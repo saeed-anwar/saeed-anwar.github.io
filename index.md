@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: home2
 title: 
 description: "Saeed Anwar's website"
 tags: [Jekyll, theme, responsive, blog, template]
