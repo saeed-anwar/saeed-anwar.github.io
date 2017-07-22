@@ -11,28 +11,28 @@ owner:
   email:          saeed.anwar@data61.csiro.au
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   #twitter: jponttuset
-  linkedin: salman-hameed-khan-12184128
-  google_scholar: M59O9lkAAAAJ
+  linkedin: saeed-anwar-51689a13
+  google_scholar: vPJIHywAAAAJ
   #google_plus: 113718226018314522413
   #github: jponttuset
   
 # Analytics and webmaster tools stuff goes here
-google_analytics: UA-52736040-1
-google_verify:
+#google_analytics: UA-52736040-1
+#google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+#bing_verify:
 
 # Links to include in top navigation
 # For external links add external: true
 links:
   #- title: Home
   #  url: /
-  - title: Research
-    url: /research/
-  - title: Publications
-    url: /publications/
-  - title: For Students
-    url: /scholarships/
+  #- title: Research
+  #  url: /research/
+  #- title: Publications
+  #  url: /publications/
+  #- title: For Students
+  #  url: /scholarships/
   #- title: For Students
   #  url: /students_/
   #- title: CV
