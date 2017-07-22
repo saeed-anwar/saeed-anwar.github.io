@@ -1,0 +1,66 @@
+title:            
+description:      My academic webpage.
+# Your site's domain goes here. Leave localhost server or blank when working locally.
+url:              https://salman-h-khan.github.io
+
+# Owner/author information
+owner:
+  name:           Salman Khan
+  avatar:         salman.png 
+  bio:            I'm a computer vision researcher affilited with Data61 (CSIRO) and ANU.
+  email:          salman.khan@data61.csiro.au
+  # Social networking links are used in author-bio sidebar. Update and remove as you like.
+  #twitter: jponttuset
+  linkedin: salman-hameed-khan-12184128
+  google_scholar: M59O9lkAAAAJ
+  #google_plus: 113718226018314522413
+  #github: jponttuset
+  
+# Analytics and webmaster tools stuff goes here
+google_analytics: UA-52736040-1
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  #- title: Home
+  #  url: /
+  - title: Research
+    url: /research/
+  - title: Publications
+    url: /publications/
+  - title: For Students
+    url: /scholarships/
+  #- title: For Students
+  #  url: /students_/
+  #- title: CV
+  #  url: /cv_/
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Australia/ACT
+future:      true
+#pygments:    true
+highlighter: rouge
+markdown:    kramdown
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+  coderay:
+    coderay_line_numbers:
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
