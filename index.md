@@ -11,7 +11,8 @@ I am a PhD Student at the Computer Vision Research Group (CVRG) at [Data61](http
 Previosuly, I completed my MS in Computer Vision and Robotics from [The Heriot Watt University, University of Girona and University of Bourgogne](http://www.vibot.org/) (vibot). I have completed my MS thesis under the supervision of [Dr. Mohammed Dabbah](https://www.linkedin.com/in/dabbah).
 
 # News!
-
+* One paper accepted in TPAMI 2018. [Jul'18]
+* Codes released for all papers.
 * Two paper accepted in BMVC 2017, London, UK. [Jul'17] (one oral and one poster)
 * One paper accepted in IEEE TIP. [Jul'17]
 
