@@ -12,7 +12,7 @@ Previosuly, I completed my MS in Computer Vision and Robotics from [The Heriot W
 
 # News!
 * One paper accepted in TPAMI 2018. [Jul'18]
-* Codes released for all papers.
+* Codes released for all papers. [Jul'18]
 * Two paper accepted in BMVC 2017, London, UK. [Jul'17] (one oral and one poster)
 * One paper accepted in IEEE TIP. [Jul'17]
 
