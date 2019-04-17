@@ -31,8 +31,8 @@ links:
   #  url: /research/
  - title: Publications
    url: /publications/
- #- title: For Students
-  #  url: /scholarships/
+ - title: For Students
+    url: /scholarships/
   #- title: For Students
   #  url: /students_/
   #- title: CV
