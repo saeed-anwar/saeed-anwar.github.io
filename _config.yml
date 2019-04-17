@@ -27,10 +27,10 @@ bing_verify:
 links:
   #- title: Home
   #  url: /
-  - title: Research
-    url: /research/
- - title: Publications
-   url: /publications/
+  #- title: Research
+  #  url: /research/
+ #- title: Publications
+ #  url: /publications/
  #- title: For Students
   #  url: /scholarships/
   #- title: For Students
