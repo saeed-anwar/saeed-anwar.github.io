@@ -35,3 +35,4 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 * Reviewer: IEEE Transactions on Circuits and Systems for Video Technology(TCSVT)
 * Reviewer: IEEE Transactions on Neural Networks and Learning Systems
 * Reviewer: Machine Vision and Applications(MVAP)
+* Reviewer: IEEE Journal of Oceanic Engineering
