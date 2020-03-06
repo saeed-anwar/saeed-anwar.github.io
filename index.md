@@ -23,3 +23,14 @@ Previosuly, I completed my MS in Computer Vision and Robotics from [The Heriot W
 * Two paper accepted in BMVC 2017, London, UK. [Jul'17] (one oral and one poster)
 * One paper accepted in IEEE TIP. [Jul'17]
 
+
+# Professional Activities!
+* Reviewer: CVPR 2020, MACCAI 2020
+* Reviewer: ICIP 2016, ICIP 2017, ICIP 2018, WACV 2018, ICIP 2019 
+* Reviewer: IEEE Transactions on Pattern Analysis and Machine Intelligence(TPAMI)
+* Reviewer: International Journal of Comuter Vision(IJCV)
+* Reviewer: IEEE Transactions on Image Processing(TIP)
+* Reviewer: IEEE Transactions on MultiMedia(TMM)
+* Reviewer: IEEE Transactions on Circuits and Systems for Video Technology(TCSVT)
+* Reviewer: IEEE Transactions on Neural Networks and Learning Systems
+* Reviewer: Machine Vision and Applications(MVAP)
