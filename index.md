@@ -15,7 +15,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 # News!
 * A paper accepted in ACM Computing Surveys. [Mar'20]
-* Two papers accepted in CVPR. [Feb'20]
+* Two papers (an oral and poster) accepted in CVPR. [Feb'20]
 * Code for [UWCNN](https://github.com/saeed-anwar/UWCNN) released. [Nov'19] 
 * A paper accepted in Pattern Recognition. [Sept'19]
 * Code for [DRLN](https://github.com/saeed-anwar/DRLN) released. [Sept'19]
