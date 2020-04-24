@@ -14,8 +14,9 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. The last date of application is 31st March 2020 (see this [link](https://jobs.csiro.au/job/Various-DATA-61/636860600/))
 
 # News!
+* Three papers accepted in CVPR (NTIRE and PBVS). [April'20]
 * A paper accepted in ACM Computing Surveys. [Mar'20]
-* Two papers (an oral and poster) accepted in CVPR. [Feb'20]
+* Two papers (an Oral and Poster) accepted in CVPR. [Feb'20]
 * Code for [UWCNN](https://github.com/saeed-anwar/UWCNN) released. [Nov'19] 
 * A paper accepted in Pattern Recognition. [Sept'19]
 * Code for [DRLN](https://github.com/saeed-anwar/DRLN) released. [Sept'19]
