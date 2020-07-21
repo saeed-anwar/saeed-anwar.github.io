@@ -14,6 +14,7 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. The last date of application (see this [link](https://jobs.csiro.au/job/Various-DATA-61/636860600/))
 
 # News!
+* [COVID19 Baseline](https://github.com/saeed-anwar/COVID19-Baselines) code/trained models released [July'20]
 * A Paper Accepted in MICCAI. [June'20] 
 * [UC-Net](http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf) nominated for CVPR best-paper award.
 * Code for [UC-Net](https://github.com/JingZhang617/UCNet) released. [June'20]
@@ -33,7 +34,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 
 # Professional Activities!
-* Reviewer: CVPR 2020 (reviewed 7 papers), MACCAI 2020
+* Reviewer: CVPR 2020, MACCAI 2020, ACCV 2020, BMVC 2020
 * Reviewer: ICIP 2016, ICIP 2017, ICIP 2018, WACV 2018, ICIP 2019 
 * Reviewer: IEEE Transactions on Pattern Analysis and Machine Intelligence(TPAMI)
 * Reviewer: International Journal of Comuter Vision(IJCV)
