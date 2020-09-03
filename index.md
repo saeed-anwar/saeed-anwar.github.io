@@ -14,14 +14,15 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. The last date of application (see this [link](https://jobs.csiro.au/job/Various-DATA-61/636860600/))
 
 # News!
+* A paper accepted in ICONIP as Oral.
 * A paper accepted in IEEE TPAMI. [Sept'20]
 * A paper accepted in Signal Processing: Image Communication. [July'20]
 * [COVID19 Baseline](https://github.com/saeed-anwar/COVID19-Baselines) code/trained models released [July'20]
-* A Paper Accepted in MICCAI. [June'20] 
+* A Paper Accepted in MICCAI as Oral. [June'20] 
 * [UC-Net](http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf) nominated for CVPR best-paper award.
 * Code for [UC-Net](https://github.com/JingZhang617/UCNet) released. [June'20]
 * Code and dataset for [CoinNet](https://github.com/saeed-anwar/CoinNet) released. [May'20]
-* Three papers accepted in CVPR (NTIRE and PBVS). [April'20]
+* Three papers accepted in CVPR (NTIRE and PBVS) including One Oral. [April'20]
 * A paper accepted in ACM Computing Surveys. [Mar'20]
 * Two papers (an Oral and Poster) accepted in CVPR. [Feb'20]
 * Code for [UWCNN](https://github.com/saeed-anwar/UWCNN) released. [Nov'19] 
