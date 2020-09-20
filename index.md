@@ -14,8 +14,9 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. The last date of application (see this [link](https://jobs.csiro.au/job/Various-DATA-61/636860600/))
 
 # News!
-* A paper accepted in ICONIP as Oral.
-* A paper accepted in IEEE TPAMI. [Sept'20]
+* Code for Fine Grain Systematic Evaluatoin [FGSE](https://github.com/saeed-anwar/FGSE) released. [Sept'20]
+* A paper accepted in ICONIP as Oral. [Sept'20]
+* A paper accepted in IEEE TPAMI. [Aug'20]
 * A paper accepted in Signal Processing: Image Communication. [July'20]
 * [COVID19 Baseline](https://github.com/saeed-anwar/COVID19-Baselines) code/trained models released [July'20]
 * A Paper Accepted in MICCAI as Oral. [June'20] 
@@ -34,7 +35,6 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 * Codes released for all papers. [Jul'18]
 * Two paper accepted in BMVC 2017, London, UK. [Jul'17] (one oral and one poster)
 * One paper accepted in IEEE TIP. [Jul'17]
-
 
 # Professional Activities!
 * Reviewer: CVPR 2020, MACCAI 2020, ACCV 2020, BMVC 2020
