@@ -14,6 +14,7 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. For the last date of application (see this [link](https://jobs.csiro.au/job/Various-DATA-61/636860600/))
 
 # News!
+* A paper accepted in WACV. [Nov'20]
 * Code for [IRAE](https://github.com/Lillian1082/IRAE_pytorch) now available. [Nov'20]
 * Code for [GradNet](https://github.com/Lillian1082/GradNet-Image-Denoising) now available. [Oct'20]
 * Code for Fine Grain Systematic Evaluatoin [FGSE](https://github.com/saeed-anwar/FGSE) released. [Sept'20]
