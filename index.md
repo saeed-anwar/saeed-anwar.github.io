@@ -35,7 +35,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 * Code and Results for [IERD](https://github.com/saeed-anwar/IERD) released. [Nov'20]
 * Code for [IRAE](https://github.com/Lillian1082/IRAE_pytorch) now available. [Nov'20]
 * Code for [GradNet](https://github.com/Lillian1082/GradNet-Image-Denoising) now available. [Oct'20]
-* Code for Fine Grain Systematic Evaluatoin [FGSE](https://github.com/saeed-anwar/FGSE) released. [Sept'20]
+* Code and trained networks for [FGSE](https://github.com/saeed-anwar/FGSE) Fine Grain Systematic Evaluation released. [Sept'20]
 * [COVID19 Baseline](https://github.com/saeed-anwar/COVID19-Baselines) code/trained models released [July'20]
 * Code for [UC-Net](https://github.com/JingZhang617/UCNet) released. [June'20]
 * Code and dataset for [CoinNet](https://github.com/saeed-anwar/CoinNet) released. [May'20]
