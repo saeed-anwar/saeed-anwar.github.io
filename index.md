@@ -30,6 +30,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 * One paper accepted in IEEE TIP. [Jul'17]
 
 # Codes!
+* Code and Results available for [R<sup>2<sup>Net](https://github.com/saeed-anwar/R2Net). [Nov'20]
 * Download our [Natural-Color Dataset (NCD)](https://github.com/saeed-anwar/ColorSurvey) provided in our Colorization Survey. [Nov'20]
 * Code and Results for [IERD](https://github.com/saeed-anwar/IERD) released. [Nov'20]
 * Code for [IRAE](https://github.com/Lillian1082/IRAE_pytorch) now available. [Nov'20]
