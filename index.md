@@ -10,11 +10,11 @@ I am a Research Scientist at [Data61](http://www.data61.csiro.au/), Commonwealth
 
 Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-Watt University, University of Girona, and the University of Bourgogne](http://www.vibot.org/) (vibot). I have completed my MS thesis under the supervision of [Dr. Mohammed Dabbah](https://www.linkedin.com/in/dabbah).
 
-## Full Ph.D. scholarships available
+### Full Ph.D. scholarships available
 I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. For the last date of application (see this [link](https://jobs.csiro.au/job/Various-DATA-61/636860600/))
 
 ---
-## News!
+### News!
 * A paper accepted in WACV. [Nov'20]
 * A paper accepted in ICONIP as Oral. [Sept'20]
 * A paper accepted in IEEE TPAMI. [Aug'20]
@@ -31,7 +31,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 * One paper accepted in IEEE TIP. [Jul'17]
 
 ---
-## Codes and Datasets!
+### Codes and Datasets!
 * Code and Results available for [R<sup>2</sup>Net](https://github.com/saeed-anwar/R2Net). [Nov'20]
 * Download our [Natural-Color Dataset (NCD)](https://github.com/saeed-anwar/ColorSurvey) provided in our Colorization Survey. [Nov'20]
 * Code and Results for [IERD](https://github.com/saeed-anwar/IERD) released. [Nov'20]
