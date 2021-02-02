@@ -15,6 +15,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 ---
 ### News!
+* A paper accepted in Pattern Recognition. [Feb'21]
 * A paper accepted in MVA. [Dec'20]
 * A paper accepted in WACV. [Nov'20]
 * A paper accepted in ICONIP as Oral. [Sept'20]
