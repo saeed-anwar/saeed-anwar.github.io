@@ -15,6 +15,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 ---
 ### News!
+* Two papers accepted in CVPR. [Mar'21]
 * A paper accepted in MVA. [Mar'21]
 * A paper accepted in Pattern Recognition. [Feb'21]
 * A paper accepted in MVA. [Dec'20]
