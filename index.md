@@ -36,6 +36,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 ---
 ### Codes and Datasets!
+* Code for [DRNet](https://github.com/ShiQiu0419/DRNet) released. [Mar'21]
 * Code, Results and Dataset available for [DDNet](https://github.com/tanveer-hussain/EfficientSOD). [Feb'21]
 * Code and Results available for [R<sup>2</sup>Net](https://github.com/saeed-anwar/R2Net). [Nov'20]
 * Download our [Natural-Color Dataset (NCD)](https://github.com/saeed-anwar/ColorSurvey) provided in our Colorization Survey. [Nov'20]
