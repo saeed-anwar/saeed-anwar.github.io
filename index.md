@@ -37,6 +37,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 ---
 ### Codes and Datasets!
+* Code for [CWR](https://github.com/JunlinHan/CWR) released. [Mar'21]
 * Code for [DRNet](https://github.com/ShiQiu0419/DRNet) released. [Mar'21]
 * Code, Results and Dataset available for [DDNet](https://github.com/tanveer-hussain/EfficientSOD). [Feb'21]
 * Code and Results available for [R<sup>2</sup>Net](https://github.com/saeed-anwar/R2Net). [Nov'20]
