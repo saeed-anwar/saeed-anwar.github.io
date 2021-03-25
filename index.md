@@ -11,7 +11,7 @@ I am a Research Scientist at [Data61](http://www.data61.csiro.au/), Commonwealth
 Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-Watt University, University of Girona, and the University of Bourgogne](http://www.vibot.org/) (vibot). I have completed my MS thesis under the supervision of [Dr. Mohammed Dabbah](https://www.linkedin.com/in/dabbah).
 
 ### Full Ph.D. scholarships available
-I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. For the last date of application (see this [link](https://jobs.csiro.au/job/Various-DATA-61/636860600/))
+I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. 
 
 ---
 ### News!
