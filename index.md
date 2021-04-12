@@ -15,6 +15,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 ---
 ### News!
+* A paper hit-on TMM. [Apr'21]
 * A paper accepted in TPAMI. [Apr'21]
 * One paper accepted in TIP. [Apr'21]
 * Two papers accepted in CVPR. [Mar'21]
