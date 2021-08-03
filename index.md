@@ -10,12 +10,16 @@ I am a Research Scientist at [Data61](http://www.data61.csiro.au/), Commonwealth
 
 Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-Watt University, University of Girona, and the University of Bourgogne](http://www.vibot.org/) (vibot). I have completed my MS thesis under the supervision of [Dr. Mohammed Dabbah](https://www.linkedin.com/in/dabbah).
 
+---
 ### Full Ph.D. scholarships available
 I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. 
 
 ---
-### News!
+### Special Issue!
 * 2021/08 --We organize a special issue on [Advanced Machine Learning Methodologies for Underwater Image and Video Processing and Analysis](https://ieeeoes.org/publications/ieee-journal-of-oceanic-engineering/joe-special-issues/) in IEEE Journal of Oceanic Engineering (IEEE-JOE) (SCI, IF: 3.554)
+
+---
+### News!
 * A paper hit-on TMM. [Apr'21]
 * A paper accepted in TPAMI. [Apr'21]
 * One paper accepted in TIP. [Apr'21]
