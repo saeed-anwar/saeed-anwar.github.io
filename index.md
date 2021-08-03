@@ -41,6 +41,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 ---
 ### Codes and Datasets!
+* [Attentional 3D Object Detection Models] are available. [Aug'21]
 * [UColor](https://github.com/Li-Chongyi/Ucolor) code, train models and results are now available. [May'21]
 * The code, dataset for [InvDN](https://github.com/Yang-Liu1082/InvDN) released. [May'21]
 * [GBNet](https://github.com/ShiQiu0419/GBNet) code and train models are available. [Apr'21]
