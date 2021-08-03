@@ -30,7 +30,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 * A paper accepted in Signal Processing: Image Communication. [July'20]
 * An Oral paper Accepted in MICCAI. [June'20] 
 * [UC-Net](http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf) nominated for CVPR best-paper award.
-* Three papers accepted in CVPR (NTIRE and PBVS) including One Oral. [April'20]
+* Three papers in CVPR Workshops (NTIRE and PBVS) including One Oral. [April'20]
 * A paper accepted in ACM Computing Surveys. [Mar'20]
 * Two papers (an Oral and Poster) accepted in CVPR. [Feb'20]
 * A paper accepted in Pattern Recognition. [Sept'19]
