@@ -15,6 +15,7 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 ---
 ### News!
+2021/08 --We organize a special issue on [Advanced Machine Learning Methodologies for Underwater Image and Video Processing and Analysis](https://ieeeoes.org/publications/ieee-journal-of-oceanic-engineering/joe-special-issues/) in IEEE Journal of Oceanic Engineering (IEEE-JOE) (SCI, IF: 3.554)
 * A paper hit-on TMM. [Apr'21]
 * A paper accepted in TPAMI. [Apr'21]
 * One paper accepted in TIP. [Apr'21]
