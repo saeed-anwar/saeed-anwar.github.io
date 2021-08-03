@@ -15,20 +15,20 @@ I am looking for Ph.D. students with exceptional English ability, coding ability
 
 ---
 ### News!
-2021/08 --We organize a special issue on [Advanced Machine Learning Methodologies for Underwater Image and Video Processing and Analysis](https://ieeeoes.org/publications/ieee-journal-of-oceanic-engineering/joe-special-issues/) in IEEE Journal of Oceanic Engineering (IEEE-JOE) (SCI, IF: 3.554)
+* 2021/08 --We organize a special issue on [Advanced Machine Learning Methodologies for Underwater Image and Video Processing and Analysis](https://ieeeoes.org/publications/ieee-journal-of-oceanic-engineering/joe-special-issues/) in IEEE Journal of Oceanic Engineering (IEEE-JOE) (SCI, IF: 3.554)
 * A paper hit-on TMM. [Apr'21]
 * A paper accepted in TPAMI. [Apr'21]
 * One paper accepted in TIP. [Apr'21]
 * Two papers accepted in CVPR. [Mar'21]
 * One paper accepted in IGARSS as an Oral. [Mar'21]
 * A paper accepted in MVA. [Feb'21]
-* A paper accepted in Pattern Recognition. [Jan'21]
-* A paper accepted in MVA. [Dec'20]
+* Paper accepted in Pattern Recognition. [Jan'21]
+* An article accepted in MVA. [Dec'20]
 * A paper accepted in WACV. [Nov'20]
-* A paper accepted in ICONIP as Oral. [Sept'20]
-* A paper accepted in IEEE TPAMI. [Aug'20]
+* An Oral paper accepted in ICONIP. [Sept'20]
+* A paper hit-on in IEEE TPAMI. [Aug'20]
 * A paper accepted in Signal Processing: Image Communication. [July'20]
-* A Paper Accepted in MICCAI as Oral. [June'20] 
+* An Oral paper Accepted in MICCAI. [June'20] 
 * [UC-Net](http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf) nominated for CVPR best-paper award.
 * Three papers accepted in CVPR (NTIRE and PBVS) including One Oral. [April'20]
 * A paper accepted in ACM Computing Surveys. [Mar'20]
