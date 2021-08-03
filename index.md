@@ -12,7 +12,7 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 
 ---
 ### Full Ph.D. scholarships available
-I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. 
+* I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. 
 
 ---
 ### Special Issue!
