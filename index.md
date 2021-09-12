@@ -20,7 +20,8 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 
 ---
 ### News!
-* A paper hit-on TMM. [Apr'21]
+* Article accepted in TIP. [Aug'21]
+* A paper hit-on TMM. [May'21]
 * A paper accepted in TPAMI. [Apr'21]
 * One paper accepted in TIP. [Apr'21]
 * Two papers accepted in CVPR. [Mar'21]
