@@ -33,10 +33,10 @@ links:
    url: /publications/
  - title: Scholarships
    url: /scholarships/
-  #- title: For Students
-  #  url: /students_/
-  #- title: CV
-  #  url: /cv_/
+  - title: People
+   url: /people/
+  - title: CV
+   url: /cv/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Australia/ACT
