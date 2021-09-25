@@ -31,12 +31,12 @@ links:
   #  url: /research/
  - title: Publications
    url: /publications/
- #- title: Scholarships
- #  url: /scholarships/
- #- title: People
- #  url: /people/
- #- title: CV
- #  url: /cv/
+ - title: Scholarships
+   url: /scholarships/
+ - title: People
+   url: /people/
+ - title: CV
+   url: /cv/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Australia/ACT
