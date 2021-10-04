@@ -20,6 +20,8 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 
 ---
 ### News!
+* One paper has been accepted by International Conference on 3D Vision 2021. [Oct'21]
+* An article is accepted Applied Sciences. [Sep'21]
 * Article accepted in TIP. [Aug'21]
 * A paper hit-on TMM. [May'21]
 * A paper accepted in TPAMI. [Apr'21]
@@ -46,7 +48,7 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 
 ---
 ### Codes and Datasets!
-* [Attentional 3D Object Detection Models]() are available. [Aug'21]
+* [Attentional 3D Object Detection](https://github.com/ShiQiu0419/attentions_in_3D_detection) codes and models are available. [Oct'21]
 * [UColor](https://github.com/Li-Chongyi/Ucolor) code, train models and results are now available. [May'21]
 * The code, dataset for [InvDN](https://github.com/Yang-Liu1082/InvDN) released. [May'21]
 * [GBNet](https://github.com/ShiQiu0419/GBNet) code and train models are available. [Apr'21]
