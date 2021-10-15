@@ -6,7 +6,15 @@ tags: [Jekyll, theme, responsive, blog, template]
 image:
   feature: picture.jpg
 ---
-I am a Research Scientist at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia in Cyber-Physical Systems, adjunct Lecturer at Australian National University ([ANU](http://https://www.anu.edu.au/)) and visiting fellow at University of Technology Sydney ([UTS](https://www.uts.edu.au/)). I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http://www.data61.csiro.au/) (previously known as NICTA), [CSIRO](http://www.csiro.au/) and College of Electrical & Computer Science ([CECS](https://cecs.anu.edu.au/)), Australian National University  (ANU) under supervision of [Prof. Fatih Porikli](http://www.porikli.com/) and [Dr. Cong Phuoc Huynh](https://www.linkedin.com/in/cong-phuoc-huynh-61891b15). <br><br>
+I am 
+* Research Scientist at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia in Cyber-Physical Systems
+* Adjunct Lecturer at Australian National University ([ANU](http://https://www.anu.edu.au/)) 
+* Visiting fellow at University of Technology Sydney ([UTS](https://www.uts.edu.au/))
+* Honorary Assistant Professor at University of Canberra
+
+I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http://www.data61.csiro.au/) (previously known as NICTA), [CSIRO](http://www.csiro.au/) and College of Electrical & Computer Science ([CECS](https://cecs.anu.edu.au/)), Australian National University  (ANU) under supervision of 
+* [Prof. Fatih Porikli](http://www.porikli.com/)  
+* [Dr. Cong Phuoc Huynh](https://www.linkedin.com/in/cong-phuoc-huynh-61891b15). <br><br>
 
 Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-Watt University, University of Girona, and the University of Bourgogne](http://www.vibot.org/) (vibot). I have completed my MS thesis under the supervision of [Dr. Mohammed Dabbah](https://www.linkedin.com/in/dabbah).
 
