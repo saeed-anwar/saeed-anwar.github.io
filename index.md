@@ -28,7 +28,8 @@ Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-W
 
 ---
 ### News!
-* One paper has been accepted by International Conference on 3D Vision 2021. [Oct'21]
+* PLCNN accepted in NCAA. [Nov'21]
+* One paper has been accepted by International Conference on 3D Vision. [Oct'21]
 * An article is accepted Applied Sciences. [Sep'21]
 * Article accepted in TIP. [Aug'21]
 * A paper hit-on TMM. [May'21]
