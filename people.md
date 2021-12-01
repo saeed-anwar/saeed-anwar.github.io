@@ -1,5 +1,5 @@
 ---
-layout: publications
+layout: people
 permalink: /people/
 title: My Collaboration
 tags: [about]
