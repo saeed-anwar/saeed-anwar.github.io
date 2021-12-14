@@ -6,10 +6,10 @@ tags: [Jekyll, theme, responsive, blog, template]
 
 ---
 I am 
-* Research Scientist at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia
-* Adjunct Lecturer at College of Engineering & Computer Science, Australian National University ([ANU](http://https://www.anu.edu.au/)) 
-* Visiting fellow at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
-* Honorary Assistant Professor at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
+* <strong>Research Scientist</strong> at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia
+* <strong>Adjunct Lecturer</strong> at College of Engineering & Computer Science, Australian National University ([ANU](http://https://www.anu.edu.au/)) 
+* <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
+* <strong>Honorary Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
 
 I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http://www.data61.csiro.au/) (previously known as NICTA), [CSIRO](http://www.csiro.au/) and College of Engineering & Computer Science ([CECS](https://cecs.anu.edu.au/)), Australian National University  (ANU). Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-Watt University, University of Girona, and the University of Bourgogne](http://www.vibot.org/) (vibot). I have completed my MS thesis at Toshiba Medical Visualization Systems Europe ([TMVSE](https://www.linkedin.com/company/toshiba-medical-visualization-systems-europe-ltd)). My B.Sc is in Computer Systems Engineering from the University of Engineering and Technology ([UET](https://www.uetpeshawar.edu.pk/)), Peshawar.
 
