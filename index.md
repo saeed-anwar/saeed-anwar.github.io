@@ -3,8 +3,7 @@ layout: home2
 title: 
 description: "Saeed Anwar's website"
 tags: [Jekyll, theme, responsive, blog, template]
-image:
-  feature: picture.jpg
+
 ---
 I am 
 * Research Scientist at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia
