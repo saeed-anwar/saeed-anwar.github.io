@@ -23,11 +23,14 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### News!
+* A Paper accepted in WACV. [Jan'22]
 * PnP-3D accepted in TPAMI. [Jan'22]
 * R<sup>2</sup>Net is now available online in TNNLS. [Dec'21]
 * PLCNN accepted in NCAA. [Nov'21]
+* Assistant Professor at University of Canberra. [Oct'21]
 * One paper has been accepted by International Conference on 3D Vision. [Oct'21]
 * An article is accepted Applied Sciences. [Sep'21]
+* Guest Editor in IEEE JOE. [Aug'21]
 * Article accepted in TIP. [Aug'21]
 * A paper hit-on TMM. [May'21]
 * A paper accepted in TPAMI. [Apr'21]
@@ -38,6 +41,7 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 * Paper accepted in Pattern Recognition. [Jan'21]
 * An article accepted in MVA. [Dec'20]
 * A paper accepted in WACV. [Nov'20]
+* Visiting Fellow at University of Technology Sydney. [Oct'20]
 * An Oral paper accepted in ICONIP. [Sept'20]
 * A paper hit-on in IEEE TPAMI. [Aug'20]
 * A paper accepted in Signal Processing: Image Communication. [July'20]
@@ -47,14 +51,17 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 * A paper accepted in ACM Computing Surveys. [Mar'20]
 * Two papers (an Oral and Poster) accepted in CVPR. [Feb'20]
 * A paper accepted in Pattern Recognition. [Sept'19]
+* Appointed as Lecturer at Australian National University (ANU). [Jul'19]
 * One paper accepted in ICCV (Oral) 2019. [Jul'19]
 * One paper accepted in TPAMI 2018. [Jul'18]
+* Started working at CSIRO. [Apr'18]
 * Two paper accepted in BMVC 2017, London, UK. [Jul'17] (one oral and one poster)
 * One paper accepted in IEEE TIP. [Jul'17]
+* One Paper accepted in ICCV.[Dec'15]
 
 ---
 ### Codes and Datasets!
-* [R(R<sup>2</sup>Net)](https://github.com/saeed-anwar/R2Net) all codes and models released. [Dec'21]
+* [R<sup>2</sup>Net](https://github.com/saeed-anwar/R2Net) all codes and models released. [Dec'21]
 * [Attentional 3D Object Detection](https://github.com/ShiQiu0419/attentions_in_3D_detection) codes and models are available. [Oct'21]
 * [UColor](https://github.com/Li-Chongyi/Ucolor) code, train models and results are now available. [May'21]
 * The code, dataset for [InvDN](https://github.com/Yang-Liu1082/InvDN) released. [May'21]
