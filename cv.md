@@ -1,7 +1,7 @@
 ---
 layout: dataset
 permalink: /dataset/
-title: My CV
+title: Datasets
 tags: [about]
 modified: 8-7-2014
 comments: false
