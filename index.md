@@ -6,8 +6,8 @@ tags: [Jekyll, theme, responsive, blog, template]
 
 ---
 I am 
+* <strong>Lecturer (Assist. Prof.)</strong> at College of Engineering & Computer Science, Australian National University ([ANU](http://https://www.anu.edu.au/)) 
 * <strong>Research Scientist</strong> at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia
-* <strong>Adjunct Lecturer</strong> at College of Engineering & Computer Science, Australian National University ([ANU](http://https://www.anu.edu.au/)) 
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
 * <strong>Honorary Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
 
@@ -23,11 +23,12 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### News!
+* A Paper hits on CVPR. [Mar'22]
 * A Paper accepted in WACV. [Jan'22]
 * PnP-3D accepted in TPAMI. [Jan'22]
 * R<sup>2</sup>Net is now available online in TNNLS. [Dec'21]
 * PLCNN accepted in NCAA. [Nov'21]
-* Assistant Professor at University of Canberra. [Oct'21]
+* *Assistant Professor* at University of Canberra. [Oct'21]
 * One paper has been accepted by International Conference on 3D Vision. [Oct'21]
 * An article is accepted Applied Sciences. [Sep'21]
 * Guest Editor in IEEE JOE. [Aug'21]
@@ -41,7 +42,7 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 * Paper accepted in Pattern Recognition. [Jan'21]
 * An article accepted in MVA. [Dec'20]
 * A paper accepted in WACV. [Nov'20]
-* Visiting Fellow at University of Technology Sydney. [Oct'20]
+* *Visiting Fellow* at University of Technology Sydney. [Oct'20]
 * An Oral paper accepted in ICONIP. [Sept'20]
 * A paper hit-on in IEEE TPAMI. [Aug'20]
 * A paper accepted in Signal Processing: Image Communication. [July'20]
@@ -61,6 +62,7 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### Codes and Datasets!
+* All codes and models for [Angular Skeleton Encoding](https://github.com/ZhenyueQin/Angular-Skeleton-Encoding). [Mar'22]
 * [R<sup>2</sup>Net](https://github.com/saeed-anwar/R2Net) all codes and models released. [Dec'21]
 * [Attentional 3D Object Detection](https://github.com/ShiQiu0419/attentions_in_3D_detection) codes and models are available. [Oct'21]
 * [UColor](https://github.com/Li-Chongyi/Ucolor) code, train models and results are now available. [May'21]
