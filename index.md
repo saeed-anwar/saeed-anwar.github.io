@@ -23,6 +23,8 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### News!
+* Associate Editor@Neurocomputing. [Apr'22]
+* Two papers in CVPRw. [Apr'22]
 * A Paper hits on CVPR. [Mar'22]
 * A Paper accepted in WACV. [Jan'22]
 * PnP-3D accepted in TPAMI. [Jan'22]
@@ -62,7 +64,7 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### Codes and Datasets!
-* All codes and models for [Angular Skeleton Encoding](https://github.com/ZhenyueQin/Angular-Skeleton-Encoding). [Mar'22]
+* All codes and models for [Angular Skeleton Encoding](https://github.com/ZhenyueQin/Angular-Skeleton-Encoding) are now available. [Mar'22]
 * [R<sup>2</sup>Net](https://github.com/saeed-anwar/R2Net) all codes and models released. [Dec'21]
 * [Attentional 3D Object Detection](https://github.com/ShiQiu0419/attentions_in_3D_detection) codes and models are available. [Oct'21]
 * [UColor](https://github.com/Li-Chongyi/Ucolor) code, train models and results are now available. [May'21]
