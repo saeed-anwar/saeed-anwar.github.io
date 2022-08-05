@@ -6,7 +6,7 @@ tags: [Jekyll, theme, responsive, blog, template]
 
 ---
 I am 
-* <strong>Adjunct Lecturer (Assist. Prof.)</strong> at College of Engineering & Computer Science, Australian National University ([ANU](http://https://www.anu.edu.au/)) [2019-2022]
+* <strong>Honorary Lecturer (Assist. Prof.)</strong> at College of Engineering & Computer Science, Australian National University ([ANU](http://https://www.anu.edu.au/)) [7/2019-7/2022]
 * <strong>Research Scientist</strong> at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
 * <strong>Honorary Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
