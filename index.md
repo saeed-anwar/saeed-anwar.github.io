@@ -23,6 +23,10 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### News!
+* Two Journal Articles: TNNLS and Electronics. [August'22]
+* A US Patent on SR Images. [Jul'22]
+* Action recognition article in ECCV Workshop. [Jun'22]
+* A papers in Signal Journal. [May'22]
 * Associate Editor@Neurocomputing. [Apr'22]
 * Two papers in CVPRw. [Apr'22]
 * A Paper hits on CVPR. [Mar'22]
