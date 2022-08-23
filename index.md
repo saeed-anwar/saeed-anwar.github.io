@@ -23,7 +23,7 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### News!
-* Three Journal Articles: TNNLS (IF:14.255), Remote Sensing (IF:5.349) and Electronics (IF:2.690). [August'22]
+* Three Journal Articles: TNNLS (IF:14.255), Remote Sensing (IF:5.349) and Electronics (IF:2.690). [Aug'22]
 * A US Patent on SR Images. [Jul'22]
 * Action recognition article in ECCV Workshop. [Jun'22]
 * A papers in Signal Journal. [May'22]
