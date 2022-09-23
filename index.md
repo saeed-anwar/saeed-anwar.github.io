@@ -23,10 +23,11 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### News!
+* PU-Transformer has been accepted in ACCV. [Sept'22]
 * Three Journal Articles: TNNLS (IF:14.255), Remote Sensing (IF:5.349) and Electronics (IF:2.690). [Aug'22]
 * A US Patent on SR Images. [Jul'22]
 * Action recognition article in ECCV Workshop. [Jun'22]
-* A papers in Signal Journal. [May'22]
+* A paper in Signal Journal. [May'22]
 * Associate Editor@Neurocomputing. [Apr'22]
 * Two papers in CVPRw. [Apr'22]
 * A Paper hits on CVPR. [Mar'22]
