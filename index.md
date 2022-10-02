@@ -23,6 +23,8 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### News!
+* TNNLS (IF:14.255) has accepted our article on Position-Sensing Graph Neural Networks. [Sept'22]
+* An article based on point cloud completion is accepted in BMVC. [Oct'22]
 * PU-Transformer has been accepted in ACCV. [Sept'22]
 * Three Journal Articles: TNNLS (IF:14.255), Remote Sensing (IF:5.349) and Electronics (IF:2.690). [Aug'22]
 * A US Patent on SR Images. [Jul'22]
