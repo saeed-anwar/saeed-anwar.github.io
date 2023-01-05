@@ -6,7 +6,7 @@ tags: [Jekyll, theme, responsive, blog, template]
 
 ---
 I am 
-* <strong>Honorary Lecturer (Assist. Prof.)</strong> at College of Engineering & Computer Science, Australian National University ([ANU](http://https://www.anu.edu.au/)) [7/2019-7/2022]
+* <strong>Honorary Lecturer (Assist. Prof.)</strong> at College of Engineering & Computer Science, Australian National University ([ANU](http://https://www.anu.edu.au/)) 
 * <strong>Research Scientist</strong> at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
 * <strong>Honorary Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
@@ -23,6 +23,7 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### News!
+* Sensors (IF:3.847) has accepted our article. [Dec'22]
 * TNNLS (IF:14.255) has accepted our article on Position-Sensing Graph Neural Networks. [Sept'22]
 * An article based on point cloud completion is accepted in BMVC. [Oct'22]
 * PU-Transformer has been accepted in ACCV. [Sept'22]
@@ -71,6 +72,7 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### Codes and Datasets!
+* [Latent-Transport-UPCN](https://github.com/CuiRuikai/Latent-Transport-UPCN) code and models are now available. [Dec'22]
 * All codes and models for [Angular Skeleton Encoding](https://github.com/ZhenyueQin/Angular-Skeleton-Encoding) are now available. [Mar'22]
 * [R<sup>2</sup>Net](https://github.com/saeed-anwar/R2Net) all codes and models released. [Dec'21]
 * [Attentional 3D Object Detection](https://github.com/ShiQiu0419/attentions_in_3D_detection) codes and models are available. [Oct'21]
