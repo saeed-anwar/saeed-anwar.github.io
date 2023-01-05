@@ -6,8 +6,8 @@ tags: [Jekyll, theme, responsive, blog, template]
 
 ---
 I am 
-* <strong>Assistant Professor </strong> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM](http://www.kfupm.edu.sa/) 
-* <strong>Honorary Faculty </strong> at College of Engineering & Computer Science, Australian National University ([ANU](https://www.anu.edu.au/)
+* <strong>Assistant Professor </strong> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM](http://www.kfupm.edu.sa/)) 
+* <strong>Honorary Faculty </strong> at College of Engineering & Computer Science, Australian National University ([ANU](https://www.anu.edu.au/))
 * <strong>Research Scientist</strong> at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
 * <strong>Honorary Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
