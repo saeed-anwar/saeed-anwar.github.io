@@ -6,7 +6,8 @@ tags: [Jekyll, theme, responsive, blog, template]
 
 ---
 I am 
-* <strong>Honorary Lecturer (Assist. Prof.)</strong> at College of Engineering & Computer Science, Australian National University ([ANU](http://https://www.anu.edu.au/)) 
+* <strong>Assistant Professor </strong> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM](http://www.kfupm.edu.sa/) 
+* <strong>Honorary Faculty </strong> at College of Engineering & Computer Science, Australian National University ([ANU](https://www.anu.edu.au/)
 * <strong>Research Scientist</strong> at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
 * <strong>Honorary Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
@@ -15,7 +16,7 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### Full Ph.D. scholarships available
-* I am looking for Ph.D. students with exceptional English ability, coding ability, and research experience. The candidate must have a high GPA and rich experience in research with publications in top venues. Drop me an email if you are interested. 
+* Scholarships for PostDoc, PhD and Masters available at ICS, KFUPM. I am looking for students with exceptional English ability, coding ability, Good GPA and research experience. Drop me an [email](saeed.anwar@kfupm.edu.sa) if you are interested. 
 
 ---
 ### Special Issue!
