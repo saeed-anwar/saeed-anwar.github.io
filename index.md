@@ -8,11 +8,15 @@ tags: [Jekyll, theme, responsive, blog, template]
 I am 
 * <strong>Assistant Professor </strong> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM](http://www.kfupm.edu.sa/)) 
 * <strong>Honorary Faculty </strong> at College of Engineering & Computer Science, Australian National University ([ANU](https://www.anu.edu.au/))
-* <strong>Research Scientist</strong> at [Data61](http://www.data61.csiro.au/), Commonwealth Scientific and Industrial Research Organization ([CSIRO](http://www.csiro.au/)), Australia
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
 * <strong>Adjunct Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
 
-I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http://www.data61.csiro.au/) (previously known as NICTA), [CSIRO](http://www.csiro.au/) and College of Engineering & Computer Science ([CECS](https://cecs.anu.edu.au/)), Australian National University  (ANU). Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-Watt University, University of Girona, and the University of Bourgogne](http://www.vibot.org/) (vibot). I have completed my MS thesis at Toshiba Medical Visualization Systems Europe ([TMVSE](https://www.linkedin.com/company/toshiba-medical-visualization-systems-europe-ltd)). My B.Sc is in Computer Systems Engineering from the University of Engineering and Technology ([UET](https://www.uetpeshawar.edu.pk/)), Peshawar.
+
+<strong>Industrial Experience</strong>: I was Research Scientist with the Efficient Computer Vision Group at [Data61](http://www.data61.csiro.au/), [CSIRO](http://www.csiro.au/) (Commonwealth Scientific and Industrial Research Organisation) Australia, from 2018-2023. I have also worked with National ICT Australia (NICTA), Australia, during 2014-2018. Previously, I was with TMVSE (Toshiba Medical Visualization Systems Europe), Scotland and Pal Robotics, Barcelona, Spain. I worked with PTCL (Pakistan Telecommunication Limited), Pakistan, during my undergraduate.
+
+<strong>Academic Experience</strong>: I was a computer engineer at Faculty Of Computer Sciences and Engineering, [GIKI](https://giki.edu.pk/) (Ghulam Ishaq Khan Institute of Engineering Sciences and Technology) from 2008-2010. I have worked as an Assistant Professor in the Department of Computer Science, [NUCES](https://www.nu.edu.pk/) (National University of Computer and Emerging Sciences) from 2012-2018. During my Ph.D. studies, I taught at Australian National University as a tutor and lecturer at the University of Canberra from 2014-2018.
+
+<strong>Education:</strong>I completed my PhD at College of Engineering & Computer Science ([CECS](https://cecs.anu.edu.au/)), Australian National University  (ANU) and the Computer Vision Research Group (CVRG) at [Data61](http://www.data61.csiro.au/) (previously known as NICTA), [CSIRO](http://www.csiro.au/). Previously, I completed my MS in Computer Vision and Robotics from [The Heriot-Watt University, University of Girona, and the University of Bourgogne](http://www.vibot.org/) (vibot). I have completed my MS thesis at Toshiba Medical Visualization Systems Europe ([TMVSE](https://www.linkedin.com/company/toshiba-medical-visualization-systems-europe-ltd)). My B.Sc is in Computer Systems Engineering from the University of Engineering and Technology ([UET](https://www.uetpeshawar.edu.pk/)), Peshawar.
 
 ---
 ### Full Ph.D. scholarships available
@@ -24,6 +28,7 @@ I completed my PhD at the Computer Vision Research Group (CVRG) at [Data61](http
 
 ---
 ### News!
+* A paper accepted by ICRA. [Jan'23]
 * Sensors (IF:3.847) has accepted our article. [Dec'22]
 * TNNLS (IF:14.255) has accepted our article on Position-Sensing Graph Neural Networks. [Sept'22]
 * An article based on point cloud completion is accepted in BMVC. [Oct'22]
