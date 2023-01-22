@@ -118,5 +118,5 @@ I am
   * IEEE Transactions on Neural Networks and Learning Systems (TNNLS)
   * Machine Vision and Applications (MVAP)
   * IEEE Journal of Oceanic Engineering (JOE)
-  * Neurocomputing, Pattern Recognition, PLoS One, Sensors, Remote Senseing
+  * Neurocomputing, Pattern Recognition, PLoS One, Sensors, Remote Sensing
 
