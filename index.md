@@ -106,15 +106,17 @@ I am
 ---
 ## Professional Activities!
 * Conference Reviewer: 
-  * CVPR 2020, CVPR 2021, MACCAI 2020, ACCV 2020, BMVC 2020, ICCV 2021
+  * CVPR 2020, CVPR 2021, CVPR 2022, MACCAI 2020, ACCV 2020, BMVC 2020, ICCV 2021
   * ICIP 2016, ICIP 2017, ICIP 2018, WACV 2018, ICIP 2019 
 * Journal Reviewer: 
-  * IEEE Transactions on Pattern Analysis and Machine Intelligence(TPAMI)
+  * IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
   * Information Fusion (IF)
-  * IEEE Transactions on Image Processing(TIP)
-  * International Journal of Comuter Vision(IJCV)
+  * IEEE Transactions on Image Processing (TIP)
+  * International Journal of Comuter Vision (IJCV)
   * IEEE Transactions on MultiMedia(TMM)
-  * IEEE Transactions on Circuits and Systems for Video Technology(TCSVT)
-  * IEEE Transactions on Neural Networks and Learning Systems
-  * Machine Vision and Applications(MVAP)
-  * IEEE Journal of Oceanic Engineering
+  * IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)
+  * IEEE Transactions on Neural Networks and Learning Systems (TNNLS)
+  * Machine Vision and Applications (MVAP)
+  * IEEE Journal of Oceanic Engineering (JOE)
+  * Neurocomputing, Pattern Recognition, PLoS One, Sensors, Remote Senseing
+
