@@ -24,8 +24,7 @@ I am
 
 ---
 ### Special Issue!
-* 2023 -- We organized a special issue on [Deep Neural Networks Sensing for RGB-D Motion Recognition](https://www.mdpi.com/journal/sensors/special_issues/TRGE634NXW) in Sensors (IF: 3.9)
-* <s> 2021/08 --We organizd a special issue on [Advanced Machine Learning Methodologies for Underwater Image and Video Processing and Analysis](https://ieeeoes.org/publications/ieee-journal-of-oceanic-engineering/joe-special-issues/) in IEEE Journal of Oceanic Engineering (IEEE-JOE) (SCI, IF: 3.554) </s>
+* 2023 -- We organized a special issue on [Deep Neural Networks Sensing for RGB-D Motion Recognition](https://www.mdpi.com/journal/sensors/special_issues/TRGE634NXW) in Sensors (IF: 3.9).
 
 ---
 ### News!
