@@ -12,9 +12,6 @@ tags: [Jekyll, theme, responsive, blog, template]
 <br><strong>2021/10 - </strong>I am also Adjunct Assistant Professor at Faculty of Science and Technology, University of Canberra (UC).</br>
 <br><strong>2018/04 - 2023/01 </strong>I was a Research Scientist with Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). </br>
 <br><strong>2021/10 - 2023/08 </strong>Visiting Fellow at Faculty of Engineering and Information Technology, University of Technology Sydney (UTS).</br>
-
-<hr />
-</p>
 <hr />
 </p>
 <!--
