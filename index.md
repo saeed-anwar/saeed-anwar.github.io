@@ -4,9 +4,15 @@ title:
 description: "Saeed Anwar's website"
 tags: [Jekyll, theme, responsive, blog, template]
 
+
 ---
-I am 
+<p>
+<br><strong>2022/12 - </strong>I am a Assistant Professor </font></a> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM].</br>
+<hr />
+</p>
+<!--
 * <strong>Assistant Professor </strong> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM](http://www.kfupm.edu.sa/)) 
+-->
 * <strong>Honorary Faculty </strong> at College of Engineering & Computer Science, Australian National University ([ANU](https://www.anu.edu.au/))
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
 * <strong>Adjunct Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
