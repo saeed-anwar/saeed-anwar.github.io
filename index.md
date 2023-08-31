@@ -10,12 +10,24 @@ tags: [Jekyll, theme, responsive, blog, template]
 <h2>
 <a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Saeed Anwar Homepage</h2>
 <div style="text-align: justify; display: block; margin-right: auto;">
+
+<h2>
+<a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Academic Experience</h2>
+<div style="text-align: justify; display: block; margin-right: auto;">
 <p>
+ 
 <br><strong>2022/12 - </strong>I am a Assistant Professor at Information and Computer Science, King Fahad University of Petroleum & Minerals (KFUPM).<br>
 <br><strong>2019/06 - </strong>I am Honorary Faculty at College of Engineering & Computer Science, Australian National University (ANU).<br>
 <br><strong>2021/10 - </strong>I am also Adjunct Assistant Professor at Faculty of Science and Technology, University of Canberra (UC).<br>
-<br><strong>2018/04 - 2023/01 </strong>I was a Research Scientist with Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). <br>
-<br><strong>2021/10 - 2023/08 </strong>Visiting Fellow at Faculty of Engineering and Information Technology, University of Technology Sydney (UTS).<br>
+<br><strong>2021/10 - 2023/08 </strong>, Visiting Fellow at Faculty of Engineering and Information Technology, University of Technology Sydney (UTS).<br>
+<hr />
+</p>
+
+<h2>
+<a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Industrial Experience</h2>
+<div style="text-align: justify; display: block; margin-right: auto;">
+<p>
+<br><strong>2018/04 - 2023/01 </strong>, I was a Research Scientist with Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). <br>
 <hr />
 </p>
  
