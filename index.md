@@ -7,7 +7,7 @@ tags: [Jekyll, theme, responsive, blog, template]
 
 ---
 <p>
-<br><strong>2022/12 - </strong>I am a Assistant Professor </font></a> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM].</br>
+<br><strong>2022/12 - </strong>I am a Assistant Professor at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM].</br>
 <hr />
 </p>
 <!--
