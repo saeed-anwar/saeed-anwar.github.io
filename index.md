@@ -16,11 +16,9 @@ tags: [Jekyll, theme, responsive, blog, template]
 </p>
 <!--
 * <strong>Assistant Professor </strong> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM](http://www.kfupm.edu.sa/)) 
-
 * <strong>Honorary Faculty </strong> at College of Engineering & Computer Science, Australian National University ([ANU](https://www.anu.edu.au/))
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
-* <strong>Adjunct Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))
--->
+* <strong>Adjunct Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/))-->
 
 <strong>Industrial Experience</strong>: I was a Research Scientist with the Efficient Computer Vision Group at [Data61](http://www.data61.csiro.au/), [CSIRO](http://www.csiro.au/) (Commonwealth Scientific and Industrial Research Organisation) Australia, from 2018-2023. Recently, I have acted as the project leader for several critical and complex projects, including Boeing, Bionic Vision, and LionShare, as well as internal projects such as Galaxies identification and locationization and Cattle 3D Point Cloud Segmentation. I have also worked with National ICT Australia (NICTA), Australia, during 2014-2018. Previously, I worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE), Scotland. Similarly, I simulated sonar sensors for transparent object detection for path planning in Pal Robotics, Barcelona, Spain. I worked with Pakistan Telecommunication Limited (PTCL) during my undergraduate.
 
