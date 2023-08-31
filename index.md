@@ -28,6 +28,7 @@ tags: [Jekyll, theme, responsive, blog, template]
 <div style="text-align: justify; display: block; margin-right: auto;">
 <p>
 <br><strong>2018/04 - 2023/01 </strong>, I was a Research Scientist with Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). <br>
+<br><strong>2014/05 - 2018/04 </strong>, I have also worked with National ICT Australia (NICTA), Australia, on various projects. <br>
 <hr />
 </p>
  
