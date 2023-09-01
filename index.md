@@ -51,64 +51,66 @@ tags: [Jekyll, theme, responsive, blog, template]
 ---
 ### Full Ph.D. scholarships available
 * Positions for PostDoc at JRCAI and Scholarships for Ph.D. and Masters available at ICS, KFUPM. I am looking for students with exceptional English ability, coding ability, Good GPA and research experience. Drop me an [email](mailto:saeed.anwar@kfupm.edu.sa) if you are interested.  
-
+</p>
 ---
 ### Special Issue!
 * 2023 -- We organized a special issue on [Deep Neural Networks Sensing for RGB-D Motion Recognition](https://www.mdpi.com/journal/sensors/special_issues/TRGE634NXW) in Sensors (IF: 3.9).
 
----
-### News!
-* P2C is accepted by ICCV. [April'23]
-* UniLoc is accepted at IROS. [March'23]
-* IEEE T-ITS (IF:8.5) has accepted our article SAT3D. [Feb'23]
-* A paper accepted by ICRA. [Jan'23]
-* Sensors (IF:3.847) has accepted our article. [Dec'22]
-* TNNLS (IF:14.255) has accepted our article on Position-Sensing Graph Neural Networks. [Sept'22]
-* An article based on point cloud completion is accepted in BMVC. [Oct'22]
-* PU-Transformer has been accepted in ACCV. [Sept'22]
-* Three Journal Articles: TNNLS (IF:14.255), Remote Sensing (IF:5.349) and Electronics (IF:2.690). [Aug'22]
-* A US Patent on SR Images. [Jul'22]
-* Action recognition article in ECCV Workshop. [Jun'22]
-* A paper in Signal Journal. [May'22]
-* Associate Editor@Neurocomputing. [Apr'22]
-* Two papers in CVPRw. [Apr'22]
-* A Paper hits on CVPR. [Mar'22]
-* A Paper accepted in WACV. [Jan'22]
-* PnP-3D accepted in TPAMI. [Jan'22]
-* R<sup>2</sup>Net is now available online in TNNLS. [Dec'21]
-* PLCNN accepted in NCAA. [Nov'21]
-* *Assistant Professor* at University of Canberra. [Oct'21]
-* One paper has been accepted by International Conference on 3D Vision. [Oct'21]
-* An article is accepted Applied Sciences. [Sep'21]
-* Guest Editor in IEEE JOE. [Aug'21]
-* Article accepted in TIP. [Aug'21]
-* A paper hit-on TMM. [May'21]
-* A paper accepted in TPAMI. [Apr'21]
-* One paper accepted in TIP. [Apr'21]
-* Two papers accepted in CVPR. [Mar'21]
-* One paper accepted in IGARSS as an Oral. [Mar'21]
-* A paper accepted in MVA. [Feb'21]
-* Paper accepted in Pattern Recognition. [Jan'21]
-* An article accepted in MVA. [Dec'20]
-* A paper accepted in WACV. [Nov'20]
-* *Visiting Fellow* at University of Technology Sydney. [Oct'20]
-* An Oral paper accepted in ICONIP. [Sept'20]
-* A paper hit-on in IEEE TPAMI. [Aug'20]
-* A paper accepted in Signal Processing: Image Communication. [July'20]
-* An Oral paper Accepted in MICCAI. [June'20] 
-* [UC-Net](http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf) nominated for CVPR best-paper award.
-* Three papers in CVPR Workshops (NTIRE and PBVS) including One Oral. [April'20]
-* A paper accepted in ACM Computing Surveys. [Mar'20]
-* Two papers (an Oral and Poster) accepted in CVPR. [Feb'20]
-* A paper accepted in Pattern Recognition. [Sept'19]
-* Appointed as Lecturer at Australian National University (ANU). [Jul'19]
-* One paper accepted in ICCV (Oral) 2019. [Jul'19]
-* One paper accepted in TPAMI 2018. [Jul'18]
-* Started working at CSIRO. [Apr'18]
-* Two paper accepted in BMVC 2017, London, UK. [Jul'17] (one oral and one poster)
-* One paper accepted in IEEE TIP. [Jul'17]
-* One Paper accepted in ICCV.[Dec'15]
+<h2>
+<a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
+<ul>
+<li> P2C is accepted by ICCV. [April'23]</li>
+<li> UniLoc is accepted at IROS. [March'23]</li>
+<li> IEEE T-ITS (IF:8.5) has accepted our article SAT3D. [Feb'23]</li>
+<li> A paper accepted by ICRA. [Jan'23]</li>
+<li> Sensors (IF:3.847) has accepted our article. [Dec'22]</li>
+<li> TNNLS (IF:14.255) has accepted our article on Position-Sensing Graph Neural Networks. [Sept'22]</li>
+<li> An article based on point cloud completion is accepted in BMVC. [Oct'22]</li>
+<li> PU-Transformer has been accepted in ACCV. [Sept'22]</li>
+<li> Three Journal Articles: TNNLS (IF:14.255), Remote Sensing (IF:5.349) and Electronics (IF:2.690). [Aug'22]</li>
+<li> A US Patent on SR Images. [Jul'22]</li>
+<li> Action recognition article in ECCV Workshop. [Jun'22]</li>
+<li> A paper in Signal Journal. [May'22]</li>
+<li> Associate Editor@Neurocomputing. [Apr'22]</li>
+<li> Two papers in CVPRw. [Apr'22]</li>
+<li> A Paper hits on CVPR. [Mar'22]</li>
+<li> A Paper accepted in WACV. [Jan'22]</li>
+<li> PnP-3D accepted in TPAMI. [Jan'22]</li>
+<li> R<sup>2</sup>Net is now available online in TNNLS. [Dec'21]</li>
+<li> PLCNN accepted in NCAA. [Nov'21]</li>
+<li> *Assistant Professor* at University of Canberra. [Oct'21]</li>
+<li> One paper has been accepted by International Conference on 3D Vision. [Oct'21]</li>
+<li> An article is accepted Applied Sciences. [Sep'21]</li>
+<li> Guest Editor in IEEE JOE. [Aug'21]</li>
+<li> Article accepted in TIP. [Aug'21]</li>
+<li> A paper hit-on TMM. [May'21]</li>
+<li> A paper accepted in TPAMI. [Apr'21]</li>
+<li> One paper accepted in TIP. [Apr'21]</li>
+<li> Two papers accepted in CVPR. [Mar'21]</li>
+<li> One paper accepted in IGARSS as an Oral. [Mar'21]</li>
+<li> A paper accepted in MVA. [Feb'21]</li>
+<li> Paper accepted in Pattern Recognition. [Jan'21]</li>
+<li> An article accepted in MVA. [Dec'20]</li>
+<li> A paper accepted in WACV. [Nov'20]</li>
+<li> *Visiting Fellow* at University of Technology Sydney. [Oct'20]</li>
+<li> An Oral paper accepted in ICONIP. [Sept'20]</li>
+<li> A paper hit-on in IEEE TPAMI. [Aug'20]</li>
+<li> A paper accepted in Signal Processing: Image Communication. [July'20]</li>
+<li> An Oral paper Accepted in MICCAI. [June'20]</li> 
+<li> [UC-Net](http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf) nominated for CVPR best-paper award.
+<li> Three papers in CVPR Workshops (NTIRE and PBVS) including One Oral. [April'20]</li>
+<li> A paper accepted in ACM Computing Surveys. [Mar'20]</li>
+<li> Two papers (an Oral and Poster) accepted in CVPR. [Feb'20]</li>
+<li> A paper accepted in Pattern Recognition. [Sept'19]</li>
+<li> Appointed as Lecturer at Australian National University (ANU). [Jul'19]</li>
+<li> One paper accepted in ICCV (Oral) 2019. [Jul'19]</li>
+<li> One paper accepted in TPAMI 2018. [Jul'18]</li>
+<li> Started working at CSIRO. [Apr'18]</li>
+<li> Two paper accepted in BMVC 2017, London, UK.  (one oral and one poster). [Jul'17]</li>
+<li> One paper accepted in IEEE TIP. [Jul'17]</li>
+<li> One Paper accepted in ICCV.[Dec'15]</li>
+</ul>
 ---
 ### Codes and Datasets!
 * [Latent-Transport-UPCN](https://github.com/CuiRuikai/Latent-Transport-UPCN) code and models are now available. [Dec'22]
