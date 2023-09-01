@@ -47,6 +47,7 @@ tags: [Jekyll, theme, responsive, blog, template]
 <hr />
 </p>
 
+<p>
 ---
 ### Full Ph.D. scholarships available
 * Positions for PostDoc at JRCAI and Scholarships for Ph.D. and Masters available at ICS, KFUPM. I am looking for students with exceptional English ability, coding ability, Good GPA and research experience. Drop me an [email](mailto:saeed.anwar@kfupm.edu.sa) if you are interested.  
@@ -151,4 +152,4 @@ tags: [Jekyll, theme, responsive, blog, template]
   * Machine Vision and Applications (MVAP)
   * IEEE Journal of Oceanic Engineering (JOE)
   * Neurocomputing, Pattern Recognition, PLoS One, Sensors, Remote Sensing
-
+</p>
