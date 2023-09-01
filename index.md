@@ -36,7 +36,20 @@ tags: [Jekyll, theme, responsive, blog, template]
 <br><strong>2007/05 - 2007/08 </strong>, I worked with Pakistan Telecommunication Limited (PTCL) during my undergraduate. <br> 
 <hr />
 </p>
- 
+
+<h2>
+<a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Education</h2>
+<div style="text-align: justify; display: block; margin-right: auto;">
+<p>
+<br><strong>2014/05 - 2018/04 </strong>, I hold a PhD from the Australian National University, where I studied at the College of Engineering & Computer Science. I conducted doctoral research within the Computer Vision Research Group (CVRG) at [Data61](http://www.data61.csiro.au/) (previously known as NICTA), [CSIRO](http://www.csiro.au/). <br>
+<br><strong>2010/09 - 2012/08 </strong>, Prior to my PhD, I pursued a Master's degree in Computer Vision and Robotics (Vibot) through a collaborative program involving the Heriot-Watt University, the University of Girona and the University of Bourgogne. <br>
+<br><strong>2004/09 - 2008/08 </strong>,  My academic journey began with a Bachelor of Science in Computer Systems Engineering from the University of Engineering and Technology (UET), Peshawar. <br>  
+<hr />
+</p>
+
+
+<strong>Education:</strong> I hold a PhD from the Australian National University (ANU), where I studied at the College of Engineering & Computer Science  ([CECS](https://cecs.anu.edu.au/)). I conducted doctoral research within the Computer Vision Research Group (CVRG) at [Data61](http://www.data61.csiro.au/) (previously known as NICTA), [CSIRO](http://www.csiro.au/). Prior to my PhD, I pursued a Master's degree in Computer Vision and Robotics ([Vibot](http://www.vibot.org/)) through a collaborative program involving the Heriot-Watt University, the University of Girona and the University of Bourgogne. I have completed my MS thesis at Toshiba Medical Visualization Systems Europe ([TMVSE](https://www.linkedin.com/company/toshiba-medical-visualization-systems-europe-ltd)). My academic journey began with a Bachelor of Science in Computer Systems Engineering from the University of Engineering and Technology (UET), Peshawar.
+
 <!--* <strong>Assistant Professor </strong> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM](http://www.kfupm.edu.sa/)) 
 * <strong>Honorary Faculty </strong> at College of Engineering & Computer Science, Australian National University ([ANU](https://www.anu.edu.au/))
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
