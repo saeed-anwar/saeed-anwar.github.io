@@ -20,6 +20,8 @@ tags: [Jekyll, theme, responsive, blog, template]
 <br><strong>2019/06 - </strong>I am Honorary Faculty at College of Engineering & Computer Science, Australian National University (ANU).<br>
 <br><strong>2021/10 - </strong>I am also Adjunct Assistant Professor at Faculty of Science and Technology, University of Canberra (UC).<br>
 <br><strong>2021/10 - 2023/08 </strong>, Visiting Fellow at Faculty of Engineering and Information Technology, University of Technology Sydney (UTS).<br>
+<br><strong>2012/09 - 2018/08 </strong>, I have worked as an Assistant Professor in the Department of Computer Science, National University of Computer and Emerging Sciences (NUCES). <br>
+<br><strong>2008/08 - 2010/08 </strong>, I was a computer engineer at the Faculty Of Computer Sciences and Engineering, Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
 <hr />
 </p>
 
@@ -29,17 +31,20 @@ tags: [Jekyll, theme, responsive, blog, template]
 <p>
 <br><strong>2018/04 - 2023/01 </strong>, I was a Research Scientist with Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). <br>
 <br><strong>2014/05 - 2018/04 </strong>, I have also worked with National ICT Australia (NICTA), Australia, on various projects. <br>
+<br><strong>2012/01 - 2012/08 </strong>, I worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE), Scotland. <br> 
+<br><strong>2011/05 - 2011/08 </strong>, Similarly, I simulated sonar sensors for transparent object detection for path planning in Pal Robotics, Barcelona, Spain. <br> 
+<br><strong>2007/05 - 2007/08 </strong>, I worked with Pakistan Telecommunication Limited (PTCL) during my undergraduate. <br> 
 <hr />
 </p>
  
 <!--* <strong>Assistant Professor </strong> at Information and Computer Science, King Fahad University of Petroleum & Minerals ([KFUPM](http://www.kfupm.edu.sa/)) 
 * <strong>Honorary Faculty </strong> at College of Engineering & Computer Science, Australian National University ([ANU](https://www.anu.edu.au/))
 * <strong>Visiting Fellow</strong> at Faculty of Engineering and Information Technology, University of Technology Sydney ([UTS](https://www.uts.edu.au/))
-* <strong>Adjunct Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/)) -->
+* <strong>Adjunct Assistant Professor</strong> at Faculty of Science and Technology, University of Canberra ([UC](https://www.canberra.edu.au/)) 
 
 <strong>Industrial Experience</strong>: I was a Research Scientist with the Efficient Computer Vision Group at [Data61](http://www.data61.csiro.au/), [CSIRO](http://www.csiro.au/) (Commonwealth Scientific and Industrial Research Organisation) Australia, from 2018-2023. Recently, I have acted as the project leader for several critical and complex projects, including Boeing, Bionic Vision, and LionShare, as well as internal projects such as Galaxies identification and locationization and Cattle 3D Point Cloud Segmentation. I have also worked with National ICT Australia (NICTA), Australia, during 2014-2018. Previously, I worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE), Scotland. Similarly, I simulated sonar sensors for transparent object detection for path planning in Pal Robotics, Barcelona, Spain. I worked with Pakistan Telecommunication Limited (PTCL) during my undergraduate.
 
-<strong>Academic Experience</strong>: During my Ph.D. studies, I taught at the Australian National University as a tutor and lecturer at the University of Canberra from 2014-2018. As a visiting Lecturer, I taught many subjects at the University of Canberra. I have worked as an Assistant Professor in the Department of Computer Science, [NUCES](https://www.nu.edu.pk/) (National University of Computer and Emerging Sciences) from 2012-2018. I was a computer engineer at the Faculty Of Computer Sciences and Engineering, [GIKI](https://giki.edu.pk/) (Ghulam Ishaq Khan Institute of Engineering Sciences and Technology) from 2008-2010.
+<strong>Academic Experience</strong>: During my Ph.D. studies, I taught at the Australian National University as a tutor and lecturer at the University of Canberra from 2014-2018. As a visiting Lecturer, I taught many subjects at the University of Canberra. I have worked as an Assistant Professor in the Department of Computer Science, [NUCES](https://www.nu.edu.pk/) (National University of Computer and Emerging Sciences) from 2012-2018. I was a computer engineer at the Faculty Of Computer Sciences and Engineering, [GIKI](https://giki.edu.pk/) (Ghulam Ishaq Khan Institute of Engineering Sciences and Technology) from 2008-2010. -->
 
 <strong>Education:</strong> I hold a PhD from the Australian National University (ANU), where I studied at the College of Engineering & Computer Science  ([CECS](https://cecs.anu.edu.au/)). I conducted doctoral research within the Computer Vision Research Group (CVRG) at [Data61](http://www.data61.csiro.au/) (previously known as NICTA), [CSIRO](http://www.csiro.au/). Prior to my PhD, I pursued a Master's degree in Computer Vision and Robotics ([Vibot](http://www.vibot.org/)) through a collaborative program involving the Heriot-Watt University, the University of Girona and the University of Bourgogne. I have completed my MS thesis at Toshiba Medical Visualization Systems Europe ([TMVSE](https://www.linkedin.com/company/toshiba-medical-visualization-systems-europe-ltd)). My academic journey began with a Bachelor of Science in Computer Systems Engineering from the University of Engineering and Technology (UET), Peshawar.
 
