@@ -49,8 +49,15 @@ tags: [Jekyll, theme, responsive, blog, template]
 
 <p>
 ---
-### Full Ph.D. scholarships available
-* Positions for PostDoc at JRCAI and Scholarships for Ph.D. and Masters available at ICS, KFUPM. I am looking for students with exceptional English ability, coding ability, Good GPA and research experience. Drop me an [email](mailto:saeed.anwar@kfupm.edu.sa) if you are interested.  
+<h2>
+<a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open Positions:</h2>
+<br><p><font color="blue">I am looking for PhD students and Master students who want to conduct
+research and develop advanced deep learning algorithms for image and video enhancement and restoration, 3D Point Clouds, computational imaging, and image signal processing to join Ph.D. and Masters at ICS, KFUPM. I am also recruiting Research Associates and Final Year Project students.</font></p></br>
+</ul>
+<br>
+<!-- ### Full Ph.D. scholarships available
+* Positions for PostDoc at JRCAI and Scholarships for Ph.D. and Masters available at ICS, KFUPM. I am looking for students with exceptional English ability, coding ability, Good GPA and research experience. Drop me an [email](mailto:saeed.anwar@kfupm.edu.sa) if you are interested. 
+-->
 </p>
 ---
 ### Special Issue!
@@ -140,21 +147,30 @@ tags: [Jekyll, theme, responsive, blog, template]
 <li> Code and Results for [DRLN](https://github.com/saeed-anwar/DRLN) released. [Sept'19]</li>
 <li> Code and Results for [RIDNet](https://github.com/saeed-anwar/RIDNet) released. [Sept'19]</li>
 <li> Codes released for all papers. [Jul'18]</li>
+</ul>ul
 
 ---
-## Professional Activities!
-* Conference Reviewer: 
-  * CVPR 2020, CVPR 2021, CVPR 2022, MACCAI 2020, ACCV 2020, BMVC 2020, ICCV 2021
-  * ICIP 2016, ICIP 2017, ICIP 2018, WACV 2018, ICIP 2019 
-* Journal Reviewer: 
-  * IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
-  * Information Fusion (IF)
-  * IEEE Transactions on Image Processing (TIP)
-  * International Journal of Comuter Vision (IJCV)
-  * IEEE Transactions on MultiMedia(TMM)
-  * IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)
-  * IEEE Transactions on Neural Networks and Learning Systems (TNNLS)
-  * Machine Vision and Applications (MVAP)
-  * IEEE Journal of Oceanic Engineering (JOE)
-  * Neurocomputing, Pattern Recognition, PLoS One, Sensors, Remote Sensing
+<h2>
+<a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Professional Activities!:</h2>
+
+<ul>
+<li> Conference Reviewer: </li>
+  <li> CVPR 2020, CVPR 2021, CVPR 2022, MACCAI 2020, ACCV 2020, BMVC 2020, ICCV 2021 </li>
+  <li> ICIP 2016, ICIP 2017, ICIP 2018, WACV 2018, ICIP 2019 </li>
+<li> Journal Reviewer: </li>
+  <li> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</li>
+  <li> Information Fusion (IF)</li>
+  <li> IEEE Transactions on Image Processing (TIP)</li>
+  <li> International Journal of Comuter Vision (IJCV)</li>
+  <li> IEEE Transactions on MultiMedia(TMM)</li>
+  <li> IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
+  <li> IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
+  <li> Machine Vision and Applications (MVAP)</li>
+  <li> IEEE Journal of Oceanic Engineering (JOE)</li>
+  <li> Neurocomputing</li>
+  <li> Pattern Recognition</li> 
+  <li> PLoS One</li>
+  <li> Sensors</li> 
+  <li> Remote Sensing</li>
+</ul>ul>
 </p>
