@@ -42,7 +42,7 @@ tags: [Jekyll, theme, responsive, blog, template]
 <a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Education</h2>
 <div style="text-align: justify; display: block; margin-right: auto;">
 <p>
-<br><strong>2014/05 - 2018/04 </strong>, I hold a PhD from the Australian National University, where I studied at the College of Engineering & Computer Science. I conducted doctoral research within the Computer Vision Research Group (CVRG) at [Data61](http://www.data61.csiro.au/) (previously known as NICTA), [CSIRO](http://www.csiro.au/). <br>
+<br><strong>2014/05 - 2018/04 </strong>, I hold a PhD from the Australian National University, where I studied at the College of Engineering & Computer Science. I conducted doctoral research within the Computer Vision Research Group (CVRG) at Data61 (previously known as NICTA), CSIRO. <br>
 <br><strong>2010/09 - 2012/08 </strong>, Prior to my PhD, I pursued a Master's degree in Computer Vision and Robotics (Vibot) through a collaborative program involving the Heriot-Watt University, the University of Girona and the University of Bourgogne. <br>
 <br><strong>2004/09 - 2008/08 </strong>,  My academic journey began with a Bachelor of Science in Computer Systems Engineering from the University of Engineering and Technology (UET), Peshawar. <br>  
 <hr />
@@ -59,9 +59,14 @@ research and develop advanced deep learning algorithms for image and video enhan
 * Positions for PostDoc at JRCAI and Scholarships for Ph.D. and Masters available at ICS, KFUPM. I am looking for students with exceptional English ability, coding ability, Good GPA and research experience. Drop me an [email](mailto:saeed.anwar@kfupm.edu.sa) if you are interested. 
 -->
 </p>
----
-### Special Issue!
-* 2023 -- We organized a special issue on [Deep Neural Networks Sensing for RGB-D Motion Recognition](https://www.mdpi.com/journal/sensors/special_issues/TRGE634NXW) in Sensors (IF: 3.9).
+
+<h2>
+<a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Special Issue!:</h2>
+
+<ul>
+<li> <strong> 2023 - </strong>, We organized a special issue on [Deep Neural Networks Sensing for RGB-D Motion Recognition](https://www.mdpi.com/journal/sensors/special_issues/TRGE634NXW) in Sensors (IF: 3.9).
+</li>
+</ul>
 
 <h2>
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
@@ -105,7 +110,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <li> A paper hit-on in IEEE TPAMI. [Aug'20]</li>
 <li> A paper accepted in Signal Processing: Image Communication. [July'20]</li>
 <li> An Oral paper Accepted in MICCAI. [June'20]</li> 
-<li> <a href="[https://www.mmlab-ntu.com/](http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf)"><font color="#1C86EE"> UC-Net</font></a> nominated for CVPR best-paper award.
+<li> <a href="http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf"><font color="#1C86EE"> UC-Net</font></a> nominated for CVPR best-paper award.
 <li> Three papers in CVPR Workshops (NTIRE and PBVS) including One Oral. [April'20]</li>
 <li> A paper accepted in ACM Computing Surveys. [Mar'20]</li>
 <li> Two papers (an Oral and Poster) accepted in CVPR. [Feb'20]</li>
@@ -119,35 +124,35 @@ research and develop advanced deep learning algorithms for image and video enhan
 <li> One Paper accepted in ICCV.[Dec'15]</li>
 </ul>
 <br>
-<hr />
+<hr/>
 
 <h2>
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Codes and Datasets:</h2>
 
 <ul>
-<li> [Latent-Transport-UPCN](https://github.com/CuiRuikai/Latent-Transport-UPCN) code and models are now available. [Dec'22]</li>
-<li> [FGBR]</li>(https://github.com/hafeez-anwar/FGBR) dataset now available. [Sep'22]</li>
-<li> All codes and models for [Angular Skeleton Encoding](https://github.com/ZhenyueQin/Angular-Skeleton-Encoding) are now available. [Mar'22]</li>
-<li> [R<sup>2</sup>Net](https://github.com/saeed-anwar/R2Net) all codes and models released. [Dec'21]</li>
-<li> [Attentional 3D Object Detection](https://github.com/ShiQiu0419/attentions_in_3D_detection) codes and models are available. [Oct'21]</li>
-<li> [UColor](https://github.com/Li-Chongyi/Ucolor) code, train models and results are now available. [May'21]</li>
-<li> The code, dataset for [InvDN](https://github.com/Yang-Liu1082/InvDN) released. [May'21]</li>
-<li> [GBNet](https://github.com/ShiQiu0419/GBNet) code and train models are available. [Apr'21]</li>
-<li> Code for [CWR](https://github.com/JunlinHan/CWR) released. [Mar'21]</li>
-<li> Code for [DRNet](https://github.com/ShiQiu0419/DRNet) released. [Mar'21]</li>
-<li> Code, Results and Dataset available for [DDNet](https://github.com/tanveer-hussain/EfficientSOD). [Feb'21]</li>
-<li> Code and Results available for [R<sup>2</sup>Net](https://github.com/saeed-anwar/R2Net). [Nov'20]</li>
-<li> Download our [Natural-Color Dataset (NCD)](https://github.com/saeed-anwar/ColorSurvey) in our Colorization Survey. [Nov'20]</li>
-<li> Code and Results for [IERD](https://github.com/saeed-anwar/IERD) released. [Nov'20]</li>
-<li> Code for [IRAE](https://github.com/Lillian1082/IRAE_pytorch) now available. [Nov'20]</li>
-<li> Code for [GradNet](https://github.com/Lillian1082/GradNet-Image-Denoising) now available. [Oct'20]</li>
-<li> Code and trained networks for [FGSE](https://github.com/saeed-anwar/FGSE) released. [Sept'20]</li>
-<li> [COVID19 Baseline](https://github.com/saeed-anwar/COVID19-Baselines) code/trained models released [July'20]</li>
-<li> Code for [UC-Net](https://github.com/JingZhang617/UCNet) released. [June'20]</li>
-<li> Code and dataset for [CoinNet](https://github.com/saeed-anwar/CoinNet) released. [May'20]</li>
-<li> Code for [UWCNN](https://github.com/saeed-anwar/UWCNN) released. [Nov'19]</li> 
-<li> Code and Results for [DRLN](https://github.com/saeed-anwar/DRLN) released. [Sept'19]</li>
-<li> Code and Results for [RIDNet](https://github.com/saeed-anwar/RIDNet) released. [Sept'19]</li>
+<li> <a href="https://github.com/CuiRuikai/Latent-Transport-UPCN"><font color="#1C86EE"> Latent-Transport-UPCN</font></a> code and models are now available. [Dec'22]</li>
+<li> <a href="https://github.com/hafeez-anwar/FGBR"><font color="#1C86EE"> FGBR</font></a> dataset now available. [Sep'22]</li>
+<li> All codes and models for <a href="https://github.com/ZhenyueQin/Angular-Skeleton-Encoding"><font color="#1C86EE"> Angular Skeleton Encoding</font></a> are now available. [Mar'22]</li>
+<li> <a href="https://github.com/saeed-anwar/R2Net"><font color="#1C86EE"> R<sup>2</sup>Net</font></a>all codes and models released. [Dec'21]</li>
+<li> <a href="https://github.com/ShiQiu0419/attentions_in_3D_detection"><font color="#1C86EE"> Attentional 3D Object Detection</font></a> codes and models are available. [Oct'21]</li>
+<li> <a href="https://github.com/Li-Chongyi/Ucolor"><font color="#1C86EE"> UColor</font></a> code, train models and results are now available. [May'21]</li>
+<li> The code, dataset for <a href="https://github.com/Yang-Liu1082/InvDN"><font color="#1C86EE"> InvDN</font></a> released. [May'21]</li>
+<li> <a href="https://github.com/ShiQiu0419/GBNet"><font color="#1C86EE"> GBNet</font></a> code and train models are available. [Apr'21]</li>
+<li> Code for <a href="https://github.com/JunlinHan/CWR"><font color="#1C86EE"> CWR</font></a> released. [Mar'21]</li>
+<li> Code for <a href="https://github.com/ShiQiu0419/DRNet"><font color="#1C86EE"> DRNet</font></a> released. [Mar'21]</li>
+<li> Code, Results and Dataset available for <a href="https://github.com/tanveer-hussain/EfficientSOD"><font color="#1C86EE"> DDNet</font></a>. [Feb'21]</li>
+<li> Code and Results available for <a href="https://github.com/saeed-anwar/R2Net"><font color="#1C86EE"> R<sup>2</sup>Net</font></a>. [Nov'20]</li>
+<li> Download our <a href="https://github.com/saeed-anwar/ColorSurvey"><font color="#1C86EE"> Natural-Color Dataset (NCD)</font></a> in our Colorization Survey. [Nov'20]</li>
+<li> Code and Results for <a href="https://github.com/saeed-anwar/IERD"><font color="#1C86EE"> IERD</font></a> released. [Nov'20]</li>
+<li> Code for <a href="https://github.com/Lillian1082/IRAE_pytorch"><font color="#1C86EE"> IRAE</font></a> now available. [Nov'20]</li>
+<li> Code for <a href="https://github.com/Lillian1082/GradNet-Image-Denoising"><font color="#1C86EE"> GradNet</font></a> now available. [Oct'20]</li>
+<li> Code and trained networks for <a href="https://github.com/saeed-anwar/FGSE"><font color="#1C86EE"> FGSE</font></a> released. [Sept'20]</li>
+<li> <a href="https://github.com/saeed-anwar/COVID19-Baselines"><font color="#1C86EE"> COVID19 Baseline</font></a> code/trained models released [July'20]</li>
+<li> Code for <a href="https://github.com/JingZhang617/UCNet"><font color="#1C86EE"> UC-Net</font></a> released. [June'20]</li>
+<li> Code and dataset for <a href="https://github.com/saeed-anwar/CoinNet"><font color="#1C86EE"> CoinNet</font></a> released. [May'20]</li>
+<li> Code for <a href="https://github.com/saeed-anwar/UWCNN"><font color="#1C86EE"> UWCNN</font></a> released. [Nov'19]</li> 
+<li> Code and Results for <a href="https://github.com/saeed-anwar/DRLN"><font color="#1C86EE"> DRLN</font></a> released. [Sept'19]</li>
+<li> Code and Results for <a href="https://github.com/saeed-anwar/RIDNet"><font color="#1C86EE"> RIDNet</font></a> released. [Sept'19]</li>
 <li> Codes released for all papers. [Jul'18]</li>
 </ul>
 <br>
@@ -157,10 +162,10 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Professional Activities!:</h2>
 
 <ul>
-<li> Conference Reviewer: </li>
+<li> Conference Reviewer: 
   <li> CVPR 2020, CVPR 2021, CVPR 2022, MACCAI 2020, ACCV 2020, BMVC 2020, ICCV 2021 </li>
-  <li> ICIP 2016, ICIP 2017, ICIP 2018, WACV 2018, ICIP 2019 </li>
-<li> Journal Reviewer: </li>
+  <li> ICIP 2016, ICIP 2017, ICIP 2018, WACV 2018, ICIP 2019 </li> </li>
+<li> Journal Reviewer: 
   <li> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</li>
   <li> Information Fusion (IF)</li>
   <li> IEEE Transactions on Image Processing (TIP)</li>
@@ -175,5 +180,6 @@ research and develop advanced deep learning algorithms for image and video enhan
   <li> PLoS One</li>
   <li> Sensors</li> 
   <li> Remote Sensing</li>
+</li>
 </ul>
 </p>
