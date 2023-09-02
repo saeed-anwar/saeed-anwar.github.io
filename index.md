@@ -36,7 +36,8 @@ tags: [Jekyll, theme, responsive, blog, template]
 <br><strong>2007/05 - 2007/08 </strong>, I worked with Pakistan Telecommunication Limited (PTCL) during my undergraduate. <br> 
 <hr />
 </p>
-
+<hr />
+ 
 <h2>
 <a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Education</h2>
 <div style="text-align: justify; display: block; margin-right: auto;">
@@ -48,12 +49,11 @@ tags: [Jekyll, theme, responsive, blog, template]
 </p>
 
 <p>
----
 <h2>
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open Positions:</h2>
 <br><p><font color="blue">I am looking for PhD students and Master students who want to conduct
 research and develop advanced deep learning algorithms for image and video enhancement and restoration, 3D Point Clouds, computational imaging, and image signal processing to join Ph.D. and Masters at ICS, KFUPM. I am also recruiting Research Associates and Final Year Project students.</font></p></br>
-</ul>
+<hr />
 <br>
 <!-- ### Full Ph.D. scholarships available
 * Positions for PostDoc at JRCAI and Scholarships for Ph.D. and Masters available at ICS, KFUPM. I am looking for students with exceptional English ability, coding ability, Good GPA and research experience. Drop me an [email](mailto:saeed.anwar@kfupm.edu.sa) if you are interested. 
@@ -118,7 +118,9 @@ research and develop advanced deep learning algorithms for image and video enhan
 <li> One paper accepted in IEEE TIP. [Jul'17]</li>
 <li> One Paper accepted in ICCV.[Dec'15]</li>
 </ul>
----
+<br>
+<hr />
+
 <h2>
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Codes and Datasets:</h2>
 
@@ -147,9 +149,10 @@ research and develop advanced deep learning algorithms for image and video enhan
 <li> Code and Results for [DRLN](https://github.com/saeed-anwar/DRLN) released. [Sept'19]</li>
 <li> Code and Results for [RIDNet](https://github.com/saeed-anwar/RIDNet) released. [Sept'19]</li>
 <li> Codes released for all papers. [Jul'18]</li>
-</ul>ul
+</ul>
+<br>
+<hr />
 
----
 <h2>
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Professional Activities!:</h2>
 
@@ -172,5 +175,5 @@ research and develop advanced deep learning algorithms for image and video enhan
   <li> PLoS One</li>
   <li> Sensors</li> 
   <li> Remote Sensing</li>
-</ul>ul>
+</ul>
 </p>
