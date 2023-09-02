@@ -105,7 +105,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <li> A paper hit-on in IEEE TPAMI. [Aug'20]</li>
 <li> A paper accepted in Signal Processing: Image Communication. [July'20]</li>
 <li> An Oral paper Accepted in MICCAI. [June'20]</li> 
-<li> [UC-Net](http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf) nominated for CVPR best-paper award.
+<li> <a href="[https://www.mmlab-ntu.com/](http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf)"><font color="#1C86EE"> UC-Net</font></a> nominated for CVPR best-paper award.
 <li> Three papers in CVPR Workshops (NTIRE and PBVS) including One Oral. [April'20]</li>
 <li> A paper accepted in ACM Computing Surveys. [Mar'20]</li>
 <li> Two papers (an Oral and Poster) accepted in CVPR. [Feb'20]</li>
