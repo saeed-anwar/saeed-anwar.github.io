@@ -121,7 +121,6 @@ research and develop advanced deep learning algorithms for image and video enhan
 <li> Two paper accepted in BMVC 2017, London, UK.  (one oral and one poster). [Jul'17]</li>
 <li> One paper accepted in IEEE TIP. [Jul'17]</li>
 <li> One Paper accepted in ICCV.[Dec'15]</li>
-</ul>
 <br>
 <hr/>
 
