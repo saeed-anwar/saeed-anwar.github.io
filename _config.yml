@@ -39,8 +39,8 @@ links:
    url: /Talks/
  - title: Datasets
    url: /Datasets/
-  # - title: Teaching
-  # url: /Teaching/
+ - title: Teaching
+   url: /Teaching/
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Australia/ACT
