@@ -71,6 +71,11 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> PSGNN is accepted by TNNLS (IF:10.4) [March'24]</li>
+<li> Data Augmentaiton survey is accepted by EAAI (IF:8) [April'23]</li>
+<li> A paper in WACV Workshop [Oct'23]</li>
+<li> Fine-Grain Evaluation is accepted in Electronics (IF:2.9) [Aug'23]</li>
+<li> A paper in IEEE Access (IF:3.9) [Jun'23]</li>
 <li> P2C is accepted by ICCV. [April'23]</li>
 <li> UniLoc is accepted at IROS. [March'23]</li>
 <li> IEEE T-ITS (IF:8.5) has accepted our article SAT3D. [Feb'23]</li>
