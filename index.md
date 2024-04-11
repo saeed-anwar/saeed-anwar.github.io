@@ -71,6 +71,8 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> 2x Papers accepted in CVPR Workshops [April'24]</li>
+<li> Attention Survey is accepted in Infurmation Fusion (IF:18.6) [April'24]</li>
 <li> PSGNN is accepted by TNNLS (IF:10.4) [March'24]</li>
 <li> Data Augmentaiton survey is accepted by EAAI (IF:8) [April'23]</li>
 <li> A paper in WACV Workshop [Oct'23]</li>
@@ -133,6 +135,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Codes and Datasets:</h2>
 
 <ul>
+<li>  MultiModal 3D UnLoc is now available: <a href="https://github.com/IbrahimUWA/UnLoc/"><font color="#1C86EE"> UnLoc</font></a>. [March'24]</li>
 <li>  Code, Models and Results are now available for <a href="https://github.com/CuiRuikai/Partial2Complete"><font color="#1C86EE"> Partial2Complete</font></a>. [Sept'23]</li>
 <li> <a href="https://ieee-dataport.org/documents/sequential-storytelling-image-dataset-ssid"><font color="#1C86EE"> SSID</font></a> is released. [April'23]</li> 
 <li> Code, Models and Results are now available for <a href="https://github.com/ShiQiu0419/pointcam"><font color="#1C86EE"> PointCam</font></a>. [Feb'23]</li>
