@@ -71,7 +71,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
-<li> 2x Papers accepted in CVPR Workshops [April'24]</li>
+<li> 2x Papers accepted in CVPR Workshops. One Poster and One Oral [April'24]</li>
 <li> Attention Survey is accepted in Infurmation Fusion (IF:18.6) [April'24]</li>
 <li> PSGNN is accepted by TNNLS (IF:10.4) [March'24]</li>
 <li> Data Augmentaiton survey is accepted by EAAI (IF:8) [April'23]</li>
