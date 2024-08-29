@@ -11,18 +11,13 @@ tags: [Jekyll, theme, responsive, blog, template]
 <a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Saeed Anwar Homepage</h2>
 <div style="text-align: justify; display: block; margin-right: auto;">
 
-<h2>
-<a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Academic Experience</h2>
-<div style="text-align: justify; display: block; margin-right: auto;">
 <p>
  
-<br><strong>2022/12 - </strong>I am a Assistant Professor at Information and Computer Science, King Fahad University of Petroleum & Minerals (KFUPM).<br>
-<br><strong>2019/06 - </strong>I am Honorary Faculty at College of Engineering & Computer Science, Australian National University (ANU).<br>
-<br><strong>2021/10 - </strong>I am also Adjunct Assistant Professor at Faculty of Science and Technology, University of Canberra (UC).<br>
-<br><strong>2021/10 - 2023/08 </strong>, Visiting Fellow at Faculty of Engineering and Information Technology, University of Technology Sydney (UTS).<br>
-<br><strong>2012/09 - 2018/08 </strong>, I have worked as an Assistant Professor in the Department of Computer Science, National University of Computer and Emerging Sciences (NUCES). <br>
-<br><strong>2008/08 - 2010/08 </strong>, I was a computer engineer at the Faculty Of Computer Sciences and Engineering, Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
-<hr />
+I am working with the Australian National University (ANU). I am also an Adjunct Assistant Professor at the University of Canberra (UC). 
+
+<br><strong>In academia</strong>, I was a Visiting Fellow at the University of Technology Sydney (UTS), an assistant professor at King Fahad University of Petroleum & Minerals (KFUPM), and a Fellow at JRCAI. I also served at the National University of Computer and Emerging Sciences (NUCES) and Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
+
+
 </p>
 
 <h2>
@@ -35,6 +30,7 @@ tags: [Jekyll, theme, responsive, blog, template]
 <br><strong>2011/05 - 2011/08 </strong>, Similarly, I simulated sonar sensors for transparent object detection for path planning in Pal Robotics, Barcelona, Spain. <br> 
 <br><strong>2007/05 - 2007/08 </strong>, I worked with Pakistan Telecommunication Limited (PTCL) during my undergraduate. <br> 
 <hr />
+In industry, I served as a Research Scientist at Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). I was involved in various projects with National ICT Australia (NICTA). I then worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE) in Scotland and simulated sonar sensors for transparent object detection in Pal Robotics, Barcelona. During my undergraduate studies, I gained experience in technology and research roles, starting with Pakistan Telecommunication Limited (PTCL). 
 </p>
 
  
