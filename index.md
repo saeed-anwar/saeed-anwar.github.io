@@ -21,16 +21,6 @@ I am working with the Australian National University (ANU). I am also an Adjunct
 
 </p>
 
-<h2>
-<a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Industrial Experience</h2>
-<div style="text-align: justify; display: block; margin-right: auto;">
-<p>
-<br><strong>2018/04 - 2023/01 </strong>, I was a Research Scientist with Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). <br>
-<br><strong>2014/05 - 2018/04 </strong>, I have also worked with National ICT Australia (NICTA), Australia, on various projects. <br>
-<br><strong>2012/01 - 2012/08 </strong>, I worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE), Scotland. <br> 
-<br><strong>2011/05 - 2011/08 </strong>, Similarly, I simulated sonar sensors for transparent object detection for path planning in Pal Robotics, Barcelona, Spain. <br> 
-<br><strong>2007/05 - 2007/08 </strong>, I worked with Pakistan Telecommunication Limited (PTCL) during my undergraduate. <br> 
-<hr />
 <br><strong>In industry</strong>, I served as a Research Scientist at Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). I was involved in various projects with National ICT Australia (NICTA). I then worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE) in Scotland and simulated sonar sensors for transparent object detection in Pal Robotics, Barcelona. During my undergraduate studies, I gained experience in technology and research roles, starting with Pakistan Telecommunication Limited (PTCL). 
 </p>
 
