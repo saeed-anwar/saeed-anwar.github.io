@@ -14,7 +14,8 @@ tags: [Jekyll, theme, responsive, blog, template]
 <p>
  
 I am working with the Australian National University (ANU). I am also an Adjunct Assistant Professor at the University of Canberra (UC). 
-
+</p>
+<p>
 <br><strong>In academia</strong>, I was a Visiting Fellow at the University of Technology Sydney (UTS), an assistant professor at King Fahad University of Petroleum & Minerals (KFUPM), and a Fellow at JRCAI. I also served at the National University of Computer and Emerging Sciences (NUCES) and Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
 
 
@@ -30,7 +31,7 @@ I am working with the Australian National University (ANU). I am also an Adjunct
 <br><strong>2011/05 - 2011/08 </strong>, Similarly, I simulated sonar sensors for transparent object detection for path planning in Pal Robotics, Barcelona, Spain. <br> 
 <br><strong>2007/05 - 2007/08 </strong>, I worked with Pakistan Telecommunication Limited (PTCL) during my undergraduate. <br> 
 <hr />
-In industry, I served as a Research Scientist at Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). I was involved in various projects with National ICT Australia (NICTA). I then worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE) in Scotland and simulated sonar sensors for transparent object detection in Pal Robotics, Barcelona. During my undergraduate studies, I gained experience in technology and research roles, starting with Pakistan Telecommunication Limited (PTCL). 
+<br><strong>In industry</strong>, I served as a Research Scientist at Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). I was involved in various projects with National ICT Australia (NICTA). I then worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE) in Scotland and simulated sonar sensors for transparent object detection in Pal Robotics, Barcelona. During my undergraduate studies, I gained experience in technology and research roles, starting with Pakistan Telecommunication Limited (PTCL). 
 </p>
 
  
