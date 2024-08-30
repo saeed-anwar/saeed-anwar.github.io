@@ -35,19 +35,11 @@ I am working with the Australian National University (ANU). I am also an Adjunct
 <h2>
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open Positions:</h2>
 <br><p><font color="blue">I am looking for PhD students and Master students who want to conduct
-research and develop advanced deep learning algorithms for image and video enhancement and restoration, 3D Point Clouds, computational imaging,  computer vision and Machine learning applications to join Ph.D. and Masters at ICS, KFUPM. I am also recruiting Research Associates and Final Year Project students.</font>
+research and develop advanced deep learning algorithms for image and video enhancement and restoration, 3D Point Clouds, computational imaging,  computer vision and Machine learning applications.</font>
 </p>
 <hr />
 
 
-
-<h2>
-<a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Special Issue!:</h2>
-
-<ul>
-<li> <strong> 2023 - </strong>, We organized a special issue on <a href="https://www.mdpi.com/journal/sensors/special_issues/TRGE634NXW"><font color="#1C86EE"> Deep Neural Networks Sensing for RGB-D Motion Recognition</font></a> in Sensors (IF: 3.9).
-</li>
-</ul>
 <hr />
 
 <h2>
