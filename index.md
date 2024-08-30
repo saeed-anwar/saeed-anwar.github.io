@@ -37,15 +37,14 @@ I am working with the Australian National University (ANU). I am also an Adjunct
 <br><p><font color="blue">I am looking for PhD students and Master students who want to conduct
 research and develop advanced deep learning algorithms for image and video enhancement and restoration, 3D Point Clouds, computational imaging,  computer vision and Machine learning applications.</font>
 </p>
-<hr />
-
-
-<hr />
 
 <h2>
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> 2x Papers accepted in ACM MM [July'24]</li>
+<li> ICIP accepted our paper [June'24]</li>
+<li> A Papers accepted in AVSS [May'24]</li>
 <li> 2x Papers accepted in CVPR Workshops. One Poster and One Oral [April'24]</li>
 <li> Attention Survey is accepted in Infurmation Fusion (IF:18.6) [April'24]</li>
 <li> PSGNN is accepted by TNNLS (IF:10.4) [March'24]</li>
