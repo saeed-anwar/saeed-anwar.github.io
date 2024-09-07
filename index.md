@@ -50,7 +50,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <li> 2x Papers accepted in CVPR Workshops. One Poster and One Oral [April'24]</li>
 <li> Attention Survey is accepted in Infurmation Fusion (IF:18.6) [April'24]</li>
 <li> PSGNN is accepted by TNNLS (IF:10.4) [March'24]</li>
-<li> Data Augmentaiton survey is accepted by EAAI (IF:8) [April'23]</li>
+<!--<li> Data Augmentaiton survey is accepted by EAAI (IF:8) [April'23]</li>-->
 <!--<li> A paper in WACV Workshop [Oct'23]</li>-->
 <!--<li> Fine-Grain Evaluation is accepted in Electronics (IF:2.9) [Aug'23]</li>-->
 <!--<li> A paper in IEEE Access (IF:3.9) [Jun'23]</li>-->
