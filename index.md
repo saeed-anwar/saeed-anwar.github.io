@@ -25,9 +25,9 @@ I am working with the Australian National University (ANU). I am also an Adjunct
 <a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Education</h2>
 <div style="text-align: justify; display: block; margin-right: auto;">
 <p>
-<br><strong>2014/05 - 2018/04 </strong>, I hold a PhD from the Australian National University, where I studied at the College of Engineering & Computer Science. I conducted doctoral research within the Computer Vision Research Group (CVRG) at Data61 (previously known as NICTA), CSIRO. <br>
-<br><strong>2010/09 - 2012/08 </strong>, Prior to my PhD, I pursued a Master's degree in Computer Vision and Robotics (Vibot) through a collaborative program involving the Heriot-Watt University, the University of Girona and the University of Bourgogne. <br>
-<br><strong>2004/09 - 2008/08 </strong>,  My academic journey began with a Bachelor of Science in Computer Systems Engineering from the University of Engineering and Technology (UET), Peshawar. <br>  
+<br><strong>2014/05 - 2018/04</strong>, I hold a PhD from the Australian National University, where I studied at the College of Engineering & Computer Science. I conducted doctoral research within the Computer Vision Research Group (CVRG) at Data61 (previously known as NICTA), CSIRO. <br>
+<br><strong>2010/09 - 2012/08</strong>, Prior to my PhD, I pursued a Master's degree in Computer Vision and Robotics (Vibot) through a collaborative program involving the Heriot-Watt University, the University of Girona and the University of Bourgogne. <br>
+<br><strong>2004/09 - 2008/08</strong>,  My academic journey began with a Bachelor of Science in Computer Systems Engineering from the University of Engineering and Technology (UET), Peshawar. <br>  
 <hr />
 </p>
 
