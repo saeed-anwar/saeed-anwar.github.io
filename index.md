@@ -42,6 +42,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> AI Review [Impact factor: 10.7] has accepted our survey on 3D object recognition. [Sep'24]</li>
 <li> 2x papers are in DICTA [August'24]</li>
 <li> A paper hit on ICPR [August'24]</li>
 <li> 2x Papers accepted in ACM MM [July'24]</li>
