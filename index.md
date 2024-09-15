@@ -143,28 +143,28 @@ research and develop advanced deep learning algorithms for image and video enhan
 </ul>
 <hr />
 
-<h2>
-<a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Professional Activities!:</h2>
+<!--<h2> -->
+<!--<a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span><!--<!-- --><!--</a>Professional Activities!:</h2> -->
 
-<ul>
-<li> Conference Reviewer: 
-  <li> CVPR 2020, CVPR 2021, CVPR 2022, MACCAI 2020, ACCV 2020, BMVC 2020, ICCV 2021 </li>
-  <li> ICIP 2016, ICIP 2017, ICIP 2018, WACV 2018, ICIP 2019 </li> </li>
-<li> Journal Reviewer: 
-  <li> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</li>
-  <li> Information Fusion (IF)</li>
-  <li> IEEE Transactions on Image Processing (TIP)</li>
-  <li> International Journal of Comuter Vision (IJCV)</li>
-  <li> IEEE Transactions on MultiMedia(TMM)</li>
-  <li> IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
-  <li> IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
-  <li> Machine Vision and Applications (MVAP)</li>
-  <li> IEEE Journal of Oceanic Engineering (JOE)</li>
-  <li> Neurocomputing</li>
-  <li> Pattern Recognition</li> 
-  <li> PLoS One</li>
-  <li> Sensors</li> 
-  <li> Remote Sensing</li>
-</li>
-</ul>
+<!--<ul>-->
+<!--<li> Conference Reviewer: -->
+<!--  <li> CVPR 2020, CVPR 2021, CVPR 2022, MACCAI 2020, ACCV 2020, BMVC 2020, ICCV 2021 </li>-->
+<!--  <li> ICIP 2016, ICIP 2017, ICIP 2018, WACV 2018, ICIP 2019 </li> </li>-->
+<!--<li> Journal Reviewer: -->
+<!--  <li> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</li>-->
+<!--  <li> Information Fusion (IF)</li>-->
+<!--  <li> IEEE Transactions on Image Processing (TIP)</li>-->
+<!--  <li> International Journal of Comuter Vision (IJCV)</li>-->
+<!--  <li> IEEE Transactions on MultiMedia(TMM)</li>-->
+<!--  <li> IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>-->
+<!--  <li> IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>-->
+<!--  <li> Machine Vision and Applications (MVAP)</li>-->
+<!--  <li> IEEE Journal of Oceanic Engineering (JOE)</li>-->
+<!--  <li> Neurocomputing</li>-->
+<!--  <li> Pattern Recognition</li> -->
+<!--  <li> PLoS One</li>-->
+<!--  <li> Sensors</li> -->
+<!--  <li> Remote Sensing</li>-->
+<!--</li>-->
+<!--</ul>-->
 
