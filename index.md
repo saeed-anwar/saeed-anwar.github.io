@@ -42,7 +42,8 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
-<li> AI Review [Impact factor: 10.7] has accepted our survey on 3D object recognition. [Sep'24]</li>
+<li> 2x Surveys in Information Fusion [IF: 14.7] are accepted. [Oct'24]</li>
+<li> AI Review [IF: 10.7] has accepted our survey on 3D object recognition. [Sep'24]</li>
 <li> 2x papers are in DICTA [August'24]</li>
 <li> A paper hit on ICPR [August'24]</li>
 <li> 2x Papers accepted in ACM MM [July'24]</li>
@@ -112,7 +113,10 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Codes and Datasets:</h2>
 
 <ul>
-<li>  MultiModal 3D UnLoc is now available: <a href="https://github.com/IbrahimUWA/UnLoc/"><font color="#1C86EE"> UnLoc</font></a>. [March'24]</li>
+<li> The dataset for definitive answers <a href="https://github.com/ashikiut/DefAn"><font color="#1C86EE"> DefAn</font></a> is here. [Sep'24]</li>
+<li> <font color="#1C86EE">AllWeatherNet</font> <a href="https://github.com/Jumponthemoon/AllWeatherNet"> is released</a>. [Sep'24]</li>
+<li>  Code for <a href="https://github.com/mas94/ADTRS"><font color="#1C86EE"> ADTRS</font> is available</a>. [April'24]</li>
+<li>  <a href="https://github.com/Mona-Alzahrani/SelectiveMV"><font color="#1C86EE"> SelectiveMV's</font></a> all information is on github now. [March'24]</li>
 <li>  Code, Models and Results are now available for <a href="https://github.com/CuiRuikai/Partial2Complete"><font color="#1C86EE"> Partial2Complete</font></a>. [Sept'23]</li>
 <li> <a href="https://ieee-dataport.org/documents/sequential-storytelling-image-dataset-ssid"><font color="#1C86EE"> SSID</font></a> is released. [April'23]</li> 
 <li> Code, Models and Results are now available for <a href="https://github.com/ShiQiu0419/pointcam"><font color="#1C86EE"> PointCam</font></a>. [Feb'23]</li>
