@@ -17,7 +17,7 @@ I am working with the Australian National University (ANU). I am also an Adjunct
 <br><strong>In academia</strong>, I was a Visiting Fellow at the University of Technology Sydney (UTS), an assistant professor at King Fahad University of Petroleum & Minerals (KFUPM), and a Fellow at JRCAI. I also served at the National University of Computer and Emerging Sciences (NUCES) and Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
 
 
-<br><strong>In industry</strong>, I served as a Research Scientist at Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). I was involved in various projects with National ICT Australia (NICTA). I then worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE) in Scotland and simulated sonar sensors for transparent object detection in Pal Robotics, Barcelona. During my undergraduate studies, I gained experience in technology and research roles, starting with Pakistan Telecommunication Limited (PTCL). 
+<br><strong>In industry</strong>, I was a Research Scientist at Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). I was a fellow at SDAIA's Joint Research Center of AI (JRCAI). Moreover, I was involved in various projects with National ICT Australia (NICTA). Before, I worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE) in Scotland and simulated sonar sensors for transparent object detection at Pal Robotics, Barcelona. During my undergraduate studies, I gained experience in technology and research roles, starting with the telecommunication industry.  
 
 
  
@@ -42,6 +42,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> One paper accepted in ACCV. [Oct'24]</li>
 <li> 2x Surveys in Information Fusion [IF: 14.7] are accepted. [Oct'24]</li>
 <li> AI Review [IF: 10.7] has accepted our survey on 3D object recognition. [Sep'24]</li>
 <li> 2x papers are in DICTA [August'24]</li>
@@ -75,10 +76,10 @@ research and develop advanced deep learning algorithms for image and video enhan
 <!--<li> PnP-3D accepted in TPAMI. [Jan'22]</li>-->
 <!-- <li> R<sup>2</sup>Net is now available online in TNNLS. [Dec'21]</li>-->
 <!-- <li> PLCNN accepted in NCAA. [Nov'21]</li>-->
-<li> *Assistant Professor* at University of Canberra. [Oct'21]</li>
+<!-- <li> *Assistant Professor* at University of Canberra. [Oct'21]</li>-->
 <!-- <li> One paper has been accepted by International Conference on 3D Vision. [Oct'21]</li>-->
 <!-- <li> An article is accepted Applied Sciences. [Sep'21]</li>-->
-<li> Guest Editor in IEEE JOE. [Aug'21]</li>
+<!-- <li> Guest Editor in IEEE JOE. [Aug'21]</li>-->
 <!--<li> Article accepted in TIP. [Aug'21]</li>-->
 <!--<li> A paper hit-on TMM. [May'21]</li>-->
 <!--<li> A paper accepted in TPAMI. [Apr'21]</li>-->
@@ -89,7 +90,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <!-- <li> Paper accepted in Pattern Recognition. [Jan'21]</li>-->
 <!--<li> An article accepted in MVA. [Dec'20]</li>-->
 <!--<li> A paper accepted in WACV. [Nov'20]</li>-->
-<li> *Visiting Fellow* at University of Technology Sydney. [Oct'20]</li>
+<!-- <li> *Visiting Fellow* at University of Technology Sydney. [Oct'20]</li>-->
 <!-- <li> An Oral paper accepted in ICONIP. [Sept'20]</li>-->
 <!--<li> A paper hit-on in IEEE TPAMI. [Aug'20]</li>-->
 <!--<li> A paper accepted in Signal Processing: Image Communication. [July'20]</li>-->
@@ -99,10 +100,10 @@ research and develop advanced deep learning algorithms for image and video enhan
 <!-- <li> A paper accepted in ACM Computing Surveys. [Mar'20]</li>-->
 <!-- <li> Two papers (an Oral and Poster) accepted in CVPR. [Feb'20]</li>-->
 <!-- <li> A paper accepted in Pattern Recognition. [Sept'19]</li>-->
-<li> Appointed as Honorary Lecturer at Australian National University (ANU). [Jul'19]</li>
+<!-- <li> Appointed as Honorary Lecturer at Australian National University (ANU). [Jul'19]</li>-->
 <!-- <li> One paper accepted in ICCV (Oral) 2019. [Jul'19]</li>-->
 <!--<li> One paper accepted in TPAMI 2018. [Jul'18]</li>-->
-<li> Started working at CSIRO. [Apr'18]</li>
+<!-- <li> Started working at CSIRO. [Apr'18]</li>-->
 <!-- <li> Two paper accepted in BMVC 2017, London, UK.  (one oral and one poster). [Jul'17]</li>-->
 <!-- <li> One paper accepted in IEEE TIP. [Jul'17]</li>-->
 <!-- <li> One Paper accepted in ICCV.[Dec'15]</li>-->
