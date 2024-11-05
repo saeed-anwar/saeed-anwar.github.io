@@ -42,6 +42,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> An article is accepted in Drones [IF: 4.4]. [Nov'24]</li>
 <li> One paper accepted in ACCV. [Oct'24]</li>
 <li> 2x Surveys in Information Fusion [IF: 14.7] are accepted. [Oct'24]</li>
 <li> AI Review [IF: 10.7] has accepted our survey on 3D object recognition. [Sep'24]</li>
