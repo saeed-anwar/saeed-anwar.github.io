@@ -42,6 +42,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> Serving Area Chair ACCV'24, IJCAI'25, ICCV'25.</li>
 <li> An article is accepted in Drones [IF: 4.4]. [Nov'24]</li>
 <li> One paper accepted in ACCV. [Oct'24]</li>
 <li> 2x Surveys in Information Fusion [IF: 14.7] are accepted. [Oct'24]</li>
@@ -115,6 +116,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Codes and Datasets:</h2>
 
 <ul>
+<li> The <a href="https://github.com/tanvirnwu/TriFuse?tab=readme-ov-file"><font color="#1C86EE"> LoLI-Street</font></a> dataset is avaliable now. [Sep'24]</li>
 <li> The dataset for testing LLMs: definitive answers <a href="https://github.com/ashikiut/DefAn"><font color="#1C86EE"> DefAn</font></a> is here. [Sep'24]</li>
 <li> <a href="https://github.com/Jumponthemoon/AllWeatherNet"><font color="#1C86EE">AllWeatherNet</font>  is released</a>. [Sep'24]</li>
 <li>  Code for <a href="https://github.com/mas94/ADTRS"><font color="#1C86EE"> ADTRS</font></a>  is available. [April'24]</li>
