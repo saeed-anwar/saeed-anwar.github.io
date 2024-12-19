@@ -42,6 +42,8 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+ 
+<li> <a href="https://icpr2024.org/Prizes-Awards.html"><font color="#1C86EE"> Best Paper Award</font></a> ICPR'24.</li>
 <li> Serving Area Chair ACCV'24, IJCAI'25, ICCV'25.</li>
 <li> An article is accepted in Drones [IF: 4.4]. [Nov'24]</li>
 <li> One paper accepted in ACCV. [Oct'24]</li>
