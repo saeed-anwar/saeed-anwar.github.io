@@ -49,7 +49,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <li> One paper accepted in ACCV. [Oct'24]</li>
 <li> 2x Surveys in Information Fusion [IF: 14.7] are accepted. [Oct'24]</li>
 <li> AI Review [IF: 10.7] has accepted our survey on 3D object recognition. [Sep'24]</li>
-<li> 2x papers are in DICTA [August'24]</li>
+<li> 2x Oral papers are in DICTA [August'24]</li>
 <li> A paper hit on ICPR [August'24]</li>
 <li> 2x Papers accepted in ACM MM [July'24]</li>
 <li> ICIP accepted our paper [June'24]</li>
