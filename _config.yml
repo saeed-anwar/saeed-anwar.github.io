@@ -39,8 +39,8 @@ links:
    url: /Talks/
  - title: People
    url: /people/
- - title: Scholarships
-   url: /scholarships/
+ #- title: Scholarships
+ #  url: /scholarships/
    
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Australia/ACT
