@@ -14,7 +14,7 @@ tags: [Jekyll, theme, responsive, blog, template]
  
 I am working with the Australian National University (ANU). I am also an Adjunct Assistant Professor at the University of Canberra (UC). 
 
-<br><strong>In academia</strong>, I was a Visiting Fellow at the University of Technology Sydney (UTS), an assistant professor at King Fahad University of Petroleum & Minerals (KFUPM), and a Fellow at JRCAI. I also served at the National University of Computer and Emerging Sciences (NUCES) and Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
+<br><strong>In academia</strong>, I was a Visiting Fellow at the University of Technology Sydney (UTS), an assistant professor at King Fahad University of Petroleum & Minerals (KFUPM). I also served at the National University of Computer and Emerging Sciences (NUCES) and Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
 
 
 <br><strong>In industry</strong>, I was a Research Scientist at Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). I was a fellow at SDAIA's Joint Research Center of AI (JRCAI). Moreover, I was involved in various projects with National ICT Australia (NICTA). Before, I worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE) in Scotland and simulated sonar sensors for transparent object detection at Pal Robotics, Barcelona. During my undergraduate studies, I gained experience in technology and research roles, starting with the telecommunication industry.  
