@@ -12,7 +12,7 @@ tags: [Jekyll, theme, responsive, blog, template]
 <div style="text-align: justify; display: block; margin-right: auto;">
 
  
-I have joined the University of Western Australia (UWA). I am also visiting scientist at CSIRO and honorary faculty at the Australian National Univeristy (ANU). 
+I have joined the University of Western Australia (UWA) as Senior Lecturer (Associate Professor in US System). I am also visiting scientist at CSIRO and honorary faculty at the Australian National Univeristy (ANU). 
 
 <br><strong>In academia</strong>, I was a adjunct assistant professor at the University of Canberra (UC) and Visiting Fellow at the University of Technology Sydney (UTS), an assistant professor at King Fahad University of Petroleum & Minerals (KFUPM). I also served at the National University of Computer and Emerging Sciences (NUCES) and Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
 
