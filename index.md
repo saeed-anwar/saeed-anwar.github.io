@@ -43,7 +43,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <li> Our LLMs overview is accepted at ACM TIST [IF: 7.2]. [May'25]</li>
 <li> An article is accepted in AEJ [IF: 6.2]. [Apr'25]</li>
 <li> CVPR has accepted our paper as Oral at Vision for Agriculture (V4A). [Mar'25]</li>
-<li> Joined as a *Senior Lecturer (Equivalent as US Associate Professor* at the University of Western Australia (UWA). [Jan'25]</li>
+<li> Joined Univeristy of Western Australia as a Senior Lecturer. [Jan'25]</li>
 <li> <a href="https://icpr2024.org/Prizes-Awards.html"><font color="#1C86EE"> Best Paper Award</font></a> ICPR'24.</li>
 <li> Serving Area Chair ACCV'24, IJCAI'25, ICCV'25.</li>
 <li> An article is accepted in Drones [IF: 4.4]. [Nov'24]</li>
