@@ -12,21 +12,20 @@ tags: [Jekyll, theme, responsive, blog, template]
 <div style="text-align: justify; display: block; margin-right: auto;">
 
  
-I have joined the University of Western Australia (UWA) as Senior Lecturer (US Associate Professor). I am also visiting scientist at CSIRO and honorary faculty at the Australian National Univeristy (ANU). 
+I am a Senior Lecturer (US Associate Professor) at the University of Western Australia (UWA). I am also a visiting scientist at the CSIRO and an honorary faculty member at the Australian National University (ANU). 
 
-<br><strong>In academia</strong>, I was a adjunct assistant professor at the University of Canberra (UC) and Visiting Fellow at the University of Technology Sydney (UTS), an assistant professor at King Fahad University of Petroleum & Minerals (KFUPM). I also served at the National University of Computer and Emerging Sciences (NUCES) and Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
+<br><strong>In academia</strong>, I was an adjunct assistant professor at the University of Canberra (UC), a Visiting Fellow at the University of Technology Sydney (UTS), an assistant professor at King Fahad University of Petroleum & Minerals (KFUPM). I also served at the National University of Computer and Emerging Sciences (NUCES) and Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
 
 
-<br><strong>In industry</strong>, I was a Research Scientist at Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). I was a fellow at SDAIA's Joint Research Center of AI (JRCAI). Moreover, I was involved in various projects with National ICT Australia (NICTA). Before, I worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE) in Scotland and simulated sonar sensors for transparent object detection at Pal Robotics, Barcelona.
+<br><strong>In industry</strong>, I was a Research Scientist at Data61, Commonwealth Scientific and Industrial Research Organisation (CSIRO). I was a fellow at SDAIA's Joint Research Center of AI (JRCAI). Moreover, I was involved in various projects with National ICT Australia (NICTA). Previously, I worked on a medical-related project with Toshiba Medical Visualization Systems Europe (TMVSE) in Scotland, where I simulated sonar sensors for transparent object detection at Pal Robotics in Barcelona.
 
  
 <h2>
 <a id="Biography-page" class="anchor" href="#biography-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Education</h2>
 <div style="text-align: justify; display: block; margin-right: auto;">
 <p>
-<br><strong>2014/05 - 2018/04</strong>, I hold a PhD from the Australian National University, where I studied at the College of Engineering & Computer Science. I conducted doctoral research within the Computer Vision Research Group (CVRG) at Data61 (previously known as NICTA), CSIRO. <br>
-<br><strong>2010/09 - 2012/08</strong>, Prior to my PhD, I pursued a Master's degree in Computer Vision and Robotics (Vibot) through a collaborative program involving the Heriot-Watt University, the University of Girona and the University of Bourgogne. <br>
-<br><strong>2004/09 - 2008/08</strong>,  My academic journey began with a Bachelor of Science in Computer Systems Engineering from the University of Engineering and Technology (UET), Peshawar. <br>  
+I hold a PhD from the Australian National University, where I studied at the College of Engineering & Computer Science. I conducted doctoral research within the Computer Vision Research Group (CVRG) at Data61 (previously known as NICTA), CSIRO. Prior to my PhD, I pursued a Master's degree in Computer Vision and Robotics (Vibot) through a collaborative program involving Heriot-Watt University, the University of Girona, and the University of Bourgogne. My academic journey began with a Bachelor of Science in Computer Systems Engineering from the University of Engineering and Technology (UET), KPK.
+ 
 <hr />
 </p>
 
@@ -41,7 +40,10 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
- 
+<li> Our LLMs overview is accepted at ACM TIST [IF: 7.2]. [May'25]</li>
+<li> An article is accepted in AEJ [IF: 6.2]. [Apr'25]</li>
+<li> CVPR has accepted our paper as Oral at Vision for Agriculture (V4A). [Mar'25]</li>
+<li> Joined as a *Senior Lecturer (Equivalent as US Associate Professor* at the University of Western Australia (UWA). [Jan'25]</li>
 <li> <a href="https://icpr2024.org/Prizes-Awards.html"><font color="#1C86EE"> Best Paper Award</font></a> ICPR'24.</li>
 <li> Serving Area Chair ACCV'24, IJCAI'25, ICCV'25.</li>
 <li> An article is accepted in Drones [IF: 4.4]. [Nov'24]</li>
