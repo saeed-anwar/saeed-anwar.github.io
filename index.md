@@ -40,6 +40,7 @@ research and develop advanced deep learning algorithms for image and video enhan
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> Our MuStD is accepted as Oral IROS. [Jun'25]</li>
 <li> Our LLMs overview is accepted at ACM TIST [IF: 7.2]. [May'25]</li>
 <li> An article is accepted in AEJ [IF: 6.2]. [Apr'25]</li>
 <li> CVPR has accepted our paper as Oral at Vision for Agriculture (V4A). [Mar'25]</li>
