@@ -29,13 +29,6 @@ I hold a PhD from the Australian National University, where I studied at the Col
 <hr />
 </p>
 
-<p>
-<h2>
-<a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open Positions:</h2>
-<br><p><font color="blue">I am looking for PhD students and Master students who want to conduct
-research and develop advanced deep learning algorithms for image and video enhancement and restoration, 3D Point Clouds, computational imaging,  computer vision and Machine learning applications.</font>
-</p>
-
 <h2>
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
