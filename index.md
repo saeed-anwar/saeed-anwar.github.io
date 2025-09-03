@@ -33,6 +33,7 @@ I hold a PhD from the Australian National University, where I studied at the Col
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> Serving as Area Chair CVPR'26.</li> 
 <li> Serving as Area Chair WACV'26.</li>
 <li> Our MuStD is accepted as Oral IROS. [Jun'25]</li>
 <li> Our LLMs overview is accepted at ACM TIST [IF: 7.2]. [May'25]</li>
