@@ -35,7 +35,7 @@ I hold a PhD from the Australian National University, where I studied at the Col
 <ul>
 <li> A paper accepted in Springer Nature. [Oct'25]</li>
 <li> Our survey on satellite to street view is accepted in Applied intelligence. [Sep'25]</li>
-<li> An article is accepted in ICTDsC [Aug'25]</li>
+<li> An article is accepted in ICTDsC. [Aug'25]</li>
 <li> Serving as Area Chair CVPR'26.</li> 
 <li> Serving as Area Chair WACV'26.</li>
 <li> Our MuStD is accepted as Oral IROS. [Jun'25]</li>
