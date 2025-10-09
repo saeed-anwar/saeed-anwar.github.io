@@ -41,6 +41,8 @@ links:
    url: /people/
  - title: Scholarships
    url: /scholarships/
+ - title: VIAIL
+   url: /VIAIL/
    
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Australia/ACT
