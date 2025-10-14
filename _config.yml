@@ -35,14 +35,15 @@ links:
    url: /Datasets/
  - title: Teaching
    url: /Teaching/
- - title: Talks
-   url: /Talks/
- - title: People
-   url: /people/
- - title: Scholarships
-   url: /scholarships/
  - title: Lab
    url: /VIAIL/
+ - title: People
+   url: /people/
+ - title: Talks
+   url: /Talks/
+ - title: Scholarships
+   url: /scholarships/
+
    
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Australia/ACT
