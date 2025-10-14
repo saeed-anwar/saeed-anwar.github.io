@@ -12,7 +12,7 @@ tags: [Jekyll, theme, responsive, blog, template]
 <div style="text-align: justify; display: block; margin-right: auto;">
 
  
-I am a Senior Lecturer (US Associate Professor) at the University of Western Australia (UWA). I am also a visiting scientist at the CSIRO and an honorary faculty member at the Australian National University (ANU). 
+I am a Senior Lecturer (US Associate Professor) at the University of Western Australia (UWA) and leading Visual Intelligence and Analytical Imaging Lab. I am also a visiting scientist at the CSIRO and an honorary faculty member at the Australian National University (ANU). 
 
 <br><strong>In academia</strong>, I was an adjunct assistant professor at the University of Canberra (UC), a Visiting Fellow at the University of Technology Sydney (UTS), an assistant professor at King Fahad University of Petroleum & Minerals (KFUPM). I also served at the National University of Computer and Emerging Sciences (NUCES) and Ghulam Ishaq Khan Institute of Engineering Sciences and Technology (GIKI).
 
