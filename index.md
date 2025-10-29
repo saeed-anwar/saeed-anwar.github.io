@@ -29,6 +29,8 @@ I am a Senior Lecturer (US Associate Professor) at the University of Western Aus
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> A paper accepted in ACM MM. [Nov'25]</li>
+<li> Two papers accepted one in Information & other in Sensors. [Nov'25]</li>
 <li> A paper accepted in Springer Nature. [Oct'25]</li>
 <li> Our survey on satellite to street view is accepted in Applied intelligence. [Sep'25]</li>
 <li> An article is accepted in ICTDsC. [Aug'25]</li>
