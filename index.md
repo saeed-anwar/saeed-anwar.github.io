@@ -29,12 +29,13 @@ I am a Senior Lecturer (US Associate Professor) at the University of Western Aus
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
-<li> A paper accepted in ACM MM. [Nov'25]</li>
-<li> Two papers accepted one in Information & other in Sensors. [Nov'25]</li>
+<li> ICISP accepted in Neural Networks Journal. [Nov'25]</li> 
+<li> Two papers accepted one in Information & other in Sensors. [Oct'25]</li>
 <li> A paper accepted in Springer Nature. [Oct'25]</li>
 <li> Our survey on satellite to street view is accepted in Applied intelligence. [Sep'25]</li>
 <li> An article is accepted in ICTDsC. [Aug'25]</li>
-<li> Serving as Area Chair CVPR'26.</li> 
+<li> A paper accepted in ACM MM. [Jul'25]</li>
+<li> Serving as Area Chair CVPR'26.</li
 <li> Serving as Area Chair WACV'26.</li>
 <li> Our MuStD is accepted as Oral IROS. [Jun'25]</li>
 <li> Our LLMs overview is accepted at ACM TIST [IF: 7.2]. [May'25]</li>
@@ -115,8 +116,10 @@ I am a Senior Lecturer (US Associate Professor) at the University of Western Aus
 <h2>
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Codes and Datasets:</h2>
 
-<ul>
- <li> The <a href="https://github.com/tanvirnwu/HazeSpace2M_ACMMN_2024?tab=readme-ov-file#dataset-download"><font color="#1C86EE"> HazeSpace2M</font></a> dataset is avaliable now. [May'25]</li>
+<ul
+
+<li> The <a href="https://github.com/cshw2021/ICISP"><font color="#1C86EE"> ICISP</font></a> code is released. [May'25]</li>
+<li> The <a href="https://github.com/tanvirnwu/HazeSpace2M_ACMMN_2024?tab=readme-ov-file#dataset-download"><font color="#1C86EE"> HazeSpace2M</font></a> dataset is avaliable now. [May'25]</li>
 <li> The <a href="https://github.com/tanvirnwu/TriFuse?tab=readme-ov-file"><font color="#1C86EE"> LoLI-Street</font></a> dataset is avaliable now. [Sep'24]</li>
 <li> The dataset for testing LLMs: definitive answers <a href="https://github.com/ashikiut/DefAn"><font color="#1C86EE"> DefAn</font></a> is here. [Sep'24]</li>
 <li> <a href="https://github.com/Jumponthemoon/AllWeatherNet"><font color="#1C86EE">AllWeatherNet</font>  is released</a>. [Sep'24]</li>
