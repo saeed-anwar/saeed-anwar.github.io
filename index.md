@@ -29,6 +29,7 @@ I am a Senior Lecturer (US Associate Professor) at the University of Western Aus
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
+<li> Highly Cited Researchers 2025. </li>
 <li> Serving as Area Chair ECCV'26. </li>
 <li> ICISP accepted in Neural Networks Journal. [Nov'25]</li> 
 <li> Two papers accepted one in Information & other in Sensors. [Oct'25]</li>
@@ -45,18 +46,18 @@ I am a Senior Lecturer (US Associate Professor) at the University of Western Aus
 <li> Joined Univeristy of Western Australia as a Senior Lecturer. [Jan'25]</li>
 <li> <a href="https://icpr2024.org/Prizes-Awards.html"><font color="#1C86EE"> Best Paper Award</font></a> ICPR'24.</li>
 <li> Serving Area Chair ACCV'24, IJCAI'25, ICCV'25.</li>
-<li> An article is accepted in Drones [IF: 4.4]. [Nov'24]</li>
-<li> One paper accepted in ACCV. [Oct'24]</li>
-<li> 2x Surveys in Information Fusion [IF: 14.7] are accepted. [Oct'24]</li>
-<li> AI Review [IF: 10.7] has accepted our survey on 3D object recognition. [Sep'24]</li>
-<li> 2x Oral papers are in DICTA [August'24]</li>
-<li> A paper hit on ICPR [August'24]</li>
-<li> 2x Papers accepted in ACM MM [July'24]</li>
-<li> ICIP accepted our paper [June'24]</li>
-<li> A Papers accepted in AVSS [May'24]</li>
-<li> 2x Papers accepted in CVPR Workshops. One Poster and One Oral [April'24]</li>
-<li> Attention Survey is accepted in Infurmation Fusion (IF:18.6) [April'24]</li>
-<li> PSGNN is accepted by TNNLS (IF:10.4) [March'24]</li>
+<!--<li> An article is accepted in Drones [IF: 4.4]. [Nov'24]</li>-->
+<!--<li> One paper accepted in ACCV. [Oct'24]</li>-->
+<!--<li> 2x Surveys in Information Fusion [IF: 14.7] are accepted. [Oct'24]</li>-->
+<!--<li> AI Review [IF: 10.7] has accepted our survey on 3D object recognition. [Sep'24]</li>-->
+<!--<li> 2x Oral papers are in DICTA [August'24]</li>-->
+<!--<li> A paper hit on ICPR [August'24]</li>-->
+<!--<li> 2x Papers accepted in ACM MM [July'24]</li>-->
+<!--<li> ICIP accepted our paper [June'24]</li>-->
+<!--<li> A Papers accepted in AVSS [May'24]</li>-->
+<!--<li> 2x Papers accepted in CVPR Workshops. One Poster and One Oral [April'24]</li>-->
+<!--<li> Attention Survey is accepted in Infurmation Fusion (IF:18.6) [April'24]</li>-->
+<!--<li> PSGNN is accepted by TNNLS (IF:10.4) [March'24]</li>-->
 <!--<li> Data Augmentaiton survey is accepted by EAAI (IF:8) [April'23]</li>-->
 <!--<li> A paper in WACV Workshop [Oct'23]</li>-->
 <!--<li> Fine-Grain Evaluation is accepted in Electronics (IF:2.9) [Aug'23]</li>-->
