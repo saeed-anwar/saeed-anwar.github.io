@@ -29,9 +29,13 @@ I am a Senior Lecturer (US Associate Professor) at the University of Western Aus
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
-<li> Two Papers: ANUBIS and ASIL are Pattern Recognition [IF: 7.6, June'26]. </li> 
-<li> HVLFormer accepted in ECCV [June'26]. </li> 
-<li> Serving as Area Chair WACV'27, ACCV'26, ECCV'26. </li>
+<li> Serving as Area Chair WACV'27, ACCV'26, ECCV'26, CVPR'26,  WACV'26. </li>
+<li> Two Papers: ANUBIS and ASIL are Pattern Recognition. [IF:7.6, Jun'26]. </li> 
+<li> HVLFormer accepted in ECCV. [Jun'26] </li> 
+<li> PointCaM is accepted in CVIU. [IF:3.5, May'26] </li>
+<li> Diffcom is in TCSVT. [IF:11.1, Apr'26] </li>
+<li> Our survey on animal action recogntion is accpeted in AIR. [IF: 13.9, Mar'26] </li>
+<li> FLaTEC is accpeted in ICME. [Mar'26] </li>
 <li> RDD4D is accepted in IEEE Access [Feb'26]. </li> 
 <li> Diffcomm is accepted in IEEE TVCST [Jan'26]. </li>
 <li> Clarivate's Highly Cited Researchers 2025. </li>
@@ -41,8 +45,6 @@ I am a Senior Lecturer (US Associate Professor) at the University of Western Aus
 <li> Our survey on satellite to street view is accepted in Applied intelligence. [Sep'25]</li>
 <li> An article is accepted in ICTDsC. [Aug'25]</li>
 <li> A paper accepted in ACM MM. [Jul'25]</li>
-<li> Serving as Area Chair CVPR'26.</li>
-<li> Serving as Area Chair WACV'26.</li>
 <li> Our MuStD is accepted as Oral IROS. [Jun'25]</li>
 <li> Our LLMs overview is accepted at ACM TIST [IF: 7.2]. [May'25]</li>
 <li> An article is accepted in AEJ [IF: 6.2]. [Apr'25]</li>
