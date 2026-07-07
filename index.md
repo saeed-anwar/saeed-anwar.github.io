@@ -30,6 +30,7 @@ I am a Senior Lecturer (US Associate Professor) at the University of Western Aus
 
 <ul>
 <li> Serving as Area Chair WACV'27, ACCV'26, ECCV'26, CVPR'26,  WACV'26. </li>
+<li> NumGrad-Pull is accepted in IEEE TVCG. [IF:6.5, Jul'26]. </li> 
 <li> Two Papers: ANUBIS and ASIL are Pattern Recognition. [IF:7.6, Jun'26]. </li> 
 <li> HVLFormer accepted in ECCV. [Jun'26] </li> 
 <li> PointCaM is accepted in CVIU. [IF:3.5, May'26] </li>
