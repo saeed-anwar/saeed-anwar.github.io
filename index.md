@@ -29,7 +29,11 @@ I am a Senior Lecturer (US Associate Professor) at the University of Western Aus
 <a id="new-page" class="anchor" href="#new-page" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent News:</h2>
 
 <ul>
-<li> Serving as Area Chair WACV'27, ACCV'26, ECCV'26, CVPR'26,  WACV'26. </li>
+<li> PGMS is hitting NeurIPS. [Sep'26]. </li> 
+<li> TDir and FlashNet is accepted at ACCV [Aug'26]. </li> 
+<li> Two papers accepted at ICONIP. [Jul'26]. </li>  
+<li> SPEGNet is accepted at IEEE TIP. [IF:13.7, Jun'26]. </li> 
+<li> Serving as Area Chair CVPR'27, WACV'27, AAAI'27, ACCV'26, ECCV'26, CVPR'26,  WACV'26. </li>
 <li> NumGrad-Pull is accepted in IEEE TVCG. [IF:6.5, Jul'26]. </li> 
 <li> Two Papers: ANUBIS and ASIL are Pattern Recognition. [IF:7.6, Jun'26]. </li> 
 <li> HVLFormer accepted in ECCV. [Jun'26] </li> 
