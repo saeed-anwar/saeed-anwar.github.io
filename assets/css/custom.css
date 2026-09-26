@@ -7,3 +7,11 @@ h4 {
   margin-top: 0.5rem;
   margin-bottom: 0.25rem;
 }
+
+/* Widen the article text to fill the space the sidebar leaves unused */
+@media only screen and (min-width: 37.5em) {
+  #main article { width: 75%; }
+}
+@media only screen and (min-width: 86.375em) {
+  #main article { width: 66.666667%; }
+}
