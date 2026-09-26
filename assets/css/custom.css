@@ -8,10 +8,19 @@ h4 {
   margin-bottom: 0.25rem;
 }
 
-/* Widen the article text to fill the space the sidebar leaves unused */
+/* Keep the author-bio sidebar, but give the article text more room
+   and a comfortable gutter on the right instead of running to the edge */
 @media only screen and (min-width: 37.5em) {
-  #main article { width: 75%; }
+  #main article {
+    width: 70%;
+    max-width: 900px;
+    margin-right: 5%;
+  }
 }
 @media only screen and (min-width: 86.375em) {
-  #main article { width: 66.666667%; }
+  #main article {
+    width: 60%;
+    max-width: 900px;
+    margin-right: 5%;
+  }
 }
