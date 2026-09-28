@@ -1,5 +1,5 @@
 ---
-layout: home_editorial
+layout: scholarships
 permalink: /scholarships/
 title: Prospective Students
 tags: [scholarships]
