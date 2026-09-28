@@ -6,25 +6,69 @@
 <head>
 {% include _head.html %}
 <style>
-a:link {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
+a:link { color: blue; background-color: transparent; text-decoration: none; }
+a:visited { color: blue; background-color: transparent; text-decoration: none; }
+a:hover { color: red; background-color: transparent; text-decoration: underline; }
+a:active { color: yellow; background-color: transparent; text-decoration: underline; }
+
+/* ---------- Teaching page ---------- */
+.teach-subtitle { margin: -6px 0 20px 0; font-style: italic; color: #777; font-size: 16px; }
+
+.teach-heading {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 19px; margin: 34px 0 14px 0;
+  padding-bottom: 8px; border-bottom: 2px solid #ececec;
 }
-a:visited {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
+.teach-heading:first-of-type { margin-top: 0; }
+.teach-heading i { font-size: 16px; width: 20px; text-align: center; }
+.teach-heading.blue i { color: #3f6bb0; }
+.teach-heading.teal i { color: #2a9d8f; }
+.teach-heading.gold i { color: #c9a227; }
+
+.teach-section { margin-bottom: 8px; }
+
+.teach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
 }
-a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
+.teach-card {
+  background: #fafafa;
+  border: 1px solid #ececec;
+  border-left: 3px solid #3f6bb0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  transition: box-shadow .15s ease, transform .15s ease;
 }
-a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
+.teach-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.10); transform: translateY(-1px); }
+.teach-card.gold { border-left-color: #c9a227; }
+.teach-card.teal { border-left-color: #2a9d8f; }
+
+.teach-term-label {
+  display: block;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #666;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.teach-course { font-size: 14px; line-height: 1.5; color: #333; margin: 0 0 3px 0; }
+.teach-course:last-child { margin-bottom: 0; }
+.teach-code {
+  display: inline-block;
+  font-family: Consolas, Menlo, monospace;
+  font-size: 12px;
+  background: #eef2f8;
+  color: #3f6bb0;
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-right: 6px;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .teach-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -102,106 +146,168 @@ div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;
     <div class="article-wrap">
       {{ content }}
 
-<!----------------------------------------------------------------------------------->
-<!-- Generated from JabRef by PubList by Truong Nghiem at 12:49 on 2016.07.15. -->
+      <p class="teach-subtitle">Courses taught as instructor, lecturer, and tutor</p>
 
-<!-------------------------------------------------------------------------------------------->
-<h4 style="margin-bottom:0px;padding-top:2px;">Winter 2026 </h4>
- 		<ul> CITS4009: Fundamental of Data Science </ul>
+      <!-- ============ INSTRUCTOR ============ -->
+      <h2 class="teach-heading blue"><i class="fa fa-book"></i>Instructor</h2>
+      <div class="teach-section">
+        <div class="teach-grid">
 
-<h4 style="margin-bottom:0px;padding-top:2px;">Spring 2026 </h4>
- 		<ul> CITS2401: Computer Visualisation and Applications </ul>
+          <div class="teach-card">
+            <span class="teach-term-label">Winter 2026</span>
+            <p class="teach-course"><span class="teach-code">CITS4009</span>Fundamental of Data Science</p>
+          </div>
 
-<h4 style="margin-bottom:0px;padding-top:2px;">Winter 2025 </h4>
- 		<ul> CITS4009: Computational Data Analysis </ul>
-		
-<h4 style="margin-bottom:0px;padding-top:2px;">Spring 2025 </h4>
- 		<ul> CITS4402: Computer Vision </ul>
-		
-<h4 style="margin-bottom:0px;padding-top:2px;">Spring 2024 </h4>
- 		<ul> ICS547: Digital Image Processing </ul>
- 		<ul> ICS483: Computer Vision </ul>
- 		<ul> ICS104: Introduction to Programing in Python and C</ul>
-	    
-<h4 style="margin-bottom:0px;padding-top:2px;">Fall 2023 </h4>
- 		<ul> ICS557: Advanced Machine Learning </ul>
- 		<ul> ICS502: Machine Learning </ul>
- 		<ul> ICS505: Computer Vision </ul>
-	    
-<h4 style="margin-bottom:0px;padding-top:2px;">Summer 2023 </h4>
- 		<ul> ICS104: Introduction to Programing in Python and C</ul>
+          <div class="teach-card">
+            <span class="teach-term-label">Spring 2026</span>
+            <p class="teach-course"><span class="teach-code">CITS2401</span>Computer Visualisation and Applications</p>
+          </div>
 
-	    
-<h4 style="margin-bottom:0px;padding-top:2px;">Spring 2023 </h4>
- 		<ul> ICS574: Big Data Analytics</ul>
- 		<ul> ICS104: Introduction to Programing in Python and C</ul>
+          <div class="teach-card">
+            <span class="teach-term-label">Winter 2025</span>
+            <p class="teach-course"><span class="teach-code">CITS4009</span>Computational Data Analysis</p>
+          </div>
 
-<h4 style="margin-bottom:0px;padding-top:2px;">As A Lecturer </h4>
-	<h5 style="margin-bottom:0px;padding-top:2px;">2022  Spring/Fall </h5>
-		<ul> COMP8755: Comp. Vision & Machine Learning Projects </ul>
-		<ul> ENGN8601\8602: Comp. Vision & Machine Learning Research Project</ul>
+          <div class="teach-card">
+            <span class="teach-term-label">Spring 2025</span>
+            <p class="teach-course"><span class="teach-code">CITS4402</span>Computer Vision</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2021  Spring/Fall  </h5>
-		<ul> COMP8755: Comp. Vision & Machine Learning Projects</ul>
-		<ul> ENGN8601\8602: Comp. Vision & Machine Learning Research Project</ul>
-		<ul> HONS2021: Masters thesis examiner</ul>
+          <div class="teach-card">
+            <span class="teach-term-label">Spring 2024</span>
+            <p class="teach-course"><span class="teach-code">ICS547</span>Digital Image Processing</p>
+            <p class="teach-course"><span class="teach-code">ICS483</span>Computer Vision</p>
+            <p class="teach-course"><span class="teach-code">ICS104</span>Introduction to Programing in Python and C</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2020  Spring/Fall</h5>
-		<ul> COMP8755: Individual Computing Project (CV & ML)</ul>
-		<ul> ENGN8601\8602: Research Project (CV & ML) </ul>
+          <div class="teach-card">
+            <span class="teach-term-label">Fall 2023</span>
+            <p class="teach-course"><span class="teach-code">ICS557</span>Advanced Machine Learning</p>
+            <p class="teach-course"><span class="teach-code">ICS502</span>Machine Learning</p>
+            <p class="teach-course"><span class="teach-code">ICS505</span>Computer Vision</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2019   Spring/Fall </h5>
-		<ul> ENGN8231: Embedded Systems</ul>
-		<ul> COMP4660: Deep Learning</ul>
+          <div class="teach-card">
+            <span class="teach-term-label">Summer 2023</span>
+            <p class="teach-course"><span class="teach-code">ICS104</span>Introduction to Programing in Python and C</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2018 Spring   </h5>
-		<ul> ENGN8224: Electric Systems</ul>
+          <div class="teach-card">
+            <span class="teach-term-label">Spring 2023</span>
+            <p class="teach-course"><span class="teach-code">ICS574</span>Big Data Analytics</p>
+            <p class="teach-course"><span class="teach-code">ICS104</span>Introduction to Programing in Python and C</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2014 Spring   </h5>
-		<ul> CS303: Software Engineering</ul>
-		<ul> CS418: Digital Image Processing</ul>
-		<ul> CS104: Computer Programming</ul>
+        </div>
+      </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2013 Summer/Spring/Fall     </h5>
-		<ul>CS313: Object Oriented Analysis & Design</ul>
-		<ul>CS303: Software Engineering</ul>
-		<ul>EE218\218L: Comp. Organization & Assembly Language + Lab</ul>
-		<ul>CS401: Artificial Intelligence</ul>
-		<ul>AI503: Advanced Machine Learning</ul>
+      <!-- ============ LECTURER ============ -->
+      <h2 class="teach-heading teal"><i class="fa fa-graduation-cap"></i>As A Lecturer</h2>
+      <div class="teach-section">
+        <div class="teach-grid">
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2012 Spring/Fall   </h5>
-		<ul>CS401: Artificial Intelligence</ul>
-		<ul>CS418: Digital Image Processing</ul>
-		<ul>CS104: Computer Programming</ul>
-		<ul>EE218\218L: Comp. Organization & Assembly Language + Lab</ul>
+          <div class="teach-card teal">
+            <span class="teach-term-label">2022 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">COMP8755</span>Comp. Vision &amp; Machine Learning Projects</p>
+            <p class="teach-course"><span class="teach-code">ENGN8601\8602</span>Comp. Vision &amp; Machine Learning Research Project</p>
+          </div>
 
+          <div class="teach-card teal">
+            <span class="teach-term-label">2021 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">COMP8755</span>Comp. Vision &amp; Machine Learning Projects</p>
+            <p class="teach-course"><span class="teach-code">ENGN8601\8602</span>Comp. Vision &amp; Machine Learning Research Project</p>
+            <p class="teach-course"><span class="teach-code">HONS2021</span>Masters thesis examiner</p>
+          </div>
 
-<h4 style="margin-bottom:0px;padding-top:2px;">As A Tutor </h4>
-	<h5 style="margin-bottom:0px;padding-top:2px;">2018 Fall   </h5>
-		<ul> ENGN2219: Simulation for Engineers</ul>
-		<ul> ENGN4528\6528: Computer Vision</ul>
+          <div class="teach-card teal">
+            <span class="teach-term-label">2020 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">COMP8755</span>Individual Computing Project (CV &amp; ML)</p>
+            <p class="teach-course"><span class="teach-code">ENGN8601\8602</span>Research Project (CV &amp; ML)</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2017 Spring/Fall    </h5>
-		<ul> COMP8019: Computer and Networks Security</ul>
-		<ul> ENGN2219: Simulation for Engineers</ul>
+          <div class="teach-card teal">
+            <span class="teach-term-label">2019 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">ENGN8231</span>Embedded Systems</p>
+            <p class="teach-course"><span class="teach-code">COMP4660</span>Deep Learning</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;"> 2016 Fall   </h5>
-		<ul>ENGN2219: Simulation for Engineers</ul>
+          <div class="teach-card teal">
+            <span class="teach-term-label">2018 &middot; Spring</span>
+            <p class="teach-course"><span class="teach-code">ENGN8224</span>Electric Systems</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2010 Spring/Fall     </h5>
-		<ul> CS419L: Applied Image Processing Lab</ul>
-		<ul> AI201L: Prog. for Artificial Intelligence Lab</ul>
-		<ul> CE318L: Intro. to Digital Image Processing Lab</ul>
-		<ul> CS312L: System Programming Lab</ul>
+          <div class="teach-card teal">
+            <span class="teach-term-label">2014 &middot; Spring</span>
+            <p class="teach-course"><span class="teach-code">CS303</span>Software Engineering</p>
+            <p class="teach-course"><span class="teach-code">CS418</span>Digital Image Processing</p>
+            <p class="teach-course"><span class="teach-code">CS104</span>Computer Programming</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2009 Spring/Fall   </h5>
-		<ul> CS351L: Artificial Intelligence Lab</ul>
-		<ul> CS418L: Digital Image Processing Lab</ul>
-		<ul> CS311L: Operating System Lab</ul>
+          <div class="teach-card teal">
+            <span class="teach-term-label">2013 &middot; Summer/Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS313</span>Object Oriented Analysis &amp; Design</p>
+            <p class="teach-course"><span class="teach-code">CS303</span>Software Engineering</p>
+            <p class="teach-course"><span class="teach-code">EE218\218L</span>Comp. Organization &amp; Assembly Language + Lab</p>
+            <p class="teach-course"><span class="teach-code">CS401</span>Artificial Intelligence</p>
+            <p class="teach-course"><span class="teach-code">AI503</span>Advanced Machine Learning</p>
+          </div>
 
-	<h5 style="margin-bottom:0px;padding-top:2px;">2008 Spring/Fall   </h5>
-		<ul> CS112L: Object-Oriented Programming Lab</ul>
-		<ul> CS103L: Comp. Programming</ul>
+          <div class="teach-card teal">
+            <span class="teach-term-label">2012 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS401</span>Artificial Intelligence</p>
+            <p class="teach-course"><span class="teach-code">CS418</span>Digital Image Processing</p>
+            <p class="teach-course"><span class="teach-code">CS104</span>Computer Programming</p>
+            <p class="teach-course"><span class="teach-code">EE218\218L</span>Comp. Organization &amp; Assembly Language + Lab</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============ TUTOR ============ -->
+      <h2 class="teach-heading gold"><i class="fa fa-pencil"></i>As A Tutor</h2>
+      <div class="teach-section">
+        <div class="teach-grid">
+
+          <div class="teach-card gold">
+            <span class="teach-term-label">2018 &middot; Fall</span>
+            <p class="teach-course"><span class="teach-code">ENGN2219</span>Simulation for Engineers</p>
+            <p class="teach-course"><span class="teach-code">ENGN4528\6528</span>Computer Vision</p>
+          </div>
+
+          <div class="teach-card gold">
+            <span class="teach-term-label">2017 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">COMP8019</span>Computer and Networks Security</p>
+            <p class="teach-course"><span class="teach-code">ENGN2219</span>Simulation for Engineers</p>
+          </div>
+
+          <div class="teach-card gold">
+            <span class="teach-term-label">2016 &middot; Fall</span>
+            <p class="teach-course"><span class="teach-code">ENGN2219</span>Simulation for Engineers</p>
+          </div>
+
+          <div class="teach-card gold">
+            <span class="teach-term-label">2010 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS419L</span>Applied Image Processing Lab</p>
+            <p class="teach-course"><span class="teach-code">AI201L</span>Prog. for Artificial Intelligence Lab</p>
+            <p class="teach-course"><span class="teach-code">CE318L</span>Intro. to Digital Image Processing Lab</p>
+            <p class="teach-course"><span class="teach-code">CS312L</span>System Programming Lab</p>
+          </div>
+
+          <div class="teach-card gold">
+            <span class="teach-term-label">2009 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS351L</span>Artificial Intelligence Lab</p>
+            <p class="teach-course"><span class="teach-code">CS418L</span>Digital Image Processing Lab</p>
+            <p class="teach-course"><span class="teach-code">CS311L</span>Operating System Lab</p>
+          </div>
+
+          <div class="teach-card gold">
+            <span class="teach-term-label">2008 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS112L</span>Object-Oriented Programming Lab</p>
+            <p class="teach-course"><span class="teach-code">CS103L</span>Comp. Programming</p>
+          </div>
+
+        </div>
+      </div>
 
     </div><!-- /.article-wrap -->
     {% if site.disqus_shortname and page.comments %}
