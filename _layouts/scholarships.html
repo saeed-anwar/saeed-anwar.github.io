@@ -6,211 +6,134 @@
 <head>
 {% include _head.html %}
 <style>
-a:link {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:visited {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
-}
-a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
+
+html{scroll-behavior:smooth}
+.rs-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:38px 36px 66px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
+.rs-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.07)}
+.rs-hero:after{content:"";position:absolute;right:70px;bottom:-90px;width:170px;height:170px;border-radius:50%;background:rgba(255,255,255,.06)}
+.rs-hero>*{position:relative;z-index:1}
+.rs-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 10px}
+.rs-hero h1{color:#fff;font-size:32px;line-height:1.2;margin:0 0 12px;padding:0}
+.rs-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:580px;line-height:1.65}
+.rs-glance{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:-40px 16px 34px;position:relative;z-index:2}
+.rs-g{display:block;background:#fff;border-radius:10px;padding:14px 6px 12px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.12);border-top:3px solid var(--c);text-decoration:none!important;transition:transform .15s ease,box-shadow .15s ease}
+.rs-g:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.16)}
+.rs-g i{display:block;font-size:20px;color:var(--c);margin-bottom:6px}.rs-g b{display:block;font-size:14px;color:#1f3a5f}
+.rs-g span{display:block;margin-top:3px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--s)}
+.rs-h{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#2f5d94;margin:38px 0 6px;display:flex;align-items:center;gap:12px}
+.rs-h:after{content:"";flex:1;height:1px;background:#e2e2e2}
+.rs-hs{margin:0 0 18px;font-size:14.5px;color:#777;font-style:italic}
+.rs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px}
+.rs-card{scroll-margin-top:20px;display:flex;flex-direction:column;background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px 22px;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:box-shadow .15s ease,transform .15s ease}
+.rs-card:hover{box-shadow:0 6px 18px rgba(0,0,0,.10);transform:translateY(-2px)}
+.rs-card.wide{grid-column:1/-1}
+.rs-card.closed{background:#f6f6f6;border-style:dashed;box-shadow:none}.rs-card.closed:hover{transform:none;box-shadow:none}
+.rs-top{display:flex;gap:14px;align-items:center;margin-bottom:12px}
+.rs-ic{flex:0 0 46px;width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px;box-shadow:0 3px 10px rgba(0,0,0,.15)}
+.rs-card h3{margin:0;font-size:17.5px;line-height:1.25}.rs-sub{margin:2px 0 0;font-size:12.5px;color:#888}
+.rs-pill{display:inline-block;margin-bottom:10px;align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#fff;border-radius:10px;padding:3px 10px}
+.rs-card p.t{margin:0 0 12px;font-size:14.5px;line-height:1.65;color:#444;flex:1}
+.rs-card.closed p.t{color:#777}
+.rs-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.rs-tag{background:#eef2f8;color:#3f6bb0;border-radius:12px;padding:3px 10px;font-size:12px;font-weight:700}
+.rs-link{margin-top:auto;font-size:12.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#3f6bb0!important;text-decoration:none!important}
+.rs-link:hover{color:#1f3a5f!important}
+.rs-areas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rs-area{display:flex;align-items:center;gap:12px;background:#f7f9fc;border:1px solid #e6edf7;border-radius:10px;padding:14px 16px;font-size:14.5px;font-weight:700;color:#1f3a5f}
+.rs-area i{width:20px;text-align:center;color:#3f6bb0;font-size:17px}
+.rs-look{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rs-lk{background:#fafafa;border:1px solid #ececec;border-radius:12px;padding:20px 18px;text-align:center}
+.rs-lk .c{width:48px;height:48px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px;box-shadow:0 3px 10px rgba(0,0,0,.15)}
+.rs-lk h3{margin:0 0 6px;font-size:16px}.rs-lk p{margin:0;font-size:13.5px;line-height:1.6;color:#555}
+.rs-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.rs-st{position:relative;padding:0 14px;text-align:center}
+.rs-st:not(:last-child):after{content:"\f178";font-family:FontAwesome;position:absolute;right:-8px;top:14px;color:#b8c6dc;font-size:16px}
+.rs-n{width:46px;height:46px;border-radius:50%;margin:0 auto 10px;border:3px solid #3f6bb0;color:#3f6bb0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;font-family:'PT Sans Narrow',sans-serif;background:#fff}
+.rs-st h3{margin:0 0 4px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#1f3a5f}.rs-st p{margin:0;font-size:13px;line-height:1.55;color:#666}
+.rs-cta{margin-top:38px;border-radius:14px;padding:32px 30px;text-align:center;color:#fff;background:linear-gradient(135deg,#1f3a5f,#2f5d94)}
+.rs-cta h2{color:#fff;margin:0 0 8px;font-size:23px;padding:0}.rs-cta p{margin:0 auto 18px;max-width:480px;opacity:.9;line-height:1.6}
+.rs-btn{display:inline-block;background:#fff!important;color:#1f3a5f!important;padding:12px 28px;border-radius:26px;font-weight:700;font-size:13.5px;letter-spacing:1px;text-transform:uppercase;text-decoration:none!important}
+.rs-btn:hover{background:#e8f0fa!important}
+@media(max-width:37.5em){
+ .rs-glance{grid-template-columns:repeat(2,1fr);margin:-34px 0 28px}.rs-hero{padding:26px 22px 54px}.rs-hero h1{font-size:26px}
+ .rs-grid,.rs-look{grid-template-columns:1fr}.rs-areas{grid-template-columns:repeat(2,1fr)}
+ .rs-steps{grid-template-columns:1fr;gap:18px}.rs-st:not(:last-child):after{content:"\f107";right:auto;left:50%;top:auto;bottom:-20px;transform:translateX(-50%)}
 }
 
-/* ---------- Scholarships / Prospective Students ---------- */
-.sch-subtitle { margin: -6px 0 24px 0; font-style: italic; color: #777; font-size: 15.5px; }
-.sch-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 28px; }
-.sch-card {
-  background: #fafafa; border: 1px solid #ececec; border-radius: 10px;
-  padding: 18px 20px; display: flex; flex-direction: column;
-  transition: box-shadow .15s ease, transform .15s ease;
-}
-.sch-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.10); transform: translateY(-1px); }
-.sch-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-.sch-icon {
-  flex: 0 0 42px; width: 42px; height: 42px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-size: 17px; box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-}
-.sch-icon.blue { background: linear-gradient(135deg,#5a86c9,#3f6bb0); }
-.sch-icon.teal { background: linear-gradient(135deg,#3fb8ad,#2a9d8f); }
-.sch-icon.gold { background: linear-gradient(135deg,#e6c34a,#c9a227); }
-.sch-icon.grey { background: linear-gradient(135deg,#b5b5b5,#999); }
-.sch-title { margin: 0; font-size: 17px; line-height: 1.25; }
-.sch-status {
-  display: inline-block; margin-top: 3px; font-size: 10.5px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .6px; color: #fff;
-  border-radius: 10px; padding: 2px 9px;
-}
-.sch-status.open { background: #2a9d8f; }
-.sch-status.cond { background: #c9a227; }
-.sch-status.closed { background: #999; }
-.sch-desc { margin: 0 0 12px 0; font-size: 14.5px; line-height: 1.6; color: #444; flex: 1; }
-.sch-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.sch-tag { background: #eef2f8; color: #3f6bb0; border-radius: 12px; padding: 3px 10px; font-size: 12px; font-weight: 700; }
-
-.sch-cta {
-  background: linear-gradient(135deg,#f5f8fc,#eef3fa); border: 1px solid #dde6f2;
-  border-radius: 10px; padding: 24px 28px; text-align: center;
-}
-.sch-cta i.fa-paper-plane { font-size: 24px; color: #3f6bb0; margin-bottom: 8px; }
-.sch-cta h3 { margin: 0 0 6px 0; }
-.sch-cta p { margin: 0 0 14px 0; color: #555; }
-.sch-btn {
-  display: inline-block; background: #3f6bb0 !important; color: #fff !important;
-  padding: 10px 20px; border-radius: 24px; font-weight: 700; font-size: 14px;
-  text-decoration: none !important;
-}
-.sch-btn:hover { background: #345a94 !important; }
 </style>
 </head>
 
 <body class="page">
-<style>
-    /*********************************
-     The list of publication items
-     *********************************/
-/* The list of items */
-.biblist { }
-
-/* The item */
-.biblist li { }
-
-/* You can define custom styles for plstyle field here. */
-
-
-/*************************************
- The box that contain BibTeX code
- *************************************/
-div.noshow { display: none; }
-div.bibtex {
-	margin-right: 0%;
-	margin-top: 1.2em;
-	margin-bottom: 1em;
-	border: 1px solid silver;
-	padding: 0em 1em;
-	background: #ffffee;
-}
-div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}</style>
-<script type="text/javascript">
-    <!--
-    // Toggle Display of BibTeX
-    function toggleBibtex(articleid) {
-        var bib = document.getElementById('bib_'+articleid);
-        if (bib) {
-            if(bib.className.indexOf('bibtex') != -1) {
-                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
-            }
-        } else {
-            return;
-        }
-    }
--->
-    </script>
-
 {% include _browser-upgrade.html %}
 
 {% include _navigation.html %}
-
-{% if page.image.feature %}
-  <div class="image-wrap">
-  <img src=
-    {% if page.image.feature contains 'http://' %}
-      "{{ page.image.feature }}"
-    {% elsif page.image.feature contains 'https://' %}
-      "{{ page.image.feature }}"
-    {% else %}
-      "{{ site.url }}/images/{{ page.image.feature }}"
-    {% endif %}
-  alt="{{ page.title }} feature image">
-  {% if page.image.credit %}
-    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-  </div><!-- /.image-wrap -->
-{% endif %}
 
 <div id="main" role="main">
   <div class="article-author-side">
     {% include _author-bio.html %}
   </div>
   <article>
-    <h1>{{ page.title }}</h1>
     <div class="article-wrap">
-      {{ content }}
+      <!-- To change a position's status, edit its .rs-pill text/colour, its "closed" class on .rs-card
+           (closed = muted card, no enquiry link) and the matching tile in the .rs-glance strip. -->
 
-      <p class="sch-subtitle">Opportunities to work with me, and what I look for in prospective students.</p>
-      <div class="sch-grid">
-        <div class="sch-card">
-          <div class="sch-head">
-            <div class="sch-icon blue"><i class="fa fa-graduation-cap"></i></div>
-            <div><h3 class="sch-title">PhD Students</h3><span class="sch-status open">Seeking applicants</span></div>
-          </div>
-          <p class="sch-desc">I am seeking highly motivated PhD students with exceptional English proficiency, strong coding skills, and relevant research experience. A prospective student should have a high GPA and extensive research experience.</p>
-          <div class="sch-tags"><span class="sch-tag">High GPA</span><span class="sch-tag">Strong coding</span><span class="sch-tag">Research experience</span><span class="sch-tag">Exceptional English</span></div>
-        </div>
-        <div class="sch-card">
-          <div class="sch-head">
-            <div class="sch-icon teal"><i class="fa fa-globe"></i></div>
-            <div><h3 class="sch-title">Visiting Students</h3><span class="sch-status cond">Self-funded only</span></div>
-          </div>
-          <p class="sch-desc">If you are interested in a visiting scholar position, please be kindly advised that I do not provide funding for it. If you can secure external funding support and if you are highly motivated and experienced in research, please drop me an email.</p>
-          <div class="sch-tags"><span class="sch-tag">External funding</span><span class="sch-tag">Research experience</span><span class="sch-tag">Highly motivated</span></div>
-        </div>
-        <div class="sch-card">
-          <div class="sch-head">
-            <div class="sch-icon teal"><i class="fa fa-book"></i></div>
-            <div><h3 class="sch-title">UWA or ANU Master&rsquo;s Students</h3><span class="sch-status open">Individual projects</span></div>
-          </div>
-          <p class="sch-desc">If you are a UWA or ANU master&rsquo;s student seeking individual projects, you should have a research background, a good GPA, and coding skills. You should also have sufficient time for research.</p>
-          <div class="sch-tags"><span class="sch-tag">Research background</span><span class="sch-tag">Good GPA</span><span class="sch-tag">Coding skills</span><span class="sch-tag">Time for research</span></div>
-        </div>
-        <div class="sch-card">
-          <div class="sch-head">
-            <div class="sch-icon gold"><i class="fa fa-university"></i></div>
-            <div><h3 class="sch-title">UWA Undergraduate Students</h3><span class="sch-status open">Honours projects</span></div>
-          </div>
-          <p class="sch-desc">If you are a UWA undergraduate seeking an Honours project, please note that I typically take on 2-3 Honours students each year and prefer 24-unit projects.</p>
-          <div class="sch-tags"><span class="sch-tag">2&ndash;3 students per year</span><span class="sch-tag">24-unit projects</span></div>
-        </div>
-        <div class="sch-card">
-          <div class="sch-head">
-            <div class="sch-icon grey"><i class="fa fa-flask"></i></div>
-            <div><h3 class="sch-title">Research Fellow</h3><span class="sch-status closed">No openings</span></div>
-          </div>
-          <p class="sch-desc">My group does not have openings for research fellows.</p>
-        </div>
+      <div class="rs-hero"><p class="rs-over">Research Opportunities</p><h1>Join Our Research Team</h1>
+        <p class="s">Explore opportunities in Computer Vision, Generative AI, 3D Vision, Multimodal AI and Visual Intelligence.</p></div>
+      <div class="rs-glance"><a class="rs-g" href="#opp-phd" style="--c:#3f6bb0;--s:#2a9d8f"><i class="fa fa-graduation-cap"></i><b>PhD</b><span>Seeking</span></a><a class="rs-g" href="#opp-fellow" style="--c:#9a9a9a;--s:#9a9a9a"><i class="fa fa-flask"></i><b>Fellows</b><span>Closed</span></a><a class="rs-g" href="#opp-visiting" style="--c:#2a9d8f;--s:#c9a227"><i class="fa fa-globe"></i><b>Visiting</b><span>Own funding</span></a><a class="rs-g" href="#opp-masters" style="--c:#2a9d8f;--s:#2a9d8f"><i class="fa fa-book"></i><b>Master&rsquo;s</b><span>Projects</span></a><a class="rs-g" href="#opp-honours" style="--c:#c9a227;--s:#2a9d8f"><i class="fa fa-university"></i><b>Honours</b><span>Projects</span></a></div>
+
+      <div class="rs-h">Find your research path</div>
+      <div class="rs-grid">
+      <div id="opp-phd" class="rs-card ">
+        <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#5a86c9,#3f6bb0)"><i class="fa fa-graduation-cap"></i></div><div><h3>PhD Students</h3><p class="rs-sub">Doctoral research</p></div></div>
+        <span class="rs-pill" style="background:#2a9d8f">Seeking applicants</span>
+        <p class="t">I am looking for highly motivated doctoral students with a high GPA, extensive research experience, strong coding skills and exceptional English proficiency.</p><div class="rs-tags"><span class="rs-tag">High GPA</span><span class="rs-tag">Research experience</span><span class="rs-tag">Strong coding</span><span class="rs-tag">English proficiency</span></div><a class="rs-link" href="mailto:saeed.anwar@uwa.edu.au?subject=PhD%20Enquiry">Enquire about a PhD &rarr;</a>
+      </div>
+      <div id="opp-fellow" class="rs-card closed">
+        <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#bdbdbd,#9a9a9a)"><i class="fa fa-flask"></i></div><div><h3>Research Fellows</h3><p class="rs-sub">Current openings</p></div></div>
+        <span class="rs-pill" style="background:#9a9a9a">Currently closed</span>
+        <p class="t">My group does not currently have openings for research fellows.</p>
+      </div>
+      <div id="opp-visiting" class="rs-card ">
+        <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#3fb8ad,#2a9d8f)"><i class="fa fa-globe"></i></div><div><h3>Visiting Researchers</h3><p class="rs-sub">Externally funded visits</p></div></div>
+        <span class="rs-pill" style="background:#c9a227">External funding required</span>
+        <p class="t">I do not provide funding for visiting positions. If you can secure external funding and are highly motivated with a strong research background, please get in touch.</p><div class="rs-tags"><span class="rs-tag">External funding</span><span class="rs-tag">Research experience</span><span class="rs-tag">Highly motivated</span></div><a class="rs-link" href="mailto:saeed.anwar@uwa.edu.au?subject=Visiting%20Researcher%20Enquiry">Enquire about a visit &rarr;</a>
+      </div>
+      <div id="opp-masters" class="rs-card ">
+        <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#3fb8ad,#2a9d8f)"><i class="fa fa-book"></i></div><div><h3>Master&rsquo;s Students</h3><p class="rs-sub">UWA and ANU individual projects</p></div></div>
+        <span class="rs-pill" style="background:#2a9d8f">Individual projects</span>
+        <p class="t">If you are a UWA or ANU master&rsquo;s student seeking an individual project, you should have a research background, a good GPA, coding skills and enough time to dedicate to research.</p><div class="rs-tags"><span class="rs-tag">Research background</span><span class="rs-tag">Good GPA</span><span class="rs-tag">Coding skills</span><span class="rs-tag">Time for research</span></div><a class="rs-link" href="mailto:saeed.anwar@uwa.edu.au?subject=Master's%20Project%20Enquiry">Enquire about a project &rarr;</a>
+      </div>
+      <div id="opp-honours" class="rs-card  wide">
+        <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#e6c34a,#c9a227)"><i class="fa fa-university"></i></div><div><h3>Honours &amp; Undergraduate Research</h3><p class="rs-sub">Research projects for motivated UWA students</p></div></div>
+        <span class="rs-pill" style="background:#2a9d8f">Honours projects</span>
+        <p class="t">For UWA undergraduates seeking an Honours project: I typically supervise 2&ndash;3 Honours students each year and prefer 24-unit projects.</p><div class="rs-tags"><span class="rs-tag">2&ndash;3 students per year</span><span class="rs-tag">24-unit projects</span></div><a class="rs-link" href="mailto:saeed.anwar@uwa.edu.au?subject=Honours%20Project%20Enquiry">Enquire about Honours &rarr;</a>
+      </div>
       </div>
 
-      <div class="sch-cta">
-        <i class="fa fa-paper-plane"></i>
-        <h3>Interested?</h3>
-        <p>If you meet the criteria above, please drop me an email.</p>
-        <a href="mailto:saeed.anwar@uwa.edu.au" class="sch-btn"><i class="fa fa-envelope"></i>&nbsp; saeed.anwar@uwa.edu.au</a>
-      </div>
+      <div class="rs-h">Research with us</div>
+      <div class="rs-areas"><div class="rs-area"><i class="fa fa-eye"></i>Computer Vision</div><div class="rs-area"><i class="fa fa-cube"></i>3D Vision</div><div class="rs-area"><i class="fa fa-magic"></i>Generative AI</div><div class="rs-area"><i class="fa fa-lightbulb-o"></i>Visual Intelligence</div><div class="rs-area"><i class="fa fa-comments"></i>Multimodal AI</div><div class="rs-area"><i class="fa fa-picture-o"></i>Image Restoration</div></div>
+
+      <div class="rs-h">What we look for</div>
+      <p class="rs-hs">Highly motivated applicants with the following strengths.</p>
+      <div class="rs-look"><div class="rs-lk"><div class="c" style="background:linear-gradient(135deg,#5a86c9,#3f6bb0)"><i class="fa fa-graduation-cap"></i></div><h3>Academic Strength</h3><p>A high GPA for PhD applicants and a good GPA for Master&rsquo;s students, along with exceptional English proficiency for PhD applicants.</p></div><div class="rs-lk"><div class="c" style="background:linear-gradient(135deg,#3fb8ad,#2a9d8f)"><i class="fa fa-flask"></i></div><h3>Research Experience</h3><p>Extensive research experience for PhD applicants, a research background for Master&rsquo;s students and demonstrated experience for visitors, with enough time to dedicate to research.</p></div><div class="rs-lk"><div class="c" style="background:linear-gradient(135deg,#e6c34a,#c9a227)"><i class="fa fa-code"></i></div><h3>Technical Skills</h3><p>Strong coding skills, expected of PhD and Master&rsquo;s applicants.</p></div></div>
+
+      <div class="rs-h">How to apply</div>
+      <div class="rs-steps" style="margin-top:20px"><div class="rs-st"><div class="rs-n">01</div><h3>Explore</h3><p>Find the opportunity that fits your stage of study.</p></div><div class="rs-st"><div class="rs-n">02</div><h3>Prepare</h3><p>Put together your CV and a short summary of your research interests.</p></div><div class="rs-st"><div class="rs-n">03</div><h3>Contact</h3><p>Send me an email with your details.</p></div><div class="rs-st"><div class="rs-n">04</div><h3>Discuss</h3><p>We&rsquo;ll talk about fit and next steps.</p></div></div>
+
+      <div class="rs-cta"><h2>Interested in joining?</h2>
+        <p>Send your CV and a brief description of your research interests and experience.</p>
+        <a class="rs-btn" href="mailto:saeed.anwar@uwa.edu.au?subject=Research%20Opportunities%20Enquiry">Contact me</a></div>
 
     </div><!-- /.article-wrap -->
-    {% if site.disqus_shortname and page.comments %}
-      <section id="disqus_thread"></section><!-- /#disqus_thread -->
-    {% endif %}
   </article>
-</div><!-- /#index -->
+</div><!-- /#main -->
+
 <div class="footer-wrap">
   <footer>
     {% include _footer.html %}
   </footer>
 </div><!-- /.footer-wrap -->
 
-{% include _scripts.html %}          
+{% include _scripts.html %}
 
 </body>
 </html>
