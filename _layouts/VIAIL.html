@@ -6,26 +6,145 @@
 <head>
 {% include _head.html %}
 <style>
-a:link {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
+a:link { color: blue; background-color: transparent; text-decoration: none; }
+a:visited { color: blue; background-color: transparent; text-decoration: none; }
+a:hover { color: red; background-color: transparent; text-decoration: underline; }
+a:active { color: yellow; background-color: transparent; text-decoration: underline; }
+
+/* ---------- VIAIL page ---------- */
+.viail-subtitle {
+  margin: -6px 0 18px 0;
+  font-style: italic;
+  color: #777;
+  font-size: 16px;
 }
-a:visited {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
+.viail-badges { margin: 0 0 22px 0; }
+.viail-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  color: #fff;
+  margin: 0 8px 8px 0;
 }
-a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
+.viail-badge.visual     { background: linear-gradient(135deg,#5a86c9,#3f6bb0); }
+.viail-badge.analytical { background: linear-gradient(135deg,#3fb8ad,#2a9d8f); }
+.viail-director {
+  font-size: 15px;
+  color: #555;
+  margin: 0 0 26px 0;
 }
-a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
+.viail-director i { color: #c9a227; margin-right: 6px; }
+
+.viail-mission {
+  position: relative;
+  background: #fafafa;
+  border: 1px solid #ececec;
+  border-left: 4px solid #3f6bb0;
+  border-radius: 8px;
+  padding: 20px 24px 20px 52px;
+  margin: 0 0 30px 0;
 }
+.viail-mission i.fa-quote-left {
+  position: absolute;
+  left: 18px;
+  top: 20px;
+  color: #c7d4e8;
+  font-size: 20px;
+}
+.viail-mission p { margin: 0; line-height: 1.6; color: #333; }
+
+.viail-heading {
+  font-size: 20px;
+  margin: 0 0 14px 0;
+}
+.viail-heading i { margin-right: 8px; color: #c9a227; }
+
+.viail-name-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 0 0 30px 0;
+}
+.viail-name-card {
+  flex: 1 1 260px;
+  background: #fafafa;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  padding: 20px;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.viail-name-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.10); transform: translateY(-1px); }
+.viail-name-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.viail-name-icon.blue { background: linear-gradient(135deg,#5a86c9,#3f6bb0); }
+.viail-name-icon.teal { background: linear-gradient(135deg,#3fb8ad,#2a9d8f); }
+.viail-name-card h3 { margin: 0 0 6px 0; font-size: 16px; }
+.viail-name-card p { margin: 0; color: #555; line-height: 1.55; font-size: 14.5px; }
+
+.viail-visitors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 30px 0;
+}
+.viail-visitor-card {
+  flex: 1 1 220px;
+  background: #fafafa;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  padding: 14px 16px;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.viail-visitor-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.10); transform: translateY(-1px); }
+.viail-visitor-year {
+  display: inline-block;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #999;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.viail-visitor-card h4 { margin: 0 0 2px 0; font-size: 15.5px; }
+.viail-visitor-card p { margin: 0; color: #777; font-size: 13.5px; font-style: italic; }
+
+.viail-join {
+  background: linear-gradient(135deg,#f5f8fc,#eef3fa);
+  border: 1px solid #dde6f2;
+  border-radius: 10px;
+  padding: 26px 28px;
+  text-align: center;
+}
+.viail-join i.fa-paper-plane { font-size: 26px; color: #3f6bb0; margin-bottom: 10px; }
+.viail-join h3 { margin: 0 0 8px 0; }
+.viail-join p { max-width: 560px; margin: 0 auto 16px auto; color: #555; line-height: 1.55; }
+.viail-btn {
+  display: inline-block;
+  background: #3f6bb0 !important;
+  color: #fff !important;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-weight: 700;
+  text-decoration: none !important;
+  font-size: 14px;
+}
+.viail-btn:hover { background: #345a94 !important; color: #fff !important; }
+
+
 </style>
 </head>
 
@@ -102,34 +221,64 @@ div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;
     <div class="article-wrap">
       {{ content }}
 
-<!-------------------------------------------------------------------------------------------->
-<h4 style="margin-bottom:0px;padding-top:10px;">Director of VIAIL</h4>
-Saeed Anwar
-		
-<h4 style="margin-bottom:0px;padding-top:10px;">Our Mission</h4>
-The VIAIL (<strong>V</strong>isual <strong>I</strong>ntelligence and <strong>A</strong>nalytical <strong>I</strong>maging <strong>L</strong>ab), a hub of academic and experimental excellence, focuses on the intersection of computer vision, data visualization, and information processing (Visual Informatics) and AI/ML-based image processing and analysis (Analytical Imaging). 
+      <p class="viail-subtitle">Visual Intelligence and Analytical Imaging Lab</p>
 
-<h4 style="margin-bottom:0px;padding-top:10px;">A Name That Sees</h4>
-We (V), Eye (I), Artificial Intelligence (AI).
-		
-<h4 style="margin-bottom:0px;padding-top:10px;">A Name That Speaks</h4>
-VIAIL (وئیل) in Pashto translates to “saying” or "expressing", which metaphorically aligns our lab's motive, “speaks through vision and images.”
+      <div class="viail-badges">
+        <span class="viail-badge visual">Visual Intelligence</span>
+        <span class="viail-badge analytical">Analytical Imaging</span>
+      </div>
+      <p class="viail-director"><i class="fa fa-user"></i> Director: <strong>Saeed Anwar</strong></p>
 
-<h4 style="margin-bottom:0px;padding-top:10px;">Visiters </h4>
-<ul>
-  <li><strong>Chongyi Li</strong> — Professor, Nankai University (2025)</li>
-  <li><strong>Muhammad Kamran</strong> — PhD Student, HEC Scholar (2026)</li>
-  <li><strong>Hamzah Luqman</strong> — Associate Professor, KFUPM (2026)</li>
-  <li><strong>Leonard Chung</strong> — UWA Student Intern (2026)</li>
-</ul>
+      <div class="viail-mission">
+        <i class="fa fa-quote-left"></i>
+        <p>The VIAIL (<strong>V</strong>isual <strong>I</strong>ntelligence and <strong>A</strong>nalytical <strong>I</strong>maging <strong>L</strong>ab), a hub of academic and experimental excellence, focuses on the intersection of computer vision, data visualization, and information processing (Visual Informatics) and AI/ML-based image processing and analysis (Analytical Imaging).</p>
+      </div>
 
-<h4 style="margin-bottom:0px;padding-top:10px;">WANT TO JOIN OUR LAB?</h4>
-If you are interested, please get in touch with us and send your CV and letter of motivation to saeed.anwar@uwa.edu.au with the title "VIAIL Affiliation". This request is an affiliation with the Lab. If you are seeking a scholarship, please check the scholarship tab.
-	
-	
-	
-	
-	</div><!-- /.article-wrap -->
+      <div class="viail-name-grid">
+        <div class="viail-name-card">
+          <div class="viail-name-icon blue"><i class="fa fa-eye"></i></div>
+          <h3>A Name That Sees</h3>
+          <p>We (V), Eye (I), Artificial Intelligence (AI).</p>
+        </div>
+        <div class="viail-name-card">
+          <div class="viail-name-icon teal"><i class="fa fa-comments"></i></div>
+          <h3>A Name That Speaks</h3>
+          <p>VIAIL (&#1608;&#1574;&#1740;&#1604;) in Pashto translates to &ldquo;saying&rdquo; or &ldquo;expressing&rdquo;, which metaphorically aligns with our lab's motive &mdash; we speak through vision and images.</p>
+        </div>
+      </div>
+
+      <h2 class="viail-heading"><i class="fa fa-users"></i>Visitors</h2>
+      <div class="viail-visitors">
+        <div class="viail-visitor-card">
+          <span class="viail-visitor-year">2025</span>
+          <h4>Chongyi Li</h4>
+          <p>Professor, Nankai University</p>
+        </div>
+        <div class="viail-visitor-card">
+          <span class="viail-visitor-year">2026</span>
+          <h4>Muhammad Kamran</h4>
+          <p>PhD Student, HEC Scholar</p>
+        </div>
+        <div class="viail-visitor-card">
+          <span class="viail-visitor-year">2026</span>
+          <h4>Hamzah Luqman</h4>
+          <p>Associate Professor, KFUPM</p>
+        </div>
+        <div class="viail-visitor-card">
+          <span class="viail-visitor-year">2026</span>
+          <h4>Leonard Chung</h4>
+          <p>UWA Student Intern</p>
+        </div>
+      </div>
+
+      <div class="viail-join">
+        <i class="fa fa-paper-plane"></i>
+        <h3>Want to Join Our Lab?</h3>
+        <p>If you are interested, please get in touch and send your CV and letter of motivation with the subject line &ldquo;VIAIL Affiliation&rdquo;. This is for lab affiliation &mdash; if you are seeking a scholarship, please check the Scholarships tab.</p>
+        <a href="mailto:saeed.anwar@uwa.edu.au?subject=VIAIL%20Affiliation" class="viail-btn"><i class="fa fa-envelope"></i>&nbsp; saeed.anwar@uwa.edu.au</a>
+      </div>
+
+    </div><!-- /.article-wrap -->
     {% if site.disqus_shortname and page.comments %}
       <section id="disqus_thread"></section><!-- /#disqus_thread -->
     {% endif %}
