@@ -1,12 +1,3 @@
----
-layout: home2
-permalink: /scholarships/
-title: Prospective Students
-tags: [scholarships]
-modified: 19-4-2019
-comments: false
----
-
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
@@ -35,9 +26,98 @@ a:active {
     background-color: transparent;
     text-decoration: underline;
 }
+
+/* ---------- Scholarships / Prospective Students ---------- */
+.sch-subtitle { margin: -6px 0 24px 0; font-style: italic; color: #777; font-size: 15.5px; }
+.sch-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 28px; }
+.sch-card {
+  background: #fafafa; border: 1px solid #ececec; border-radius: 10px;
+  padding: 18px 20px; display: flex; flex-direction: column;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.sch-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.10); transform: translateY(-1px); }
+.sch-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.sch-icon {
+  flex: 0 0 42px; width: 42px; height: 42px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 17px; box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.sch-icon.blue { background: linear-gradient(135deg,#5a86c9,#3f6bb0); }
+.sch-icon.teal { background: linear-gradient(135deg,#3fb8ad,#2a9d8f); }
+.sch-icon.gold { background: linear-gradient(135deg,#e6c34a,#c9a227); }
+.sch-icon.grey { background: linear-gradient(135deg,#b5b5b5,#999); }
+.sch-title { margin: 0; font-size: 17px; line-height: 1.25; }
+.sch-status {
+  display: inline-block; margin-top: 3px; font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .6px; color: #fff;
+  border-radius: 10px; padding: 2px 9px;
+}
+.sch-status.open { background: #2a9d8f; }
+.sch-status.cond { background: #c9a227; }
+.sch-status.closed { background: #999; }
+.sch-desc { margin: 0 0 12px 0; font-size: 14.5px; line-height: 1.6; color: #444; flex: 1; }
+.sch-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.sch-tag { background: #eef2f8; color: #3f6bb0; border-radius: 12px; padding: 3px 10px; font-size: 12px; font-weight: 700; }
+
+.sch-cta {
+  background: linear-gradient(135deg,#f5f8fc,#eef3fa); border: 1px solid #dde6f2;
+  border-radius: 10px; padding: 24px 28px; text-align: center;
+}
+.sch-cta i.fa-paper-plane { font-size: 24px; color: #3f6bb0; margin-bottom: 8px; }
+.sch-cta h3 { margin: 0 0 6px 0; }
+.sch-cta p { margin: 0 0 14px 0; color: #555; }
+.sch-btn {
+  display: inline-block; background: #3f6bb0 !important; color: #fff !important;
+  padding: 10px 20px; border-radius: 24px; font-weight: 700; font-size: 14px;
+  text-decoration: none !important;
+}
+.sch-btn:hover { background: #345a94 !important; }
 </style>
 </head>
+
 <body class="page">
+<style>
+    /*********************************
+     The list of publication items
+     *********************************/
+/* The list of items */
+.biblist { }
+
+/* The item */
+.biblist li { }
+
+/* You can define custom styles for plstyle field here. */
+
+
+/*************************************
+ The box that contain BibTeX code
+ *************************************/
+div.noshow { display: none; }
+div.bibtex {
+	margin-right: 0%;
+	margin-top: 1.2em;
+	margin-bottom: 1em;
+	border: 1px solid silver;
+	padding: 0em 1em;
+	background: #ffffee;
+}
+div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}</style>
+<script type="text/javascript">
+    <!--
+    // Toggle Display of BibTeX
+    function toggleBibtex(articleid) {
+        var bib = document.getElementById('bib_'+articleid);
+        if (bib) {
+            if(bib.className.indexOf('bibtex') != -1) {
+                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
+            }
+        } else {
+            return;
+        }
+    }
+-->
+    </script>
+
 {% include _browser-upgrade.html %}
 
 {% include _navigation.html %}
@@ -68,28 +148,69 @@ a:active {
     <div class="article-wrap">
       {{ content }}
 
+      <p class="sch-subtitle">Opportunities to work with me, and what I look for in prospective students.</p>
+      <div class="sch-grid">
+        <div class="sch-card">
+          <div class="sch-head">
+            <div class="sch-icon blue"><i class="fa fa-graduation-cap"></i></div>
+            <div><h3 class="sch-title">PhD Students</h3><span class="sch-status open">Seeking applicants</span></div>
+          </div>
+          <p class="sch-desc">I am seeking highly motivated PhD students with exceptional English proficiency, strong coding skills, and relevant research experience. A prospective student should have a high GPA and extensive research experience.</p>
+          <div class="sch-tags"><span class="sch-tag">High GPA</span><span class="sch-tag">Strong coding</span><span class="sch-tag">Research experience</span><span class="sch-tag">Exceptional English</span></div>
+        </div>
+        <div class="sch-card">
+          <div class="sch-head">
+            <div class="sch-icon teal"><i class="fa fa-globe"></i></div>
+            <div><h3 class="sch-title">Visiting Students</h3><span class="sch-status cond">Self-funded only</span></div>
+          </div>
+          <p class="sch-desc">If you are interested in a visiting scholar position, please be kindly advised that I do not provide funding for it. If you can secure external funding support and if you are highly motivated and experienced in research, please drop me an email.</p>
+          <div class="sch-tags"><span class="sch-tag">External funding</span><span class="sch-tag">Research experience</span><span class="sch-tag">Highly motivated</span></div>
+        </div>
+        <div class="sch-card">
+          <div class="sch-head">
+            <div class="sch-icon teal"><i class="fa fa-book"></i></div>
+            <div><h3 class="sch-title">UWA or ANU Master&rsquo;s Students</h3><span class="sch-status open">Individual projects</span></div>
+          </div>
+          <p class="sch-desc">If you are a UWA or ANU master&rsquo;s student seeking individual projects, you should have a research background, a good GPA, and coding skills. You should also have sufficient time for research.</p>
+          <div class="sch-tags"><span class="sch-tag">Research background</span><span class="sch-tag">Good GPA</span><span class="sch-tag">Coding skills</span><span class="sch-tag">Time for research</span></div>
+        </div>
+        <div class="sch-card">
+          <div class="sch-head">
+            <div class="sch-icon gold"><i class="fa fa-university"></i></div>
+            <div><h3 class="sch-title">UWA Undergraduate Students</h3><span class="sch-status open">Honours projects</span></div>
+          </div>
+          <p class="sch-desc">If you are a UWA undergraduate seeking an Honours project, please note that I typically take on 2-3 Honours students each year and prefer 24-unit projects.</p>
+          <div class="sch-tags"><span class="sch-tag">2&ndash;3 students per year</span><span class="sch-tag">24-unit projects</span></div>
+        </div>
+        <div class="sch-card">
+          <div class="sch-head">
+            <div class="sch-icon grey"><i class="fa fa-flask"></i></div>
+            <div><h3 class="sch-title">Research Fellow</h3><span class="sch-status closed">No openings</span></div>
+          </div>
+          <p class="sch-desc">My group does not have openings for research fellows.</p>
+        </div>
+      </div>
 
-If you are an excellent student and interested to undertake a research based degree at ANU focussed in Computer Vision, Machine Learning, Pattern Recognition and/or Image Processing, please drop me an email with your CV and a brief research proposal. We can then discuss potential research projects and scholarships available to you. Below, I summarize the scholarships for which you may be eligible. <br><br>
+      <div class="sch-cta">
+        <i class="fa fa-paper-plane"></i>
+        <h3>Interested?</h3>
+        <p>If you meet the criteria above, please drop me an email.</p>
+        <a href="mailto:saeed.anwar@uwa.edu.au" class="sch-btn"><i class="fa fa-envelope"></i>&nbsp; saeed.anwar@uwa.edu.au</a>
+      </div>
 
-**Data61 Scholarships**
+    </div><!-- /.article-wrap -->
+    {% if site.disqus_shortname and page.comments %}
+      <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    {% endif %}
+  </article>
+</div><!-- /#index -->
+<div class="footer-wrap">
+  <footer>
+    {% include _footer.html %}
+  </footer>
+</div><!-- /.footer-wrap -->
 
-Data61 (previously NICTA) provides generous support to PhD students in the form of full scholarships (same rate as Australian Postgraduate Award) or top-up stipends ($10,000 per annum) for a duation of up to 3.5 years. Each year, these scholarships are normally offered in two rounds (normally around August and March). You will still need to apply at the partner university (ANU) and follow their normal application procedure. 
+{% include _scripts.html %}          
 
-You can find more information about the eligiblity requirements, application procedure and key dates [CSIRO](https://www.csiro.au/en/Careers/Studentships/Postgraduate-scholarships) and [Data61](https://data61.csiro.au/en/Our-Network/Students/Scholarship-Program). <br><br>
-> Note that the application dates for domestic and international applicants may be different!
-
-
-**ANU Scholarships**
-
-A number of scholarships are available at ANU. You can find more details on the links below:
-* [Pre-applicaiton guidelines and formal application process](https://cecs.anu.edu.au/study/graduate-research#5)
-* [Scholarships at ANU](http://www.anu.edu.au/students/scholarships-support/anu-phd-scholarships) (check [this link](http://www.anu.edu.au/students/scholarships-support/anu-university-research-scholarships) as well.)  
-
-You will be required to fulfill English language requirements at ANU (details available [here](https://policies.anu.edu.au/ppl/document/ANUP_000408).
-
-If you are an international student, you may be eligible for other scholarships such as the following:
-* [Endeavour Awards](https://internationaleducation.gov.au/endeavour%20program/scholarships-and-fellowships/international-applicants/pages/international-applicants.aspx)
-* [Australian Awards](http://australiaawards.gov.au/Pages/default.aspx)
-    
 </body>
 </html>
