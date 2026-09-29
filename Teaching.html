@@ -1,0 +1,387 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include _head.html %}
+<style>
+a:link { color: blue; background-color: transparent; text-decoration: none; }
+a:visited { color: blue; background-color: transparent; text-decoration: none; }
+a:hover { color: red; background-color: transparent; text-decoration: underline; }
+a:active { color: yellow; background-color: transparent; text-decoration: underline; }
+
+/* ---------- Teaching page ---------- */
+.teach-subtitle { margin: -6px 0 20px 0; font-style: italic; color: #777; font-size: 16px; }
+
+.teach-heading {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 19px; margin: 34px 0 14px 0;
+  padding-bottom: 8px; border-bottom: 2px solid #ececec;
+}
+.teach-heading:first-of-type { margin-top: 0; }
+.teach-heading i { font-size: 16px; width: 20px; text-align: center; }
+.teach-heading.blue i { color: #3f6bb0; }
+.teach-heading.teal i { color: #2a9d8f; }
+.teach-heading.gold i { color: #c9a227; }
+
+/* ---------- Teaching top (hero / stats / search / filters) ---------- */
+.tt-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 64px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
+.tt-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tt-hero>*{position:relative}
+.tt-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
+.tt-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
+.tt-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:560px;line-height:1.6}
+.tt-bar{display:flex;gap:12px;align-items:center;margin:22px 0 14px;flex-wrap:wrap}
+.tt-search{flex:1;min-width:220px;position:relative}.tt-search i{position:absolute;left:14px;top:12px;color:#9aa5b8}
+.tt-search input{width:100%;box-sizing:border-box;border:1px solid #d5dbe6;border-radius:22px;padding:10px 16px 10px 38px;font-size:14px;background:#fff;outline:none}
+.tt-search input:focus{border-color:#3f6bb0;box-shadow:0 0 0 3px rgba(63,107,176,.15)}
+.tt-count{font-size:12.5px;color:#888;font-weight:700;white-space:nowrap}
+.tt-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.tt-f{background:#eef2f8!important;color:#3f6bb0;border:none;border-radius:16px;padding:6px 14px;font-size:12.5px;font-weight:700;cursor:pointer}
+.tt-f.on{background:#3f6bb0!important;color:#fff}
+.tt-empty{display:none;text-align:center;padding:30px 10px;color:#888;font-size:14.5px;background:#fafafa;border:1px dashed #d8d8d8;border-radius:12px}
+@media only screen and (max-width: 37.5em) {
+  .tt-hero{padding:26px 22px 54px}.tt-hero h1{font-size:26px}
+}
+
+.teach-section { margin-bottom: 8px; }
+
+.teach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+.teach-card {
+  background: #fafafa;
+  border: 1px solid #ececec;
+  border-left: 3px solid #3f6bb0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.teach-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.10); transform: translateY(-1px); }
+.teach-card.gold { border-left-color: #c9a227; }
+.teach-card.teal { border-left-color: #2a9d8f; }
+
+.teach-term-label {
+  display: block;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #666;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.teach-course { font-size: 14px; line-height: 1.5; color: #333; margin: 0 0 3px 0; }
+.teach-course:last-child { margin-bottom: 0; }
+.teach-code {
+  display: inline-block;
+  font-family: Consolas, Menlo, monospace;
+  font-size: 12px;
+  background: #eef2f8;
+  color: #3f6bb0;
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-right: 6px;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .teach-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body class="page">
+<style>
+    /*********************************
+     The list of publication items
+     *********************************/
+/* The list of items */
+.biblist { }
+
+/* The item */
+.biblist li { }
+
+/* You can define custom styles for plstyle field here. */
+
+
+/*************************************
+ The box that contain BibTeX code
+ *************************************/
+div.noshow { display: none; }
+div.bibtex {
+	margin-right: 0%;
+	margin-top: 1.2em;
+	margin-bottom: 1em;
+	border: 1px solid silver;
+	padding: 0em 1em;
+	background: #ffffee;
+}
+div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}</style>
+<script type="text/javascript">
+    <!--
+    // Toggle Display of BibTeX
+    function toggleBibtex(articleid) {
+        var bib = document.getElementById('bib_'+articleid);
+        if (bib) {
+            if(bib.className.indexOf('bibtex') != -1) {
+                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
+            }
+        } else {
+            return;
+        }
+    }
+-->
+    </script>
+
+{% include _browser-upgrade.html %}
+
+{% include _navigation.html %}
+
+{% if page.image.feature %}
+  <div class="image-wrap">
+  <img src=
+    {% if page.image.feature contains 'http://' %}
+      "{{ page.image.feature }}"
+    {% elsif page.image.feature contains 'https://' %}
+      "{{ page.image.feature }}"
+    {% else %}
+      "{{ site.url }}/images/{{ page.image.feature }}"
+    {% endif %}
+  alt="{{ page.title }} feature image">
+  {% if page.image.credit %}
+    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+  {% endif %}
+  </div><!-- /.image-wrap -->
+{% endif %}
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    {% include _author-bio.html %}
+  </div>
+  <article>
+    <div class="article-wrap">
+      {{ content }}
+
+      <div class="tt-hero"><p class="tt-over">Teaching history</p><h1>Teaching</h1>
+        <p class="s">Courses taught as instructor, lecturer, and tutor, from 2008 to 2026.</p></div>
+      <div class="tt-bar"><div class="tt-search"><i class="fa fa-search"></i><input id="ttq" type="text" placeholder="Search by course code, title or term&hellip;" autocomplete="off"></div><span class="tt-count" id="ttc">22 terms</span></div>
+      <div class="tt-filters">
+        <button class="tt-f on" data-f="all">All (22)</button>
+        <button class="tt-f" data-f="Instructor">Instructor (8)</button>
+        <button class="tt-f" data-f="Lecturer">As A Lecturer (8)</button>
+        <button class="tt-f" data-f="Tutor">As A Tutor (6)</button>
+      </div>
+      <div class="tt-empty" id="tte">No terms match your search. Try a different keyword or choose &ldquo;All&rdquo;.</div>
+
+      <!-- ============ INSTRUCTOR ============ -->
+      <h2 class="teach-heading blue" id="role-Instructor"><i class="fa fa-book"></i>Instructor</h2>
+      <div class="teach-section" data-role-section="Instructor">
+        <div class="teach-grid">
+
+          <div class="teach-card" data-h="winter 2026 cits4009 fundamental of data science">
+            <span class="teach-term-label">Winter 2026</span>
+            <p class="teach-course"><span class="teach-code">CITS4009</span>Fundamental of Data Science</p>
+          </div>
+
+          <div class="teach-card" data-h="spring 2026 cits2401 computer visualisation and applications">
+            <span class="teach-term-label">Spring 2026</span>
+            <p class="teach-course"><span class="teach-code">CITS2401</span>Computer Visualisation and Applications</p>
+          </div>
+
+          <div class="teach-card" data-h="winter 2025 cits4009 computational data analysis">
+            <span class="teach-term-label">Winter 2025</span>
+            <p class="teach-course"><span class="teach-code">CITS4009</span>Computational Data Analysis</p>
+          </div>
+
+          <div class="teach-card" data-h="spring 2025 cits4402 computer vision">
+            <span class="teach-term-label">Spring 2025</span>
+            <p class="teach-course"><span class="teach-code">CITS4402</span>Computer Vision</p>
+          </div>
+
+          <div class="teach-card" data-h="spring 2024 ics547 digital image processing ics483 computer vision ics104 introduction to programing in python and c">
+            <span class="teach-term-label">Spring 2024</span>
+            <p class="teach-course"><span class="teach-code">ICS547</span>Digital Image Processing</p>
+            <p class="teach-course"><span class="teach-code">ICS483</span>Computer Vision</p>
+            <p class="teach-course"><span class="teach-code">ICS104</span>Introduction to Programing in Python and C</p>
+          </div>
+
+          <div class="teach-card" data-h="fall 2023 ics557 advanced machine learning ics502 machine learning ics505 computer vision">
+            <span class="teach-term-label">Fall 2023</span>
+            <p class="teach-course"><span class="teach-code">ICS557</span>Advanced Machine Learning</p>
+            <p class="teach-course"><span class="teach-code">ICS502</span>Machine Learning</p>
+            <p class="teach-course"><span class="teach-code">ICS505</span>Computer Vision</p>
+          </div>
+
+          <div class="teach-card" data-h="summer 2023 ics104 introduction to programing in python and c">
+            <span class="teach-term-label">Summer 2023</span>
+            <p class="teach-course"><span class="teach-code">ICS104</span>Introduction to Programing in Python and C</p>
+          </div>
+
+          <div class="teach-card" data-h="spring 2023 ics574 big data analytics ics104 introduction to programing in python and c">
+            <span class="teach-term-label">Spring 2023</span>
+            <p class="teach-course"><span class="teach-code">ICS574</span>Big Data Analytics</p>
+            <p class="teach-course"><span class="teach-code">ICS104</span>Introduction to Programing in Python and C</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============ LECTURER ============ -->
+      <h2 class="teach-heading teal" id="role-Lecturer"><i class="fa fa-graduation-cap"></i>As A Lecturer</h2>
+      <div class="teach-section" data-role-section="Lecturer">
+        <div class="teach-grid">
+
+          <div class="teach-card teal" data-h="2022 · spring/fall comp8755 comp. vision & machine learning projects engn8601\8602 comp. vision & machine learning research project">
+            <span class="teach-term-label">2022 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">COMP8755</span>Comp. Vision &amp; Machine Learning Projects</p>
+            <p class="teach-course"><span class="teach-code">ENGN8601\8602</span>Comp. Vision &amp; Machine Learning Research Project</p>
+          </div>
+
+          <div class="teach-card teal" data-h="2021 · spring/fall comp8755 comp. vision & machine learning projects engn8601\8602 comp. vision & machine learning research project hons2021 masters thesis examiner">
+            <span class="teach-term-label">2021 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">COMP8755</span>Comp. Vision &amp; Machine Learning Projects</p>
+            <p class="teach-course"><span class="teach-code">ENGN8601\8602</span>Comp. Vision &amp; Machine Learning Research Project</p>
+            <p class="teach-course"><span class="teach-code">HONS2021</span>Masters thesis examiner</p>
+          </div>
+
+          <div class="teach-card teal" data-h="2020 · spring/fall comp8755 individual computing project (cv & ml) engn8601\8602 research project (cv & ml)">
+            <span class="teach-term-label">2020 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">COMP8755</span>Individual Computing Project (CV &amp; ML)</p>
+            <p class="teach-course"><span class="teach-code">ENGN8601\8602</span>Research Project (CV &amp; ML)</p>
+          </div>
+
+          <div class="teach-card teal" data-h="2019 · spring/fall engn8231 embedded systems comp4660 deep learning">
+            <span class="teach-term-label">2019 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">ENGN8231</span>Embedded Systems</p>
+            <p class="teach-course"><span class="teach-code">COMP4660</span>Deep Learning</p>
+          </div>
+
+          <div class="teach-card teal" data-h="2018 · spring engn8224 electric systems">
+            <span class="teach-term-label">2018 &middot; Spring</span>
+            <p class="teach-course"><span class="teach-code">ENGN8224</span>Electric Systems</p>
+          </div>
+
+          <div class="teach-card teal" data-h="2014 · spring cs303 software engineering cs418 digital image processing cs104 computer programming">
+            <span class="teach-term-label">2014 &middot; Spring</span>
+            <p class="teach-course"><span class="teach-code">CS303</span>Software Engineering</p>
+            <p class="teach-course"><span class="teach-code">CS418</span>Digital Image Processing</p>
+            <p class="teach-course"><span class="teach-code">CS104</span>Computer Programming</p>
+          </div>
+
+          <div class="teach-card teal" data-h="2013 · summer/spring/fall cs313 object oriented analysis & design cs303 software engineering ee218\218l comp. organization & assembly language + lab cs401 artificial intelligence ai503 advanced machine learning">
+            <span class="teach-term-label">2013 &middot; Summer/Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS313</span>Object Oriented Analysis &amp; Design</p>
+            <p class="teach-course"><span class="teach-code">CS303</span>Software Engineering</p>
+            <p class="teach-course"><span class="teach-code">EE218\218L</span>Comp. Organization &amp; Assembly Language + Lab</p>
+            <p class="teach-course"><span class="teach-code">CS401</span>Artificial Intelligence</p>
+            <p class="teach-course"><span class="teach-code">AI503</span>Advanced Machine Learning</p>
+          </div>
+
+          <div class="teach-card teal" data-h="2012 · spring/fall cs401 artificial intelligence cs418 digital image processing cs104 computer programming ee218\218l comp. organization & assembly language + lab">
+            <span class="teach-term-label">2012 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS401</span>Artificial Intelligence</p>
+            <p class="teach-course"><span class="teach-code">CS418</span>Digital Image Processing</p>
+            <p class="teach-course"><span class="teach-code">CS104</span>Computer Programming</p>
+            <p class="teach-course"><span class="teach-code">EE218\218L</span>Comp. Organization &amp; Assembly Language + Lab</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ============ TUTOR ============ -->
+      <h2 class="teach-heading gold" id="role-Tutor"><i class="fa fa-pencil"></i>As A Tutor</h2>
+      <div class="teach-section" data-role-section="Tutor">
+        <div class="teach-grid">
+
+          <div class="teach-card gold" data-h="2018 · fall engn2219 simulation for engineers engn4528\6528 computer vision">
+            <span class="teach-term-label">2018 &middot; Fall</span>
+            <p class="teach-course"><span class="teach-code">ENGN2219</span>Simulation for Engineers</p>
+            <p class="teach-course"><span class="teach-code">ENGN4528\6528</span>Computer Vision</p>
+          </div>
+
+          <div class="teach-card gold" data-h="2017 · spring/fall comp8019 computer and networks security engn2219 simulation for engineers">
+            <span class="teach-term-label">2017 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">COMP8019</span>Computer and Networks Security</p>
+            <p class="teach-course"><span class="teach-code">ENGN2219</span>Simulation for Engineers</p>
+          </div>
+
+          <div class="teach-card gold" data-h="2016 · fall engn2219 simulation for engineers">
+            <span class="teach-term-label">2016 &middot; Fall</span>
+            <p class="teach-course"><span class="teach-code">ENGN2219</span>Simulation for Engineers</p>
+          </div>
+
+          <div class="teach-card gold" data-h="2010 · spring/fall cs419l applied image processing lab ai201l prog. for artificial intelligence lab ce318l intro. to digital image processing lab cs312l system programming lab">
+            <span class="teach-term-label">2010 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS419L</span>Applied Image Processing Lab</p>
+            <p class="teach-course"><span class="teach-code">AI201L</span>Prog. for Artificial Intelligence Lab</p>
+            <p class="teach-course"><span class="teach-code">CE318L</span>Intro. to Digital Image Processing Lab</p>
+            <p class="teach-course"><span class="teach-code">CS312L</span>System Programming Lab</p>
+          </div>
+
+          <div class="teach-card gold" data-h="2009 · spring/fall cs351l artificial intelligence lab cs418l digital image processing lab cs311l operating system lab">
+            <span class="teach-term-label">2009 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS351L</span>Artificial Intelligence Lab</p>
+            <p class="teach-course"><span class="teach-code">CS418L</span>Digital Image Processing Lab</p>
+            <p class="teach-course"><span class="teach-code">CS311L</span>Operating System Lab</p>
+          </div>
+
+          <div class="teach-card gold" data-h="2008 · spring/fall cs112l object-oriented programming lab cs103l comp. programming">
+            <span class="teach-term-label">2008 &middot; Spring/Fall</span>
+            <p class="teach-course"><span class="teach-code">CS112L</span>Object-Oriented Programming Lab</p>
+            <p class="teach-course"><span class="teach-code">CS103L</span>Comp. Programming</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /.article-wrap -->
+    {% if site.disqus_shortname and page.comments %}
+      <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    {% endif %}
+  </article>
+</div><!-- /#index -->
+<div class="footer-wrap">
+  <footer>
+    {% include _footer.html %}
+  </footer>
+</div><!-- /.footer-wrap -->
+
+{% include _scripts.html %}          
+
+<script>
+(function(){
+  var role='all';
+  function apply(){
+    var q=(document.getElementById('ttq').value||'').toLowerCase().trim(), total=0;
+    document.querySelectorAll('.teach-section').forEach(function(sec){
+      var r=sec.getAttribute('data-role-section');
+      var secOk=(role==='all'||role===r);
+      var any=false;
+      sec.querySelectorAll('[data-h]').forEach(function(c){
+        var okQ=!q||c.getAttribute('data-h').indexOf(q)>-1;
+        var show=secOk&&okQ;
+        c.style.display=show?'':'none';
+        if(show){any=true;total++;}
+      });
+      sec.style.display=any?'':'none';
+      var h=document.getElementById('role-'+r);
+      if(h) h.style.display=any?'':'none';
+    });
+    document.getElementById('ttc').textContent=total+' term'+(total===1?'':'s');
+    document.getElementById('tte').style.display=total?'none':'block';
+  }
+  document.querySelectorAll('.tt-f').forEach(function(b){
+    b.onclick=function(){
+      document.querySelectorAll('.tt-f').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on'); role=b.getAttribute('data-f'); apply();
+    };
+  });
+  document.getElementById('ttq').addEventListener('input', apply);
+})();
+</script>
+
+</body>
+</html>
