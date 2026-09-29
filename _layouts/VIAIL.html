@@ -18,27 +18,9 @@ a:active { color: yellow; background-color: transparent; text-decoration: underl
   color: #777;
   font-size: 16px;
 }
-.viail-badges { margin: 0 0 22px 0; }
-.viail-badge {
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  color: #fff;
-  margin: 0 8px 8px 0;
-}
-.viail-badge.visual     { background: linear-gradient(135deg,#5a86c9,#3f6bb0); }
-.viail-badge.analytical { background: linear-gradient(135deg,#3fb8ad,#2a9d8f); }
-.viail-director {
-  font-size: 15px;
-  color: #555;
-  margin: 0 0 26px 0;
-}
-.viail-director i { color: #c9a227; margin-right: 6px; }
 
 .viail-mission {
+  scroll-margin-top: 20px;
   position: relative;
   background: #fafafa;
   border: 1px solid #ececec;
@@ -57,6 +39,7 @@ a:active { color: yellow; background-color: transparent; text-decoration: underl
 .viail-mission p { margin: 0; line-height: 1.6; color: #333; }
 
 .viail-heading {
+  scroll-margin-top: 20px;
   font-size: 20px;
   margin: 0 0 14px 0;
 }
@@ -69,6 +52,7 @@ a:active { color: yellow; background-color: transparent; text-decoration: underl
   margin: 0 0 30px 0;
 }
 .viail-name-card {
+  scroll-margin-top: 20px;
   flex: 1 1 260px;
   background: #fafafa;
   border: 1px solid #ececec;
@@ -123,6 +107,7 @@ a:active { color: yellow; background-color: transparent; text-decoration: underl
 .viail-visitor-card p { margin: 0; color: #777; font-size: 13.5px; font-style: italic; }
 
 .viail-join {
+  scroll-margin-top: 20px;
   background: linear-gradient(135deg,#f5f8fc,#eef3fa);
   border: 1px solid #dde6f2;
   border-radius: 10px;
@@ -143,6 +128,24 @@ a:active { color: yellow; background-color: transparent; text-decoration: underl
   font-size: 14px;
 }
 .viail-btn:hover { background: #345a94 !important; color: #fff !important; }
+
+/* ---------- VIAIL top (hero + glance strip, matches Scholarships) ---------- */
+.va-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 64px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
+.va-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
+.va-hero>*{position:relative}
+.va-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
+.va-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
+.va-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:580px;line-height:1.6}
+.va-glance{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:-36px 22px 30px;position:relative;z-index:2}
+.va-g{display:block;background:#fff;border-radius:10px;padding:14px 6px 12px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.12);border-top:3px solid var(--c);text-decoration:none!important;transition:transform .15s ease,box-shadow .15s ease}
+.va-g:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.16)}
+.va-g i{display:block;font-size:19px;color:var(--c);margin-bottom:6px}
+.va-g b{display:block;font-size:13.5px;color:#1f3a5f}
+.va-g span{display:block;margin-top:3px;font-size:10px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#999}
+@media only screen and (max-width: 37.5em) {
+  .va-glance{grid-template-columns:repeat(3,1fr);margin:-30px 0 26px;gap:8px}
+  .va-hero{padding:26px 22px 54px}.va-hero h1{font-size:26px}
+}
 
 
 </style>
@@ -217,37 +220,36 @@ div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;
     {% include _author-bio.html %}
   </div>
   <article>
-    <h1>{{ page.title }}</h1>
     <div class="article-wrap">
       {{ content }}
 
-      <p class="viail-subtitle">Visual Intelligence and Analytical Imaging Lab</p>
-
-      <div class="viail-badges">
-        <span class="viail-badge visual">Visual Intelligence</span>
-        <span class="viail-badge analytical">Analytical Imaging</span>
+      <div class="va-hero"><p class="va-over">Visual Intelligence and Analytical Imaging Lab</p><h1>VIAIL</h1>
+        <p class="s">Directed by Saeed Anwar, the lab researches computer vision, visual informatics and AI/ML-based image processing and analysis.</p></div>
+      <div class="va-glance">
+        <a class="va-g" href="#viail-mission" style="--c:#3f6bb0"><i class="fa fa-quote-left"></i><b>Mission</b><span>Our focus</span></a>
+        <a class="va-g" href="#viail-visitors" style="--c:#c9a227"><i class="fa fa-users"></i><b>Visitors</b><span>Meet them</span></a>
+        <a class="va-g" href="#viail-join" style="--c:#3f6bb0"><i class="fa fa-paper-plane"></i><b>Join Us</b><span>Get in touch</span></a>
       </div>
-      <p class="viail-director"><i class="fa fa-user"></i> Director: <strong>Saeed Anwar</strong></p>
 
-      <div class="viail-mission">
+      <div class="viail-mission" id="viail-mission">
         <i class="fa fa-quote-left"></i>
         <p>The VIAIL (<strong>V</strong>isual <strong>I</strong>ntelligence and <strong>A</strong>nalytical <strong>I</strong>maging <strong>L</strong>ab), a hub of academic and experimental excellence, focuses on the intersection of computer vision, data visualization, and information processing (Visual Informatics) and AI/ML-based image processing and analysis (Analytical Imaging).</p>
       </div>
 
       <div class="viail-name-grid">
-        <div class="viail-name-card">
+        <div class="viail-name-card" id="viail-sees">
           <div class="viail-name-icon blue"><i class="fa fa-eye"></i></div>
           <h3>A Name That Sees</h3>
           <p>We (V), Eye (I), Artificial Intelligence (AI).</p>
         </div>
-        <div class="viail-name-card">
+        <div class="viail-name-card" id="viail-speaks">
           <div class="viail-name-icon teal"><i class="fa fa-comments"></i></div>
           <h3>A Name That Speaks</h3>
           <p>VIAIL (&#1608;&#1574;&#1740;&#1604;) in Pashto translates to &ldquo;saying&rdquo; or &ldquo;expressing&rdquo;, which metaphorically aligns with our lab's motive &mdash; we speak through vision and images.</p>
         </div>
       </div>
 
-      <h2 class="viail-heading"><i class="fa fa-users"></i>Visitors</h2>
+      <h2 class="viail-heading" id="viail-visitors"><i class="fa fa-users"></i>Visitors</h2>
       <div class="viail-visitors">
         <div class="viail-visitor-card">
           <span class="viail-visitor-year">2025</span>
@@ -271,7 +273,7 @@ div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;
         </div>
       </div>
 
-      <div class="viail-join">
+      <div class="viail-join" id="viail-join">
         <i class="fa fa-paper-plane"></i>
         <h3>Want to Join Our Lab?</h3>
         <p>If you are interested, please get in touch and send your CV and letter of motivation with the subject line &ldquo;VIAIL Affiliation&rdquo;. This is for lab affiliation &mdash; if you are seeking a scholarship, please check the Scholarships tab.</p>
