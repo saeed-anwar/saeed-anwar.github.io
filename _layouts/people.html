@@ -79,6 +79,31 @@ a:active { color: yellow; background-color: transparent; text-decoration: underl
 @media only screen and (max-width: 37.5em) {
   .people-grid, .people-roster { grid-template-columns: 1fr; }
 }
+
+/* ---------- People top (hero / stats / search / filters, matches Datasets) ---------- */
+.pp-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 64px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
+.pp-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
+.pp-hero>*{position:relative}
+.pp-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
+.pp-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
+.pp-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:580px;line-height:1.6}
+.pp-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:-36px auto 26px;max-width:380px;position:relative;z-index:2}
+.pp-st{background:#fff;border-radius:10px;padding:14px 8px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.pp-st b{display:block;font-size:24px;color:#1f3a5f;font-family:'PT Sans Narrow',sans-serif}
+.pp-st span{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#888}
+.pp-bar{display:flex;gap:12px;align-items:center;margin:0 0 14px;flex-wrap:wrap}
+.pp-search{flex:1;min-width:220px;position:relative}.pp-search i{position:absolute;left:14px;top:12px;color:#9aa5b8}
+.pp-search input{width:100%;box-sizing:border-box;border:1px solid #d5dbe6;border-radius:22px;padding:10px 16px 10px 38px;font-size:14px;background:#fff;outline:none}
+.pp-search input:focus{border-color:#3f6bb0;box-shadow:0 0 0 3px rgba(63,107,176,.15)}
+.pp-count{font-size:12.5px;color:#888;font-weight:700;white-space:nowrap}
+.pp-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.pp-f{background:#eef2f8!important;color:#3f6bb0;border:none;border-radius:16px;padding:6px 14px;font-size:12.5px;font-weight:700;cursor:pointer}
+.pp-f.on{background:#3f6bb0!important;color:#fff}
+.pp-empty{display:none;text-align:center;padding:30px 10px;color:#888;font-size:14.5px;background:#fafafa;border:1px dashed #d8d8d8;border-radius:12px;margin-top:14px}
+@media only screen and (max-width: 37.5em) {
+  .pp-stats{margin:-32px 0 22px;max-width:none}
+  .pp-hero{padding:26px 22px 54px}.pp-hero h1{font-size:26px}
+}
 </style>
 </head>
 
@@ -151,143 +176,159 @@ div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;
     {% include _author-bio.html %}
   </div>
   <article>
-    <h1>{{ page.title }}</h1>
     <div class="article-wrap">
       {{ content }}
 
-      <p class="people-subtitle">I have the honor to work with great researchers. Following is a non-exhaustive list, in no particular order.</p>
+      <div class="pp-hero"><p class="pp-over">Academic network</p><h1>People</h1>
+        <p class="s">I have the honor to work with great researchers. Following is a non-exhaustive list, in no particular order.</p></div>
+      <div class="pp-stats">
+        <div class="pp-st"><b>44</b><span>Students</span></div>
+        <div class="pp-st"><b>16</b><span>Collaborators</span></div>
+      </div>
+
+      <div class="pp-bar"><div class="pp-search"><i class="fa fa-search"></i><input id="ppq" type="text" placeholder="Search by name or institution&hellip;" autocomplete="off"></div><span class="pp-count" id="ppc">60 people</span></div>
+      <div class="pp-filters">
+        <button class="pp-f on" data-f="all">All (60)</button>
+        <button class="pp-f" data-f="CurrentPhD">Current PhD (4)</button>
+        <button class="pp-f" data-f="PastPhD">Past PhD (11)</button>
+        <button class="pp-f" data-f="Masters">Master&rsquo;s (21)</button>
+        <button class="pp-f" data-f="BSc">B.Sc (6)</button>
+        <button class="pp-f" data-f="Vacation">Vacation &amp; Internship (2)</button>
+        <button class="pp-f" data-f="Collaborators">Collaborators (16)</button>
+      </div>
+      <div class="pp-empty" id="ppe">No one matches your search. Try a different keyword or choose &ldquo;All&rdquo;.</div>
 
       <!-- ============ STUDENTS ============ -->
-      <h2 class="people-heading blue"><i class="fa fa-graduation-cap"></i>Students</h2>
+      <h2 class="people-heading blue" id="heading-Students"><i class="fa fa-graduation-cap"></i>Students</h2>
 
-      <h3 class="people-subheading">Current PhD Students <span class="people-badge">Current</span></h3>
-      <div class="people-grid">
-        <div class="people-card">
+      <h3 class="people-subheading" id="cat-CurrentPhD">PhD Students <span class="people-badge">Current</span></h3>
+      <div class="people-grid" data-cat-section="CurrentPhD">
+        <div class="people-card" data-h="tengkai wang uwa · 2026–">
           <h4>Tengkai Wang</h4>
           <p class="people-meta">UWA &middot; 2026&ndash;</p>
         </div>
-        <div class="people-card">
+        <div class="people-card" data-h="wesley arthur uwa · 2026–">
           <h4>Wesley Arthur</h4>
           <p class="people-meta">UWA &middot; 2026&ndash;</p>
         </div>
-        <div class="people-card">
+        <div class="people-card" data-h="xiaoge zhang uwa · 2025–">
           <h4><a href="https://xiaogezhang9.github.io/">Xiaoge Zhang</a></h4>
           <p class="people-meta">UWA &middot; 2025&ndash;</p>
         </div>
-        <div class="people-card">
+        <div class="people-card" data-h="numair nadeem uni. of regina · 2024–">
           <h4><a href="https://scholar.google.com/citations?user=SIahZ3UAAAAJ&hl=en&inst=3028249956058794315">Numair Nadeem</a></h4>
           <p class="people-meta">Uni. of Regina &middot; 2024&ndash;</p>
         </div>
       </div>
 
-      <h3 class="people-subheading">Past PhD Students</h3>
-      <div class="people-grid">
-        <div class="people-card alumni">
+      <h3 class="people-subheading" id="cat-PastPhD">PhD Students <span class="people-badge">Past</span></h3>
+      <div class="people-grid" data-cat-section="PastPhD">
+        <div class="people-card alumni" data-h="abm ashikur rahman kfupm · 2024–2026">
           <h4><a href="https://scholar.google.com/citations?user=wI9QQg4AAAAJ&hl=en">ABM Ashikur Rahman</a></h4>
           <p class="people-meta">KFUPM &middot; 2024&ndash;2026</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="ruikai cui anu · 2021–2025">
           <h4><a href="https://ruikai.ink/">Ruikai Cui</a></h4>
           <p class="people-meta">ANU &middot; 2021&ndash;2025</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="wadha almattar kfupm · 2022–2025">
           <h4><a href="https://www.iau.edu.sa/en/colleges/college-of-computer-science-and-information-technology/faculty/wadha-muteb-al-mattar">Wadha Almattar</a></h4>
           <p class="people-meta">KFUPM &middot; 2022&ndash;2025</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="mona alzahrani kfupm · 2022–2025">
           <h4><a href="https://scholar.google.com.au/citations?hl=en&user=e5fM3ZgAAAAJ&view_op=list_works&sortby=pubdate">Mona Alzahrani</a></h4>
           <p class="people-meta">KFUPM &middot; 2022&ndash;2025</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="muhammad ibrahim uwa · 2021–2024">
           <h4><a href="https://scholar.google.com/citations?user=t_M0DmoAAAAJ&hl=en">Muhammad Ibrahim</a></h4>
           <p class="people-meta">UWA &middot; 2021&ndash;2024</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="shi qiu anu · 2019–2023">
           <h4><a href="https://shiqiu0419.github.io/">Shi Qiu</a></h4>
           <p class="people-meta">ANU &middot; 2019&ndash;2023</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="tanveer hussain sejong university · 2020–2022">
           <h4><a href="https://scholar.google.com/citations?user=4fU0t_oAAAAJ&hl=en">Tanveer Hussain</a></h4>
           <p class="people-meta">Sejong University &middot; 2020&ndash;2022</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="yang liu csiro/anu · 2019–2021">
           <h4><a href="https://scholar.google.com/citations?hl=en&user=VPs7nXkAAAAJ">Yang Liu</a></h4>
           <p class="people-meta">CSIRO/ANU &middot; 2019&ndash;2021</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="zhenyue qin anu · 2019–2021">
           <h4><a href="https://kfzyqin.github.io/">Zhenyue Qin</a></h4>
           <p class="people-meta">ANU &middot; 2019&ndash;2021</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="jing zhang anu · 2019–2021">
           <h4><a href="https://jingzhang617.github.io/">Jing Zhang</a></h4>
           <p class="people-meta">ANU &middot; 2019&ndash;2021</p>
         </div>
-        <div class="people-card alumni">
+        <div class="people-card alumni" data-h="kaiyue lu csiro/anu · 2018–2021">
           <h4><a href="https://dblp.org/pid/190/8790.html">Kaiyue Lu</a></h4>
           <p class="people-meta">CSIRO/ANU &middot; 2018&ndash;2021</p>
         </div>
       </div>
 
-      <h3 class="people-subheading">Master&rsquo;s Students</h3>
-      <div class="people-roster">
-        <div class="people-roster-row"><span class="prn">Md Faraz Kabir Khan</span><span class="prm">UWA, since 2025</span></div>
-        <div class="people-roster-row"><span class="prn">Shahzad Khan</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
-        <div class="people-roster-row"><span class="prn">Habiba Kausar</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
-        <div class="people-roster-row"><span class="prn">Yasmin Yasin</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
-        <div class="people-roster-row"><span class="prn">Babar Jan</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
-        <div class="people-roster-row"><span class="prn">Leena Alghamdi</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
-        <div class="people-roster-row"><span class="prn">Rahaf Jaber</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
-        <div class="people-roster-row"><span class="prn">Khawlah Bajbaa</span><span class="prm">KFUPM, 2023&ndash;2024</span></div>
-        <div class="people-roster-row"><span class="prn">Mohammad Shullar</span><span class="prm">KFUPM, 2023&ndash;2024</span></div>
-        <div class="people-roster-row"><span class="prn">Ali Elborki</span><span class="prm">KFUPM, 2023&ndash;2024</span></div>
-        <div class="people-roster-row"><span class="prn">Qichen Zheng</span><span class="prm">ANU, 2022</span></div>
-        <div class="people-roster-row"><span class="prn">Luoyu Chen</span><span class="prm">ANU, 2022</span></div>
-        <div class="people-roster-row"><span class="prn">Xingshu Wang</span><span class="prm">ANU, 2021</span></div>
-        <div class="people-roster-row"><span class="prn">Ruiqi Chen</span><span class="prm">ANU, 2021</span></div>
-        <div class="people-roster-row"><span class="prn">Yuheng Shi</span><span class="prm">ANU, 2021</span></div>
-        <div class="people-roster-row"><span class="prn">Rizqi Ekoputris</span><span class="prm">ANU, 2020&ndash;2022</span></div>
-        <div class="people-roster-row"><span class="prn">Ruikai Cui</span><span class="prm">ANU, 2021</span></div>
-        <div class="people-roster-row"><span class="prn">Yunfan Wu</span><span class="prm">ANU, 2020&ndash;2021</span></div>
-        <div class="people-roster-row"><span class="prn">Zhuocheng Yuan</span><span class="prm">ANU, 2020</span></div>
-        <div class="people-roster-row"><span class="prn">Derek Liu</span><span class="prm">ANU, 2020</span></div>
-        <div class="people-roster-row"><span class="prn">Jiabo Xu</span><span class="prm">ANU, 2019&ndash;2020</span></div>
+      <h3 class="people-subheading" id="cat-Masters">Master&rsquo;s Students</h3>
+      <div class="people-roster" data-cat-section="Masters">
+        <div class="people-roster-row" data-h="md faraz kabir khan uwa, since 2025"><span class="prn">Md Faraz Kabir Khan</span><span class="prm">UWA, since 2025</span></div>
+        <div class="people-roster-row" data-h="shahzad khan kfupm, 2024–2025"><span class="prn">Shahzad Khan</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
+        <div class="people-roster-row" data-h="habiba kausar kfupm, 2024–2025"><span class="prn">Habiba Kausar</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
+        <div class="people-roster-row" data-h="yasmin yasin kfupm, 2024–2025"><span class="prn">Yasmin Yasin</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
+        <div class="people-roster-row" data-h="babar jan kfupm, 2024–2025"><span class="prn">Babar Jan</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
+        <div class="people-roster-row" data-h="leena alghamdi kfupm, 2024–2025"><span class="prn">Leena Alghamdi</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
+        <div class="people-roster-row" data-h="rahaf jaber kfupm, 2024–2025"><span class="prn">Rahaf Jaber</span><span class="prm">KFUPM, 2024&ndash;2025</span></div>
+        <div class="people-roster-row" data-h="khawlah bajbaa kfupm, 2023–2024"><span class="prn">Khawlah Bajbaa</span><span class="prm">KFUPM, 2023&ndash;2024</span></div>
+        <div class="people-roster-row" data-h="mohammad shullar kfupm, 2023–2024"><span class="prn">Mohammad Shullar</span><span class="prm">KFUPM, 2023&ndash;2024</span></div>
+        <div class="people-roster-row" data-h="ali elborki kfupm, 2023–2024"><span class="prn">Ali Elborki</span><span class="prm">KFUPM, 2023&ndash;2024</span></div>
+        <div class="people-roster-row" data-h="qichen zheng anu, 2022"><span class="prn">Qichen Zheng</span><span class="prm">ANU, 2022</span></div>
+        <div class="people-roster-row" data-h="luoyu chen anu, 2022"><span class="prn">Luoyu Chen</span><span class="prm">ANU, 2022</span></div>
+        <div class="people-roster-row" data-h="xingshu wang anu, 2021"><span class="prn">Xingshu Wang</span><span class="prm">ANU, 2021</span></div>
+        <div class="people-roster-row" data-h="ruiqi chen anu, 2021"><span class="prn">Ruiqi Chen</span><span class="prm">ANU, 2021</span></div>
+        <div class="people-roster-row" data-h="yuheng shi anu, 2021"><span class="prn">Yuheng Shi</span><span class="prm">ANU, 2021</span></div>
+        <div class="people-roster-row" data-h="rizqi ekoputris anu, 2020–2022"><span class="prn">Rizqi Ekoputris</span><span class="prm">ANU, 2020&ndash;2022</span></div>
+        <div class="people-roster-row" data-h="ruikai cui anu, 2021"><span class="prn">Ruikai Cui</span><span class="prm">ANU, 2021</span></div>
+        <div class="people-roster-row" data-h="yunfan wu anu, 2020–2021"><span class="prn">Yunfan Wu</span><span class="prm">ANU, 2020&ndash;2021</span></div>
+        <div class="people-roster-row" data-h="zhuocheng yuan anu, 2020"><span class="prn">Zhuocheng Yuan</span><span class="prm">ANU, 2020</span></div>
+        <div class="people-roster-row" data-h="derek liu anu, 2020"><span class="prn">Derek Liu</span><span class="prm">ANU, 2020</span></div>
+        <div class="people-roster-row" data-h="jiabo xu anu, 2019–2020"><span class="prn">Jiabo Xu</span><span class="prm">ANU, 2019&ndash;2020</span></div>
       </div>
 
-      <h3 class="people-subheading">B.Sc Students</h3>
-      <div class="people-roster">
-        <div class="people-roster-row"><span class="prn">Yuanchu Liang</span><span class="prm">ANU, 2021</span></div>
-        <div class="people-roster-row"><span class="prn">Junlin Han</span><span class="prm">ANU, 2023</span></div>
-        <div class="people-roster-row"><span class="prn">Waqas Ahmed</span><span class="prm">NUCES, 2014</span></div>
-        <div class="people-roster-row"><span class="prn">Ibrahim Shakeel</span><span class="prm">NUCES, 2014</span></div>
-        <div class="people-roster-row"><span class="prn">Khadija Khan</span><span class="prm">NUCES, 2013</span></div>
-        <div class="people-roster-row"><span class="prn">Akas Ali</span><span class="prm">NUCES, 2012</span></div>
+      <h3 class="people-subheading" id="cat-BSc">B.Sc Students</h3>
+      <div class="people-roster" data-cat-section="BSc">
+        <div class="people-roster-row" data-h="yuanchu liang anu, 2021"><span class="prn">Yuanchu Liang</span><span class="prm">ANU, 2021</span></div>
+        <div class="people-roster-row" data-h="junlin han anu, 2023"><span class="prn">Junlin Han</span><span class="prm">ANU, 2023</span></div>
+        <div class="people-roster-row" data-h="waqas ahmed nuces, 2014"><span class="prn">Waqas Ahmed</span><span class="prm">NUCES, 2014</span></div>
+        <div class="people-roster-row" data-h="ibrahim shakeel nuces, 2014"><span class="prn">Ibrahim Shakeel</span><span class="prm">NUCES, 2014</span></div>
+        <div class="people-roster-row" data-h="khadija khan nuces, 2013"><span class="prn">Khadija Khan</span><span class="prm">NUCES, 2013</span></div>
+        <div class="people-roster-row" data-h="akas ali nuces, 2012"><span class="prn">Akas Ali</span><span class="prm">NUCES, 2012</span></div>
       </div>
 
-      <h3 class="people-subheading">Vacation &amp; Internship Students</h3>
-      <div class="people-roster">
-        <div class="people-roster-row"><span class="prn">Kevin Lam</span><span class="prm">CSIRO, 2019&ndash;2020</span></div>
-        <div class="people-roster-row"><span class="prn">Jatin Takyar</span><span class="prm">UTS, 2020</span></div>
+      <h3 class="people-subheading" id="cat-Vacation">Vacation &amp; Internship Students</h3>
+      <div class="people-roster" data-cat-section="Vacation">
+        <div class="people-roster-row" data-h="kevin lam csiro, 2019–2020"><span class="prn">Kevin Lam</span><span class="prm">CSIRO, 2019&ndash;2020</span></div>
+        <div class="people-roster-row" data-h="jatin takyar uts, 2020"><span class="prn">Jatin Takyar</span><span class="prm">UTS, 2020</span></div>
       </div>
 
       <!-- ============ COLLABORATORS ============ -->
-      <h2 class="people-heading teal"><i class="fa fa-share-alt"></i>Collaborators</h2>
-      <div class="people-tags">
-        <a href="http://www.porikli.com/" class="people-tag">Prof. Fatih Porikli</a>
-        <a href="http://users.cecs.anu.edu.au/~nmb/" class="people-tag">Prof. Nick Barnes</a>
-        <a href="https://ajmalsaeed.net/" class="people-tag">Prof. Ajmal Mian</a>
-        <a href="https://li-chongyi.github.io/" class="people-tag">Prof. Chongyi Li</a>
-        <a href="https://scholar.google.com.au/citations?hl=en&user=KvbLR3gAAAAJ" class="people-tag">Muhammad Saqib</a>
-        <a href="https://scholar.google.com.au/citations?hl=en&user=UnnAvjAAAAAJ" class="people-tag">Prof. Tom Gedeon</a>
-        <a href="https://zheng-lab.cecs.anu.edu.au/J" class="people-tag">Liang Zheng</a>
-        <a href="https://www.linkedin.com/in/cong-phuoc-huynh-61891b15" class="people-tag">Cong Phuoc Huynh</a>
-        <a href="https://sites.google.com/view/fahadkhans/home" class="people-tag">Fahad Shahbaz Khan</a>
-        <a href="https://salman-h-khan.github.io/" class="people-tag">Salman Khan</a>
-        <a href="https://profiles.uts.edu.au/Nabin.Sharma" class="people-tag">Nabin Sharma</a>
-        <a href="https://au.linkedin.com/in/ali-armin-9b420941" class="people-tag">Mohammad Ali Armin</a>
-        <a href="https://scholar.google.com/citations?user=5zKe6mUAAAAJ&hl=en" class="people-tag">Hafeez Anwar</a>
-        <a href="https://scholar.google.com.au/citations?hl=en&user=dqEiXrYAAAAJ" class="people-tag">Muhammad Tahir</a>
-        <a href="https://scholar.google.com.au/citations?hl=en&user=cTTXR50AAAAJ" class="people-tag">Muhammad Usman</a>
-        <a href="https://scholar.google.com.au/citations?hl=en&user=Xqmlj18AAAAJ" class="people-tag">Naveed Akhtar</a>
+      <h2 class="people-heading teal" id="heading-Collaborators"><i class="fa fa-share-alt"></i>Collaborators</h2>
+      <div class="people-tags" data-cat-section="Collaborators">
+        <a href="http://www.porikli.com/" class="people-tag" data-h="prof. fatih porikli">Prof. Fatih Porikli</a>
+        <a href="http://users.cecs.anu.edu.au/~nmb/" class="people-tag" data-h="prof. nick barnes">Prof. Nick Barnes</a>
+        <a href="https://ajmalsaeed.net/" class="people-tag" data-h="prof. ajmal mian">Prof. Ajmal Mian</a>
+        <a href="https://li-chongyi.github.io/" class="people-tag" data-h="prof. chongyi li">Prof. Chongyi Li</a>
+        <a href="https://scholar.google.com.au/citations?hl=en&user=KvbLR3gAAAAJ" class="people-tag" data-h="muhammad saqib">Muhammad Saqib</a>
+        <a href="https://scholar.google.com.au/citations?hl=en&user=UnnAvjAAAAAJ" class="people-tag" data-h="prof. tom gedeon">Prof. Tom Gedeon</a>
+        <a href="https://zheng-lab.cecs.anu.edu.au/J" class="people-tag" data-h="liang zheng">Liang Zheng</a>
+        <a href="https://www.linkedin.com/in/cong-phuoc-huynh-61891b15" class="people-tag" data-h="cong phuoc huynh">Cong Phuoc Huynh</a>
+        <a href="https://sites.google.com/view/fahadkhans/home" class="people-tag" data-h="fahad shahbaz khan">Fahad Shahbaz Khan</a>
+        <a href="https://salman-h-khan.github.io/" class="people-tag" data-h="salman khan">Salman Khan</a>
+        <a href="https://profiles.uts.edu.au/Nabin.Sharma" class="people-tag" data-h="nabin sharma">Nabin Sharma</a>
+        <a href="https://au.linkedin.com/in/ali-armin-9b420941" class="people-tag" data-h="mohammad ali armin">Mohammad Ali Armin</a>
+        <a href="https://scholar.google.com/citations?user=5zKe6mUAAAAJ&hl=en" class="people-tag" data-h="hafeez anwar">Hafeez Anwar</a>
+        <a href="https://scholar.google.com.au/citations?hl=en&user=dqEiXrYAAAAJ" class="people-tag" data-h="muhammad tahir">Muhammad Tahir</a>
+        <a href="https://scholar.google.com.au/citations?hl=en&user=cTTXR50AAAAJ" class="people-tag" data-h="muhammad usman">Muhammad Usman</a>
+        <a href="https://scholar.google.com.au/citations?hl=en&user=Xqmlj18AAAAJ" class="people-tag" data-h="naveed akhtar">Naveed Akhtar</a>
       </div>
 
     </div><!-- /.article-wrap -->
@@ -303,6 +344,43 @@ div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;
 </div><!-- /.footer-wrap -->
 
 {% include _scripts.html %}          
+
+<script>
+(function(){
+  var cat='all';
+  function apply(){
+    var q=(document.getElementById('ppq').value||'').toLowerCase().trim(), total=0;
+    document.querySelectorAll('[data-cat-section]').forEach(function(sec){
+      var sc=sec.getAttribute('data-cat-section');
+      var secOn=(cat==='all'||cat===sc);
+      var any=false;
+      sec.querySelectorAll('[data-h]').forEach(function(it){
+        var okQ=!q||it.getAttribute('data-h').indexOf(q)>-1;
+        var show=secOn&&okQ;
+        it.style.display=show?'':'none';
+        if(show){any=true;total++;}
+      });
+      sec.style.display=(secOn&&any)?'':'none';
+      var h=document.getElementById('cat-'+sc);
+      if(h) h.style.display=(secOn&&any)?'':'none';
+    });
+    var studentCats=['CurrentPhD','PastPhD','Masters','BSc','Vacation'];
+    var anyStudents=studentCats.some(function(c){var s=document.querySelector('[data-cat-section="'+c+'"]');return s&&s.style.display!=='none';});
+    document.getElementById('heading-Students').style.display=anyStudents?'':'none';
+    var collab=document.querySelector('[data-cat-section="Collaborators"]');
+    document.getElementById('heading-Collaborators').style.display=(collab&&collab.style.display!=='none')?'':'none';
+    document.getElementById('ppc').textContent=total+' '+(total===1?'person':'people');
+    document.getElementById('ppe').style.display=total?'none':'block';
+  }
+  document.querySelectorAll('.pp-f').forEach(function(b){
+    b.onclick=function(){
+      document.querySelectorAll('.pp-f').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on'); cat=b.getAttribute('data-f'); apply();
+    };
+  });
+  document.getElementById('ppq').addEventListener('input', apply);
+})();
+</script>
 
 </body>
 </html>
