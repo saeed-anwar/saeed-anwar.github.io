@@ -1,0 +1,1593 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include _head.html %}
+<style>
+a:link {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/* ---------- Publications page ---------- */
+.pb-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 64px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
+.pb-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
+.pb-hero>*{position:relative}
+.pb-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
+.pb-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
+.pb-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:580px;line-height:1.6}
+.pb-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-36px 22px 26px;position:relative;z-index:2}
+.pb-st{background:#fff;border-radius:10px;padding:14px 8px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.pb-st b{display:block;font-size:24px;color:#1f3a5f;font-family:'PT Sans Narrow',sans-serif}
+.pb-st span{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#888}
+.pb-bar{display:flex;gap:12px;align-items:center;margin:0 0 14px;flex-wrap:wrap}
+.pb-search{flex:1;min-width:220px;position:relative}.pb-search i{position:absolute;left:14px;top:12px;color:#9aa5b8}
+.pb-search input{width:100%;box-sizing:border-box;border:1px solid #d5dbe6;border-radius:22px;padding:10px 16px 10px 38px;font-size:14px;background:#fff;outline:none}
+.pb-search input:focus{border-color:#3f6bb0;box-shadow:0 0 0 3px rgba(63,107,176,.15)}
+.pb-count{font-size:12.5px;color:#888;font-weight:700;white-space:nowrap}
+.pb-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.pb-f{background:#eef2f8!important;color:#3f6bb0;border:none;border-radius:16px;padding:6px 14px;font-size:12.5px;font-weight:700;cursor:pointer}
+.pb-f.on{background:#3f6bb0!important;color:#fff}
+.pb-empty{display:none;text-align:center;padding:30px 10px;color:#888;font-size:14.5px;background:#fafafa;border:1px dashed #d8d8d8;border-radius:12px;margin-top:14px}
+
+.pb-year{display:flex;align-items:baseline;gap:10px;font-size:20px;margin:30px 0 14px;padding-bottom:8px;border-bottom:2px solid #ececec;color:#1f3a5f}
+.pb-year:first-of-type{margin-top:4px}
+.pb-year-n{font-size:12px;font-weight:700;color:#aaa}
+
+.pb-card{background:#fafafa;border:1px solid #ececec;border-radius:10px;padding:16px 20px;margin-bottom:14px;transition:box-shadow .15s ease,transform .15s ease}
+.pb-card:hover{box-shadow:0 4px 14px rgba(0,0,0,.08);transform:translateY(-1px)}
+.pb-title{margin:0 0 6px;font-size:16.5px;line-height:1.4;color:#1a1a1a}
+.pb-authors{margin:0 0 6px;font-size:13.5px;color:#666;line-height:1.5}
+.pb-venue{margin:0 0 12px;font-size:13.5px;color:#555;line-height:1.5}
+.pb-oral{display:inline-block;margin-left:8px;font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#3f6bb0;background:#eef2f8;border-radius:9px;padding:1px 8px;font-style:normal}
+.pb-badge{display:inline-flex;align-items:center;gap:5px;margin-left:8px;font-size:10.5px;font-weight:700;letter-spacing:.3px;color:#fff;border-radius:9px;padding:2px 9px;font-style:normal}
+.pb-badge i{font-size:10px}
+
+.pb-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pb-l{display:inline-flex;align-items:center;gap:6px;border:1px solid #3f6bb0;color:#3f6bb0!important;background:#fff!important;border-radius:14px;padding:4px 11px;font-size:12px;font-weight:700;text-decoration:none!important}
+.pb-l:hover{background:#eef2f8!important}
+.pb-l.disabled{border-color:#ddd;color:#bbb!important;cursor:default}
+.pb-bibbtn{display:inline-flex;align-items:center;gap:6px;background:#fff!important;border:1px solid #bbb;color:#777;border-radius:14px;padding:4px 11px;font-size:12px;font-weight:700;cursor:pointer}
+.pb-bib{display:none;position:relative;margin-top:10px}
+.pb-bib.open{display:block}
+.pb-bib pre{margin:0;background:#f7f7f2;border:1px solid #e6e3d5;border-radius:6px;padding:12px 14px;font-size:11.5px;line-height:1.5;overflow:auto;max-height:240px;white-space:pre-wrap;word-break:break-word}
+.pb-bib-copy{position:absolute;top:6px;right:8px;z-index:2;background:#fff;border:1px solid #d8d8cc;border-radius:4px;font-size:11px;padding:2px 8px;cursor:pointer;color:#555}
+
+@media only screen and (max-width: 37.5em) {
+  .pb-stats{grid-template-columns:repeat(2,1fr);margin:-32px 0 22px}
+  .pb-hero{padding:26px 22px 54px}.pb-hero h1{font-size:26px}
+  .pb-card{padding:14px 16px}
+}
+</style>
+</head>
+
+<body class="page">
+{% include _browser-upgrade.html %}
+
+{% include _navigation.html %}
+
+{% if page.image.feature %}
+  <div class="image-wrap">
+  <img src=
+    {% if page.image.feature contains 'http://' %}
+      "{{ page.image.feature }}"
+    {% elsif page.image.feature contains 'https://' %}
+      "{{ page.image.feature }}"
+    {% else %}
+      "{{ site.url }}/images/{{ page.image.feature }}"
+    {% endif %}
+  alt="{{ page.title }} feature image">
+  {% if page.image.credit %}
+    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
+  {% endif %}
+  </div><!-- /.image-wrap -->
+{% endif %}
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    {% include _author-bio.html %}
+  </div>
+  <article>
+    <div class="article-wrap">
+      {{ content }}
+
+<div class="pb-hero"><p class="pb-over">Peer-reviewed research</p><h1>Publications</h1>
+<p class="s">112 papers in computer vision, image processing and machine learning, 2020&ndash;2026.</p></div>
+<div class="pb-stats">
+  <div class="pb-st"><b>112</b><span>Papers</span></div>
+  <div class="pb-st"><b>15,550+</b><span>Citations</span></div>
+  <div class="pb-st"><b>41</b><span>h-index</span></div>
+  <div class="pb-st"><b>66</b><span>i10-index</span></div>
+</div>
+<div class="pb-bar"><div class="pb-search"><i class="fa fa-search"></i><input id="pbq" type="text" placeholder="Search by title, author or venue&hellip;" autocomplete="off"></div><span class="pb-count" id="pbc">112 papers</span></div>
+<div class="pb-filters"><button class="pb-f on" data-f="all">All (112)</button><button class="pb-f" data-f="2026">2026 (23)</button><button class="pb-f" data-f="2025">2025 (19)</button><button class="pb-f" data-f="2024">2024 (16)</button><button class="pb-f" data-f="2023">2023 (6)</button><button class="pb-f" data-f="2022">2022 (13)</button><button class="pb-f" data-f="2021">2021 (16)</button><button class="pb-f" data-f="2020">2020 (19)</button></div>
+<div class="pb-empty" id="pbe">No papers match your search. Try a different keyword or choose &ldquo;All&rdquo;.</div>
+<h2 class="pb-year" id="py-2026">2026<span class="pb-year-n">23</span></h2>
+<div class="pb-card" data-year="2026" data-h="pgms: pyramidal gaussian mixture splatting for 3dgs compression x. zhang, z. wu, m. feng, s. anwar, and a. mian conference on neural information processing systems (neurips)">
+          <h3 class="pb-title">PGMS: Pyramidal Gaussian Mixture Splatting for 3DGS Compression</h3>
+          <p class="pb-authors">X. Zhang, Z. Wu, M. Feng, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>Conference on Neural Information Processing Systems (NeurIPS)</i></p>
+          <div class="pb-links"><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-pdf-o"></i>Official PDF</span><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-text-o"></i>arXiv</span><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-globe"></i>Project Page</span><button class="pb-bibbtn" onclick="toggleBib('Zhang2026PGMS')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Zhang2026PGMS"><button class="pb-bib-copy" onclick="copyBib('Zhang2026PGMS',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Zhang2026PGMS">@inproceedings{Zhang2026PGMS,
+  title={PGMS: Pyramidal Gaussian Mixture Splatting for 3DGS Compression},
+  author={Xiaoge Zhang and Zijie Wu and Mingtao Feng and Saeed Anwar and Ajmal Mian},
+  journal={Conference on Neural Information Processing Systems},
+  year={2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="beyond red and green: flashing traffic light recognition in autonomous driving s. ali, md t. islam, s. anwar, r. scherer, s. bakshi, h. oh, and k. muhammad asian conference on computer vision (accv)">
+          <h3 class="pb-title">Beyond Red and Green: Flashing Traffic Light Recognition in Autonomous Driving</h3>
+          <p class="pb-authors">S. Ali, Md T. Islam, S. Anwar, R. Scherer, S. Bakshi, H. OH, and K. Muhammad</p>
+          <p class="pb-venue"><i>Asian Conference on Computer Vision (ACCV)</i></p>
+          <div class="pb-links"><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-pdf-o"></i>Official PDF</span><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-text-o"></i>arXiv</span><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-globe"></i>Project Page</span><button class="pb-bibbtn" onclick="toggleBib('Ali2026FlashNet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ali2026FlashNet"><button class="pb-bib-copy" onclick="copyBib('Ali2026FlashNet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ali2026FlashNet">@InProceedings{Ali2026FlashNet,
+    title={Beyond Red and Green: Flashing Traffic Light Recognition in Autonomous Driving},
+    author	= {Shehzad Ali and Md Tanvir Islam and Saeed Anwar and Rafał Scherer and Sambit Bakshi and HAYOUNG OH and Khan Muhammad},
+    booktitle = {IEEE/CVF Asian Conference on Computer Vision},
+    year={2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="tdir: transformer based diffusion for image restoration tasks a. anwar, i. radwan, a. a. nasir, m. masood, and s. anwar asian conference on computer vision (accv)">
+          <h3 class="pb-title">TDiR: Transformer based Diffusion for Image Restoration Tasks</h3>
+          <p class="pb-authors">A. Anwar, I. Radwan, A. A. Nasir, M. Masood, and S. Anwar</p>
+          <p class="pb-venue"><i>Asian Conference on Computer Vision (ACCV)</i></p>
+          <div class="pb-links"><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-pdf-o"></i>Official PDF</span><a class="pb-l" href="https://arxiv.org/pdf/2506.20302"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2026TDiR')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2026TDiR"><button class="pb-bib-copy" onclick="copyBib('Anwar2026TDiR',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2026TDiR">@inproceedings{Anwar2026TDiR,
+  title={TDiR: Transformer based Diffusion for Image Restoration Tasks},
+  author={Anwar, Abbas and Radwan, Ibrahim and Nasir, Ali Arshad and Masood, Mudassir and Anwar, Saeed},
+  journal={Asian Conference on Computer Vision},
+  year={2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="pointdiffuse: a dual-conditional diffusion model for enhanced point cloud semantic segmentation y. he, h. yu, m. feng, t. chen, z. li, a. ulhaq, s. anwar, and a. mian ieee transactions on automation science and engineering (tase)">
+          <h3 class="pb-title">PointDiffuse: A Dual-Conditional Diffusion Model for Enhanced Point Cloud Semantic Segmentation</h3>
+          <p class="pb-authors">Y. He, H. Yu, M. Feng, T. Chen, Z. Li, A. Ulhaq, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>IEEE Transactions on Automation Science and Engineering (TASE)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/11649484"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/abs/2503.06094"><i class="fa fa-file-text-o"></i>arXiv</a><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-globe"></i>Project Page</span><button class="pb-bibbtn" onclick="toggleBib('Yong2026PointDiffuse')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Yong2026PointDiffuse"><button class="pb-bib-copy" onclick="copyBib('Yong2026PointDiffuse',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Yong2026PointDiffuse">@article{Yong2026PointDiffuse,
+  author={He, Yong and Yu, Hongshan and Feng, Mingtao and Li, Zechuan and Chen, Tongjia and Ulhaq, Anwaar and Anwar, Saeed and Mian, Ajmal},
+  journal={IEEE Transactions on Automation Science and Engineering}, 
+  title={PointDiffuse: A Dual-Conditional Diffusion Model for Enhanced Point Cloud Semantic Segmentation}, 
+  year={2026},
+  doi={10.1109/TASE.2026.3722737}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="do vision-language models truly count? revealing the semantic-localization gap in dense crowd understanding b. das, u. k. nareti, s. prajapati, c. adak, s. chattopadhyay, m. saqib and s. anwar international conference on neural information processing (iconip)">
+          <h3 class="pb-title">Do Vision-Language Models Truly Count? Revealing the Semantic-Localization Gap in Dense Crowd Understanding</h3>
+          <p class="pb-authors">B. Das, U. K. Nareti, S. Prajapati, C. Adak, S. Chattopadhyay, M. Saqib and S. Anwar</p>
+          <p class="pb-venue"><i>International Conference on Neural Information Processing (ICONIP)</i></p>
+          <div class="pb-links"><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-pdf-o"></i>Official PDF</span><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-text-o"></i>arXiv</span><a class="pb-l" href="https://github.com/bibek-cse/VisionCrowdTest"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Bibek2026count')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Bibek2026count"><button class="pb-bib-copy" onclick="copyBib('Bibek2026count',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Bibek2026count">@inproceedings{Bibek2026count,
+  author    = {Das, Bibek and Prajapati, Sourabh and Adak, Chandranath and Chattopadhyay, Soumi and Saqib, Muhammad and Anwar, Saeed},
+  title     = {Do Vision-Language Models Truly Count? Revealing the Semantic-Localization Gap in Dense Crowd Understanding},
+  booktitle = {International Conference on Neural Information Processing (ICONIP)},
+  year      = {2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="from visual feedback to textual reviews: a multi-agent vision-language framework for image-grounded review assistance u. k. nareti, a. bansal, k. priya, c. adak, s. chattopadhyay, m. saqib and s. anwar international conference on neural information processing (iconip)">
+          <h3 class="pb-title">From Visual Feedback to Textual Reviews: A Multi-Agent Vision-Language Framework for Image-Grounded Review Assistance</h3>
+          <p class="pb-authors">U. K. Nareti, A. Bansal, K. Priya, C. Adak, S. Chattopadhyay, M. Saqib and S. Anwar</p>
+          <p class="pb-venue"><i>International Conference on Neural Information Processing (ICONIP)</i></p>
+          <div class="pb-links"><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-pdf-o"></i>Official PDF</span><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-text-o"></i>arXiv</span><a class="pb-l" href="https://github.com/KumariPriyaIITP/product/tree/main"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Nareti2026Visual')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Nareti2026Visual"><button class="pb-bib-copy" onclick="copyBib('Nareti2026Visual',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Nareti2026Visual">@inproceedings{Nareti2026Visual,
+  author    = {Nareti, Utsav Kumar and Bansal, Ayush and Priya, Kumari and Adak, Chandranath and Chattopadhyay, Soumi and Saqib, Muhammad and Anwar, Saeed},
+  title     = {From Visual Feedback to Textual Reviews: A Multi-Agent Vision-Language Framework for Image-Grounded Review Assistance},
+  booktitle = {International Conference on Neural Information Processing (ICONIP)},
+  year      = {2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="ubllie: unified backlight and low-light image enhancement y. yasin, m. usman, i. radwan, and s. anwar arxiv e-prints">
+          <h3 class="pb-title">UBLLIE: Unified Backlight and Low-Light Image Enhancement</h3>
+          <p class="pb-authors">Y. Yasin, M. Usman, I. Radwan, and S. Anwar</p>
+          <p class="pb-venue"><i>arXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/pdf/2608.04429"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('Yasmin2026UBLLIE')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Yasmin2026UBLLIE"><button class="pb-bib-copy" onclick="copyBib('Yasmin2026UBLLIE',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Yasmin2026UBLLIE">@article{Yasmin2026UBLLIE,
+      title={UBLLIE: Unified Backlight and Low-Light Image Enhancement}, 
+      author={Yasmin Yasin and Muhammad Usman and Ibrahim Radwan and Saeed Anwar},
+      year={2026},
+      eprint={2608.04429},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2608.04429},
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="spegnet: synergistic perception-guided network for camouflaged object detection b. jan, s. anwar, a. h. el-maleh, a. j. siddiqui, and a. bais ieee transactions on image processing (tip)">
+          <h3 class="pb-title">SPEGNet: Synergistic Perception-Guided Network for Camouflaged Object Detection</h3>
+          <p class="pb-authors">B. Jan, S. Anwar, A. H. El-Maleh, A. J. Siddiqui, and A. Bais</p>
+          <p class="pb-venue"><i>IEEE Transactions on Image Processing (TIP)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/11646885"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2510.04472"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/Baber-Jan/SPEGNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Baber2026SPEGNet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Baber2026SPEGNet"><button class="pb-bib-copy" onclick="copyBib('Baber2026SPEGNet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Baber2026SPEGNet">@article{Baber2026SPEGNet,
+   title={SPEGNet: Synergistic Perception-Guided Network for Camouflaged Object Detection}, 
+   author={Baber Jan and Saeed Anwar and Aiman H. El-Maleh and Abdul Jabbar Siddiqui and Abdul Bais},
+   journal ={Transactions on Image Processing},
+   year={2026},
+   organization={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="the evolution of deep learning: from perceptrons to generative foundation models h. naveed, s. anwar, s. qiu, d. liu, n. barnes, i. radwan, and a. mian preprints">
+          <h3 class="pb-title">The Evolution of Deep Learning: From Perceptrons to Generative Foundation Models</h3>
+          <p class="pb-authors">H. Naveed, S. Anwar, S. Qiu, D. Liu, N. Barnes, I. Radwan, and A. Mian</p>
+          <p class="pb-venue"><i>Preprints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.preprints.org/manuscript/202607.1764"><i class="fa fa-file-text-o"></i>Preprint</a><button class="pb-bibbtn" onclick="toggleBib('Naveed2026EDL')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Naveed2026EDL"><button class="pb-bib-copy" onclick="copyBib('Naveed2026EDL',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Naveed2026EDL">@article{Naveed2026EDL,
+	year = 2026,
+	month = {July},
+	publisher = {Preprints},
+	author = {Humza Naveed and Saeed Anwar and Shi Qiu and Daochang Liu and Nick Barnes and Ibrahim Radwan and Ajmal Mian},
+	title = {The Evolution of Deep Learning: From Perceptrons to Generative Foundation Models},
+	journal = {Preprints}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="gensyn10: a multi-generative ai dataset for benchmarking image classification m.f.k. khan, s anwar, and g.m. hassan arxiv e-prints">
+          <h3 class="pb-title">GenSyn10: A Multi-Generative AI Dataset For Benchmarking Image Classification</h3>
+          <p class="pb-authors">M.F.K. Khan, S Anwar, and G.M. Hassan</p>
+          <p class="pb-venue"><i>arXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2607.16283"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/farazkabir/GenSyn10-Benchmarking"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Khan2026GenSyn10')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Khan2026GenSyn10"><button class="pb-bib-copy" onclick="copyBib('Khan2026GenSyn10',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Khan2026GenSyn10">@article{Khan2026GenSyn10,
+  title={GenSyn10: A Multi-Generative AI Dataset For Benchmarking Image Classification},
+  author={Khan, Md Faraz Kabir and Anwar, Saeed and Hassan, Ghulam Mubashar},
+  journal={arXiv preprint arXiv:2607.16283},
+  year={2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="exploiting semantic and pixel representations for ultra-low bitrate image compression h. wei, y. zhou, c. ge, s. anwar and a. mian arxiv e-prints">
+          <h3 class="pb-title">Exploiting Semantic and Pixel Representations for Ultra-Low Bitrate Image Compression</h3>
+          <p class="pb-authors">H. Wei, Y. Zhou, C. Ge, S. Anwar and A. Mian</p>
+          <p class="pb-venue"><i>arXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2606.01608"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/cshw2021/SPRDiff"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Wei2026SPRDiff')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Wei2026SPRDiff"><button class="pb-bib-copy" onclick="copyBib('Wei2026SPRDiff',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Wei2026SPRDiff">@article{Wei2026SPRDiff,
+      title={Exploiting Semantic and Pixel Representations for Ultra-Low Bitrate Image Compression}, 
+      author={Hao Wei and Yanhui Zhou and Chenyang Ge and Saeed Anwar and Ajmal Mian},
+      year={2026},
+      eprint={2606.01608},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2606.01608}, 
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="numgrad-pull: numerical gradient guided tri-plane representation for surface reconstruction from point clouds r. cui, s. qiu, j. liu, s. anwar, and n. barnes ieee transactions on visualization and computer graphics (tvcg)">
+          <h3 class="pb-title">NumGrad-Pull: Numerical Gradient Guided Tri-plane Representation for Surface Reconstruction from Point Clouds</h3>
+          <p class="pb-authors">R. Cui, S. Qiu, J. Liu, S. Anwar, and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE Transactions on Visualization and Computer Graphics (TVCG)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/11600597"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2411.17392"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/CuiRuikai/NumGrad-Pull"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Cui2026numgrad')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Cui2026numgrad"><button class="pb-bib-copy" onclick="copyBib('Cui2026numgrad',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Cui2026numgrad">@article{Cui2024numgrad,
+      title={NumGrad-Pull: Numerical Gradient Guided Tri-plane Representation for Surface Reconstruction from Point Clouds}, 
+      author={Ruikai Cui and Binzhu Xie and Shi Qiu and Jiawei Liu and Saeed Anwar and Nick Barnes},
+      journal={IEEE Transactions on Visualization \&amp; Computer Graphics},
+	  year={2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="segmenting visuals with querying words: language anchors for semi-supervised image segmentation n. nadeem, s. anwar, m. h. asad, and a. bais european conference on computer vision (eccv)">
+          <h3 class="pb-title">Segmenting Visuals With Querying Words: Language Anchors For Semi-Supervised Image Segmentation</h3>
+          <p class="pb-authors">N. Nadeem, S. Anwar, M. H. Asad, and A. Bais</p>
+          <p class="pb-venue"><i>European Conference on Computer Vision (ECCV)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2506.13925"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://numnz.github.io/HVLFormer/"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Nadeem2026HVLFormer')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Nadeem2026HVLFormer"><button class="pb-bib-copy" onclick="copyBib('Nadeem2026HVLFormer',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Nadeem2026HVLFormer">@inproceedings{Nadeem2026HVLFormer,
+  title={Segmenting Visuals With Querying Words: Language Anchors For Semi-Supervised Image Segmentation},
+  author={Nadeem, Numair and Anwar, Saeed and Asad, Muhammad Hamza and Bais, Abdul},
+  booktitle={European Conference on Computer Vision},
+  year={2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="auto-feedback semantic interface learning for text-based person retrieval j li, m jiang, m wu, j kong, s anwar, and a mian pattern recognition (pr)">
+          <h3 class="pb-title">Auto-Feedback Semantic Interface Learning for Text-Based Person Retrieval</h3>
+          <p class="pb-authors">J Li, M Jiang, M Wu, J Kong, S Anwar, and A Mian</p>
+          <p class="pb-venue"><i>Pattern Recognition (PR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S0031320326012896"><i class="fa fa-file-pdf-o"></i>Official PDF</a><button class="pb-bibbtn" onclick="toggleBib('Li2026ASIL')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Li2026ASIL"><button class="pb-bib-copy" onclick="copyBib('Li2026ASIL',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Li2026ASIL">@article{Li2026ASIL,
+	title   = {Auto-Feedback Semantic Interface Learning for Text-Based Person Retrieval},
+	journal = {Pattern Recognition},
+	volume  = {180},
+	pages   = {114324},
+	year    = {2026},
+	issn    = {0031-3203},
+	doi     = {https://doi.org/10.1016/j.patcog.2026.114324},
+	url     = {https://www.sciencedirect.com/science/article/pii/S0031320326012896},
+	author  = {Jiayi Li and Min Jiang and Meng Wu and Jun Kong and Saeed Anwar and Ajmal Mian}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="pointcam: cut-and-mix for open-set point cloud analysis j. hong, s. qiu, w. li, s. anwar, m. harandi, n. barnes, and l. petersson computer vision and image understanding (cviu)">
+          <h3 class="pb-title">PointCaM: Cut-and-Mix for Open-Set Point Cloud Analysis</h3>
+          <p class="pb-authors">J. Hong, S. Qiu, W. Li, S. Anwar, M. Harandi, N. Barnes, and L. Petersson</p>
+          <p class="pb-venue"><i>Computer Vision and Image Understanding (CVIU)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://doi.org/10.1016/j.cviu.2026.104814"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2212.02011"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/ShiQiu0419/pointcam"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('hong2026pointcam')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-hong2026pointcam"><button class="pb-bib-copy" onclick="copyBib('hong2026pointcam',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-hong2026pointcam">@article{hong2026pointcam,
+  title={Pointcam: Cut-and-mix for open-set point cloud learning},
+  author={Hong, Jie and Qiu, Shi and Li, Weihao and Anwar, Saeed and Harandi, Mehrtash and Barnes, Nick and Petersson, Lars},
+  journal={Computer Vision and Image Understanding},
+  pages={104814},
+  year={2026},
+  publisher={Elsevier}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="flatec: frequency-disentangled latent triplanes for efficient compression of lidar point clouds x. zhang, z. wu, m. feng, z. geng, m. nasim, s. anwar, and a. mian ieee international conference on multimedia and expo (icme)">
+          <h3 class="pb-title">FLaTEC: Frequency-Disentangled Latent Triplanes for Efficient Compression of LiDAR Point Clouds</h3>
+          <p class="pb-authors">X. Zhang, Z. Wu, M. Feng, Z. Geng, M. Nasim, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>IEEE International Conference on Multimedia and Expo (ICME)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2511.20065"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://xiaogezhang9.github.io/project/FLaTEC/"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Zhang2026FLaTEC')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Zhang2026FLaTEC"><button class="pb-bib-copy" onclick="copyBib('Zhang2026FLaTEC',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Zhang2026FLaTEC">@article{Zhang2026FLaTEC,
+      title={FLaTEC: Frequency-Disentangled Latent Triplanes for Efficient Compression of LiDAR Point Clouds}, 
+      author={Xiaoge Zhang and Zijie Wu and Mingtao Feng and Zichen Geng and Mehwish Nasim and Saeed Anwar and Ajmal Mian},
+      booktitle={IEEE International Conference on Multimedia and Expo (ICME)},
+      year={2026},
+      organization={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="representation-centric survey of skeletal action recognition and the anubis benchmark y. liu, j. yang, m. perera, p. ji, d. kim, m. xu, t. wang, s. anwar, t. gedeon, l. wang, and z. qin pattern recognition (pr)">
+          <h3 class="pb-title">Representation-Centric Survey of Skeletal Action Recognition and the ANUBIS Benchmark</h3>
+          <p class="pb-authors">Y. Liu, J. Yang, M. Perera, P. Ji, D. Kim, M. Xu, T. Wang, S. Anwar, T. Gedeon, L. Wang, and Z. Qin</p>
+          <p class="pb-venue"><i>Pattern Recognition (PR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S0031320326011052"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/abs/2205.02071"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="http://hcc-workshop.anu.edu.au/webs/anu101/home"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Qin2026ANUBIS')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Qin2026ANUBIS"><button class="pb-bib-copy" onclick="copyBib('Qin2026ANUBIS',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Qin2026ANUBIS">@article{Qin2026ANUBIS,
+  title={ANUBIS: Skeleton Action Recognition Dataset, Review, and Benchmark},
+  author={Yang Liu and Jiyao Yang and Madhawa Perera and Pan Ji and Dongwoo Kim and Min Xu and Tianyang Wang and Saeed Anwar and Tom Gedeon and Lei Wang and Zhenyue Qin},
+  journal={Pattern Recognition},
+  year={2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="a review on vision-centric coarse to fine-grained animal action recognition a. zia, r. sharma, a. khamis, u. ali, x. li, m. husnain, n. shafi, s. anwar, i. raza, m. h. jamal, s. schmoelzl, e. stone, l. petersson, and v. rolland artificial intelligence review (air)">
+          <h3 class="pb-title">A review on vision-centric coarse to fine-grained animal action recognition</h3>
+          <p class="pb-authors">A. Zia, R. Sharma, A. Khamis, U. Ali, X. Li, M. Husnain, N. Shafi, S. Anwar, I. Raza, M. H. Jamal, S. Schmoelzl, E. Stone, L. Petersson, and V. Rolland</p>
+          <p class="pb-venue"><i>Artificial Intelligence Review (AIR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2506.01214"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('Ali2026FGAnimal')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ali2026FGAnimal"><button class="pb-bib-copy" onclick="copyBib('Ali2026FGAnimal',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ali2026FGAnimal">@article{Ali2026FGAnimal,
+  title={A review on vision-centric coarse to fine-grained animal action recognition},
+  author={Zia, Ali and Sharma, Renuka and Khamis, Abdelwahed and Ali, Usman and Li, Xuesong and Husnain, Muhammad and Shafi, Numan and Anwar, Saeed and Raza, Imran and Jamal, Muhammad Hasan and others},
+  journal={Artificial Intelligence Review},
+  year={2026},
+  publisher={Springer}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="mind the rarities: can rare skin diseases be reliably diagnosed via diagnostic reasoning? y. liu, j. yang, h. zhao, x. li, y. ji, x. li, r. jiang, t. wang, s. anwar, d. kim, y. yao, z. qin, and m. xu arxiv e-prints">
+          <h3 class="pb-title">Mind the Rarities: Can Rare Skin Diseases Be Reliably Diagnosed via Diagnostic Reasoning?</h3>
+          <p class="pb-authors">Y. Liu, J. Yang, H. Zhao, X. Li, Y. Ji, X. Li, R. Jiang, T. Wang, S. Anwar, D. Kim, Y. Yao, Z. Qin, and M. Xu</p>
+          <p class="pb-venue"><i>arXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2603.18418"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://yliu1082.github.io/DermCase/"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Liu2026Mind')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Liu2026Mind"><button class="pb-bib-copy" onclick="copyBib('Liu2026Mind',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Liu2026Mind">@article{Liu2026Mind,
+  title={Mind the Rarities: Can Rare Skin Diseases Be Reliably Diagnosed via Diagnostic Reasoning?},
+  author={Liu, Yang and Yang, Jiyao and Zhao, Hongjin and Li, Xiaoyong and Ji, Yanzhe and Li, Xingjian and Jiang, Runmin and Wang, Tianyang and Anwar, Saeed and Kim, Dongwoo and others},
+  journal={arXiv preprint arXiv:2603.18418},
+  year={2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="faithful extreme image rescaling with learnable reversible transformation and semantic priors h. wei, y. zhou, c. ge, s. anwar, and a. mian arxiv e-prints">
+          <h3 class="pb-title">Faithful Extreme Image Rescaling with Learnable Reversible Transformation and Semantic Priors</h3>
+          <p class="pb-authors">H. Wei, Y. Zhou, C. Ge, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>arXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/pdf/2605.00605"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/cshw2021/FaithEIR"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Wei2026Faithful')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Wei2026Faithful"><button class="pb-bib-copy" onclick="copyBib('Wei2026Faithful',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Wei2026Faithful">@article{Wei2026Faithful,
+  title={Faithful Extreme Image Rescaling with Learnable Reversible Transformation and Semantic Priors},
+  author={Wei, Hao and Zhou, Yanhui and Ge, Chenyang and Anwar, Saeed and Mian, Ajmal},
+  journal={arXiv preprint arXiv:2605.00605},
+  year={2026}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="diffcom: decoupled sparse priors guided diffusion compression for point clouds x. zhang, z. wu, m. feng, m. nasim, s. anwar, and a. mian ieee transactions on circuits and systems for video technology (tcsvt)">
+          <h3 class="pb-title">DiffCom: Decoupled Sparse Priors Guided Diffusion Compression for Point Clouds</h3>
+          <p class="pb-authors">X. Zhang, Z. Wu, M. Feng, M. Nasim, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/html/2411.13860v2"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://ieeexplore.ieee.org/document/11393473"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://xiaogezhang9.github.io/project/DiffCom/"><i class="fa fa-globe"></i>Project Page</a><a class="pb-l" href="https://xiaogezhang9.github.io/project/DiffCom/"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Xiaoge2026DiffCom')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Xiaoge2026DiffCom"><button class="pb-bib-copy" onclick="copyBib('Xiaoge2026DiffCom',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Xiaoge2026DiffCom">@article{Xiaoge2026DiffCom,
+  author={Zhang, Xiaoge and Wu, Zijie and Feng, Mingtao and Nasim, Mehwish and Anwar, Saeed and Mian, Ajmal},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+  title={DiffCom: Decoupled Sparse Priors Guided Diffusion Compression for Point Clouds}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TCSVT.2026.3663664} 
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="rdd4d: 4d attention-guided road damage detection and classification a. alkalbani, m. saqib, a. s. alrawahi, a. anwar, c. adak, and s. anwar ieee access">
+          <h3 class="pb-title">RDD4D: 4D Attention-Guided Road Damage Detection And Classification</h3>
+          <p class="pb-authors">A. Alkalbani, M. Saqib, A. S. Alrawahi, A. Anwar, C. Adak, and S. Anwar</p>
+          <p class="pb-venue"><i>IEEE Access</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2501.02822"><i class="fa fa-file-text-o"></i>arXiv</a><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-pdf-o"></i>Official PDF</span><a class="pb-l" href="https://github.com/msaqib17/Road_Damage_Detection"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Asma2026RDD4D')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Asma2026RDD4D"><button class="pb-bib-copy" onclick="copyBib('Asma2026RDD4D',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Asma2026RDD4D">@article{Asma2026RDD4D,
+      title={RDD4D: 4D Attention-Guided Road Damage Detection And Classification}, 
+      author={Asma Alkalbani and Muhammad Saqib and Ahmed Salim Alrawahi and Abbas Anwar and Chandarnath Adak and Saeed Anwar},
+      year={2025},
+      journal={IEEE Access}
+}</pre></div>
+        </div><div class="pb-card" data-year="2026" data-h="swinifs: landmark guided swin transformer for identity preserving face super resolution h. kausar, s. anwar, o. j. hammad, and a. bais arxiv e-prints">
+          <h3 class="pb-title">SwinIFS: Landmark Guided Swin Transformer For Identity Preserving Face Super Resolution</h3>
+          <p class="pb-authors">H. Kausar, S. Anwar, O. J. Hammad, and A. Bais</p>
+          <p class="pb-venue"><i>arXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2601.01406"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/Habiba123-stack/SwinIFS"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Kausar2026SwinIFS')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Kausar2026SwinIFS"><button class="pb-bib-copy" onclick="copyBib('Kausar2026SwinIFS',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Kausar2026SwinIFS">@article{Kausar2026SwinIFS,
+      title={SwinIFS: Landmark Guided Swin Transformer For Identity Preserving Face Super Resolution}, 
+      author={Habiba Kausar and Saeed Anwar and Omar Jamal Hammad and Abdul Bais},
+      year={2026},
+      eprint={2601.01406},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2601.01406}, 
+}</pre></div>
+        </div><h2 class="pb-year" id="py-2025">2025<span class="pb-year-n">19</span></h2>
+<div class="pb-card" data-year="2025" data-h="pendulum: a benchmark for assessing sycophancy in multimodal large language models a. b. m. a. rahman, s. anwar, m. usman, i. ahmad, and a. mian arxiv e-prints">
+          <h3 class="pb-title">PENDULUM: A Benchmark for Assessing Sycophancy in Multimodal Large Language Models</h3>
+          <p class="pb-authors">A. B. M. A. Rahman, S. Anwar, M. Usman, I. Ahmad, and A. Mian</p>
+          <p class="pb-venue"><i>arXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2512.19350"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/ashikiut/pendulum/"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Rahman2025PENDULUM')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Rahman2025PENDULUM"><button class="pb-bib-copy" onclick="copyBib('Rahman2025PENDULUM',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Rahman2025PENDULUM">@article{Rahman2025PENDULUM,
+      title={PENDULUM: A Benchmark for Assessing Sycophancy in Multimodal Large Language Models}, 
+      author={A. B. M. Ashikur Rahman and Saeed Anwar and Muhammad Usman and Irfan Ahmad and Ajmal Mian},
+      year={2025},
+      eprint={2512.19350},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2512.19350}, 
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="c3net: context-contrast network for camouflaged object detection b. jan, a. h. el-maleh, a. j. siddiqui, a. bais, and s. anwar arxiv e-prints">
+          <h3 class="pb-title">C3Net: Context-Contrast Network for Camouflaged Object Detection</h3>
+          <p class="pb-authors">B. Jan, A. H. El-Maleh, A. J. Siddiqui, A. Bais, and S. Anwar</p>
+          <p class="pb-venue"><i>arXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2511.12627"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/Baber-Jan/C3Net"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Baber2025C3Net')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Baber2025C3Net"><button class="pb-bib-copy" onclick="copyBib('Baber2025C3Net',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Baber2025C3Net">@article{Baber2025C3Net,
+     title={C3Net: Context-Contrast Network for Camouflaged Object Detection}, 
+      author={Baber Jan and Aiman H. El-Maleh and Abdul Jabbar Siddiqui and Abdul Bais and Saeed Anwar},
+      year={2025},
+      eprint={2511.12627},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.12627}, 
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="msrnet: a multi-scale recursive network for camouflaged object detection l. alghamdi, m. usman, h. anwar, a. bais, and s. anwar arxiv e-prints">
+          <h3 class="pb-title">MSRNet: A Multi-Scale Recursive Network for Camouflaged Object Detection</h3>
+          <p class="pb-authors">L. Alghamdi, M. Usman, H. Anwar, A. Bais, and S. Anwar</p>
+          <p class="pb-venue"><i>arXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2511.12810"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/linaagh98/MSRNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Alghamdi2025MSRNet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Alghamdi2025MSRNet"><button class="pb-bib-copy" onclick="copyBib('Alghamdi2025MSRNet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Alghamdi2025MSRNet">@article{Alghamdi2025MSRNet,
+      title={MSRNet: A Multi-Scale Recursive Network for Camouflaged Object Detection}, 
+      author={Leena Alghamdi and Muhammad Usman and Hafeez Anwar and Abdul Bais and Saeed Anwar},
+      year={2025},
+      eprint={2511.12810},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2511.12810}, 
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="iard: intruder activity recognition dataset for threat detection s. ali, m. t. islam, i. h. lee, s. anwar, j. d. ser, and k. muhammad acm international conference on information and knowledge management (cikm)">
+          <h3 class="pb-title">IARD: Intruder Activity Recognition Dataset for Threat Detection</h3>
+          <p class="pb-authors">S. Ali, M. T. Islam, I. H. Lee, S. Anwar, J. D. Ser, and K. Muhammad</p>
+          <p class="pb-venue"><i>ACM International Conference on Information and Knowledge Management (CIKM)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://dl.acm.org/doi/abs/10.1145/3746252.3761619"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://github.com/ShehzadCS18/IARD"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Ali2025IARD')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ali2025IARD"><button class="pb-bib-copy" onclick="copyBib('Ali2025IARD',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ali2025IARD">@inproceedings{Ali2025IARD,
+	author = {Ali, Shehzad and Islam, Md Tanvir and Lee, Ik Hyun and Anwar, Saeed and Ser, Javier Del and Muhammad, Khan},
+	title = {IARD: Intruder Activity Recognition Dataset for Threat Detection},
+	isbn = {9798400720406},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/3746252.3761619},
+	doi = {10.1145/3746252.3761619},
+	booktitle = {Proceedings of the 34th ACM International Conference on Information and Knowledge Management},
+	pages = {6317–6322},
+	numpages = {6},
+	year = {2025}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="a lightweight model for perceptual image compression via implicit priors h. wei, y. zhou, y. jia, c. ge, s. anwar, and a. mian neural networks (nn)">
+          <h3 class="pb-title">A Lightweight Model for Perceptual Image Compression via Implicit Priors</h3>
+          <p class="pb-authors">H. Wei, Y. Zhou, Y. Jia, C. Ge, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>Neural Networks (NN)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S0893608025011608"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/abs/2507.19304"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/cshw2021/ICISP"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Wei2025Lightweight')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Wei2025Lightweight"><button class="pb-bib-copy" onclick="copyBib('Wei2025Lightweight',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Wei2025Lightweight">@article{Wei2025Lightweight,
+      title={A Lightweight Model for Perceptual Image Compression via Implicit Priors}, 
+      author={Hao Wei and Yanhui Zhou and Yiwen Jia and Chenyang Ge and Saeed Anwar and Ajmal Mian},
+ 	  journal={Nerual Networks},
+  	  year={2025},
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="defan: definitive answer dataset for llms hallucination evaluation a. b. m. a. rahman, s. anwar, m. usman, i. ahmad, and a. mian information">
+          <h3 class="pb-title">DefAn: Definitive Answer Dataset for LLMs Hallucination Evaluation</h3>
+          <p class="pb-authors">A. B. M. A. Rahman, S. Anwar, M. Usman, I. Ahmad, and A. Mian</p>
+          <p class="pb-venue"><i>Information</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/pdf/2406.09155"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://www.mdpi.com/2078-2489/16/11/937"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://github.com/ashikiut/DefAn"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('rahman2025defan')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-rahman2025defan"><button class="pb-bib-copy" onclick="copyBib('rahman2025defan',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-rahman2025defan">@article{rahman2025defan,
+AUTHOR = {Rahman, A. B. M. Ashikur and Anwar, Saeed and Usman, Muhammad and Ahmad, Irfan and Mian, Ajmal},
+TITLE = {DefAn: Definitive Answer Dataset for LLM Hallucination Evaluation},
+JOURNAL = {Information},
+VOLUME = {16},
+YEAR = {2025},
+NUMBER = {11},
+ARTICLE-NUMBER = {937},
+ISSN = {2078-2489},
+DOI = {10.3390/info16110937}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="crtsc: channel-wise recalibration and texture-structural consistency constraint for anomaly detection in medical chest images m. xiong, c. wang, h. cai, a. alotaibi, s. anwar, a. k. j. saudagar, j. d. ser, and k. muhammad sensors">
+          <h3 class="pb-title">CRTSC: Channel-Wise Recalibration and Texture-Structural Consistency Constraint for Anomaly Detection in Medical Chest Images</h3>
+          <p class="pb-authors">M. Xiong, C. Wang, H. Cai, A. Alotaibi, S. Anwar, A. K. J. Saudagar, J. D. Ser, and K. Muhammad</p>
+          <p class="pb-venue"><i>Sensors</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.mdpi.com/1424-8220/25/21/6722"><i class="fa fa-file-pdf-o"></i>Official PDF</a><button class="pb-bibbtn" onclick="toggleBib('xiong2025crtsc')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-xiong2025crtsc"><button class="pb-bib-copy" onclick="copyBib('xiong2025crtsc',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-xiong2025crtsc">@article{xiong2025crtsc,
+  title={CRTSC: Channel-Wise Recalibration and Texture-Structural Consistency Constraint for Anomaly Detection in Medical Chest Images},
+  author={Xiong, Mingfu and Wang, Chong and Cai, Hao and Alotaibi, Aziz and Anwar, Saeed and Saudagar, Abdul Khader Jilani and Del Ser, Javier and Muhammad, Khan},
+  journal={Sensors},
+  volume={25},
+  number={21},
+  pages={6722},
+  year={2025},
+  publisher={MDPI}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="bird's-eye view to street-view: a survey k. bajbaa, m. usman, s. anwar, i. radwan, and a. bais applied intelligence (ai)">
+          <h3 class="pb-title">Bird's-Eye View to Street-View: A Survey</h3>
+          <p class="pb-authors">K. Bajbaa, M. Usman, S. Anwar, I. Radwan, and A. Bais</p>
+          <p class="pb-venue"><i>Applied Intelligence (AI)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://link.springer.com/article/10.1007/s10489-025-06940-1"><i class="fa fa-file-pdf-o"></i>Official Version</a><a class="pb-l" href="https://arxiv.org/pdf/2405.08961"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('bajbaa2025birdseye')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-bajbaa2025birdseye"><button class="pb-bib-copy" onclick="copyBib('bajbaa2025birdseye',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-bajbaa2025birdseye">@article{bajbaa2025birdseye,
+      title={Bird&#x27;s-Eye View to Street-View: A Survey}, 
+      author={Khawlah Bajbaa and Muhammad Usman and Saeed Anwar and Ibrahim Radwan and Abdul Bais},
+ 	  journal={Applied Intelligence},
+  	  year={2025},
+  	  publisher={Springer}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="benchmarking crowd counting in bird-eye images from drones m. saqib, r. sharma, s. anwar, and n. sharma international conference on data science and communication (ictdsc)">
+          <h3 class="pb-title">Benchmarking Crowd Counting in Bird-Eye Images From Drones</h3>
+          <p class="pb-authors">M. Saqib, R. Sharma, S. Anwar, and N. Sharma</p>
+          <p class="pb-venue"><i>International Conference on Data Science and Communication (ICTDsC)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://link.springer.com/content/pdf/10.1007/978-981-96-4543-5.pdf"><i class="fa fa-file-pdf-o"></i>Official PDF</a><button class="pb-bibbtn" onclick="toggleBib('Saqib2025Benchmarking')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Saqib2025Benchmarking"><button class="pb-bib-copy" onclick="copyBib('Saqib2025Benchmarking',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Saqib2025Benchmarking">@InProceedings{Saqib2025Benchmarking,
+author=&quot;Saqib, Muhammad
+and Sharma, Rabi
+and Anwar, Saeed
+and Sharma, Nabin&quot;,
+title=&quot;Benchmarking Crowd Counting in Bird-Eye Images From Drones&quot;,
+booktitle=&quot;Data Science and Communication Engineering&quot;,
+year=&quot;2025&quot;,
+publisher=&quot;Springer Nature Singapore&quot;,
+address=&quot;Singapore&quot;,
+pages=&quot;683--697&quot;,
+isbn=&quot;978-981-96-4543-5&quot;
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="multi scale self supervised learning for deep knowledge transfer in diabetic retinopathy grading w. almattar, s. anwar, s. al-azani, and f. a. khan scientific reports (sr)">
+          <h3 class="pb-title">Multi scale self supervised learning for deep knowledge transfer in diabetic retinopathy grading</h3>
+          <p class="pb-authors">W. Almattar, S. Anwar, S. Al-Azani, and F. A. Khan</p>
+          <p class="pb-venue"><i>Scientific Reports (SR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://rdcu.be/eJxgF"><i class="fa fa-file-pdf-o"></i>Official PDF</a><button class="pb-bibbtn" onclick="toggleBib('almattar2025multi')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-almattar2025multi"><button class="pb-bib-copy" onclick="copyBib('almattar2025multi',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-almattar2025multi">@article{almattar2025multi,
+  title={Multi scale self supervised learning for deep knowledge transfer in diabetic retinopathy grading},
+  author={Almattar, Wadha and Anwar, Saeed and Al-Azani, Sadam and Khan, Fakhri Alam},
+  journal={Scientific Reports},
+  volume={15},
+  number={1},
+  pages={33742},
+  year={2025},
+  publisher={Nature Publishing Group UK London}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="multistream network for lidar and camera-based 3d object detection in outdoor scenes m. ibrahim, n. akhtar, h. wang, s. anwar, and a. mian ieee/rsj international conference on intelligent robots and systems (iros)">
+          <h3 class="pb-title">Multistream Network for LiDAR and Camera-based 3D Object Detection in Outdoor Scenes</h3>
+          <p class="pb-authors">M. Ibrahim, N. Akhtar, H. Wang, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i><span class="pb-oral">Oral</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2507.19304"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/IbrahimUWA/MuStD"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Ibrahim2025MuStD')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ibrahim2025MuStD"><button class="pb-bib-copy" onclick="copyBib('Ibrahim2025MuStD',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ibrahim2025MuStD">@inproceedings{Ibrahim2025MuStD,
+  title={Multistream Network for LiDAR and Camera-based 3D Object Detection in Outdoor Scenes},
+  author={Ibrahim, Muhammad and Akhtar, Naveed and Wang, Haitian and Anwar, Saeed and Mian, Ajmal},
+  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year={2025},
+  organization={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="towards hazardous activity recognition for a novel real-world dataset s. ali, m. t. islam, i. h. lee, m. xiong, m.-s. dao, s. anwar, s. bakshi, and k. muhammad acm international conference on multimedia (acm mm)">
+          <h3 class="pb-title">Towards Hazardous Activity Recognition for A Novel Real-World Dataset</h3>
+          <p class="pb-authors">S. Ali, M. T. Islam, I. H. Lee, M. Xiong, M.-S. Dao, S. Anwar, S. Bakshi, and K. Muhammad</p>
+          <p class="pb-venue"><i>ACM International Conference on Multimedia (ACM MM)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://dl.acm.org/doi/10.1145/3746027.3754795"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://github.com/ShehzadCS18/RHAD/"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Ali2025RHAD')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ali2025RHAD"><button class="pb-bib-copy" onclick="copyBib('Ali2025RHAD',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ali2025RHAD">@InProceedings{Ali2025RHAD,
+title={\enquote{Towards Hazardous Activity Recognition for A Novel Real-World Dataset}},
+author	={Shehzad Ali and Md Tanvir Islam and Ik Hyun Lee and  Mingfu Xiong and Minh-Son Dao and {\bf Saeed Anwar} and Sambit Bakshi and Khan Muhammad},
+isbn = {9798400720352},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3746027.3754795},
+doi = {10.1145/3746027.3754795},
+booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia},
+pages = {5326–5335},
+numpages = {10},
+keywords = {child activities, hazardnet, indoor hazard, safety, surveillance},
+location = {Dublin, Ireland},
+series = {MM &#x27;25}
+year={2025}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="a comprehensive overview of large language models h. naveed, a. u. khan, s. qiu, m. saqib, s. anwar, m. usman, n. barnes, and a. mian acm transactions on intelligent systems and technology (tist)">
+          <h3 class="pb-title">A Comprehensive Overview of Large Language Models</h3>
+          <p class="pb-authors">H. Naveed, A. U. Khan, S. Qiu, M. Saqib, S. Anwar, M. Usman, N. Barnes, and A. Mian</p>
+          <p class="pb-venue"><i>ACM Transactions on Intelligent Systems and Technology (TIST)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://dl.acm.org/doi/abs/10.1145/3744746"><i class="fa fa-file-pdf-o"></i>Official Version</a><a class="pb-l" href="https://arxiv.org/abs/2307.06435"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/humza909/LLM_Survey"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Humza2025LLMs')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Humza2025LLMs"><button class="pb-bib-copy" onclick="copyBib('Humza2025LLMs',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Humza2025LLMs">@article{Humza2025LLMs,
+  title = {A Comprehensive Overview of Large Language Models},
+  author={Humza Naveed and Asad Ullah Khan and Shi Qiu and Muhammad Saqib and Saeed Anwar and Muhammad Usman and Nick Barnes and Ajmal Mian},  
+  publisher = {ACM Transactions on Intelligent Systems and Technology},
+  year={2025}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="maskadapt: unsupervised geometry-aware domain adaptation using multimodal contextual learning and rgb-depth masking n. nadeem, m. h. asad, s. anwar, and a. bais ieee computer vision and pattern recognition workshops (cvprw)">
+          <h3 class="pb-title">MaskAdapt: Unsupervised Geometry-Aware Domain Adaptation Using Multimodal Contextual Learning and RGB-Depth Masking</h3>
+          <p class="pb-authors">N. Nadeem, M. H. Asad, S. Anwar, and A. Bais</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition Workshops (CVPRW)</i><span class="pb-oral">Oral</span></p>
+          <div class="pb-links"><span class="pb-l disabled" title="Link coming soon"><i class="fa fa-file-pdf-o"></i>CVPR Version</span><a class="pb-l" href="https://arxiv.org/pdf/2505.24026"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('Numair2025MaskAdapt')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Numair2025MaskAdapt"><button class="pb-bib-copy" onclick="copyBib('Numair2025MaskAdapt',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Numair2025MaskAdapt">@InProceedings{Numair2025MaskAdapt,
+    author    = {Nadeem, Numair and Asad, Muhammad Hamza and Anwar, Saeed and Bais, Abdul},
+    title     = {MaskAdapt: Unsupervised Geometry-Aware Domain Adaptation Using Multimodal Contextual Learning and RGB-Depth Masking},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2025},</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="sednet: synergistic learning network with embedded encoder and dense atrous convolution for vehicle re-identification m. xiong, t. gui, z. sun, s. anwar, a. alotaibi, and k muhammad alexandria engineering journal (aej)">
+          <h3 class="pb-title">SEDNet: Synergistic Learning Network with Embedded Encoder and Dense Atrous Convolution for Vehicle Re-identification</h3>
+          <p class="pb-authors">M. Xiong, T. Gui, Z. Sun, S. Anwar, A. Alotaibi, and K Muhammad</p>
+          <p class="pb-venue"><i>Alexandria Engineering Journal (AEJ)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S1110016825006064"><i class="fa fa-file-pdf-o"></i>Official PDF</a><button class="pb-bibbtn" onclick="toggleBib('Xiong2025SEDNet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Xiong2025SEDNet"><button class="pb-bib-copy" onclick="copyBib('Xiong2025SEDNet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Xiong2025SEDNet">@article{Xiong2025SEDNet,
+title = {SEDNet: Synergistic Learning Network with Embedded Encoder and Dense Atrous Convolution for Vehicle Re-identification},
+author = {Mingfu Xiong and Tanghao Gui and Zhihong Sun and Saeed Anwar and Aziz Alotaibi and Khan Muhammad},
+journal = {Alexandria Engineering Journal},
+volume = {128},
+pages = {297-305},
+issn = {1110-0168},
+year = {2025}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="vehicle and license plate recognition with novel dataset for toll collection m. usama, h. anwar, a. anwar, and s. anwar pattern analysis and applications (paa)">
+          <h3 class="pb-title">Vehicle and License Plate Recognition with Novel Dataset for Toll Collection</h3>
+          <p class="pb-authors">M. Usama, H. Anwar, A. Anwar, and S. Anwar</p>
+          <p class="pb-venue"><i>Pattern Analysis and Applications (PAA)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/pdf/2202.05631.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/usama-x930/VT-LPR"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Usama2025VTLPR')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Usama2025VTLPR"><button class="pb-bib-copy" onclick="copyBib('Usama2025VTLPR',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Usama2025VTLPR">@article{Usama2025VTLPR,
+     title={Vehicle and License Plate Recognition with Novel Dataset for Toll Collection}, 
+     author={Muhammad Usama and Hafeez Anwar and Abbas Anwar and Saeed Anwar},
+     journal={Pattern Analysis and Applications},
+     year={2024},
+     publisher={Springer}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="fsbi: deepfakes detection with frequency enhanced self-blended images a. a. hasanaath, h. luqman, r. katib, and s. anwar image and vision computing (ivs)">
+          <h3 class="pb-title">FSBI: Deepfakes Detection with Frequency Enhanced Self-Blended Images</h3>
+          <p class="pb-authors">A. A. Hasanaath, H. Luqman, R. Katib, and S. Anwar</p>
+          <p class="pb-venue"><i>Image and Vision Computing (IVS)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/abs/pii/S026288562500006X"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2406.08625"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/gufranSabri/FSBI"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('hasanaath2025fsbi')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-hasanaath2025fsbi"><button class="pb-bib-copy" onclick="copyBib('hasanaath2025fsbi',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-hasanaath2025fsbi">@article{hasanaath2025fsbi,
+  title={FSBI: Deepfake detection with frequency enhanced self-blended images},
+  author={Hasanaath, Ahmed Abul and Luqman, Hamzah and Katib, Raed and Anwar, Saeed},
+  journal={Image and Vision Computing},
+  pages={105418},
+  year={2025},
+  publisher={Elsevier}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="image colorization: a survey and dataset s. anwar, m. tahir, c. li, a. mian, f. s. khan, and a. w. muzaffar information fusion (if)">
+          <h3 class="pb-title">Image Colorization: A Survey and Dataset</h3>
+          <p class="pb-authors">S. Anwar, M. Tahir, C. Li, A. Mian, F. S. Khan, and A. W. Muzaffar</p>
+          <p class="pb-venue"><i>Information Fusion (IF)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S1566253524004986"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2008.10774.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/saeed-anwar/ColorSurvey"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2025ColorSurvey')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2025ColorSurvey"><button class="pb-bib-copy" onclick="copyBib('Anwar2025ColorSurvey',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2025ColorSurvey">@article{Anwar2025ColorSurvey,
+  title={Image Colorization: A Survey and Dataset},
+  author={Saeed Anwar and Muhammad Tahir and Chongyi Li and Ajmal Mian and Fahad Shahbaz Khan and Abdul Wahab Muzaffar},
+  journal={Information Fusion},
+  year={2025},
+  volume = {114},
+  pages = {102720},
+  year = {2025},
+  issn = {1566-2535},
+  publisher={Elsevier}
+}</pre></div>
+        </div><div class="pb-card" data-year="2025" data-h="deep learning based 3d segmentation: a survey y. he, h. yu, x. liu, z. yang, w. sun, s. anwar, and a. mian information fusion (if)">
+          <h3 class="pb-title">Deep Learning Based 3D Segmentation: A Survey</h3>
+          <p class="pb-authors">Y. He, H. Yu, X. Liu, Z. Yang, W. Sun, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>Information Fusion (IF)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S1566253524005001"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/abs/2103.05423"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('he2025DL3D')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-he2025DL3D"><button class="pb-bib-copy" onclick="copyBib('he2025DL3D',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-he2025DL3D">@article{he2025DL3D,
+  title = {Deep learning based 3D segmentation in computer vision: A survey},
+  author = {Yong He and Hongshan Yu and Xiaoyan Liu and Zhengeng Yang and Wei Sun and Saeed Anwar and Ajmal Mian},
+  journal = {Information Fusion},
+  volume = {115},
+  pages = {102722},
+  year = {2025},
+  issn = {1566-2535},
+  publisher={Elsevier}
+}</pre></div>
+        </div><h2 class="pb-year" id="py-2024">2024<span class="pb-year-n">16</span></h2>
+<div class="pb-card" data-year="2024" data-h="allweather-net: unified image enhancement for autonomous driving under adverse weather and low-light conditions c. qian, m. rezaei, s. anwar, w. li, t. hussain, m. azarmi, and w. wang international conference on pattern recognition (icpr)">
+          <h3 class="pb-title">AllWeather-Net: Unified Image Enhancement for Autonomous Driving Under Adverse Weather and Low-Light Conditions</h3>
+          <p class="pb-authors">C. Qian, M. Rezaei, S. Anwar, W. Li, T. Hussain, M. Azarmi, and W. Wang</p>
+          <p class="pb-venue"><i>International Conference on Pattern Recognition (ICPR)</i><span class="pb-oral">Oral</span><span class="pb-badge" style="background:#c9a227"><i class="fa fa-trophy"></i>Best Paper Award</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://link.springer.com/chapter/10.1007/978-3-031-78113-1_11"><i class="fa fa-file-pdf-o"></i>ICPR Version</a><a class="pb-l" href="https://arxiv.org/abs/2409.02045"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/Jumponthemoon/AllWeatherNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Qian2024AllWeatherNet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Qian2024AllWeatherNet"><button class="pb-bib-copy" onclick="copyBib('Qian2024AllWeatherNet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Qian2024AllWeatherNet">@InProceedings{Qian2024AllWeatherNet,
+  title={AllWeather-Net: Unified Image Enhancement for Autonomous Driving Under Adverse Weather and Low-Light Conditions}, 
+  author={Chenghao Qian and Mahdi Rezaei and Saeed Anwar and Wenjing Li and Tanveer Hussain and Mohsen Azarmi and Wei Wang},
+  booktitle={International Conference on Pattern Recognition (ICPR)},
+  year={2024},
+  organization={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="sketch–to–3d: transforming hand-sketched floorplans into 3d layouts m. usman, a. almulhim, m. alaseri, m. alzahran, h. luqman, and s. anwar digital image computing: techniques and applications (dicta)">
+          <h3 class="pb-title">Sketch–to–3D: Transforming Hand-Sketched Floorplans into 3D Layouts</h3>
+          <p class="pb-authors">M. Usman, A. Almulhim, M. Alaseri, M. Alzahran, H. Luqman, and S. Anwar</p>
+          <p class="pb-venue"><i>Digital Image Computing: Techniques and Applications (DICTA)</i><span class="pb-oral">Oral</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/10869598"><i class="fa fa-file-pdf-o"></i>DICTA Version</a><a class="pb-l" href="https://drive.google.com/file/d/1-Bds46sJlWrzCEp2rOKPvTUcPr8nYEZj/view"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Usman2024Sketchto3D')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Usman2024Sketchto3D"><button class="pb-bib-copy" onclick="copyBib('Usman2024Sketchto3D',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Usman2024Sketchto3D">@InProceedings{Usman2024Sketchto3D,
+  author={Usman, Muhammad and Almulhim, Abdullah and Alaseri, Mohammad and Alzahran, Mona and Luqman, Hamzah and Anwar, Saeed},
+  booktitle={International Conference on Digital Image Computing: Techniques and Applications (DICTA)}, 
+  title={Sketch–to–3D: Transforming Hand-Sketched Floorplans into 3D Layouts}, 
+  pages={359-366},
+  year={2024}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="3d object classification with selective multi-view fusion and shape rendering m. alzahrani, m. usman, r. alharbi, s. anwar, a. mian, and t. helmy digital image computing: techniques and applications (dicta)">
+          <h3 class="pb-title">3D Object Classification with Selective Multi-View Fusion and Shape Rendering</h3>
+          <p class="pb-authors">M. Alzahrani, M. Usman, R. Alharbi, S. Anwar, A. Mian, and T. Helmy</p>
+          <p class="pb-venue"><i>Digital Image Computing: Techniques and Applications (DICTA)</i><span class="pb-oral">Oral</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/10869594"><i class="fa fa-file-pdf-o"></i>DICTA Version</a><a class="pb-l" href="https://github.com/Mona-Alzahrani/SelectiveMV-Multiview"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Alzahrani20243DObject')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Alzahrani20243DObject"><button class="pb-bib-copy" onclick="copyBib('Alzahrani20243DObject',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Alzahrani20243DObject">@InProceedings{Alzahrani20243DObject,
+ author={Alzahrani, Mona and Usman, Muhammad and Alharbi, Randah and Anwar, Saeed and Mian, Ajmal and Helmy, Tarek},
+  booktitle={International Conference on Digital Image Computing: Techniques and Applications (DICTA)}, 
+  title={3D Object Classification with Selective Multi-View Fusion and Shape Rendering}, 
+  pages={351-358},
+  year={2024}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="impact of adverse weather and image distortions on vision-based uav detection: a performance evaluation of deep learning models a. munir, a. j. siddiqui, s. anwar, a. el-maleh, a. h. khan, and a. rehman drones">
+          <h3 class="pb-title">Impact of Adverse Weather and Image Distortions on Vision-Based UAV Detection: A Performance Evaluation of Deep Learning Models</h3>
+          <p class="pb-authors">A. Munir, A. J. Siddiqui, S. Anwar, A. El-Maleh, A. H. Khan, and A. Rehman</p>
+          <p class="pb-venue"><i>Drones</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.mdpi.com/2504-446X/8/11/638"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://github.com/AdnanMunir338/UAV-AWID/tree/main"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Munir2024drones')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Munir2024drones"><button class="pb-bib-copy" onclick="copyBib('Munir2024drones',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Munir2024drones">@Article{Munir2024drones,
+  AUTHOR = {Munir, Adnan and Siddiqui, Abdul Jabbar and Anwar, Saeed and El-Maleh, Aiman and Khan, Ayaz H. and Rehman, Aqsa},
+  TITLE = {Impact of Adverse Weather and Image Distortions on Vision-Based UAV Detection: A Performance Evaluation of Deep Learning Models},
+  JOURNAL = {Drones},
+  VOLUME = {8},
+  YEAR = {2024},
+  NUMBER = {11},
+  ARTICLE-NUMBER = {638}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="loli-street: benchmarking low-light image enhancement and beyond m. t. islam, i. alam, s. s. woo, s. anwar, i. h. lee, and k. muhammad asian conference on computer vision (accv)">
+          <h3 class="pb-title">LoLI-Street: Benchmarking Low-Light Image Enhancement and Beyond</h3>
+          <p class="pb-authors">M. T. Islam, I. Alam, S. S. Woo, S. Anwar, I. H. Lee, and K. Muhammad</p>
+          <p class="pb-venue"><i>Asian Conference on Computer Vision (ACCV)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://link.springer.com/chapter/10.1007/978-981-96-0917-8_20"><i class="fa fa-file-pdf-o"></i>ACCV Version</a><a class="pb-l" href="https://arxiv.org/pdf/2410.09831"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/tanvirnwu/TriFuse"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Islam2024loli')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Islam2024loli"><button class="pb-bib-copy" onclick="copyBib('Islam2024loli',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Islam2024loli">@inproceedings{Islam2024loli,
+      title={LoLI-Street: Benchmarking Low-Light Image Enhancement and Beyond}, 
+      author={Md Tanvir Islam and Inzamamul Alam and Simon S. Woo and Saeed Anwar and IK Hyun Lee and Khan Muhammad},
+      booktitle={Proceedings of the Asian Conference on Computer Vision (ACCV)},
+      year={2024}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="cefdet: cognitive effectiveness network based on fuzzy inference for action detection z. luo, w. fu, s. liu, s. anwar, m. saqib, s. bakshi, and k. muhammad acm international conference on multimedia (acm mm)">
+          <h3 class="pb-title">Cefdet: Cognitive Effectiveness Network Based on Fuzzy Inference for Action Detection</h3>
+          <p class="pb-authors">Z. Luo, W. Fu, S. Liu, S. Anwar, M. Saqib, S. Bakshi, and K. Muhammad</p>
+          <p class="pb-venue"><i>ACM International Conference on Multimedia (ACM MM)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://dl.acm.org/doi/10.1145/3664647.3681226"><i class="fa fa-file-pdf-o"></i>MM Version</a><a class="pb-l" href="https://arxiv.org/pdf/2410.05771"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/12sakura/cefdet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Zhe2024Cefdet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Zhe2024Cefdet"><button class="pb-bib-copy" onclick="copyBib('Zhe2024Cefdet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Zhe2024Cefdet">@inproceedings{Zhe2024Cefdet,
+  title={Cefdet: Cognitive Effectiveness Network Based on Fuzzy Inference for Action Detection}, 
+  author={Zhe Luo and Weina Fu and Shuai Liu and Saeed Anwar and Muhammad Saqib and Sambit Bakshi and Khan Muhammad},
+  booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
+  year={2024},
+  doi = {10.1145/3664647.3681226}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="hazespace2m: a dataset for haze aware single image dehazing m. t. islam, n. rahim, s. anwar, m. saqib, s. bakshi, and k. muhammad acm international conference on multimedia (acm mm)">
+          <h3 class="pb-title">HazeSpace2M: A Dataset for Haze Aware Single Image Dehazing</h3>
+          <p class="pb-authors">M. T. Islam, N. Rahim, S. Anwar, M. Saqib, S. Bakshi, and K. Muhammad</p>
+          <p class="pb-venue"><i>ACM International Conference on Multimedia (ACM MM)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://dl.acm.org/doi/10.1145/3664647.3681382"><i class="fa fa-file-pdf-o"></i>MM Version</a><a class="pb-l" href="https://arxiv.org/abs/2409.17432"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/tanvirnwu/HazeSpace2M"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Islam2024HazeSpace2M')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Islam2024HazeSpace2M"><button class="pb-bib-copy" onclick="copyBib('Islam2024HazeSpace2M',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Islam2024HazeSpace2M">@inproceedings{Islam2024HazeSpace2M,
+  title={HazeSpace2M: A Dataset for Haze Aware Single Image Dehazing},
+  author={Islam, Md Tanvir and Rahim, Nasir and Anwar, Saeed and Saqib Muhammad and Bakshi, Sambit and Muhammad, Khan},
+  booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
+  year={2024},
+  doi = {10.1145/3664647.3681382}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="dual deep learning network for abnormal action detection f. u. m. ullah, z. a. khan, s. w. baik, e. talavera, s. anwar, and k. muhammad ieee international conference on advanced video and signal based surveillance (avss)">
+          <h3 class="pb-title">Dual Deep Learning Network for Abnormal Action Detection</h3>
+          <p class="pb-authors">F. U. M. Ullah, Z. A. Khan, S. W. Baik, E. Talavera, S. Anwar, and K. Muhammad</p>
+          <p class="pb-venue"><i>IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/10672568"><i class="fa fa-file-pdf-o"></i>AVSS Version</a><a class="pb-l" href="https://github.com/FathUMinUllah3797/DDL_Network/"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Ullah2024Detection')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ullah2024Detection"><button class="pb-bib-copy" onclick="copyBib('Ullah2024Detection',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ullah2024Detection">@InProceedings{Ullah2024Detection,
+  author={Ullah, Fath U Min and Khan, Zulfiqar Ahmad and Baik, Sung Wook and Talavera, Estefania and Anwar, Saeed and Muhammad, Khan},
+  booktitle={IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)}, 
+  title={Dual Deep Learning Network for Abnormal Action Detection}, 
+  year={2024},
+  pages={1-8},
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="attention down-sampling transformer, relative ranking and self-consistency for blind image quality assessment m. alsaafin, m. alsheikh, s. anwar, and m. usman international conference on image processing (icip)">
+          <h3 class="pb-title">Attention Down-Sampling Transformer, Relative Ranking and Self-Consistency for Blind Image Quality Assessment</h3>
+          <p class="pb-authors">M. Alsaafin, M. Alsheikh, S. Anwar, and M. Usman</p>
+          <p class="pb-venue"><i>International conference on image processing (ICIP)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/10647621"><i class="fa fa-file-pdf-o"></i>ICIP Version</a><a class="pb-l" href="https://arxiv.org/abs/2409.07115"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/mas94/ADTRS"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Alsaafin2024NRIQA')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Alsaafin2024NRIQA"><button class="pb-bib-copy" onclick="copyBib('Alsaafin2024NRIQA',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Alsaafin2024NRIQA">@InProceedings{Alsaafin2024NRIQA,
+  title={Attention Down-Sampling Transformer, Relative Ranking and Self-Consistency for Blind Image Quality Assessment}, 
+  author={Mohammed Alsaafin and Musab Alsheikh and Saeed Anwar and Muhammad Usman},
+  booktitle={International conference on image processing (ICIP)},
+  year={2024},
+  organization={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="deep models for multi-view 3d object recognition: a review m. alzahrani, m. usman, s. kammoun, s. anwar, and t. helmy artificial intelligence review (air)">
+          <h3 class="pb-title">Deep Models for Multi-View 3D Object Recognition: A Review</h3>
+          <p class="pb-authors">M. Alzahrani, M. Usman, S. Kammoun, S. Anwar, and T. Helmy</p>
+          <p class="pb-venue"><i>Artificial Intelligence Review (AIR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://link.springer.com/content/pdf/10.1007/s10462-024-10941-w.pdf"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/abs/2404.15224"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('alzahrani20243DSurvey')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-alzahrani20243DSurvey"><button class="pb-bib-copy" onclick="copyBib('alzahrani20243DSurvey',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-alzahrani20243DSurvey">@article{alzahrani20243DSurvey,
+      title={Deep Models for Multi-View 3D Object Recognition: A Review}, 
+      author={Mona Alzahrani and Muhammad Usman and Salma Kammoun and Saeed Anwar and Tarek Helmy},
+      journal={Artificial Intelligence Review},
+      volume={},
+      pages={},
+      year={2024},
+      publisher={Springer}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="selective multi-view deep model for 3d object classification m. alzahrani, m. usman, s. anwar, and t. helmy ieee computer vision and pattern recognition workshops (cvprw)">
+          <h3 class="pb-title">Selective Multi-View Deep Model for 3D Object Classification</h3>
+          <p class="pb-authors">M. Alzahrani, M. Usman, S. Anwar, and T. Helmy</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition Workshops (CVPRW)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/CVPR2024W/3DMV/papers/Alzahrani_Selective_Multi-View_Deep_Model_for_3D_Object_Classification_CVPRW_2024_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR Version</a><a class="pb-l" href="https://openaccess.thecvf.com/content/CVPR2024W/3DMV/supplemental/Alzahrani_Selective_Multi-View_Deep_CVPRW_2024_supplemental.pdf"><i class="fa fa-paperclip"></i>Supp</a><a class="pb-l" href="https://github.com/Mona-Alzahrani/SelectiveMV"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Alzahrani2024Selective')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Alzahrani2024Selective"><button class="pb-bib-copy" onclick="copyBib('Alzahrani2024Selective',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Alzahrani2024Selective">@InProceedings{Alzahrani2024Selective,
+    author    = {Alzahrani, Mona and Usman, Muhammad and Anwar, Saeed and Helmy, Tarek},
+    title     = {Selective Multi-View Deep Model for 3D Object Classification},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2024},
+    pages     = {728-736}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="improved crop and weed detection with diverse data ensemble learning m. h. asad, s. anwar, and a. bais ieee computer vision and pattern recognition workshops (cvprw)">
+          <h3 class="pb-title">Improved Crop and Weed Detection with Diverse Data Ensemble Learning</h3>
+          <p class="pb-authors">M. H. Asad, S. Anwar, and A. Bais</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition Workshops (CVPRW)</i><span class="pb-oral">Oral</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/CVPR2024W/Vision4Ag/papers/Asad_Improved_Crop_and_Weed_Detection_with_Diverse_Data_Ensemble_Learning_CVPRW_2024_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR Version</a><a class="pb-l" href="https://arxiv.org/pdf/2310.01055.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('asad2024improved')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-asad2024improved"><button class="pb-bib-copy" onclick="copyBib('asad2024improved',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-asad2024improved">@InProceedings{asad2024improved,
+    author    = {Asad, Muhammad Hamza and Anwar, Saeed and Bais, Abdul},
+    title     = {Improved Crop and Weed Detection with Diverse Data Ensemble Learning},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2024},
+    pages     = {5336-5345}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="visual attention methods in deep learning: an in-depth survey m. hassanin, s. anwar, i. radwan, f. s. khan, and a. mian information fusion (if)">
+          <h3 class="pb-title">Visual Attention Methods in Deep Learning: An In-Depth Survey</h3>
+          <p class="pb-authors">M. Hassanin, S. Anwar, I. Radwan, F. S. Khan, and A. Mian</p>
+          <p class="pb-venue"><i>Information Fusion (IF)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/abs/pii/S1566253524001957"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2204.07756"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('Hassanin2024attention')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Hassanin2024attention"><button class="pb-bib-copy" onclick="copyBib('Hassanin2024attention',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Hassanin2024attention">@article{Hassanin2024attention,
+  title={Visual attention methods in deep learning: An in-depth survey},
+  author={Hassanin, Mohammed and Anwar, Saeed and Radwan, Ibrahim and Khan, Fahad Shahbaz and Mian, Ajmal},
+  journal={Information Fusion},
+  pages={102417},
+  year={2024},
+  publisher={Elsevier}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="position-sensing graph neural networks: proactively learning nodes relative positions y. zhang, z. qin, s. anwar, d. kim, y. liu, p. ji, and t. gedeon ieee transactions on neural networks and learning systems (tnnls)">
+          <h3 class="pb-title">Position-Sensing Graph Neural Networks: Proactively Learning Nodes Relative Positions</h3>
+          <p class="pb-authors">Y. Zhang, Z. Qin, S. Anwar, D. Kim, Y. Liu, P. Ji, and T. Gedeon</p>
+          <p class="pb-venue"><i>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/document/10478451/"><i class="fa fa-file-pdf-o"></i>TNNLS</a><a class="pb-l" href="https://arxiv.org/pdf/2105.11346.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/ZhenyueQin/PSGNN"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Qin2024PSGNN')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Qin2024PSGNN"><button class="pb-bib-copy" onclick="copyBib('Qin2024PSGNN',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Qin2024PSGNN">@article{Qin2024PSGNN,
+  author={Zhang, Yiqun and Qin, Zhenyue and Anwar, Saeed and Kim, Dongwoo and Liu, Yang and Ji, Pan and Gedeon, Tom},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Position-Sensing Graph Neural Networks: Proactively Learning Nodes Relative Positions}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-8},
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="investigation of uav detection in images with complex backgrounds and rainy artifacts a. munir, a. j. siddiqui, and s. anwar ieee/cvf winter conference on applications of computer vision (wacv), workshops">
+          <h3 class="pb-title">Investigation of UAV Detection in Images With Complex Backgrounds and Rainy Artifacts</h3>
+          <p class="pb-authors">A. Munir, A. J. Siddiqui, and S. Anwar</p>
+          <p class="pb-venue"><i>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), Workshops</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/WACV2024W/RWS/papers/Munir_Investigation_of_UAV_Detection_in_Images_With_Complex_Backgrounds_and_WACVW_2024_paper.pdf"><i class="fa fa-file-pdf-o"></i>WACV Version</a><a class="pb-l" href="https://arxiv.org/abs/2305.16450"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/AdnanMunir294/UAVD-CBRA"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('munir2024investigation')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-munir2024investigation"><button class="pb-bib-copy" onclick="copyBib('munir2024investigation',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-munir2024investigation">@article{munir2024investigation,
+  title={Investigation of UAV Detection in Images With Complex Backgrounds and Rainy Artifacts},
+  author={Munir, Adnan and Siddiqui, Abdul Jabbar and Anwar, Saeed},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={221--230},
+  year={2024}
+}</pre></div>
+        </div><div class="pb-card" data-year="2024" data-h="survey: image mixing and deleting for data augmentation h. naveed, s. anwar, m. hayat, k. javed, and a. mian journal engineering applications of artificial intelligence (eaai)">
+          <h3 class="pb-title">Survey: Image Mixing and Deleting for Data Augmentation</h3>
+          <p class="pb-authors">H. Naveed, S. Anwar, M. Hayat, K. Javed, and A. Mian</p>
+          <p class="pb-venue"><i>Journal Engineering Applications of Artificial Intelligence (EAAI)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S0952197623019759"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2106.07085"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/humza909/Survery-Image-Mixing-and-Deleting-for-Data-Augmentation"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Humza2024Aug')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Humza2024Aug"><button class="pb-bib-copy" onclick="copyBib('Humza2024Aug',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Humza2024Aug">@article{Humza2023Aug,
+  title = {Survey: Image Mixing and Deleting for Data Augmentation},
+  author = {Naveed, Humza and Anwar, Saeed and Hayat, Munawar and Javed, Kashif and Mian, Ajmal},  
+  publisher = {Journal Engineering Applications of Artificial Intelligence},
+  year={2024}
+}</pre></div>
+        </div><h2 class="pb-year" id="py-2023">2023<span class="pb-year-n">6</span></h2>
+<div class="pb-card" data-year="2023" data-h="a systematic evaluation: fine-grained cnn vs. traditional cnn classifiers s. anwar, n. barnes, and l. petersson electronics">
+          <h3 class="pb-title">A Systematic Evaluation: Fine-Grained CNN vs. Traditional CNN Classifiers</h3>
+          <p class="pb-authors">S. Anwar, N. Barnes, and L. Petersson</p>
+          <p class="pb-venue"><i>Electronics</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2003.11154"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://www.mdpi.com/2079-9292/12/23/4877/pdf?version=1701666853"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://github.com/saeed-anwar/FGSE"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2023Systematic')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2023Systematic"><button class="pb-bib-copy" onclick="copyBib('Anwar2023Systematic',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2023Systematic">@article{Anwar2023Systematic,
+ title={A Systematic Evaluation: Fine-Grained CNN vs. Traditional CNN Classifiers},
+ author={Saeed Anwar and Nick Barnes and Lars Petersson},
+ journal = {Electronics},
+ volume = {12},
+ year = {2023},
+ number = {23},
+ article-number = {4877},
+}</pre></div>
+        </div><div class="pb-card" data-year="2023" data-h="p2c: self-supervised point cloud completion from single partial clouds r. cui, s. qiu, s. anwar, j. liu, c. xing, j. zhang, and n. barnes ieee international conference on computer vision (iccv)">
+          <h3 class="pb-title">P2C: Self-Supervised Point Cloud Completion from Single Partial Clouds</h3>
+          <p class="pb-authors">R. Cui, S. Qiu, S. Anwar, J. Liu, C. Xing, J. Zhang, and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE International Conference on Computer Vision (ICCV)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2307.14726"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://openaccess.thecvf.com/content/ICCV2023/papers/Cui_P2C_Self-Supervised_Point_Cloud_Completion_from_Single_Partial_Clouds_ICCV_2023_paper.pdf"><i class="fa fa-file-pdf-o"></i>ICCV Version</a><a class="pb-l" href="https://github.com/CuiRuikai/Partial2Complete"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Ruikai2023P2C')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ruikai2023P2C"><button class="pb-bib-copy" onclick="copyBib('Ruikai2023P2C',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ruikai2023P2C">@InProceedings{Ruikai2023P2C,
+author = {Ruikai Cui and Shi Qiu and Saeed Anwar and Jiawei Liu and Chaoyue Xing and Jing Zhang and Nick Barnes},
+title = {P2C: Self-Supervised Point Cloud Completion from Single Partial Clouds},
+booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+year = {2023}
+}</pre></div>
+        </div><div class="pb-card" data-year="2023" data-h="unloc: a universal localization method for lidar, radar and/or camera input m. ibrahim, n. akhtar, s. anwar, and a. mian ieee/rsj international conference on intelligent robots and systems (iros)">
+          <h3 class="pb-title">UnLoc: A Universal Localization Method for LiDAR, RADAR and/or Camera Input</h3>
+          <p class="pb-authors">M. Ibrahim, N. Akhtar, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/abs/2307.00741"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/10342046"><i class="fa fa-file-pdf-o"></i>IROS Version</a><a class="pb-l" href="https://github.com/IbrahimUWA/UnLoc/"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Ibrahim2023UnLoc')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ibrahim2023UnLoc"><button class="pb-bib-copy" onclick="copyBib('Ibrahim2023UnLoc',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ibrahim2023UnLoc">@inproceedings{Ibrahim2023UnLoc,
+  title={Unloc: a universal localization method for autonomous vehicles using lidar, radar and/or camera input},
+  author={Ibrahim, Muhammad and Akhtar, Naveed and Anwar, Saeed and Mian, Ajmal},
+  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages={5187--5194},
+  year={2023},
+  organization={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2023" data-h="sequential vision to language as story: a storytelling dataset and benchmarking z. m. malakan, s. anwar, g. m. hassan, and a. mian ieee access">
+          <h3 class="pb-title">Sequential Vision to Language as Story: A Storytelling Dataset and Benchmarking</h3>
+          <p class="pb-authors">Z. M. Malakan, S. Anwar, G. M. Hassan, and A. Mian</p>
+          <p class="pb-venue"><i>IEEE Access</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10177150"><i class="fa fa-file-pdf-o"></i>IEEE Version</a><a class="pb-l" href="https://ieee-dataport.org/documents/sequential-storytelling-image-dataset-ssid"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Zainy2023SSID')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Zainy2023SSID"><button class="pb-bib-copy" onclick="copyBib('Zainy2023SSID',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Zainy2023SSID">@article{Zainy2023SSID,
+  author={Malakan, Zainy M. and Anwar, Saeed and Hassan, Ghulam Mubashar and Mian, Ajmal},
+  journal={IEEE Access}, 
+  title={Sequential Vision to Language as Story: A Storytelling Dataset and Benchmarking}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/ACCESS.2023.3293646}}</pre></div>
+        </div><div class="pb-card" data-year="2023" data-h="sat3d: slot attention transformer for 3d point cloud semantic segmentation m. ibrahim, n. akhtar, s. anwar, and a. mian ieee transactions on intelligent transportation systems (t-its)">
+          <h3 class="pb-title">SAT3D: Slot Attention Transformer for 3D Point Cloud Semantic Segmentation</h3>
+          <p class="pb-authors">M. Ibrahim, N. Akhtar, S. Anwar, and A. Mian</p>
+          <p class="pb-venue"><i>IEEE Transactions on Intelligent Transportation Systems (T-ITS)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/document/10046141"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://github.com/saeed-anwar/SAT3D"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Ibrahim2023SAT3D')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ibrahim2023SAT3D"><button class="pb-bib-copy" onclick="copyBib('Ibrahim2023SAT3D',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ibrahim2023SAT3D">@article{Ibrahim2023SAT3D,
+  title={SAT3D: Slot Attention Transformer for 3D Point Cloud Semantic Segmentation},
+  author={Ibrahim, Muhammad and Akhtar, Naveed and Anwar, Saeed and Mian, Ajmal},
+  journal={IEEE Transactions on Intelligent Transportation Systems (T-ITS)},
+  year={2023}
+}</pre></div>
+        </div><div class="pb-card" data-year="2023" data-h="slice transformer and self-supervised learning for 6dof localization in 3d point cloud maps m. ibrahim, n. akhtar, s. anwar, m. wise, and a. mian ieee international conference on robotics and automation (icra)">
+          <h3 class="pb-title">Slice Transformer and Self-supervised Learning for 6DoF Localization in 3D Point Cloud Maps</h3>
+          <p class="pb-authors">M. Ibrahim, N. Akhtar, S. Anwar, M. Wise, and A. Mian</p>
+          <p class="pb-venue"><i>IEEE International Conference on Robotics and Automation (ICRA)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10161128"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/abs/2301.08957"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/ibrahimUWA/slice"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Ibrahim2023slice')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ibrahim2023slice"><button class="pb-bib-copy" onclick="copyBib('Ibrahim2023slice',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ibrahim2023slice">@article{Ibrahim2023slice,
+  title={Slice Transformer and Self-supervised Learning for 6DoF Localization in 3D Point Cloud Maps},
+  author={Ibrahim, Muhammad and Akhtar, Naveed and Anwar, Saeed and Wise, Michael and Mian, Ajmal},
+  journal={IEEE International Conference on Robotics and Automation (ICRA)},
+  year={2023}
+}</pre></div>
+        </div><h2 class="pb-year" id="py-2022">2022<span class="pb-year-n">13</span></h2>
+<div class="pb-card" data-year="2022" data-h="disentangling noise from images: a flow-based image denoising neural network y. liu, s. anwar, z. qin, p. ji, s. caldwell, and t. gedeon sensors">
+          <h3 class="pb-title">Disentangling Noise from Images: A Flow-Based Image Denoising Neural Network</h3>
+          <p class="pb-authors">Y. Liu, S. Anwar, Z. Qin, P. Ji, S. Caldwell, and T. Gedeon</p>
+          <p class="pb-venue"><i>Sensors</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.mdpi.com/1424-8220/22/24/9844"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2105.04746.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/Yang-Liu1082/FDN"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Liu2022FDN')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Liu2022FDN"><button class="pb-bib-copy" onclick="copyBib('Liu2022FDN',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Liu2022FDN">@article{Liu2022FDN,
+  title={Disentangling Noise from Images: A Flow-Based Image Denoising Neural Network},
+  author={Liu, Yang and Anwar, Saeed and Qin, Zhenyue and Ji, Pan and Caldwell, Sabrina and Gedeon, Tom},
+  journal = {Sensors},
+  volume = {22},
+  year = {2022},
+  number = {24},
+  article-number = {9844},
+  PubMedID = {36560213},
+  issn = {1424-8220}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="energy-based residual latent transport for unsupervised point cloud completion r. cui, s. qiu, s. anwar, j. zhang, and n. barnes british machine vision conference (bmvc)">
+          <h3 class="pb-title">Energy-Based Residual Latent Transport for Unsupervised Point Cloud Completion</h3>
+          <p class="pb-authors">R. Cui, S. Qiu, S. Anwar, J. Zhang, and N. Barnes</p>
+          <p class="pb-venue"><i>British Machine Vision Conference (BMVC)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://bmvc2022.mpi-inf.mpg.de/0048.pdf"><i class="fa fa-file-pdf-o"></i>BMVC</a><a class="pb-l" href="https://bmvc2022.mpi-inf.mpg.de/0048_supp.zip"><i class="fa fa-paperclip"></i>Supp</a><a class="pb-l" href="https://arxiv.org/pdf/2211.06820"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://bmvc2022.mpi-inf.mpg.de/0048_poster.pdf"><i class="fa fa-image"></i>Poster</a><a class="pb-l" href="https://bmvc2022.mpi-inf.mpg.de/0048_video.mp4"><i class="fa fa-play-circle"></i>Video</a><a class="pb-l" href="https://github.com/CuiRuikai/Latent-Transport-UPCN"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Ruikai2022EBM')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Ruikai2022EBM"><button class="pb-bib-copy" onclick="copyBib('Ruikai2022EBM',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Ruikai2022EBM">@InProceedings{Ruikai2022EBM,
+      title={Energy-Based Residual Latent Transport for Unsupervised Point Cloud Completion}, 
+      author={Ruikai Cui and Shi Qiu and Saeed Anwar and Jing Zhang and Nick Barnes},
+      booktitle={British Machine Vision Conference (BMVC)},
+      year={2022}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="pu-transformer: point cloud upsampling transformer s. qiu, s. anwar, and n. barnes asian conference on computer vision (accv)">
+          <h3 class="pb-title">PU-Transformer: Point Cloud Upsampling Transformer</h3>
+          <p class="pb-authors">S. Qiu, S. Anwar, and N. Barnes</p>
+          <p class="pb-venue"><i>Asian Conference on Computer Vision (ACCV)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/ACCV2022/papers/Qiu_PU-Transformer_Point_Cloud_Upsampling_Transformer_ACCV_2022_paper.pdf"><i class="fa fa-file-pdf-o"></i>ACCV</a><a class="pb-l" href="https://arxiv.org/pdf/2111.12242.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://openaccess.thecvf.com/content/ACCV2022/supplemental/Qiu_PU-Transformer_Point_Cloud_ACCV_2022_supplemental.pdf"><i class="fa fa-paperclip"></i>Supp</a><a class="pb-l" href="https://github.com/ShiQiu0419/PU-Transformer/blob/main/accv2022_poster.pdf"><i class="fa fa-image"></i>Poster</a><a class="pb-l" href="https://drive.google.com/file/d/1oTbEWbB9xkrbEiOqof1tG_U1RAAJ5CeN/view?usp=share_link"><i class="fa fa-file-powerpoint-o"></i>PPT</a><a class="pb-l" href="https://github.com/ShiQiu0419/PU-Transformer"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Shi2022PUTransformer')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Shi2022PUTransformer"><button class="pb-bib-copy" onclick="copyBib('Shi2022PUTransformer',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Shi2022PUTransformer">@InProceedings{Shi2021PUTransformer,
+      title={PU-Transformer: Point Cloud Upsampling Transformer}, 
+      author={Shi Qiu and Saeed Anwar and Nick Barnes},
+      booktitle={Proceedings of the Asian Conference on Computer Vision (ACCV)},
+      pages={2475--2493},
+      year={2022}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="fusing higher-order features in graph neural networks for skeleton-based action recognition z. qin, y. liu, p. ji, d. kim, l. wang, b. mckay, s. anwar, and t. gedeon ieee transactions on neural networks and learning systems (tnnls)">
+          <h3 class="pb-title">Fusing Higher-Order Features in Graph Neural Networks for Skeleton-Based Action Recognition</h3>
+          <p class="pb-authors">Z. Qin, Y. Liu, P. Ji, D. Kim, L. Wang, B. McKay, S. Anwar, and T. Gedeon</p>
+          <p class="pb-venue"><i>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/pdf/2105.01563.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/ZhenyueQin/Angular-Skeleton-Encoding"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('qin2022leveraging')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-qin2022leveraging"><button class="pb-bib-copy" onclick="copyBib('qin2022leveraging',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-qin2022leveraging">@article{qin2022leveraging,
+  title={Leveraging Third-Order Features in Skeleton-Based Action Recognition},
+  author={Qin, Zhenyue and Liu, Yang and Ji, Pan and Kim, Dongwoo and Wang, Lei and McKay, Bob and Anwar, Saeed and Gedeon, Tom},
+  journal={IEEE Transactions on Neural Networks and Learning Systems},
+  year={2022}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="towards low-cost classification for novel fine-grained datasets a. anwar, h. anwar, and s. anwar electronics">
+          <h3 class="pb-title">Towards Low-Cost Classification for Novel Fine-Grained Datasets</h3>
+          <p class="pb-authors">A. Anwar, H. Anwar, and S. Anwar</p>
+          <p class="pb-venue"><i>Electronics</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.mdpi.com/2079-9292/11/17/2701"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://github.com/hafeez-anwar/FGBR"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2022lowCost')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2022lowCost"><button class="pb-bib-copy" onclick="copyBib('Anwar2022lowCost',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2022lowCost">@article{Anwar2022lowCost,
+  title={Towards Low-Cost Classification for Novel Fine-Grained Datasets},
+  author={Anwar, Abbas and Anwar, Hafeez and Anwar, Saeed},
+  journal={Electronics},
+  year={2022}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="underwater image restoration via contrastive learning and a real-world dataset j. han, m. shoeiby, t. malthus, e. botha, j. anstee, s. anwar, r. wei, m. a. armin, h. li, and l. petersson remote sensing (rs)">
+          <h3 class="pb-title">Underwater Image Restoration via Contrastive Learning and a Real-world Dataset</h3>
+          <p class="pb-authors">J. Han, M. Shoeiby, T. Malthus, E. Botha, J. Anstee, S. Anwar, R. Wei, M. A. Armin, H. Li, and L. Petersson</p>
+          <p class="pb-venue"><i>Remote Sensing (RS)</i><span class="pb-badge" style="background:#c9a227"><i class="fa fa-trophy"></i>Best Paper Award</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.mdpi.com/2072-4292/14/17/4297"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2106.10718.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/JunlinHan/CWR"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Han2022CWR')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Han2022CWR"><button class="pb-bib-copy" onclick="copyBib('Han2022CWR',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Han2022CWR">@article{Han2022CWR,
+      title={Underwater Image Restoration via Contrastive Learning and a Real-world Dataset}, 
+      author={Junlin Han and Mehrdad Shoeiby and Tim Malthus and Elizabeth Botha and Janet Anstee and Saeed Anwar and Ran Wei and Mohammad Ali Armin and Hongdong Li and Lars Petersson},
+      journal={Remote Sensing},
+      year={2022}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="strengthening skeletal action recognizers via leveraging temporal patterns z. qin, p. ji, d. kim, y. liu, s. anwar, and t. gedeon european conference on computer vision workshops (eccvw)">
+          <h3 class="pb-title">Strengthening Skeletal Action Recognizers via Leveraging Temporal Patterns</h3>
+          <p class="pb-authors">Z. Qin, P. Ji, D. Kim, Y. Liu, S. Anwar, and T. Gedeon</p>
+          <p class="pb-venue"><i>European Conference on Computer Vision Workshops (ECCVw)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://link.springer.com/chapter/10.1007/978-3-031-25072-9_39"><i class="fa fa-file-pdf-o"></i>ECCV Version</a><a class="pb-l" href="https://arxiv.org/pdf/2205.14405"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('Qin2022Strengthening')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Qin2022Strengthening"><button class="pb-bib-copy" onclick="copyBib('Qin2022Strengthening',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Qin2022Strengthening">@InProceedings{Qin2022Strengthening,
+  title={Strengthening Skeletal Action Recognizers via Leveraging Temporal Patterns},
+  author={Qin, Zhenyue and Kim, Dongwoo and Liu, Yang and Anwar, Saeed and Gedeon, Tom},
+  booktitle={European Conference on Computer Vision Workshops},
+  year={2022}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="covid19 detection from radiographs: is deep learning able to handle the crisis? m. saqib, a. anwar, s. anwar, l. petersson, n. sharma, and m. blumenstein signals">
+          <h3 class="pb-title">COVID19 detection from Radiographs: Is Deep Learning able to handle the crisis?</h3>
+          <p class="pb-authors">M. Saqib, A. Anwar, S. Anwar, L. Petersson, N. Sharma, and M. Blumenstein</p>
+          <p class="pb-venue"><i>Signals</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.mdpi.com/2624-6120/3/2/19"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://www.preprints.org/manuscript/202006.0189/v1/download"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/saeed-anwar/COVID19-Baselines"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2022COVID19Detect')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2022COVID19Detect"><button class="pb-bib-copy" onclick="copyBib('Anwar2022COVID19Detect',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2022COVID19Detect">@article{Anwar2022COVID19Detect,
+  title={COVID-19 Detection from Radiographs: Is Deep Learning Able to Handle the Crisis?},
+  author={Saqib, Muhammad and Anwar, Abbas and Anwar, Saeed and Petersson, Lars and Sharma, Nabin and Blumenstein, Michael},
+  journal={Signals},
+  volume={3},
+  number={2},
+  pages={296--312},
+  year={2022}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="image dehazing transformer with transmission-aware 3d position embedding c. guo, q. yan, s. anwar, r. cong, w. ren, and c. li ieee computer vision and pattern recognition (cvpr)">
+          <h3 class="pb-title">Image Dehazing Transformer with Transmission-Aware 3D Position Embedding</h3>
+          <p class="pb-authors">C. Guo, Q. Yan, S. Anwar, R. Cong, W. Ren, and C. Li</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition (CVPR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/CVPR2022/papers/Guo_Image_Dehazing_Transformer_With_Transmission-Aware_3D_Position_Embedding_CVPR_2022_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR</a><a class="pb-l" href="https://li-chongyi.github.io/Proj_DeHamer.html"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Chunle2022Dehaze')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Chunle2022Dehaze"><button class="pb-bib-copy" onclick="copyBib('Chunle2022Dehaze',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Chunle2022Dehaze">@InProceedings{Chunle2022Dehaze,
+    author    = {Guo, Chun-Le and Yan, Qixin and Anwar, Saeed and Cong, Runmin and Ren, Wenqi and Li, Chongyi},
+    title     = {Image Dehazing Transformer With Transmission-Aware 3D Position Embedding},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2022},
+    pages     = {5812-5820}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="pyramidal attention for saliency detection t. hussain, a. anwar, s. anwar, l. petersson, and s. w. baik ieee computer vision and pattern recognition workshops (cvprw)">
+          <h3 class="pb-title">Pyramidal Attention for Saliency Detection</h3>
+          <p class="pb-authors">T. Hussain, A. Anwar, S. Anwar, L. Petersson, and S. W. Baik</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition Workshops (CVPRW)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/CVPR2022W/FaDE-TCV/papers/Hussain_Pyramidal_Attention_for_Saliency_Detection_CVPRW_2022_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR</a><a class="pb-l" href="https://arxiv.org/pdf/2204.06788"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/tanveer-hussain/EfficientSOD2"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Hussain2022Pyramidal')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Hussain2022Pyramidal"><button class="pb-bib-copy" onclick="copyBib('Hussain2022Pyramidal',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Hussain2022Pyramidal">@InProceedings{Hussain2022Pyramidal,
+    author    = {Hussain, Tanveer and Anwar, Abbas and Anwar, Saeed and Petersson, Lars and Baik, Sung Wook},
+    title     = {Pyramidal Attention for Saliency Detection},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2022},
+    pages     = {2878-2888}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="drt: a lightweight single image deraining recursive transformer y. liang, s. anwar, and y. liu ieee computer vision and pattern recognition workshops (cvprw)">
+          <h3 class="pb-title">DRT: A Lightweight Single Image Deraining Recursive Transformer</h3>
+          <p class="pb-authors">Y. Liang, S. Anwar, and Y. Liu</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition Workshops (CVPRW)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/papers/Liang_DRT_A_Lightweight_Single_Image_Deraining_Recursive_Transformer_CVPRW_2022_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR</a><a class="pb-l" href="https://arxiv.org/abs/2204.11385"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/YC-Liang/DRT"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Liang2022DRT')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Liang2022DRT"><button class="pb-bib-copy" onclick="copyBib('Liang2022DRT',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Liang2022DRT">@InProceedings{Liang2022DRT,
+    author    = {Liang, Yuanchu and Anwar, Saeed and Liu, Yang},
+    title     = {DRT: A Lightweight Single Image Deraining Recursive Transformer},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2022},
+    pages     = {589-598}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="depth completion auto-encoder k. lu, n. barnes, s. anwar, and l. zheng ieee/cvf winter conference on applications of computer vision (wacv) workshops">
+          <h3 class="pb-title">Depth Completion Auto-Encoder</h3>
+          <p class="pb-authors">K. Lu, N. Barnes, S. Anwar, and L. Zheng</p>
+          <p class="pb-venue"><i>IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshops</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/WACV2022W/VAQ/papers/Lu_Depth_Completion_Auto-Encoder_WACVW_2022_paper.pdf"><i class="fa fa-file-pdf-o"></i>WACV</a><a class="pb-l" href="https://www.youtube.com/watch?v=aY8t6uMANGs&amp;ab_channel=ComputerVisionFoundationVideos"><i class="fa fa-play-circle"></i>Video</a><button class="pb-bibbtn" onclick="toggleBib('Lu2022DA')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Lu2022DA"><button class="pb-bib-copy" onclick="copyBib('Lu2022DA',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Lu2022DA">@InProceedings{Lu2022DA,
+    author    = {Lu, Kaiyue and Barnes, Nick and Anwar, Saeed and Zheng, Liang},
+    title     = {Depth Completion Auto-Encoder},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshops},
+    month     = {January},
+    year      = {2022},
+    pages     = {63-73}
+}</pre></div>
+        </div><div class="pb-card" data-year="2022" data-h="deep localization of protein structures in fluorescence microscopy images m. tahir*, s. anwar*, a. mian, and a. w. muzaffar neural computing and applications (ncaa)">
+          <h3 class="pb-title">Deep localization of protein structures in fluorescence microscopy images</h3>
+          <p class="pb-authors">M. Tahir*, S. Anwar*, A. Mian, and A. W. Muzaffar</p>
+          <p class="pb-venue"><i>Neural Computing and Applications (NCAA)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://link.springer.com/article/10.1007/s00521-021-06715-y"><i class="fa fa-file-pdf-o"></i>NCAA</a><a class="pb-l" href="https://arxiv.org/abs/1910.04287"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/saeed-anwar/PLCNN"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2022PLCNN')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2022PLCNN"><button class="pb-bib-copy" onclick="copyBib('Anwar2022PLCNN',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2022PLCNN">@article{Anwar2021PLCNN,
+  title={Deep localization of protein structures in fluorescence microscopy images},
+  author={Tahir, Muhammad and Anwar, Saeed and Mian, Ajmal and Muzaffar, Abdul W.},
+  journal={Neural Computing and Applications},
+  year={2022},
+  publisher={Springer}
+}</pre></div>
+        </div><h2 class="pb-year" id="py-2021">2021<span class="pb-year-n">16</span></h2>
+<div class="pb-card" data-year="2021" data-h="pnp-3d: a plug-and-play for 3d point clouds s. qiu, s. anwar, and n. barnes ieee transactions on pattern analysis and machine intelligence (tpami)">
+          <h3 class="pb-title">PnP-3D: A Plug-and-Play for 3D Point Clouds</h3>
+          <p class="pb-authors">S. Qiu, S. Anwar, and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/document/9661313"><i class="fa fa-file-pdf-o"></i>TPAMI</a><a class="pb-l" href="http://arxiv.org/abs/2108.07378"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/ShiQiu0419/pnp-3d"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Qiu2021PnP3D')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Qiu2021PnP3D"><button class="pb-bib-copy" onclick="copyBib('Qiu2021PnP3D',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Qiu2021PnP3D">@article{Qiu2021PnP3D,
+      title={PnP-3D: A Plug-and-Play for 3D Point Clouds}, 
+      author={Shi Qiu and Saeed Anwar and Nick Barnes},
+      journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+      year={2021}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="attention based real image restoration s. anwar, n. barnes, and l. petersson ieee transactions on neural networks and learning systems (tnnls)">
+          <h3 class="pb-title">Attention Based Real Image Restoration</h3>
+          <p class="pb-authors">S. Anwar, N. Barnes, and L. Petersson</p>
+          <p class="pb-venue"><i>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/document/9648263"><i class="fa fa-file-pdf-o"></i>PDF</a><a class="pb-l" href="https://ieeexplore.ieee.org/ielx7/5962385/6104215/9648263/supp1-3131739.pdf?arnumber=9648263"><i class="fa fa-paperclip"></i>Supp</a><a class="pb-l" href="http://arxiv.org/abs/2004.13524"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/saeed-anwar/R2Net"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2021R2NET')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2021R2NET"><button class="pb-bib-copy" onclick="copyBib('Anwar2021R2NET',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2021R2NET">@article{Anwar2021R2NET,
+    title={Attention Based Real Image Restoration},
+    author={Saeed Anwar and Nick Barnes and Lars Petersson},
+    journal={Transactions on Neural Networks and Learning Systems},
+    year={2021},
+    publisher={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="investigating attention mechanism in 3d point cloud object detection s. qiu, y. wu, s. anwar, and c. li ieee international conference on 3d vision (3dv)">
+          <h3 class="pb-title">Investigating Attention Mechanism in 3D Point Cloud Object Detection</h3>
+          <p class="pb-authors">S. Qiu, Y. Wu, S. Anwar, and C. Li</p>
+          <p class="pb-venue"><i>IEEE International Conference on 3D Vision (3DV)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/document/9665862"><i class="fa fa-file-pdf-o"></i>3DV PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2108.00620.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/ShiQiu0419/attentions_in_3D_detection/blob/main/059-poster.pdf"><i class="fa fa-image"></i>Poster</a><a class="pb-l" href="https://github.com/ShiQiu0419/attentions_in_3D_detection"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Qiu2021Att3Ddetection')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Qiu2021Att3Ddetection"><button class="pb-bib-copy" onclick="copyBib('Qiu2021Att3Ddetection',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Qiu2021Att3Ddetection">@inproceedings{Qiu2021Att3Ddetection,
+      title={Investigating Attention Mechanism in 3D Point Cloud Object Detection}, 
+      author={Shi Qiu and Yunfan Wu and Saeed Anwar and Chongyi Li},
+      year={2021},
+      booktitle={International Conference on 3D Vision (3DV)},
+      organization={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="light-dehazenet: a novel lightweight cnn architecture for single image dehazing h. ullah, k. muhammad, m. irfan, s. anwar, m. sajjad, s. imran, and v. h. c. d. albuquerque ieee transactions on image processing (tip)">
+          <h3 class="pb-title">Light-DehazeNet: A Novel Lightweight CNN Architecture for Single Image Dehazing</h3>
+          <p class="pb-authors">H. Ullah, K. Muhammad, M. Irfan, S. Anwar, M. Sajjad, S. Imran, and V. H. C. D. Albuquerque</p>
+          <p class="pb-venue"><i>IEEE Transactions on Image Processing (TIP)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/document/9562276"><i class="fa fa-file-pdf-o"></i>TIP PDF</a><a class="pb-l" href="https://github.com/hayatkhan8660-maker/Light-DehazeNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Hayat2021DehazeNet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Hayat2021DehazeNet"><button class="pb-bib-copy" onclick="copyBib('Hayat2021DehazeNet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Hayat2021DehazeNet">@article{Hayat2021DehazeNet,
+   author = {Ullah, Hayat and Muhammad, Khan and Irfan, Muhammad and Anwar, Saeed and Sajjad, Muhammad and Imran, Shariq and  De Albuquerque, Victor Hugo C.},
+   title = {Light-DehazeNet: A Novel Lightweight CNN Architecture for Single Image Dehazing},
+   journal ={Transactions on Image Processing},
+   year={2021},
+   organization={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="transformers in pedestrian image retrieval and person re-identification in a multi-camera surveillance system m. tahir, and s. anwar applied sciences (as)">
+          <h3 class="pb-title">Transformers in Pedestrian Image Retrieval and Person Re-Identification in a Multi-Camera Surveillance System</h3>
+          <p class="pb-authors">M. Tahir, and S. Anwar</p>
+          <p class="pb-venue"><i>Applied Sciences (AS)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.mdpi.com/2076-3417/11/19/9197/pdf"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://github.com/saeed-anwar/TRE-ID"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Tahir2021ReID')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Tahir2021ReID"><button class="pb-bib-copy" onclick="copyBib('Tahir2021ReID',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Tahir2021ReID">@article{Tahir2021ReID,
+AUTHOR = {Tahir, Muhammad and Anwar, Saeed},
+TITLE = {Transformers in Pedestrian Image Retrieval and Person Re-Identification in a Multi-Camera Surveillance System},
+JOURNAL = {Applied Sciences},
+VOLUME = {11},
+YEAR = {2021},
+NUMBER = {19},
+ARTICLE-NUMBER = {9197},
+ISSN = {2076-3417},
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="geometric back-projection network for point cloud classification s. qiu, s. anwar, and n. barnes ieee transaction on multimedia (tmm)">
+          <h3 class="pb-title">Geometric Back-Projection Network for Point Cloud Classification</h3>
+          <p class="pb-authors">S. Qiu, S. Anwar, and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE Transaction on MultiMedia (TMM)</i><span class="pb-badge" style="background:#3f6bb0"><i class="fa fa-star"></i>ESI Highly Cited</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/9410405"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/abs/1911.12885"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://drive.google.com/file/d/1G5tlWIrfONHOKs0YIONMRuYtjeEZELV_/view?usp=share_link"><i class="fa fa-file-powerpoint-o"></i>PPT</a><a class="pb-l" href="https://github.com/ShiQiu0419/GFNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Shi2021GFNet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Shi2021GFNet"><button class="pb-bib-copy" onclick="copyBib('Shi2021GFNet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Shi2021GFNet">@article{qiu2021geometric,
+    title={Geometric Back-Projection Network for Point Cloud Classification},
+    author={Shi Qiu and Saeed Anwar and Nick Barnes},
+    journal = {IEEE Transaction on MultiMedia},
+    year={2021}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="uncertainty inspired rgb-d saliency detection j. zhang, d.p. fan, y. dai, s. anwar, f.s. saleh, s. aliakbarian, and n. barnes ieee transactions on pattern analysis and machine intelligence (tpami)">
+          <h3 class="pb-title">Uncertainty Inspired RGB-D Saliency Detection</h3>
+          <p class="pb-authors">J. Zhang, D.P. Fan, Y. Dai, S. Anwar, F.S. Saleh, S. Aliakbarian, and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/pdf/2009.03075.pdf"><i class="fa fa-file-pdf-o"></i>TPAMI PDF</a><a class="pb-l" href="https://github.com/JingZhang617/UCNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Jing2021uncertainty')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Jing2021uncertainty"><button class="pb-bib-copy" onclick="copyBib('Jing2021uncertainty',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Jing2021uncertainty">@article{Jing2021uncertainty,
+  title={Uncertainty Inspired RGB-D Saliency Detection},
+  author={Zhang, Jing and Fan, Deng-Ping and Dai, Yuchao and Anwar, Saeed and Saleh, Fatemeh and Aliakbarian, Sadegh and Barnes, Nick},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2021}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="underwater image enhancement via medium transmission-guided multi-color space embedding c. li, s. anwar, j. hou, r. cong, c. guo, and w. ren ieee transactions on image processing (tip)">
+          <h3 class="pb-title">Underwater Image Enhancement via Medium Transmission-Guided Multi-Color Space Embedding</h3>
+          <p class="pb-authors">C. Li, S. Anwar, J. Hou, R. Cong, C. Guo, and W. Ren</p>
+          <p class="pb-venue"><i>IEEE Transactions on Image Processing (TIP)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://ieeexplore.ieee.org/abstract/document/9426457"><i class="fa fa-file-pdf-o"></i>TIP PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2104.13015.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/Li-Chongyi/Ucolor"><i class="fa fa-code"></i>Code</a><a class="pb-l" href="https://li-chongyi.github.io/Proj_Ucolor.html"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Chongyi2021MultiColor')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Chongyi2021MultiColor"><button class="pb-bib-copy" onclick="copyBib('Chongyi2021MultiColor',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Chongyi2021MultiColor">@article{Chongyi2021MultiColor,
+title  = {Underwater Image Enhancement via Medium Transmission-Guided Multi-Color Space Embedding},
+author = {Li, Chongyi and  Anwar, Saeed and Hou, Junhui and Cong, Runmin and Guo, Chunle and Ren, Wenqi},
+journal	= {IEEE Transactions on Image Processing (TIP)},
+year	= {2021},
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="semantic segmentation for real point cloud scenes via bilateral augmentation and adaptive fusion s. qiu, s. anwar, and n. barnes ieee computer vision and pattern recognition (cvpr)">
+          <h3 class="pb-title">Semantic Segmentation for Real Point Cloud Scenes via Bilateral Augmentation and Adaptive Fusion</h3>
+          <p class="pb-authors">S. Qiu, S. Anwar, and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition (CVPR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Qiu_Semantic_Segmentation_for_Real_Point_Cloud_Scenes_via_Bilateral_Augmentation_CVPR_2021_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR Version</a><a class="pb-l" href="https://openaccess.thecvf.com/content/CVPR2021/supplemental/Qiu_Semantic_Segmentation_for_CVPR_2021_supplemental.pdf"><i class="fa fa-paperclip"></i>Supp</a><a class="pb-l" href="https://arxiv.org/pdf/2103.07074.pdf"><i class="fa fa-file-text-o"></i>arXiv+Supp</a><a class="pb-l" href="https://github.com/ShiQiu0419/BAAF-Net/blob/main/cvpr2021_poster.pdf"><i class="fa fa-image"></i>Poster</a><a class="pb-l" href="https://drive.google.com/file/d/1eox2L1SWxg-mN1a7FI2y1Ffbfcvhn8Cs/view?usp=share_link"><i class="fa fa-file-powerpoint-o"></i>PPT</a><a class="pb-l" href="https://github.com/ShiQiu0419/BAAF-Net"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('QIU2021BAAF')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-QIU2021BAAF"><button class="pb-bib-copy" onclick="copyBib('QIU2021BAAF',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-QIU2021BAAF">@InProceedings{QIU2021BAAF,
+    author    = {Qiu, Shi and Anwar, Saeed and Barnes, Nick},
+    title     = {Semantic Segmentation for Real Point Cloud Scenes via Bilateral Augmentation and Adaptive Fusion},
+    booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year      = {2021},
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="invertible denoising network: a light solution for real noise removal y. liu, z. qin, s. anwar, p. ji, d. kim, s. cadwell, and t. gedeon ieee computer vision and pattern recognition (cvpr)">
+          <h3 class="pb-title">Invertible Denoising Network: A Light Solution for Real Noise Removal</h3>
+          <p class="pb-authors">Y. Liu, Z. Qin, S. Anwar, P. Ji, D. Kim, S. Cadwell, and T. Gedeon</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition (CVPR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/CVPR2021/papers/Liu_Invertible_Denoising_Network_A_Light_Solution_for_Real_Noise_Removal_CVPR_2021_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR Version</a><a class="pb-l" href="https://arxiv.org/pdf/2104.10546.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/Yang-Liu1082/InvDN.git"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Yang2020InvDN')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Yang2020InvDN"><button class="pb-bib-copy" onclick="copyBib('Yang2020InvDN',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Yang2020InvDN">@article{Yang2020InvDN,
+  author = {Liu, Yang and Qin, Zhenyue and Anwar, Saeed and Ji, Pan and Kim, Dongwoo and Cadwell, Sabrina and Gedeon, Tom },
+  title = {Invertible Denoising Network: A Light Solution for Real Noise Removal},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year = {2021}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="single underwater image restoration by contrastive learning j. han, m. shoeiby, t. malthus, e. botha, j. anstee, s. anwar, r. wei, l. petersson, and m. a. armin international geoscience and remote sensing symposium (igarss)">
+          <h3 class="pb-title">Single Underwater Image Restoration by contrastive learning</h3>
+          <p class="pb-authors">J. Han, M. Shoeiby, T. Malthus, E. Botha, J. Anstee, S. Anwar, R. Wei, L. Petersson, and M. A. Armin</p>
+          <p class="pb-venue"><i>International Geoscience and Remote Sensing Symposium (IGARSS)</i><span class="pb-oral">Oral</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://igarss2021.com/view_paper.php?PaperNum=1098"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/2103.09697.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/JunlinHan/CWR"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Han2020CWR')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Han2020CWR"><button class="pb-bib-copy" onclick="copyBib('Han2020CWR',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Han2020CWR">@article{Han2020CWR,
+  author = {Han, Junlin and Shoeiby, Mehrdad and Malthus, Tim and Botha, Elizabeth and Anstee, Janet and  Anwar, Saeed  and Wei, Ran and Petersson, Lars  and Armin, Mohammad Ali 
+},
+  title = {Single Underwater Image Restoration by contrastive learning},
+  booktitle = {International Geoscience and Remote Sensing Symposium (IGARSS)},
+  year = {2021}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="multi-fan: multi-spectral mosaic super-resolution via multi-scale feature aggregation network m. shoeiby, s. aliakbarian, s. anwar, and l. petersson machine vision and applications (mva)">
+          <h3 class="pb-title">Multi-FAN: Multi-Spectral Mosaic Super-Resolution Via Multi-Scale Feature Aggregation Network</h3>
+          <p class="pb-authors">M. Shoeiby, S. Aliakbarian, S. Anwar, and L. Petersson</p>
+          <p class="pb-venue"><i>Machine Vision and Applications (MVA)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/pdf/1807.03528.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('Shoeiby2021multiSR')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Shoeiby2021multiSR"><button class="pb-bib-copy" onclick="copyBib('Shoeiby2021multiSR',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Shoeiby2021multiSR">@article{Shoeiby2021multiSR,
+  title={Multi-FAN: Multi-Spectral Mosaic Super-Resolution Via Multi-Scale Feature Aggregation Network},
+  author={Shoeiby, Mehrdad and Aliakbarian, Sadegh and Anwar, Saeed and Petersson, Lars},
+  journal={ Machine Vision and Applications},
+  year={2021}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="densely deformable efficient salient object detection network t. hussain, s. anwar, a. ullah, k. muhammad, and s. w. baik arxiv e-prints">
+          <h3 class="pb-title">Densely Deformable Efficient Salient Object Detection Network</h3>
+          <p class="pb-authors">T. Hussain, S. Anwar, A. Ullah, K. Muhammad, and S. W. Baik</p>
+          <p class="pb-venue"><i>ArXiv e-prints</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/pdf/2102.06407.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/tanveer-hussain/EfficientSOD"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Tan2021DDNET')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Tan2021DDNET"><button class="pb-bib-copy" onclick="copyBib('Tan2021DDNET',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Tan2021DDNET">@InProceedings{Tan2021DDNET,
+      title={Densely Deformable Efficient Salient Object Detection Network}, 
+      author={Tanveer Hussain and Saeed Anwar and Amin Ullah and Khan Muhammad and Sung Wook Baik},
+      year={2021},
+      eprint={2102.06407},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="deep ancient roman republican coin classification via feature fusion and attention h. anwar*, s. anwar*, s. zambanini, and f. porikli pattern recognition (pr)">
+          <h3 class="pb-title">Deep Ancient Roman Republican Coin Classification via Feature Fusion and Attention</h3>
+          <p class="pb-authors">H. Anwar*, S. Anwar*, S. Zambanini, and F. Porikli</p>
+          <p class="pb-venue"><i>Pattern Recognition (PR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S0031320321000583"><i class="fa fa-file-pdf-o"></i>PR PDF</a><a class="pb-l" href="https://arxiv.org/pdf/1908.09428.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/saeed-anwar/CoinNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2021CoinNet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2021CoinNet"><button class="pb-bib-copy" onclick="copyBib('Anwar2021CoinNet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2021CoinNet">@article{Anwar2021CoinNet,
+title = {Deep Ancient Roman Republican Coin Classification via Feature Fusion and Attention},
+journal = {Pattern Recognition},
+pages = {107871},
+year = {2021},
+issn = {0031-3203},
+doi = {https://doi.org/10.1016/j.patcog.2021.107871},
+url = {https://www.sciencedirect.com/science/article/pii/S0031320321000583},
+author = {Hafeez Anwar and Saeed Anwar and Sebastian Zambanini and Fatih Porikli},
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="deblur and deep depth from a defocus image s. anwar, z. hayder, and f. porikli machine vision and applications (mva)">
+          <h3 class="pb-title">Deblur and Deep Depth from a Defocus Image</h3>
+          <p class="pb-authors">S. Anwar, Z. Hayder, and F. Porikli</p>
+          <p class="pb-venue"><i>Machine Vision and Applications (MVA)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://link.springer.com/article/10.1007/s00138-020-01162-6"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="../papers/MVA2020_Defocus.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="../codes/DefocusingImagesCode.zip"><i class="fa fa-code"></i>Code</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2021DefocusMVA')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2021DefocusMVA"><button class="pb-bib-copy" onclick="copyBib('Anwar2021DefocusMVA',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2021DefocusMVA">@article{Anwar2021DefocusMVA,
+  title={Deblur and deep depth from single defocus image},
+  author={Anwar, Saeed and Hayder, Zeeshan and Porikli, Fatih},
+  journal={Machine Vision and Applications},
+  volume={32},
+  number={1},
+  pages={1--13},
+  year={2021},
+  publisher={Springer}
+}</pre></div>
+        </div><div class="pb-card" data-year="2021" data-h="dense-resolution network for point cloud classification and segmentation s. qiu, s. anwar, and n. barnes ieee winter conference on applications of computer vision (wacv)">
+          <h3 class="pb-title">Dense-Resolution Network for Point Cloud Classification and Segmentation</h3>
+          <p class="pb-authors">S. Qiu, S. Anwar, and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE Winter Conference on Applications of Computer Vision (WACV)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content/WACV2021/papers/Qiu_Dense-Resolution_Network_for_Point_Cloud_Classification_and_Segmentation_WACV_2021_paper.pdf"><i class="fa fa-file-pdf-o"></i>WACV Version</a><a class="pb-l" href="https://openaccess.thecvf.com/content/WACV2021/supplemental/Qiu_Dense-Resolution_Network_for_WACV_2021_supplemental.pdf"><i class="fa fa-paperclip"></i>WACV Supp</a><a class="pb-l" href="https://arxiv.org/pdf/2005.06734.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://youtu.be/TnbksHzaJzw"><i class="fa fa-play-circle"></i>Video</a><a class="pb-l" href="https://drive.google.com/file/d/10yyLmdloHsI-PFKYEdoxIs4R_auVEiXJ/view?usp=sharing"><i class="fa fa-file-powerpoint-o"></i>PPT</a><a class="pb-l" href="https://github.com/ShiQiu0419/DRNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('QIU2021DRNET')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-QIU2021DRNET"><button class="pb-bib-copy" onclick="copyBib('QIU2021DRNET',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-QIU2021DRNET">@InProceedings{QIU2021DRNET,
+    author    = {Qiu, Shi and Anwar, Saeed and Barnes, Nick},
+    title     = {Dense-Resolution Network for Point Cloud Classification and Segmentation},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2021},
+    pages     = {3813-3822}
+}</pre></div>
+        </div><h2 class="pb-year" id="py-2020">2020<span class="pb-year-n">19</span></h2>
+<div class="pb-card" data-year="2020" data-h="densely residual laplacian super-resolution s. anwar and n. barnes ieee transactions on pattern analysis and machine intelligence (tpami)">
+          <h3 class="pb-title">Densely Residual Laplacian Super-Resolution</h3>
+          <p class="pb-authors">S. Anwar and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.computer.org/csdl/journal/tp/5555/01/09185010/1mNmSufHH8c"><i class="fa fa-file-pdf-o"></i>TPAMI PDF</a><a class="pb-l" href="https://s3.amazonaws.com/ieeecs.cdn.csdl.public/trans/tp/5555/01/extras/ttp555501-09185010s1-supp1-3021088.pdf"><i class="fa fa-paperclip"></i>TPAMI Supp</a><a class="pb-l" href="../papers/DRLN.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/saeed-anwar/DRLN"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2020DRLN')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2020DRLN"><button class="pb-bib-copy" onclick="copyBib('Anwar2020DRLN',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2020DRLN">@article{Anwar2020DRLN,
+  author = {Anwar, Saeed and Barnes, Nick},
+  title = {Densely Residual Laplacian Super-Resolution},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year = {2020}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="diving deeper into underwater image enhancement: a survey s. anwar and c. li signal processing: image communication (spic)">
+          <h3 class="pb-title">Diving Deeper into Underwater image enhancement: A survey</h3>
+          <p class="pb-authors">S. Anwar and C. Li</p>
+          <p class="pb-venue"><i>Signal Processing: Image Communication (SPIC)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S0923596520301478"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://arxiv.org/pdf/1907.07863.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/saeed-anwar/UWSurvey"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2020UWESurvey')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2020UWESurvey"><button class="pb-bib-copy" onclick="copyBib('Anwar2020UWESurvey',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2020UWESurvey">@article{Anwar2020UWESurvey,
+  title = &quot;Diving deeper into underwater image enhancement: A survey&quot;,
+  journal = &quot;Signal Processing: Image Communication&quot;,
+  volume = &quot;89&quot;,
+  pages = &quot;115978&quot;,
+  year = &quot;2020&quot;,
+  issn = &quot;0923-5965&quot;,
+  doi = &quot;https://doi.org/10.1016/j.image.2020.115978&quot;,
+  url = &quot;http://www.sciencedirect.com/science/article/pii/S0923596520301478&quot;,
+  author = &quot;Saeed Anwar and Chongyi Li&quot;,
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="are deep neural architectures losing information? invertibility is indispensable y. liu, z. qin, s. anwar, s. caldwell, and t. gedeon international conference on neural information processing (iconip)">
+          <h3 class="pb-title">Are Deep Neural Architectures Losing Information? Invertibility Is Indispensable</h3>
+          <p class="pb-authors">Y. Liu, Z. Qin, S. Anwar, S. Caldwell, and T. Gedeon</p>
+          <p class="pb-venue"><i>International Conference on Neural Information Processing (ICONIP)</i><span class="pb-oral">Oral</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://arxiv.org/pdf/2009.03173.pdf"><i class="fa fa-file-pdf-o"></i>Official PDF</a><a class="pb-l" href="https://github.com/Lillian1082/IRAE_pytorch"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Yang2020Glow')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Yang2020Glow"><button class="pb-bib-copy" onclick="copyBib('Yang2020Glow',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Yang2020Glow">@article{Yang2020Glow,
+  author = {Liu, Yang and Qin, Zhenyue and Anwar, Saeed  and Caldwell, Sabrina  and Gedeon, Tom },
+  title = {Are Deep Neural Architectures Losing Information? Invertibility Is Indispensable},
+  booktitle={International Conference on Neural Information Processing},  
+  year = {2020}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="ofgan: realistic rendition of synthetic colonoscopy videos j. xu, s. anwar, n. barnes, f. grimpen, o. salvado, s. anderson, and m. a. armin medical image computing and computer assisted interventions (miccai)">
+          <h3 class="pb-title">OfGAN: Realistic Rendition of Synthetic Colonoscopy Videos</h3>
+          <p class="pb-authors">J. Xu, S. Anwar, N. Barnes, F. Grimpen, O. Salvado, S. Anderson, and M. A. Armin</p>
+          <p class="pb-venue"><i>Medical Image Computing and Computer Assisted Interventions (MICCAI)</i><span class="pb-oral">Oral</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://link.springer.com/chapter/10.1007/978-3-030-59716-0_70"><i class="fa fa-file-pdf-o"></i>Official PDF</a><button class="pb-bibbtn" onclick="toggleBib('Xu2020OfGAN')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Xu2020OfGAN"><button class="pb-bib-copy" onclick="copyBib('Xu2020OfGAN',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Xu2020OfGAN">@InProceedings{Xu2020OfGAN,
+ author=&quot;Xu, Jiabo and Anwar, Saeed and Barnes, Nick and Grimpen, Florian and Salvado, Olivier and Anderson, Stuart and Armin, Mohammad Ali&quot;,
+ title=&quot;OfGAN: Realistic Rendition of Synthetic Colonoscopy Videos&quot;,
+ booktitle=&quot;Medical Image Computing and Computer Assisted Intervention (MICCAI)&quot;,
+ year=&quot;2020&quot;,
+ publisher=&quot;Springer International Publishing&quot;,
+ address=&quot;Cham&quot;,
+ pages=&quot;732--741&quot;,
+ isbn=&quot;978-3-030-59716-0&quot;
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="a deep journey into super-resolution: a survey s. anwar, s. khan, and n. barnes acm computing surveys (csur)">
+          <h3 class="pb-title">A Deep Journey into Super-resolution: A survey</h3>
+          <p class="pb-authors">S. Anwar, S. Khan, and N. Barnes</p>
+          <p class="pb-venue"><i>ACM Computing Surveys (CSUR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://dl.acm.org/doi/abs/10.1145/3390462"><i class="fa fa-file-pdf-o"></i>CSUR PDF</a><a class="pb-l" href="https://arxiv.org/abs/1904.07523"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/saeed-anwar/SRsurvey"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2020Survey')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2020Survey"><button class="pb-bib-copy" onclick="copyBib('Anwar2020Survey',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2020Survey">@article{Anwar2020Survey,
+  author = {Anwar, Saeed and Khan, Salman and Barnes, Nick},
+    title = {A Deep Journey into Super-resolution: A survey},
+    journal={ACM Computing Surveys (CSUR)},
+    year={2020},
+    publisher={ACM New York, NY, USA}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="uc-net: uncertainty inspired rgb-d saliency detection via conditional variational autoencoders j. zhang, d.p. fan, y. dai, s. anwar, f.s. saleh, t. zhang, and n. barnes ieee computer vision and pattern recognition (cvpr)">
+          <h3 class="pb-title">UC-Net: Uncertainty Inspired RGB-D Saliency Detection via Conditional Variational Autoencoders</h3>
+          <p class="pb-authors">J. Zhang, D.P. Fan, Y. Dai, S. Anwar, F.S. Saleh, T. Zhang, and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition (CVPR)</i><span class="pb-oral">Oral</span><span class="pb-badge" style="background:#2a9d8f"><i class="fa fa-certificate"></i>Best Paper nominated in CVPR</span></p>
+          <div class="pb-links"><a class="pb-l" href="http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR Version</a><a class="pb-l" href="https://github.com/JingZhang617/UCNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Jing2020UCNET')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Jing2020UCNET"><button class="pb-bib-copy" onclick="copyBib('Jing2020UCNET',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Jing2020UCNET">@InProceedings{Jing2020UCNET,
+author = {Zhang, Jing and Fan, Deng-Ping and Dai, Yuchao and Anwar, Saeed and Saleh, Fatemeh Sadat and Zhang, Tong and Barnes, Nick},
+title = {UC-Net: Uncertainty Inspired RGB-D Saliency Detection via Conditional Variational Autoencoders},
+booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2020}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="from depth what can you see? depth completion via auxiliary image reconstruction k. lu, n. barnes, s. anwar, and l. zheng ieee computer vision and pattern recognition (cvpr)">
+          <h3 class="pb-title">From Depth What Can You See? Depth Completion via Auxiliary Image Reconstruction</h3>
+          <p class="pb-authors">K. Lu, N. Barnes, S. Anwar, and L. Zheng</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition (CVPR)</i></p>
+          <div class="pb-links"><a class="pb-l" href="http://openaccess.thecvf.com/content_CVPR_2020/papers/Lu_From_Depth_What_Can_You_See_Depth_Completion_via_Auxiliary_CVPR_2020_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR Version</a><a class="pb-l" href="https://www.youtube.com/watch?v=aIxvUuoT0Cg"><i class="fa fa-play-circle"></i>Video</a><button class="pb-bibbtn" onclick="toggleBib('Kaiyue2020Depth')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Kaiyue2020Depth"><button class="pb-bib-copy" onclick="copyBib('Kaiyue2020Depth',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Kaiyue2020Depth">@InProceedings{Kaiyue2020Depth,
+author = {Lu, Kaiyue and Barnes, Nick and Anwar, Saeed and Zheng, Liang},
+title = {From Depth What Can You See? Depth Completion via Auxiliary Image Reconstruction},
+booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2020}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="identity enhanced image denoising s. anwar, c. p. huynh, and f. porikli ieee computer vision and pattern recognition workshops (cvprw)">
+          <h3 class="pb-title">Identity Enhanced Image Denoising</h3>
+          <p class="pb-authors">S. Anwar, C. P. Huynh, and F. Porikli</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition Workshops (CVPRW)</i></p>
+          <div class="pb-links"><a class="pb-l" href="http://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Anwar_Identity_Enhanced_Residual_Image_Denoising_CVPRW_2020_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR Version</a><a class="pb-l" href="http://arxiv.org/abs/2004.13523"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="http://openaccess.thecvf.com/content_CVPRW_2020/supplemental/Anwar_Identity_Enhanced_Residual_CVPRW_2020_supplemental.pdf"><i class="fa fa-paperclip"></i>CVPR Supp</a><a class="pb-l" href="https://github.com/saeed-anwar/IERD"><i class="fa fa-code"></i>Code</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2020IERD')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2020IERD"><button class="pb-bib-copy" onclick="copyBib('Anwar2020IERD',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2020IERD">@InProceedings{Anwar2020IERD,
+    author = {Anwar, Saeed and Phuoc Huynh, Cong and Porikli, Fatih},
+    title = {Identity Enhanced Residual Image Denoising},
+    booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month = {June},
+    year = {2020}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="gradnet image denoising y. liu, s. anwar, and l. zheng ieee computer vision and pattern recognition workshops (cvprw)">
+          <h3 class="pb-title">GradNet Image Denoising</h3>
+          <p class="pb-authors">Y. Liu, S. Anwar, and L. Zheng</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition Workshops (CVPRW)</i></p>
+          <div class="pb-links"><a class="pb-l" href="http://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Liu_GradNet_Image_Denoising_CVPRW_2020_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR Version</a><a class="pb-l" href="http://openaccess.thecvf.com/content_CVPRW_2020/supplemental/Liu_GradNet_Image_Denoising_CVPRW_2020_supplemental.pdf"><i class="fa fa-paperclip"></i>CVPR Supp</a><a class="pb-l" href="https://github.com/Lillian1082/GradNet-Image-Denoising"><i class="fa fa-code"></i>Code</a><button class="pb-bibbtn" onclick="toggleBib('Yang2020GradNet')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Yang2020GradNet"><button class="pb-bib-copy" onclick="copyBib('Yang2020GradNet',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Yang2020GradNet">@InProceedings{Yang2020GradNet,
+    author = {Liu, Yang and Anwar, Saeed and Zheng, Liang and Tian, Qi},
+    title = {GradNet Image Denoising},
+    booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month = {June},
+    year = {2020}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="mosaic super-resolution via sequential feature pyramid networks m. shoeiby, m. a. armin, s. aliakbarian, s. anwar, and l. petersson ieee computer vision and pattern recognition workshops (cvprw)">
+          <h3 class="pb-title">Mosaic Super-resolution via Sequential Feature Pyramid Networks</h3>
+          <p class="pb-authors">M. Shoeiby, M. A. Armin, S. Aliakbarian, S. Anwar, and L. petersson</p>
+          <p class="pb-venue"><i>IEEE Computer Vision and Pattern Recognition Workshops (CVPRW)</i><span class="pb-oral">Oral</span></p>
+          <div class="pb-links"><a class="pb-l" href="http://openaccess.thecvf.com/content_CVPRW_2020/papers/w6/Shoeiby_Mosaic_Super-Resolution_via_Sequential_Feature_Pyramid_Networks_CVPRW_2020_paper.pdf"><i class="fa fa-file-pdf-o"></i>CVPR Version</a><a class="pb-l" href="https://arxiv.org/abs/2004.06853"><i class="fa fa-file-text-o"></i>arXiv</a><button class="pb-bibbtn" onclick="toggleBib('Mehrdad2019SR')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Mehrdad2019SR"><button class="pb-bib-copy" onclick="copyBib('Mehrdad2019SR',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Mehrdad2019SR">@InProceedings{Mehrdad2019SR,
+     author = {Shoeiby, Mehrdad and Armin, Ali and Aliakbarian, Sadegh and Anwar, Saeed and Petersson, Lars},
+     title = {Mosaic Super-Resolution via Sequential Feature Pyramid Networks},
+     booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+     month = {June},
+     year = {2020}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="real image denoising with feature attention s. anwar and n. barnes ieee international conference on computer vision (iccv), oral, 2019">
+          <h3 class="pb-title">Real Image Denoising with Feature Attention</h3>
+          <p class="pb-authors">S. Anwar and N. Barnes</p>
+          <p class="pb-venue"><i>IEEE International Conference on Computer Vision (ICCV), Oral, 2019</i></p>
+          <div class="pb-links"><a class="pb-l" href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Anwar_Real_Image_Denoising_With_Feature_Attention_ICCV_2019_paper.pdf"><i class="fa fa-file-pdf-o"></i>ICCV Version</a><a class="pb-l" href="http://openaccess.thecvf.com/content_ICCV_2019/supplemental/Anwar_Real_Image_Denoising_ICCV_2019_supplemental.pdf"><i class="fa fa-paperclip"></i>ICCV Supp</a><a class="pb-l" href="https://github.com/saeed-anwar/RIDNet"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2019RIDNET')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2019RIDNET"><button class="pb-bib-copy" onclick="copyBib('Anwar2019RIDNET',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2019RIDNET">@InProceedings{Anwar2019RIDNET,
+author = {Anwar, Saeed and Barnes, Nick},
+title = {Real Image Denoising With Feature Attention},
+booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+month = {October},
+year = {2019}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="underwater scene prior inspired deep underwater image and video enhancement s. anwar, c. li, and f. porikli pattern recognition (pr), 2019">
+          <h3 class="pb-title">Underwater Scene Prior Inspired Deep Underwater Image and Video Enhancement</h3>
+          <p class="pb-authors">S. Anwar, C. Li, and F. Porikli</p>
+          <p class="pb-venue"><i>Pattern Recognition (PR), 2019</i><span class="pb-badge" style="background:#3f6bb0"><i class="fa fa-star"></i>ESI Highly Cited</span><span class="pb-badge" style="background:#2a9d8f"><i class="fa fa-certificate"></i>Best Paper Honorable Mention</span></p>
+          <div class="pb-links"><a class="pb-l" href="https://www.sciencedirect.com/science/article/pii/S0031320319303401#fig0010"><i class="fa fa-file-pdf-o"></i>PR Version</a><a class="pb-l" href="https://arxiv.org/pdf/1807.03528.pdf"><i class="fa fa-file-text-o"></i>arXiv</a><a class="pb-l" href="https://github.com/saeed-anwar/UWCNN"><i class="fa fa-globe"></i>Project Page</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2019UWE')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2019UWE"><button class="pb-bib-copy" onclick="copyBib('Anwar2019UWE',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2019UWE">@article{Anwar2019UWE,
+  title={Underwater Scene Prior Inspired Deep Underwater Image and Video Enhancement},
+  author={Li, Chongyi and Anwar, Saeed},
+  journal={Pattern Recognition},
+  pages={107038},
+  year={2019},
+  publisher={Elsevier}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="image deblurring with a class-specific prior s. anwar, c. p. huynh, and f. porikli ieee transactions on pattern analysis and machine intelligence (tpami), 2018">
+          <h3 class="pb-title">Image Deblurring with a Class-Specific Prior</h3>
+          <p class="pb-authors">S. Anwar, C. P. Huynh, and F. Porikli</p>
+          <p class="pb-venue"><i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2018</i></p>
+          <div class="pb-links"><a class="pb-l" href="../papers/TPAMI18-deblurring-preprint.pdf"><i class="fa fa-file-pdf-o"></i>TPAMI PDF</a><a class="pb-l" href="../papers/TPAMI18-deblurring-supp.pdf"><i class="fa fa-paperclip"></i>TPAMI Supp</a><a class="pb-l" href="../codes/Deblurring_ICCV15_PAMI18.zip"><i class="fa fa-code"></i>Code</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2018PAMI')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2018PAMI"><button class="pb-bib-copy" onclick="copyBib('Anwar2018PAMI',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2018PAMI">@article{Anwar2018PAMI,
+  author = {Anwar, Saeed and Huynh, Cong P. and Porikli, Fatih },
+  title = {Image Deblurring with a Class-Specific Prior},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year = {2018}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="category-specific object image denoising s. anwar, f. porikli, and c. p. huynh ieee transactions in image processing (tip), 2017">
+          <h3 class="pb-title">Category-Specific Object Image Denoising</h3>
+          <p class="pb-authors">S. Anwar, F. Porikli, and C. P. Huynh</p>
+          <p class="pb-venue"><i>IEEE Transactions in Image Processing (TIP), 2017</i></p>
+          <div class="pb-links"><a class="pb-l" href="../papers/TIP17-noise.pdf"><i class="fa fa-file-pdf-o"></i>TIP PDF</a><a class="pb-l" href="../codes/CSID_TIP17_codes.zip"><i class="fa fa-code"></i>Code</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2017category')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2017category"><button class="pb-bib-copy" onclick="copyBib('Anwar2017category',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2017category">@article{Anwar2017category,
+	title	={Category-specific object image denoising},
+	author	={Anwar, Saeed and Porikli, Fatih and Huynh, Cong Phuoc},
+	journal	={IEEE Transactions on Image Processing},
+	volume	={26},
+	number	={11},
+	pages	={5506--5518},
+	year	={2017},
+	publisher={IEEE}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="combined internal and external category-specific image denoising s. anwar, c. p. huynh, and f. porikli british machine vision conference (bmvc), 2017">
+          <h3 class="pb-title">Combined Internal and External Category-Specific Image Denoising</h3>
+          <p class="pb-authors">S. Anwar, C. P. Huynh, and F. Porikli</p>
+          <p class="pb-venue"><i>British Machine Vision Conference (BMVC), 2017</i></p>
+          <div class="pb-links"><a class="pb-l" href="../papers/BMVC17-internalnoise.pdf"><i class="fa fa-file-pdf-o"></i>BMVC PDF</a><a class="pb-l" href="../codes/Combined_BMVC17_codes.zip"><i class="fa fa-code"></i>Code</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2017internalnoise')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2017internalnoise"><button class="pb-bib-copy" onclick="copyBib('Anwar2017internalnoise',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2017internalnoise">@article{Anwar2017internalnoise,
+  author = {Anwar, Saeed and Huynh, Cong P. and Porikli, Fatih },
+  title = {Combined Internal and External Category-Specific Image Denoising},
+  journal = {British Machine Vision Conference},
+  year = {2017}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="depth estimation and blur removal from a single out-of-focus image s. anwar, z hayder, and f. porikli british machine vision conference (bmvc), oral, 2017">
+          <h3 class="pb-title">Depth Estimation and Blur Removal from a Single Out-of-focus Image</h3>
+          <p class="pb-authors">S. Anwar, Z Hayder, and F. Porikli</p>
+          <p class="pb-venue"><i>British Machine Vision Conference (BMVC), Oral, 2017</i></p>
+          <div class="pb-links"><a class="pb-l" href="../papers/BMVC17-depth.pdf"><i class="fa fa-file-pdf-o"></i>BMVC PDF</a><a class="pb-l" href="../codes/DefocusingImagesCode.zip"><i class="fa fa-code"></i>Code</a><button class="pb-bibbtn" onclick="toggleBib('Anwar2017depth')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-Anwar2017depth"><button class="pb-bib-copy" onclick="copyBib('Anwar2017depth',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-Anwar2017depth">@article{Anwar2017depth,
+  author = {Anwar, Saeed and Hayder, Zeeshan and Porikli, Fatih },
+  title = {Depth Estimation and Blur Removal from a Single Out-of-focus Image},
+  journal = {British Machine Vision Conference},
+  year = {2017}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="class-specific image deblurring s. anwar, c. p. huynh, and f. porikli ieee international conference on computer vision (iccv), 2015">
+          <h3 class="pb-title">Class-specific image deblurring</h3>
+          <p class="pb-authors">S. Anwar, C. P. Huynh, and F. Porikli</p>
+          <p class="pb-venue"><i>IEEE International Conference on Computer Vision (ICCV), 2015</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openaccess.thecvf.com/content_iccv_2015/papers/Anwar_Class-Specific_Image_Deblurring_ICCV_2015_paper.pdf"><i class="fa fa-file-pdf-o"></i>ICCV Version</a><a class="pb-l" href="../codes/Deblurring_ICCV15_PAMI18.zip"><i class="fa fa-code"></i>Code</a><button class="pb-bibbtn" onclick="toggleBib('anwar2015class')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-anwar2015class"><button class="pb-bib-copy" onclick="copyBib('anwar2015class',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-anwar2015class">@inproceedings{anwar2015class,
+  title={Class-specific image deblurring},
+  author={Anwar, Saeed and Phuoc Huynh, Cong and Porikli, Fatih},
+  booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+  pages={495--503},
+  year={2015}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="fast mean shift and particle filtering based visual human tracking m. farooq, s. anwar, and s. khan ieee multitopic conference (inmic), 2009">
+          <h3 class="pb-title">Fast mean shift and particle filtering based visual human tracking</h3>
+          <p class="pb-authors">M. Farooq, S. Anwar, and S. Khan</p>
+          <p class="pb-venue"><i>IEEE Multitopic Conference (INMIC), 2009</i></p>
+          <div class="pb-links"><a class="pb-l" href="../papers/INMIC2009-fast.pdf"><i class="fa fa-file-pdf-o"></i>PDF</a><button class="pb-bibbtn" onclick="toggleBib('farooq2009fast')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-farooq2009fast"><button class="pb-bib-copy" onclick="copyBib('farooq2009fast',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-farooq2009fast">@inproceedings{farooq2009fast,
+  title={Fast mean shift and particle filtering based visual human tracking},
+  author={Farooq, Muhammad and Anwar, Saeed and Khan, Sharif},
+  booktitle={Multitopic Conference, INMIC 2009. IEEE 13th International},
+  pages={1--5},
+  year={2009}
+}</pre></div>
+        </div><div class="pb-card" data-year="2020" data-h="data-driven image restoration s. anwar the australian national university, australia (anu)">
+          <h3 class="pb-title">Data-Driven Image Restoration</h3>
+          <p class="pb-authors">S. Anwar</p>
+          <p class="pb-venue"><i>The Australian National University, Australia (ANU)</i></p>
+          <div class="pb-links"><a class="pb-l" href="https://openresearch-repository.anu.edu.au/handle/1885/148622"><i class="fa fa-file-pdf-o"></i>PDF</a><button class="pb-bibbtn" onclick="toggleBib('anwarthesis')"><i class="fa fa-quote-left"></i> BibTeX</button></div>
+          <div class="pb-bib" id="bib-anwarthesis"><button class="pb-bib-copy" onclick="copyBib('anwarthesis',this)"><i class="fa fa-files-o"></i> Copy</button><pre id="bibt-anwarthesis">@phdthesis{anwarthesis,
+  title={Data-Driven Image Restoration},
+  author={Anwar, Saeed},
+  school={The Australian National University (Australia) },
+  year={2018}
+}</pre></div>
+        </div>
+        </div><!-- /.article-wrap -->
+    {% if site.disqus_shortname and page.comments %}
+      <section id="disqus_thread"></section><!-- /#disqus_thread -->
+    {% endif %}
+  </article>
+</div><!-- /#index -->
+<div class="footer-wrap">
+  <footer>
+    {% include _footer.html %}
+  </footer>
+</div><!-- /.footer-wrap -->
+
+{% include _scripts.html %}
+<script>
+function toggleBib(id){var e=document.getElementById('bib-'+id);e.classList.toggle('open');}
+function copyBib(id,btn){var t=document.getElementById('bibt-'+id).innerText;var done=function(){var o=btn.innerHTML;btn.innerHTML='Copied';setTimeout(function(){btn.innerHTML=o;},1400);};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(a);done();}}
+(function(){
+  var yr='all';
+  function apply(){
+    var q=(document.getElementById('pbq').value||'').toLowerCase().trim(), total=0;
+    document.querySelectorAll('.pb-card').forEach(function(c){
+      var okY=(yr==='all'||c.getAttribute('data-year')===yr);
+      var okQ=!q||c.getAttribute('data-h').indexOf(q)>-1;
+      var show=okY&&okQ;
+      c.style.display=show?'':'none';
+      if(show)total++;
+    });
+    document.querySelectorAll('.pb-year').forEach(function(y){
+      var yy=y.id.replace('py-','');
+      var any=false;
+      document.querySelectorAll('.pb-card[data-year="'+yy+'"]').forEach(function(c){ if(c.style.display!=='none') any=true; });
+      y.style.display=any?'':'none';
+    });
+    document.getElementById('pbc').textContent=total+' paper'+(total===1?'':'s');
+    document.getElementById('pbe').style.display=total?'none':'block';
+  }
+  document.querySelectorAll('.pb-f').forEach(function(b){
+    b.onclick=function(){
+      document.querySelectorAll('.pb-f').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on'); yr=b.getAttribute('data-f'); apply();
+    };
+  });
+  document.getElementById('pbq').addEventListener('input', apply);
+})();
+</script>
+          
+
+</body>
+</html>
