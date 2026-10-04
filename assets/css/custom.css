@@ -1,0 +1,97 @@
+h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Keep the author-bio sidebar, but give the article text more room
+   and a comfortable gutter on the right instead of running to the edge */
+@media only screen and (min-width: 37.5em) {
+  #main article {
+    width: 70%;
+    max-width: 900px;
+    margin-right: 5%;
+  }
+}
+@media only screen and (min-width: 86.375em) {
+  #main article {
+    width: 60%;
+    max-width: 900px;
+    margin-right: 5%;
+  }
+}
+
+/* ---------- Professional sidebar card (author bio) ---------- */
+@media only screen and (min-width: 37.5em) {
+  .article-author-side {
+    background: #fafafa !important;
+    border: 1px solid #ececec;
+    border-radius: 12px;
+    padding: 20px 16px 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    text-align: center;
+  }
+  .article-author-side,
+  .article-author-side h3,
+  .article-author-side p,
+  .article-author-side .author-social {
+    max-width: 190px !important;
+  }
+  .article-author-side .bio-photo {
+    max-width: 120px !important;
+    margin: 0 auto 12px;
+    display: block;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #3f6bb0, 0 6px 16px rgba(0,0,0,.15);
+  }
+  .article-author-side h3 {
+    margin-top: 0 !important;
+    margin-bottom: 4px !important;
+    font-size: 17px;
+    color: #1f3a5f;
+  }
+  .article-author-side p {
+    font-size: 12.5px !important;
+    font-style: normal !important;
+    color: #666;
+    line-height: 1.55;
+    margin: 0 auto 16px !important;
+  }
+  .article-author-side .author-social {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+    background: #eef2f8 !important;
+    color: #3f6bb0 !important;
+    border-radius: 16px;
+    padding: 7px 12px;
+    font-size: 12px !important;
+    font-weight: 700;
+    margin: 0 auto 8px !important;
+    transition: background .15s ease, transform .15s ease;
+  }
+  .article-author-side .author-social:hover {
+    background: #dde8f5 !important;
+    transform: translateY(-1px);
+  }
+  .article-author-side .author-social:active {
+    transform: translateY(0);
+  }
+  .article-author-side .author-social .fa,
+  .article-author-side .author-social .ai {
+    margin-right: 0;
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 86.375em) {
+  .article-author-side,
+  .article-author-side h3,
+  .article-author-side p,
+  .article-author-side .author-social {
+    max-width: 190px !important;
+  }
+}
