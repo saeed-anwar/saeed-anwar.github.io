@@ -37,6 +37,11 @@ html{scroll-behavior:smooth}
 .rs-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.rs-tag{background:#eef2f8;color:#3f6bb0;border-radius:12px;padding:3px 10px;font-size:12px;font-weight:700}
 .rs-link{margin-top:auto;font-size:12.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#3f6bb0!important;text-decoration:none!important}
 .rs-link:hover{color:#1f3a5f!important}
+.rs-phd-sub{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;padding-top:16px;border-top:1px solid #eee}
+.rs-phd-col{border-left:3px solid var(--c);padding:2px 0 2px 12px}
+.rs-phd-col h4{margin:0 0 4px;font-size:13.5px;color:#1f3a5f}
+.rs-phd-col p{margin:0;font-size:13px;line-height:1.55;color:#555}
+@media only screen and (max-width:37.5em){.rs-phd-sub{grid-template-columns:1fr}}
 .rs-areas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .rs-area{display:flex;align-items:center;gap:12px;background:#f7f9fc;border:1px solid #e6edf7;border-radius:10px;padding:14px 16px;font-size:14.5px;font-weight:700;color:#1f3a5f}
 .rs-area i{width:20px;text-align:center;color:#3f6bb0;font-size:17px}
@@ -73,8 +78,8 @@ html{scroll-behavior:smooth}
   </div>
   <article>
     <div class="article-wrap">
-      <!-- To change a position's status, edit its .rs-pill text/colour, its "closed" class on .rs-card
-           (closed = muted card, no enquiry link) and the matching tile in the .rs-glance strip. -->
+      <!-- To change a position's status, edit its .rs-pill text/colour, its "closed" class on .rs-card,
+           and the matching tile in the .rs-glance strip. -->
 
       <div class="rs-hero"><p class="rs-over">Research Opportunities</p><h1>Join Our Research Team</h1>
         <p class="s">Explore opportunities in Computer Vision, Generative AI, 3D Vision, Multimodal AI and Visual Intelligence.</p></div>
@@ -82,10 +87,15 @@ html{scroll-behavior:smooth}
 
       <div class="rs-h">Find your research path</div>
       <div class="rs-grid">
-      <div id="opp-phd" class="rs-card ">
+      <div id="opp-phd" class="rs-card  wide">
         <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#5a86c9,#3f6bb0)"><i class="fa fa-graduation-cap"></i></div><div><h3>PhD Students</h3><p class="rs-sub">Doctoral research</p></div></div>
         <span class="rs-pill" style="background:#2a9d8f">Seeking applicants</span>
-        <p class="t">I am looking for highly motivated doctoral students with a high GPA, extensive research experience, strong coding skills and exceptional English proficiency.</p><div class="rs-tags"><span class="rs-tag">High GPA</span><span class="rs-tag">Research experience</span><span class="rs-tag">Strong coding</span><span class="rs-tag">English proficiency</span></div><a class="rs-link" href="mailto:saeed.anwar@uwa.edu.au?subject=PhD%20Enquiry">Enquire about a PhD &rarr;</a>
+        <p class="t">I am looking for highly motivated doctoral students with a high GPA, extensive research experience, strong coding skills and exceptional English proficiency.</p><div class="rs-tags"><span class="rs-tag">High GPA</span><span class="rs-tag">Research experience</span><span class="rs-tag">Strong coding</span><span class="rs-tag">English proficiency</span></div>
+        <div class="rs-phd-sub">
+          <div class="rs-phd-col" style="--c:#3f6bb0"><h4>International Students</h4><p>Open to applicants from any country. You will need to meet the university&rsquo;s English-language and visa requirements, and I can help identify suitable international scholarship schemes.</p></div>
+          <div class="rs-phd-col" style="--c:#2a9d8f"><h4>Domestic Students</h4><p>Open to citizens and permanent residents of the host institution&rsquo;s country. You may be eligible for standard domestic scholarship and stipend schemes.</p></div>
+          <div class="rs-phd-col" style="--c:#c9a227"><h4>Self-Funded PhD</h4><p>If you already have your own funding &mdash; a government scholarship, employer sponsorship, or personal funding &mdash; I welcome enquiries regardless of nationality.</p></div>
+        </div>
       </div>
       <div id="opp-fellow" class="rs-card closed">
         <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#bdbdbd,#9a9a9a)"><i class="fa fa-flask"></i></div><div><h3>Research Fellows</h3><p class="rs-sub">Current openings</p></div></div>
@@ -95,17 +105,17 @@ html{scroll-behavior:smooth}
       <div id="opp-visiting" class="rs-card ">
         <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#3fb8ad,#2a9d8f)"><i class="fa fa-globe"></i></div><div><h3>Visiting Researchers</h3><p class="rs-sub">Externally funded visits</p></div></div>
         <span class="rs-pill" style="background:#c9a227">External funding required</span>
-        <p class="t">I do not provide funding for visiting positions. If you can secure external funding and are highly motivated with a strong research background, please get in touch.</p><div class="rs-tags"><span class="rs-tag">External funding</span><span class="rs-tag">Research experience</span><span class="rs-tag">Highly motivated</span></div><a class="rs-link" href="mailto:saeed.anwar@uwa.edu.au?subject=Visiting%20Researcher%20Enquiry">Enquire about a visit &rarr;</a>
+        <p class="t">I do not provide funding for visiting positions. If you can secure external funding and are highly motivated with a strong research background, please get in touch.</p><div class="rs-tags"><span class="rs-tag">External funding</span><span class="rs-tag">Research experience</span><span class="rs-tag">Highly motivated</span></div>
       </div>
       <div id="opp-masters" class="rs-card ">
         <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#3fb8ad,#2a9d8f)"><i class="fa fa-book"></i></div><div><h3>Master&rsquo;s Students</h3><p class="rs-sub">UWA and ANU individual projects</p></div></div>
         <span class="rs-pill" style="background:#2a9d8f">Individual projects</span>
-        <p class="t">If you are a UWA or ANU master&rsquo;s student seeking an individual project, you should have a research background, a good GPA, coding skills and enough time to dedicate to research.</p><div class="rs-tags"><span class="rs-tag">Research background</span><span class="rs-tag">Good GPA</span><span class="rs-tag">Coding skills</span><span class="rs-tag">Time for research</span></div><a class="rs-link" href="mailto:saeed.anwar@uwa.edu.au?subject=Master's%20Project%20Enquiry">Enquire about a project &rarr;</a>
+        <p class="t">If you are a UWA or ANU master&rsquo;s student seeking an individual project, you should have a research background, a good GPA, coding skills and enough time to dedicate to research.</p><div class="rs-tags"><span class="rs-tag">Research background</span><span class="rs-tag">Good GPA</span><span class="rs-tag">Coding skills</span><span class="rs-tag">Time for research</span></div>
       </div>
       <div id="opp-honours" class="rs-card  wide">
         <div class="rs-top"><div class="rs-ic" style="background:linear-gradient(135deg,#e6c34a,#c9a227)"><i class="fa fa-university"></i></div><div><h3>Honours &amp; Undergraduate Research</h3><p class="rs-sub">Research projects for motivated UWA students</p></div></div>
         <span class="rs-pill" style="background:#2a9d8f">Honours projects</span>
-        <p class="t">For UWA undergraduates seeking an Honours project: I typically supervise 2&ndash;3 Honours students each year and prefer 24-unit projects.</p><div class="rs-tags"><span class="rs-tag">2&ndash;3 students per year</span><span class="rs-tag">24-unit projects</span></div><a class="rs-link" href="mailto:saeed.anwar@uwa.edu.au?subject=Honours%20Project%20Enquiry">Enquire about Honours &rarr;</a>
+        <p class="t">For UWA undergraduates seeking an Honours project: I typically supervise 2&ndash;3 Honours students each year and prefer 24-unit projects.</p><div class="rs-tags"><span class="rs-tag">2&ndash;3 students per year</span><span class="rs-tag">24-unit projects</span></div>
       </div>
       </div>
 
