@@ -6,205 +6,256 @@
 <head>
 {% include _head.html %}
 <style>
-a:link {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:visited {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
-}
-a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
-}
-
-/* ---------- Service page (mixed density) ---------- */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Top banner and figure tiles (shared style with the other pages) */
 .sv-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 64px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
 .sv-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
 .sv-hero>*{position:relative}
 .sv-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
-.sv-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
+.sv .sv-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
 .sv-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:580px;line-height:1.6}
 .sv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-36px 22px 26px;position:relative;z-index:2}
 .sv-st{background:#fff!important;border-radius:10px;padding:14px 8px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .sv-st b{display:block;font-size:22px;color:#1f3a5f;font-family:'PT Sans Narrow',sans-serif}
 .sv-st span{font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#888}
-.sv-h{display:flex;align-items:center;gap:9px;font-size:19px;margin:34px 0 14px;padding-bottom:8px;border-bottom:2px solid #ececec}
-.sv-h:first-of-type{margin-top:0}
-.sv-h i{font-size:16px;width:20px;text-align:center;color:#3f6bb0}
-.sv-hint{margin:-8px 0 16px;font-size:12.5px;color:#999}
 
-/* rich cards: Editorial Roles + Conference Organization */
-.sv-grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:6px}
-.sv-card{background:#fafafa;border:1px solid #ececec;border-left:4px solid var(--c);border-radius:8px;padding:12px 16px;transition:box-shadow .15s ease,transform .15s ease}
-.sv-card:hover{box-shadow:0 4px 14px rgba(0,0,0,.08);transform:translateY(-1px)}
-.sv-card-top{display:flex;align-items:center;gap:8px;margin-bottom:3px;flex-wrap:wrap}
-.sv-yr{display:inline-block;font-family:'PT Sans Narrow',sans-serif;font-weight:700;font-size:11.5px;color:#fff;background:var(--c);border-radius:11px;padding:2px 9px}
-.sv-role{font-weight:700;font-size:14px;color:#2a2a2a}
-.sv-venue{font-size:13px;color:#555}
-.sv-if{display:inline-block;margin-left:auto;font-size:10px;font-weight:700;color:#fff;background:#3f6bb0;border-radius:9px;padding:1px 8px}
-.sv-issue{display:block;margin-top:5px;font-size:12px;color:#777;font-style:italic;line-height:1.5}
+/* Page content */
+.sv{--ink:#1c2733;--navy:#1f3a5f;--text:#3d4752;--muted:#6b7480;--rule:#dfe3e8;--wash:#f3f5f8;--green:#2e7d4f;color:var(--text)}
+.sv ul{list-style:none;margin:0;padding:0}
+.sv li{margin:0}
+.sv-sec{padding:2.25rem 0 .25rem}
+.sv-h{display:flex;align-items:center;gap:.6rem;font-size:1.5rem;color:var(--ink);margin:0 0 .3rem;padding:0;scroll-margin-top:1.25rem}
+.sv-h i{font-size:1rem;width:1.25rem;text-align:center;color:var(--navy)}
+.sv-note{margin:0 0 1.1rem;font-size:.92rem;color:var(--muted)}
+.sv abbr{text-decoration:none;border:0;cursor:help}
 
-/* compact tag-pills: Conference Reviewer, Journal Reviewer, Affiliations */
-.sv-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
-.sv-tag{display:inline-flex;align-items:center;gap:6px;background:#eef2f8;color:#3f6bb0;border-radius:14px;padding:5px 12px;font-size:12.5px;font-weight:700}
-.sv-tag .yr{color:#8aa3c7;font-weight:400}
-.sv-tag.jr{background:#e9f6f2;color:#1f7a68}
-.sv-tag.aff{background:#fdf6e3;color:#9c7a12;display:block;width:100%;box-sizing:border-box}
-.sv-tag.aff .sub{display:block;font-weight:400;font-size:11px;color:#b3922a;margin-top:1px}
-.sv-aff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:6px}
+/* Editorial roles: entries with a left rule */
+.sv-eds{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem 2rem;margin-top:1.1rem!important}
+.sv-ed{border-left:3px solid var(--rule);padding:.15rem 0 .2rem 1rem}
+.sv-ed.is-cur{border-left-color:var(--navy)}
+.sv-role{margin:0 0 .2rem;font-size:.85rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.sv-now{display:inline-flex;align-items:center;gap:.35rem;color:var(--green);font-weight:700}
+.sv-now:before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--green)}
+.sv-ed h4{margin:0;font-size:1.05rem;line-height:1.4;color:var(--ink)}
+.sv-ed h4.sv-title{font-family:inherit;font-style:italic;font-weight:400;font-size:1.02rem;line-height:1.55}
+.sv-meta{margin:.25rem 0 0;font-size:.9rem;color:var(--muted);display:flex;align-items:center;flex-wrap:wrap;gap:0 .6rem}
+.sv-sep{width:1px;height:.85rem;background:var(--rule)}
+
+/* Conference organisation: venue panels */
+.sv-vens{display:grid;grid-template-columns:repeat(auto-fill,minmax(13.5rem,1fr));gap:1rem}
+.sv-ven{display:flex;flex-direction:column;border:1px solid var(--rule);border-top:3px solid var(--navy);border-radius:4px;padding:1rem 1.1rem}
+.sv-acr{font-family:'PT Sans Narrow','Arial Narrow',sans-serif;font-weight:700;font-size:1.3rem;line-height:1.1;color:var(--navy);letter-spacing:.01em}
+.sv-vrole{margin:.45rem 0 .15rem;font-weight:700;font-size:.95rem;color:var(--ink)}
+.sv-vfull{margin:0;font-size:.82rem;line-height:1.4;color:var(--muted)}
+.sv-yrs{margin:auto 0 0;padding-top:.8rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.sv-yrs span{font-size:.85rem;font-weight:700;color:var(--navy);background:var(--wash);border-radius:3px;padding:.15rem .5rem;font-variant-numeric:tabular-nums}
+
+/* Conference reviewing: compact venue strip */
+.sv-rvs{margin-top:1.1rem!important;display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:.75rem}
+.sv-rv{display:flex;flex-direction:column;background:var(--wash);border-radius:4px;padding:.8rem .95rem}
+.sv-rv .sv-acr{font-size:1.25rem}
+.sv-rvy{margin:.3rem 0 .2rem;font-size:.9rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.sv-rv .sv-vfull{font-size:.78rem}
+
+/* Journal reviewing: by publisher */
+.sv-pubs{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem 2rem;align-items:start}
+.sv-pub h4{display:flex;justify-content:space-between;align-items:baseline;margin:0;padding:0 0 .45rem;font-size:1.05rem;color:var(--ink);border-bottom:2px solid var(--navy)}
+.sv-pub h4 span{font-size:.85rem;font-weight:400;color:var(--muted)}
+.sv-pub li{padding:.5rem 0;border-bottom:1px solid var(--rule);font-size:.95rem;line-height:1.45;color:var(--text)}
+
+/* Memberships */
+.sv-mems{margin-top:1.1rem!important;display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.75rem}
+.sv-mem{display:flex;align-items:center;gap:.9rem;border:1px solid var(--rule);border-radius:4px;padding:.8rem 1rem}
+.sv-macr{flex:0 0 3.4rem;height:3.4rem;border-radius:50%;background:var(--wash);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'PT Sans Narrow','Arial Narrow',sans-serif;font-weight:700;font-size:1rem}
+.sv-mname{font-size:.95rem;line-height:1.35;color:var(--ink)}
+.sv-mname em{display:block;font-style:normal;font-size:.82rem;color:var(--muted);margin-top:.1rem}
 
 @media only screen and (max-width:37.5em){
   .sv-stats{grid-template-columns:repeat(2,1fr);margin:-32px 0 22px}
-  .sv-hero{padding:26px 22px 54px}.sv-hero h1{font-size:26px}
-  .sv-grid2,.sv-aff-grid{grid-template-columns:1fr}
+  .sv-hero{padding:26px 22px 54px}.sv .sv-hero h1{font-size:26px}
+  .sv-eds{grid-template-columns:1fr}
+  .sv-vens{grid-template-columns:1fr 1fr;gap:.75rem}
+  .sv-ven{padding:.85rem .9rem}
+  .sv-acr{font-size:1.15rem}
+  .sv-rvs{grid-template-columns:1fr 1fr}
 }
-
 </style>
 </head>
 
 <body class="page">
-<style>
-    /*********************************
-     The list of publication items
-     *********************************/
-/* The list of items */
-.biblist { }
-
-/* The item */
-.biblist li { }
-
-/* You can define custom styles for plstyle field here. */
-
-
-/*************************************
- The box that contain BibTeX code
- *************************************/
-div.noshow { display: none; }
-div.bibtex {
-	margin-right: 0%;
-	margin-top: 1.2em;
-	margin-bottom: 1em;
-	border: 1px solid silver;
-	padding: 0em 1em;
-	background: #ffffee;
-}
-div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}</style>
-<script type="text/javascript">
-    <!--
-    // Toggle Display of BibTeX
-    function toggleBibtex(articleid) {
-        var bib = document.getElementById('bib_'+articleid);
-        if (bib) {
-            if(bib.className.indexOf('bibtex') != -1) {
-                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
-            }
-        } else {
-            return;
-        }
-    }
--->
-    </script>
-
 {% include _browser-upgrade.html %}
 
 {% include _navigation.html %}
-
-{% if page.image.feature %}
-  <div class="image-wrap">
-  <img src=
-    {% if page.image.feature contains 'http://' %}
-      "{{ page.image.feature }}"
-    {% elsif page.image.feature contains 'https://' %}
-      "{{ page.image.feature }}"
-    {% else %}
-      "{{ site.url }}/images/{{ page.image.feature }}"
-    {% endif %}
-  alt="{{ page.title }} feature image">
-  {% if page.image.credit %}
-    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-  </div><!-- /.image-wrap -->
-{% endif %}
 
 <div id="main" role="main">
   <div class="article-author-side">
     {% include _author-bio.html %}
   </div>
   <article>
-    <div class="article-wrap">
-      {{ content }}
+    <div class="article-wrap sv">
+      <!-- Update the four figures in .sv-stats when you add roles:
+           editorial = editorial entries; area chair & SPC = total years across the venue panels;
+           conference reviews = total years across the reviewing strip; journals = journals across all publishers. -->
+      <div class="sv-hero"><p class="sv-over">Academic service</p><h1>Service</h1>
+        <p class="s">Editorial roles, conference organization, and reviewing for conferences and journals in computer vision and machine learning.</p></div>
+      <div class="sv-stats">
+        <div class="sv-st"><b>4</b><span>Editorial roles</span></div>
+        <div class="sv-st"><b>11</b><span>Area chair &amp; SPC</span></div>
+        <div class="sv-st"><b>12</b><span>Conference reviews</span></div>
+        <div class="sv-st"><b>14</b><span>Journals reviewed</span></div>
+      </div>
 
-<div class="sv-hero"><p class="sv-over">Academic service</p><h1>Service</h1>
-<p class="s">Editorial roles, conference organization, and reviewing for conferences and journals in computer vision and machine learning.</p></div>
-<div class="sv-stats">
-  <div class="sv-st"><b>4</b><span>Editorial</span></div>
-  <div class="sv-st"><b>10</b><span>Conf. Org.</span></div>
-  <div class="sv-st"><b>12</b><span>Reviewed</span></div>
-  <div class="sv-st"><b>14</b><span>Journals</span></div>
-</div>
+      <section id="editorial" class="sv-sec">
+        <h2 class="sv-h"><i class="fa fa-pencil" aria-hidden="true"></i>Editorial roles</h2>
+        <ul class="sv-eds">
+          <li class="sv-ed is-cur">
+            <p class="sv-role">Associate Editor<span class="sv-now">Current</span></p>
+            <h4>IEEE Journal of Oceanic Engineering (JOE)</h4>
+            <p class="sv-meta">Since Oct 2023<span class="sv-sep" aria-hidden="true"></span>Impact factor 4.1</p>
+          </li>
+          <li class="sv-ed">
+            <p class="sv-role">Associate Editor</p>
+            <h4>Neurocomputing (Elsevier)</h4>
+            <p class="sv-meta">Apr 2022 &ndash; Jun 2024<span class="sv-sep" aria-hidden="true"></span>Impact factor 5.72</p>
+          </li>
+          <li class="sv-ed">
+            <p class="sv-role">Lead Editor, special issue</p>
+            <h4 class="sv-title">&ldquo;Deep Neural Networks Sensing for RGB-D Motion Recognition&rdquo;</h4>
+            <p class="sv-meta">Sensors</p>
+          </li>
+          <li class="sv-ed">
+            <p class="sv-role">Guest Editor, special issue</p>
+            <h4 class="sv-title">&ldquo;Advanced Machine Learning Methodologies for Underwater Image and Video Processing and Analysis&rdquo;</h4>
+            <p class="sv-meta">IEEE Journal of Oceanic Engineering (JOE)</p>
+          </li>
+        </ul>
+      </section>
 
-<h2 class="sv-h"><i class="fa fa-pencil"></i>Editorial Roles</h2>
-<div class="sv-grid2"><div class="sv-card" style="--c:#3f6bb0">
-<div class="sv-card-top"><span class="sv-yr">Since Oct 2023</span><span class="sv-role">Associate Editor</span><span class="sv-if">IF 4.1</span></div>
-<p class="sv-venue">IEEE Journal of Oceanic Engineering (JOE)</p></div><div class="sv-card" style="--c:#3f6bb0">
-<div class="sv-card-top"><span class="sv-yr">Apr 2022 &ndash; Jun 2024</span><span class="sv-role">Associate Editor</span><span class="sv-if">IF 5.72</span></div>
-<p class="sv-venue">Elsevier&rsquo;s Neurocomputing</p></div><div class="sv-card" style="--c:#3f6bb0">
-<div class="sv-card-top"><span class="sv-role">Lead Editor</span><span class="sv-if">IF 3.87</span></div>
-<p class="sv-venue">Sensors</p><span class="sv-issue">&ldquo;Deep Neural Networks Sensing for RGB-D Motion Recognition&rdquo;</span></div><div class="sv-card" style="--c:#3f6bb0">
-<div class="sv-card-top"><span class="sv-role">Guest Editor</span><span class="sv-if">IF 4.1</span></div>
-<p class="sv-venue">IEEE Journal of Oceanic Engineering (JOE)</p><span class="sv-issue">&ldquo;Advanced Machine Learning Methodologies for Underwater Image and Video Processing and Analysis&rdquo;</span></div></div>
+      <section id="organisation" class="sv-sec">
+        <h2 class="sv-h"><i class="fa fa-gavel" aria-hidden="true"></i>Conference organization</h2>
+        <p class="sv-note">Listed in order of venue standing (Google Scholar Metrics h5-index).</p>
+        <ul class="sv-vens">
+          <li class="sv-ven">
+            <abbr class="sv-acr" title="IEEE/CVF Conference on Computer Vision and Pattern Recognition">CVPR</abbr>
+            <p class="sv-vrole">Area Chair</p>
+            <p class="sv-vfull">IEEE/CVF Conference on Computer Vision and Pattern Recognition</p>
+            <p class="sv-yrs"><span>2026</span><span>2027</span></p>
+          </li>
+          <li class="sv-ven">
+            <abbr class="sv-acr" title="European Conference on Computer Vision">ECCV</abbr>
+            <p class="sv-vrole">Area Chair</p>
+            <p class="sv-vfull">European Conference on Computer Vision</p>
+            <p class="sv-yrs"><span>2026</span></p>
+          </li>
+          <li class="sv-ven">
+            <abbr class="sv-acr" title="IEEE/CVF International Conference on Computer Vision">ICCV</abbr>
+            <p class="sv-vrole">Area Chair</p>
+            <p class="sv-vfull">IEEE/CVF International Conference on Computer Vision</p>
+            <p class="sv-yrs"><span>2025</span></p>
+          </li>
+          <li class="sv-ven">
+            <abbr class="sv-acr" title="AAAI Conference on Artificial Intelligence">AAAI</abbr>
+            <p class="sv-vrole">Senior Program Committee</p>
+            <p class="sv-vfull">AAAI Conference on Artificial Intelligence</p>
+            <p class="sv-yrs"><span>2026</span></p>
+          </li>
+          <li class="sv-ven">
+            <abbr class="sv-acr" title="International Joint Conference on Artificial Intelligence">IJCAI</abbr>
+            <p class="sv-vrole">Senior Program Committee</p>
+            <p class="sv-vfull">International Joint Conference on Artificial Intelligence</p>
+            <p class="sv-yrs"><span>2025</span><span>2026</span></p>
+          </li>
+          <li class="sv-ven">
+            <abbr class="sv-acr" title="IEEE/CVF Winter Conference on Applications of Computer Vision">WACV</abbr>
+            <p class="sv-vrole">Area Chair</p>
+            <p class="sv-vfull">IEEE/CVF Winter Conference on Applications of Computer Vision</p>
+            <p class="sv-yrs"><span>2026</span><span>2027</span></p>
+          </li>
+          <li class="sv-ven">
+            <abbr class="sv-acr" title="Asian Conference on Computer Vision">ACCV</abbr>
+            <p class="sv-vrole">Area Chair</p>
+            <p class="sv-vfull">Asian Conference on Computer Vision</p>
+            <p class="sv-yrs"><span>2024</span><span>2026</span></p>
+          </li>
+        </ul>
+      </section>
 
-<h2 class="sv-h"><i class="fa fa-gavel"></i>Conference Organization</h2>
-<p class="sv-hint">Ordered by venue prestige (Google Scholar Metrics h5-index).</p>
-<div class="sv-grid2"><div class="sv-card" style="--c:#c9a227">
-<div class="sv-card-top"><span class="sv-yr">2027</span><span class="sv-role">CVPR</span></div>
-<p class="sv-venue">Area Chair</p></div><div class="sv-card" style="--c:#c9a227">
-<div class="sv-card-top"><span class="sv-yr">2026</span><span class="sv-role">CVPR</span></div>
-<p class="sv-venue">Area Chair</p></div><div class="sv-card" style="--c:#c9a227">
-<div class="sv-card-top"><span class="sv-yr">2026</span><span class="sv-role">ECCV</span></div>
-<p class="sv-venue">Area Chair</p></div><div class="sv-card" style="--c:#c9a227">
-<div class="sv-card-top"><span class="sv-yr">2025</span><span class="sv-role">ICCV</span></div>
-<p class="sv-venue">Area Chair</p></div><div class="sv-card" style="--c:#2a9d8f">
-<div class="sv-card-top"><span class="sv-yr">2026</span><span class="sv-role">AAAI</span></div>
-<p class="sv-venue">Senior PC</p></div><div class="sv-card" style="--c:#2a9d8f">
-<div class="sv-card-top"><span class="sv-yr">2026</span><span class="sv-role">IJCAI</span></div>
-<p class="sv-venue">Senior PC</p></div><div class="sv-card" style="--c:#2a9d8f">
-<div class="sv-card-top"><span class="sv-yr">2025</span><span class="sv-role">IJCAI</span></div>
-<p class="sv-venue">Senior PC</p></div><div class="sv-card" style="--c:#c9a227">
-<div class="sv-card-top"><span class="sv-yr">2027</span><span class="sv-role">WACV</span></div>
-<p class="sv-venue">Area Chair</p></div><div class="sv-card" style="--c:#c9a227">
-<div class="sv-card-top"><span class="sv-yr">2026</span><span class="sv-role">WACV</span></div>
-<p class="sv-venue">Area Chair</p></div><div class="sv-card" style="--c:#c9a227">
-<div class="sv-card-top"><span class="sv-yr">2026</span><span class="sv-role">ACCV</span></div>
-<p class="sv-venue">Area Chair</p></div><div class="sv-card" style="--c:#c9a227">
-<div class="sv-card-top"><span class="sv-yr">2024</span><span class="sv-role">ACCV</span></div>
-<p class="sv-venue">Area Chair</p></div></div>
+      <section id="conference-reviewing" class="sv-sec">
+        <h2 class="sv-h"><i class="fa fa-comments" aria-hidden="true"></i>Conference reviewing</h2>
+        <ul class="sv-rvs">
+          <li class="sv-rv"><abbr class="sv-acr" title="IEEE/CVF Conference on Computer Vision and Pattern Recognition">CVPR</abbr><span class="sv-rvy">2020&ndash;2022</span><span class="sv-vfull">IEEE/CVF Conference on Computer Vision and Pattern Recognition</span></li>
+          <li class="sv-rv"><abbr class="sv-acr" title="IEEE/CVF International Conference on Computer Vision">ICCV</abbr><span class="sv-rvy">2021</span><span class="sv-vfull">IEEE/CVF International Conference on Computer Vision</span></li>
+          <li class="sv-rv"><abbr class="sv-acr" title="Asian Conference on Computer Vision">ACCV</abbr><span class="sv-rvy">2020</span><span class="sv-vfull">Asian Conference on Computer Vision</span></li>
+          <li class="sv-rv"><abbr class="sv-acr" title="British Machine Vision Conference">BMVC</abbr><span class="sv-rvy">2020</span><span class="sv-vfull">British Machine Vision Conference</span></li>
+          <li class="sv-rv"><abbr class="sv-acr" title="Medical Image Computing and Computer Assisted Intervention">MICCAI</abbr><span class="sv-rvy">2020</span><span class="sv-vfull">Medical Image Computing and Computer Assisted Intervention</span></li>
+          <li class="sv-rv"><abbr class="sv-acr" title="IEEE/CVF Winter Conference on Applications of Computer Vision">WACV</abbr><span class="sv-rvy">2018</span><span class="sv-vfull">IEEE/CVF Winter Conference on Applications of Computer Vision</span></li>
+          <li class="sv-rv"><abbr class="sv-acr" title="IEEE International Conference on Image Processing">ICIP</abbr><span class="sv-rvy">2016&ndash;2019</span><span class="sv-vfull">IEEE International Conference on Image Processing</span></li>
+        </ul>
+      </section>
 
-<h2 class="sv-h"><i class="fa fa-comments"></i>Conference Reviewer</h2>
-<div class="sv-tags"><span class="sv-tag">CVPR <span class="yr">2022</span></span><span class="sv-tag">CVPR <span class="yr">2021</span></span><span class="sv-tag">ICCV <span class="yr">2021</span></span><span class="sv-tag">ACCV <span class="yr">2020</span></span><span class="sv-tag">BMVC <span class="yr">2020</span></span><span class="sv-tag">CVPR <span class="yr">2020</span></span><span class="sv-tag">MICCAI <span class="yr">2020</span></span><span class="sv-tag">ICIP <span class="yr">2019</span></span><span class="sv-tag">ICIP <span class="yr">2018</span></span><span class="sv-tag">WACV <span class="yr">2018</span></span><span class="sv-tag">ICIP <span class="yr">2017</span></span><span class="sv-tag">ICIP <span class="yr">2016</span></span></div>
+      <section id="journal-reviewing" class="sv-sec">
+        <h2 class="sv-h"><i class="fa fa-book" aria-hidden="true"></i>Journal reviewing</h2>
+        <p class="sv-note">Grouped by publisher.</p>
+        <div class="sv-pubs">
+          <div class="sv-pub">
+            <h4>IEEE<span>6</span></h4>
+            <ul>
+              <li>IEEE Journal of Oceanic Engineering (JOE)</li>
+              <li>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</li>
+              <li>IEEE Transactions on Image Processing (TIP)</li>
+              <li>IEEE Transactions on Multimedia (TMM)</li>
+              <li>IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
+              <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</li>
+            </ul>
+          </div>
+          <div class="sv-pub">
+            <h4>Elsevier<span>3</span></h4>
+            <ul>
+              <li>Information Fusion</li>
+              <li>Neurocomputing</li>
+              <li>Pattern Recognition</li>
+            </ul>
+          </div>
+          <div class="sv-pub">
+            <h4>Springer<span>2</span></h4>
+            <ul>
+              <li>International Journal of Computer Vision (IJCV)</li>
+              <li>Machine Vision and Applications (MVAP)</li>
+            </ul>
+          </div>
+          <div class="sv-pub">
+            <h4>MDPI<span>2</span></h4>
+            <ul>
+              <li>Remote Sensing</li>
+              <li>Sensors</li>
+            </ul>
+          </div>
+          <div class="sv-pub">
+            <h4>PLOS<span>1</span></h4>
+            <ul>
+              <li>PLoS One</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-<h2 class="sv-h"><i class="fa fa-book"></i>Journal Reviewer</h2>
-<div class="sv-tags"><span class="sv-tag jr">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</span><span class="sv-tag jr">Information Fusion</span><span class="sv-tag jr">IEEE Transactions on Image Processing (TIP)</span><span class="sv-tag jr">International Journal of Computer Vision (IJCV)</span><span class="sv-tag jr">IEEE Transactions on Multimedia (TMM)</span><span class="sv-tag jr">IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)</span><span class="sv-tag jr">IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</span><span class="sv-tag jr">Machine Vision and Applications (MVAP)</span><span class="sv-tag jr">IEEE Journal of Oceanic Engineering (JOE)</span><span class="sv-tag jr">Neurocomputing</span><span class="sv-tag jr">Pattern Recognition</span><span class="sv-tag jr">PLoS One</span><span class="sv-tag jr">Sensors</span><span class="sv-tag jr">Remote Sensing</span></div>
+      <section id="memberships" class="sv-sec">
+        <h2 class="sv-h"><i class="fa fa-certificate" aria-hidden="true"></i>Professional memberships</h2>
+        <ul class="sv-mems">
+          <li class="sv-mem"><span class="sv-macr">ACM</span><span class="sv-mname">Association for Computing Machinery</span></li>
+          <li class="sv-mem"><span class="sv-macr">ACS</span><span class="sv-mname">Australian Computer Society<em>Accredited member</em></span></li>
+          <li class="sv-mem"><span class="sv-macr">BMVA</span><span class="sv-mname">British Machine Vision Association</span></li>
+          <li class="sv-mem"><span class="sv-macr">CVF</span><span class="sv-mname">Computer Vision Foundation</span></li>
+          <li class="sv-mem"><span class="sv-macr">IEEE</span><span class="sv-mname">Institute of Electrical and Electronics Engineers</span></li>
+          <li class="sv-mem"><span class="sv-macr">PEC</span><span class="sv-mname">Pakistan Engineering Council</span></li>
+        </ul>
+      </section>
 
-<h2 class="sv-h"><i class="fa fa-certificate"></i>Professional Affiliations</h2>
-<div class="sv-aff-grid"><span class="sv-tag aff">Computer Vision Foundation (CVF)</span><span class="sv-tag aff">Institute of Electrical and Electronics Engineers (IEEE)</span><span class="sv-tag aff">Australian Computer Society (ACS)<span class="sub">Accredited</span></span><span class="sv-tag aff">The British Machine Vision Association (BMVA)</span><span class="sv-tag aff">Association for Computing Machinery (ACM)</span><span class="sv-tag aff">Pakistan Engineering Council (PEC)</span></div>
-
-        </div><!-- /.article-wrap -->
-    {% if site.disqus_shortname and page.comments %}
-      <section id="disqus_thread"></section><!-- /#disqus_thread -->
-    {% endif %}
+    </div><!-- /.article-wrap -->
   </article>
-</div><!-- /#index -->
+</div><!-- /#main -->
+
 <div class="footer-wrap">
   <footer>
     {% include _footer.html %}
@@ -212,7 +263,6 @@ div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;
 </div><!-- /.footer-wrap -->
 
 {% include _scripts.html %}
-          
 
 </body>
 </html>

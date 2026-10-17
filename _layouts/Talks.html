@@ -6,298 +6,312 @@
 <head>
 {% include _head.html %}
 <style>
-a:link {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:visited {
-    color: blue;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:hover {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
-}
-a:active {
-    color: yellow;
-    background-color: transparent;
-    text-decoration: underline;
-}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* ---------- Talks page ---------- */
-.talks-subtitle { margin: -6px 0 18px 0; font-style: italic; color: #777; font-size: 15.5px; }
-
-.talks-timeline { position: relative; padding-left: 30px; }
-.talks-timeline:before {
-  content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px;
-  width: 2px; background: #e2e2e2;
-}
-.talks-year {
-  position: relative; display: inline-block;
-  font-family: 'PT Sans Narrow', sans-serif; font-weight: 700;
-  font-size: 15px; letter-spacing: 1.5px; color: #fff;
-  background: linear-gradient(135deg,#5a86c9,#3f6bb0);
-  border-radius: 14px; padding: 3px 14px; margin: 6px 0 14px -30px;
-}
-.talks-year:first-child { margin-top: 0; }
-.talk-item { position: relative; margin: 0 0 14px 0; }
-.talk-item:before {
-  content: ""; position: absolute; left: -26px; top: 18px;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: #fff; border: 2px solid #3f6bb0;
-}
-.talk-card {
-  background: #fafafa; border: 1px solid #ececec; border-radius: 8px;
-  padding: 12px 18px; transition: box-shadow .15s ease, transform .15s ease;
-}
-.talk-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.10); transform: translateY(-1px); }
-
-/* ---------- Talks top (hero + search/filter, no stat tiles) ---------- */
-.tk-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 30px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%);margin-bottom:22px}
+/* Top banner and figure tiles (same style as the other pages) */
+.tk-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 64px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
 .tk-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
+.tk-hero:after{content:"";position:absolute;right:110px;bottom:-70px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.05)}
 .tk-hero>*{position:relative}
 .tk-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
-.tk-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
-.tk-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:580px;line-height:1.6}
-.tk-bar{display:flex;gap:12px;align-items:center;margin:0 0 14px;flex-wrap:wrap}
-.tk-search{flex:1;min-width:220px;position:relative}.tk-search i{position:absolute;left:14px;top:12px;color:#9aa5b8}
-.tk-search input{width:100%;box-sizing:border-box;border:1px solid #d5dbe6;border-radius:22px;padding:10px 16px 10px 38px;font-size:14px;background:#fff;outline:none}
-.tk-search input:focus{border-color:#3f6bb0;box-shadow:0 0 0 3px rgba(63,107,176,.15)}
-.tk-count{font-size:12.5px;color:#888;font-weight:700;white-space:nowrap}
-.tk-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
-.tk-f{background:#eef2f8!important;color:#3f6bb0;border:none;border-radius:16px;padding:6px 14px;font-size:12.5px;font-weight:700;cursor:pointer}
-.tk-f.on{background:#3f6bb0!important;color:#fff}
-.tk-empty{display:none;text-align:center;padding:30px 10px;color:#888;font-size:14.5px;background:#fafafa;border:1px dashed #d8d8d8;border-radius:12px}
-@media only screen and (max-width: 37.5em) {
-  .tk-hero{padding:26px 22px 24px}.tk-hero h1{font-size:26px}
+.tk .tk-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
+.tk-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:600px;line-height:1.6}
+.tk-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-36px 22px 0;position:relative;z-index:2}
+.tk-st{background:#fff!important;border-radius:10px;padding:14px 8px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.tk-st b{display:block;font-size:22px;color:#1f3a5f;font-family:'PT Sans Narrow',sans-serif}
+.tk-st span{font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#888}
+
+
+/* Page */
+.tk{--ink:#1c2733;--text:#3d4752;--muted:#6b7480;--rule:#dfe3e8;--wash:#f3f5f8;--bg:#fff;--navy:#1f3a5f;--teal:#2a8c83;color:var(--text)}
+.tk ul,.tk ol{list-style:none;margin:0;padding:0}
+.tk li{margin:0}
+.tk [hidden]{display:none!important}
+.tk a{text-decoration:none;border-bottom:0}
+.tk a:focus-visible,.tk button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.tk-kicker{margin:0 0 .5rem;font:700 .78rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.tk-sr{position:absolute;left:-9999px}
+
+/* Topic colours */
+.t-3d{--ac:#1f3a5f}.t-sal{--ac:#2a9187}.t-res{--ac:#4a7fb8}.t-llm{--ac:#7a6aa8}.t-act{--ac:#b8901c}.t-cvdl{--ac:#5b6b7c}.t-edu{--ac:#a5523a}
+
+/* Filter */
+.tk-tools{margin:1.9rem 0 0;padding:1rem 0;border-top:2px solid var(--navy);border-bottom:1px solid var(--rule)}
+.tk-chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.tk-chip{display:inline-flex;align-items:center;gap:.45rem;font:700 .86rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.03em;color:var(--text);background:none;border:1px solid var(--rule);border-radius:999px;padding:.48rem .85rem;cursor:pointer}
+.tk-chip i{width:.6rem;height:.6rem;border-radius:50%;background:var(--ac)}
+.tk-chip span{font-weight:400;opacity:.7}
+.tk-chip:hover{border-color:var(--navy)}
+.tk-chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.tk-chip.on[data-f]:not([data-f="all"]){background:var(--ac);border-color:var(--ac)}
+.tk-chip.on i{background:#fff}
+
+/* Year sections */
+.tk-yr{display:grid;grid-template-columns:6.5rem 1fr;gap:0 1.75rem;padding:2.1rem 0 .25rem;scroll-margin-top:1rem}
+.tk-yh{position:sticky;top:1rem;align-self:start}
+.tk-yh h2{margin:0;padding:0;font:700 2.1rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;color:var(--navy)}
+.tk-list{border-top:1px solid var(--rule)}
+.tk-e{display:flex;gap:1.1rem;padding:1.15rem 0;border-bottom:1px solid var(--rule)}
+.tk-cal{flex:0 0 3.6rem;height:3.9rem;border-radius:10px;overflow:hidden;text-align:center;background:var(--bg);border:1px solid var(--rule);box-shadow:0 6px 14px -10px rgba(31,58,95,.55)}
+.tk-cal span{display:block;padding:.28rem 0 .22rem;background:linear-gradient(135deg,#1f3a5f,#2f5d94 70%,#3fb8ad);color:#fff;font:700 .74rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.tk-cal b{display:block;padding-top:.32rem;font:700 1.05rem 'PT Sans Narrow','Arial Narrow',sans-serif;color:var(--navy)}
+.tk-b{min-width:0}
+.tk-b h3{margin:.05rem 0 .4rem;padding:0;font:700 1.08rem/1.4 'PT Serif',Georgia,serif;color:var(--ink)}
+.tk-host,.tk-loc{display:flex;align-items:baseline;gap:.5rem;margin:0;font-size:.93rem;line-height:1.5}
+.tk-host{color:var(--text)}
+.tk-loc{color:var(--muted)}
+.tk-host i,.tk-loc i{flex:0 0 .9rem;text-align:center;font-size:.85rem;color:var(--muted)}
+.tk-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0 0}
+.tk-type,.tk-top{font:700 .74rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.04em;border-radius:999px;padding:.32rem .65rem;white-space:nowrap}
+.tk-type{color:var(--muted);border:1px solid var(--rule)}
+.tk-type.hl{color:#9a7413;border-color:rgba(184,144,28,.45);background:#fbf4dc}
+.tk-top{color:var(--ac);background:color-mix(in srgb,var(--ac) 11%,var(--bg));border:1px solid color-mix(in srgb,var(--ac) 28%,transparent)}
+.tk-empty{margin:1.5rem 0 0;padding:1rem 1.25rem;background:var(--wash);border-radius:8px}
+
+/* Invite */
+.tk-invite{margin:3rem 0 1rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem 1.5rem;padding:1.6rem 1.9rem;border-radius:14px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
+.tk-invite:before{content:"";position:absolute;left:-40px;bottom:-80px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06)}
+.tk-invite>*{position:relative}
+.tk-inv-i{flex:0 0 3rem;height:3rem;border-radius:50%;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+.tk-invite div{flex:1 1 18rem}
+.tk-invite h2{margin:0 0 .25rem;padding:0;color:#fff;font-size:1.45rem}
+.tk-invite p{margin:0;opacity:.92;line-height:1.55}
+.tk-btn{display:inline-block;background:#fff;color:#1f3a5f!important;font-weight:700;padding:.75rem 1.5rem;border-radius:6px}
+.tk-btn:hover{background:#eef3f8}
+.tk-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+@media only screen and (max-width:44em){
+  .tk-yr{grid-template-columns:1fr;padding-top:1.6rem}
+  .tk-yh{position:static;margin-bottom:.4rem}
+  .tk-yh h2{font-size:1.75rem}
 }
-.talk-date {
-  display: block; font-family: 'PT Sans Narrow', sans-serif; font-weight: 700;
-  font-size: 12px; color: #999; letter-spacing: 1.5px;
-  text-transform: uppercase; margin-bottom: 2px;
+@media only screen and (max-width:37.5em){
+  .tk-stats{grid-template-columns:repeat(2,1fr);margin:-32px 0 0}
+  .tk-hero{padding:26px 22px 54px}.tk .tk-hero h1{font-size:26px}
+  .tk-chips{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:.25rem}
+  .tk-chip{white-space:nowrap}
+  .tk-cal{flex-basis:3.2rem;height:3.6rem}
+  .tk-invite{padding:1.4rem}
 }
-.talk-title { margin: 0 0 6px 0; font-size: 16.5px; font-weight: 700; line-height: 1.3; color: #2a2a2a; }
-.talk-event { margin: 0 0 4px 0; font-size: 12.5px; color: #2a9d8f; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
-.talk-venue { margin: 0; font-size: 14px; color: #555; line-height: 1.5; }
-.talk-venue i { width: 16px; color: #aaa; margin-right: 4px; text-align: center; }
 </style>
 </head>
 
 <body class="page">
-<style>
-    /*********************************
-     The list of publication items
-     *********************************/
-/* The list of items */
-.biblist { }
-
-/* The item */
-.biblist li { }
-
-/* You can define custom styles for plstyle field here. */
-
-
-/*************************************
- The box that contain BibTeX code
- *************************************/
-div.noshow { display: none; }
-div.bibtex {
-	margin-right: 0%;
-	margin-top: 1.2em;
-	margin-bottom: 1em;
-	border: 1px solid silver;
-	padding: 0em 1em;
-	background: #ffffee;
-}
-div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;}</style>
-<script type="text/javascript">
-    <!--
-    // Toggle Display of BibTeX
-    function toggleBibtex(articleid) {
-        var bib = document.getElementById('bib_'+articleid);
-        if (bib) {
-            if(bib.className.indexOf('bibtex') != -1) {
-                bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex';
-            }
-        } else {
-            return;
-        }
-    }
--->
-    </script>
-
 {% include _browser-upgrade.html %}
 
 {% include _navigation.html %}
-
-{% if page.image.feature %}
-  <div class="image-wrap">
-  <img src=
-    {% if page.image.feature contains 'http://' %}
-      "{{ page.image.feature }}"
-    {% elsif page.image.feature contains 'https://' %}
-      "{{ page.image.feature }}"
-    {% else %}
-      "{{ site.url }}/images/{{ page.image.feature }}"
-    {% endif %}
-  alt="{{ page.title }} feature image">
-  {% if page.image.credit %}
-    <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
-  {% endif %}
-  </div><!-- /.image-wrap -->
-{% endif %}
 
 <div id="main" role="main">
   <div class="article-author-side">
     {% include _author-bio.html %}
   </div>
   <article>
-    <div class="article-wrap">
-      {{ content }}
+    <div class="article-wrap tk">
+      <!-- Talks page. To add a talk, copy an <li class="tk-e"> block into the right year (or copy a whole year section)
+           and edit it. data-t lists its topic keys (3d, sal, res, llm, act, cvdl, edu) for the topic filter;
+           add a matching <span class="tk-top t-..."> tag. Update the figures in .tk-stats and the topic counts when you add talks. -->
+      <div class="tk-hero"><p class="tk-over">Speaking</p><h1>Talks</h1>
+        <p class="s">Invited talks, tutorials and panels at universities, research institutes and companies in Australia, the Middle East, Asia, Europe and North America.</p></div>
+      <div class="tk-stats">
+        <div class="tk-st"><b>15</b><span>Talks</span></div>
+        <div class="tk-st"><b>6</b><span>Countries</span></div>
+        <div class="tk-st"><b>6</b><span>Universities</span></div>
+        <div class="tk-st"><b>6</b><span>Research labs &amp; industry</span></div>
+      </div>
 
-      <div class="tk-hero"><p class="tk-over">Speaking engagements</p><h1>Talks</h1>
-        <p class="s">15 invited talks across 6 countries, from 2012 to 2025.</p></div>
+      <div class="tk-tools">
+        <p class="tk-kicker">Filter by topic</p>
+        <div class="tk-chips" role="group" aria-label="Filter talks by topic"><button type="button" class="tk-chip on" data-f="all" aria-pressed="true">All topics<span>15</span></button><button type="button" class="tk-chip t-3d" data-f="3d" aria-pressed="false"><i aria-hidden="true"></i>3D vision &amp; point clouds<span>4</span></button><button type="button" class="tk-chip t-sal" data-f="sal" aria-pressed="false"><i aria-hidden="true"></i>Saliency detection<span>3</span></button><button type="button" class="tk-chip t-res" data-f="res" aria-pressed="false"><i aria-hidden="true"></i>Image restoration<span>3</span></button><button type="button" class="tk-chip t-llm" data-f="llm" aria-pressed="false"><i aria-hidden="true"></i>Generative AI &amp; LLMs<span>2</span></button><button type="button" class="tk-chip t-act" data-f="act" aria-pressed="false"><i aria-hidden="true"></i>Action recognition<span>1</span></button><button type="button" class="tk-chip t-cvdl" data-f="cvdl" aria-pressed="false"><i aria-hidden="true"></i>Computer vision &amp; deep learning<span>2</span></button><button type="button" class="tk-chip t-edu" data-f="edu" aria-pressed="false"><i aria-hidden="true"></i>Teaching &amp; research practice<span>1</span></button></div>
+      </div>
 
-      <div class="tk-bar"><div class="tk-search"><i class="fa fa-search"></i><input id="tkq" type="text" placeholder="Search by title, venue or location&hellip;" autocomplete="off"></div><span class="tk-count" id="tkc">15 talks</span></div>
-      <div class="tk-filters">
-        <button class="tk-f on" data-f="all">All (15)</button>
-        <button class="tk-f" data-f="2025">2025 (1)</button>
-        <button class="tk-f" data-f="2024">2024 (1)</button>
-        <button class="tk-f" data-f="2022">2022 (3)</button>
-        <button class="tk-f" data-f="2021">2021 (6)</button>
-        <button class="tk-f" data-f="2020">2020 (1)</button>
-        <button class="tk-f" data-f="2017">2017 (1)</button>
-        <button class="tk-f" data-f="2015">2015 (1)</button>
-        <button class="tk-f" data-f="2012">2012 (1)</button>
-      </div>
-      <div class="tk-empty" id="tke">No talks match your search. Try a different keyword or choose &ldquo;All&rdquo;.</div>
+      <section class="tk-yr" id="t-2025" data-sec>
+        <div class="tk-yh"><h2>2025</h2></div>
+        <ol class="tk-list">
+          <li class="tk-e" data-t="llm">
+            <div class="tk-cal" aria-hidden="true"><span>Dec</span><b>2025</b></div>
+            <div class="tk-b">
+              <h3>AI Debate: AI Overhyped or Near Singularity</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>UWA Data Institute</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Australia</span><span class="tk-sr">, Dec 2025</span></p>
+              <p class="tk-tags"><span class="tk-type hl">Panel debate</span><span class="tk-top t-llm">Generative AI &amp; LLMs</span></p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="tk-yr" id="t-2024" data-sec>
+        <div class="tk-yh"><h2>2024</h2></div>
+        <ol class="tk-list">
+          <li class="tk-e" data-t="llm">
+            <div class="tk-cal" aria-hidden="true"><span>Nov</span><b>2024</b></div>
+            <div class="tk-b">
+              <h3>Introduction to LLMs and GPT from Scratch</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>AI Crash Course, Joint Research Center for AI (JRCAI)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Saudi Arabia</span><span class="tk-sr">, Nov 2024</span></p>
+              <p class="tk-tags"><span class="tk-type hl">Tutorial</span><span class="tk-top t-llm">Generative AI &amp; LLMs</span></p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="tk-yr" id="t-2022" data-sec>
+        <div class="tk-yh"><h2>2022</h2></div>
+        <ol class="tk-list">
+          <li class="tk-e" data-t="3d">
+            <div class="tk-cal" aria-hidden="true"><span>Dec</span><b>2022</b></div>
+            <div class="tk-b">
+              <h3>Point Clouds and RGBD Applications</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>Joint Research Center for AI (JRCAI), KFUPM&ndash;SDAIA</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Dhahran, Saudi Arabia</span><span class="tk-sr">, Dec 2022</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-3d">3D vision &amp; point clouds</span></p>
+            </div>
+          </li>
+          <li class="tk-e" data-t="edu">
+            <div class="tk-cal" aria-hidden="true"><span>Sep</span><b>2022</b></div>
+            <div class="tk-b">
+              <h3>Modern Tools and Research in Teaching</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>COMSATS University</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Attock, Pakistan</span><span class="tk-sr">, Sep 2022</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-edu">Teaching &amp; research practice</span></p>
+            </div>
+          </li>
+          <li class="tk-e" data-t="3d">
+            <div class="tk-cal" aria-hidden="true"><span>Mar</span><b>2022</b></div>
+            <div class="tk-b">
+              <h3>3D Vision</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>The University of Western Australia (UWA)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Perth, Australia</span><span class="tk-sr">, Mar 2022</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-3d">3D vision &amp; point clouds</span></p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="tk-yr" id="t-2021" data-sec>
+        <div class="tk-yh"><h2>2021</h2></div>
+        <ol class="tk-list">
+          <li class="tk-e" data-t="act">
+            <div class="tk-cal" aria-hidden="true"><span>Nov</span><b>2021</b></div>
+            <div class="tk-b">
+              <h3>Skeleton Action Recognition</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>United Arab Emirates University (UAEU)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Al Ain, United Arab Emirates</span><span class="tk-sr">, Nov 2021</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-act">Action recognition</span></p>
+            </div>
+          </li>
+          <li class="tk-e" data-t="3d">
+            <div class="tk-cal" aria-hidden="true"><span>Oct</span><b>2021</b></div>
+            <div class="tk-b">
+              <h3>3D Vision</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>University of New South Wales (UNSW)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Sydney, Australia</span><span class="tk-sr">, Oct 2021</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-3d">3D vision &amp; point clouds</span></p>
+            </div>
+          </li>
+          <li class="tk-e" data-t="sal">
+            <div class="tk-cal" aria-hidden="true"><span>Oct</span><b>2021</b></div>
+            <div class="tk-b">
+              <h3>Saliency Detection</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>General Electric (GE)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>New York, USA</span><span class="tk-sr">, Oct 2021</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-sal">Saliency detection</span></p>
+            </div>
+          </li>
+          <li class="tk-e" data-t="3d sal">
+            <div class="tk-cal" aria-hidden="true"><span>Sep</span><b>2021</b></div>
+            <div class="tk-b">
+              <h3>Point Cloud Analysis and RGB-D Saliency Detection</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Abu Dhabi, United Arab Emirates</span><span class="tk-sr">, Sep 2021</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-3d">3D vision &amp; point clouds</span><span class="tk-top t-sal">Saliency detection</span></p>
+            </div>
+          </li>
+          <li class="tk-e" data-t="sal">
+            <div class="tk-cal" aria-hidden="true"><span>Jul</span><b>2021</b></div>
+            <div class="tk-b">
+              <h3>RGB-D Inspired Saliency Detection</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>Commonwealth Scientific and Industrial Research Organisation (CSIRO)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Canberra, Australia</span><span class="tk-sr">, Jul 2021</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-sal">Saliency detection</span></p>
+            </div>
+          </li>
+          <li class="tk-e" data-t="res">
+            <div class="tk-cal" aria-hidden="true"><span>May</span><b>2021</b></div>
+            <div class="tk-b">
+              <h3>Image Restoration and Enhancement</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>Inception Institute of Artificial Intelligence (IIAI)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Abu Dhabi, United Arab Emirates</span><span class="tk-sr">, May 2021</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-res">Image restoration</span></p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="tk-yr" id="t-2020" data-sec>
+        <div class="tk-yh"><h2>2020</h2></div>
+        <ol class="tk-list">
+          <li class="tk-e" data-t="res">
+            <div class="tk-cal" aria-hidden="true"><span>Mar</span><b>2020</b></div>
+            <div class="tk-b">
+              <h3>Traditional Image Deblurring Fundamentals</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>Commonwealth Scientific and Industrial Research Organisation (CSIRO)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Canberra, Australia</span><span class="tk-sr">, Mar 2020</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-res">Image restoration</span></p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="tk-yr" id="t-2017" data-sec>
+        <div class="tk-yh"><h2>2017</h2></div>
+        <ol class="tk-list">
+          <li class="tk-e" data-t="cvdl">
+            <div class="tk-cal" aria-hidden="true"><span>Sep</span><b>2017</b></div>
+            <div class="tk-b">
+              <h3>Computer Vision and Deep Learning</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>The Australian National University (ANU)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Canberra, Australia</span><span class="tk-sr">, Sep 2017</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-cvdl">Computer vision &amp; deep learning</span></p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="tk-yr" id="t-2015" data-sec>
+        <div class="tk-yh"><h2>2015</h2></div>
+        <ol class="tk-list">
+          <li class="tk-e" data-t="res">
+            <div class="tk-cal" aria-hidden="true"><span>Aug</span><b>2015</b></div>
+            <div class="tk-b">
+              <h3>Class-specific Image Deblurring</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>National ICT Australia (NICTA)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Canberra, Australia</span><span class="tk-sr">, Aug 2015</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-res">Image restoration</span></p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <section class="tk-yr" id="t-2012" data-sec>
+        <div class="tk-yh"><h2>2012</h2></div>
+        <ol class="tk-list">
+          <li class="tk-e" data-t="cvdl">
+            <div class="tk-cal" aria-hidden="true"><span>Mar</span><b>2012</b></div>
+            <div class="tk-b">
+              <h3>Speeded Up Robust Features</h3>
+              <p class="tk-host"><i class="fa fa-building" aria-hidden="true"></i><span>Toshiba Medical Visualization Systems Europe (TMVSE)</span></p>
+              <p class="tk-loc"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Scotland, UK</span><span class="tk-sr">, Mar 2012</span></p>
+              <p class="tk-tags"><span class="tk-type">Invited talk</span><span class="tk-top t-cvdl">Computer vision &amp; deep learning</span></p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <p class="tk-empty" hidden>No talks on this topic.</p>
 
-      <div class="talks-timeline">
-      <span class="talks-year" id="ty-2025">2025</span>
-      <div class="talk-item" data-year="2025" data-h="dec 2025 ai debate: ai overhyped or near singularity uwa data institute australia">
-        <div class="talk-card">
-          <span class="talk-date">Dec 2025</span>
-          <p class="talk-title">AI Debate: AI Overhyped or Near Singularity</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>UWA Data Institute<br><i class="fa fa-map-marker"></i>Australia</p>
-        </div>
-      </div>
-      <span class="talks-year" id="ty-2024">2024</span>
-      <div class="talk-item" data-year="2024" data-h="nov 2024 introduction to llms and gpt from scratch ai crash course jrcai ksa">
-        <div class="talk-card">
-          <span class="talk-date">Nov 2024</span>
-          <p class="talk-title">Introduction to LLMs and GPT from Scratch</p>
-          <p class="talk-event">AI Crash Course</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>JRCAI<br><i class="fa fa-map-marker"></i>KSA</p>
-        </div>
-      </div>
-      <span class="talks-year" id="ty-2022">2022</span>
-      <div class="talk-item" data-year="2022" data-h="dec 2022 point clouds and rgbd applications jrcai, kfupm-sdaia dhahran, ksa">
-        <div class="talk-card">
-          <span class="talk-date">Dec 2022</span>
-          <p class="talk-title">Point Clouds and RGBD Applications</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>JRCAI, KFUPM-SDAIA<br><i class="fa fa-map-marker"></i>Dhahran, KSA</p>
-        </div>
-      </div>
-      <div class="talk-item" data-year="2022" data-h="sep 2022 modern tools and research in teaching comsats attock, pakistan">
-        <div class="talk-card">
-          <span class="talk-date">Sep 2022</span>
-          <p class="talk-title">Modern Tools and Research in Teaching</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>COMSATS<br><i class="fa fa-map-marker"></i>Attock, Pakistan</p>
-        </div>
-      </div>
-      <div class="talk-item" data-year="2022" data-h="mar 2022 3d vision university of western australia (uwa) perth, australia">
-        <div class="talk-card">
-          <span class="talk-date">Mar 2022</span>
-          <p class="talk-title">3D Vision</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>University of Western Australia (UWA)<br><i class="fa fa-map-marker"></i>Perth, Australia</p>
-        </div>
-      </div>
-      <span class="talks-year" id="ty-2021">2021</span>
-      <div class="talk-item" data-year="2021" data-h="nov 2021 skeleton action recognition united arab emirates university (uaeu) al-ain, united arab emirates">
-        <div class="talk-card">
-          <span class="talk-date">Nov 2021</span>
-          <p class="talk-title">Skeleton Action Recognition</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>United Arab Emirates University (UAEU)<br><i class="fa fa-map-marker"></i>Al-Ain, United Arab Emirates</p>
-        </div>
-      </div>
-      <div class="talk-item" data-year="2021" data-h="oct 2021 3d vision university of new south wales (unsw) sydney, australia">
-        <div class="talk-card">
-          <span class="talk-date">Oct 2021</span>
-          <p class="talk-title">3D Vision</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>University of New South Wales (UNSW)<br><i class="fa fa-map-marker"></i>Sydney, Australia</p>
-        </div>
-      </div>
-      <div class="talk-item" data-year="2021" data-h="oct 2021 saliency detection general electric (ge) new york, usa">
-        <div class="talk-card">
-          <span class="talk-date">Oct 2021</span>
-          <p class="talk-title">Saliency Detection</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>General Electric (GE)<br><i class="fa fa-map-marker"></i>New York, USA</p>
-        </div>
-      </div>
-      <div class="talk-item" data-year="2021" data-h="sep 2021 point cloud analysis and rgb-d saliency detection mohammad bin zayed university of artificial intelligence (mbzuai) abu dhabi, united arab emirates">
-        <div class="talk-card">
-          <span class="talk-date">Sep 2021</span>
-          <p class="talk-title">Point Cloud Analysis and RGB-D Saliency Detection</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>Mohammad bin Zayed University of Artificial Intelligence (MBZUAI)<br><i class="fa fa-map-marker"></i>Abu Dhabi, United Arab Emirates</p>
-        </div>
-      </div>
-      <div class="talk-item" data-year="2021" data-h="jul 2021 rgb-d inspired saliency detection commonwealth scientific and industrial research organisation (csiro) canberra, australia">
-        <div class="talk-card">
-          <span class="talk-date">Jul 2021</span>
-          <p class="talk-title">RGB-D Inspired Saliency Detection</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>Commonwealth Scientific and Industrial Research Organisation (CSIRO)<br><i class="fa fa-map-marker"></i>Canberra, Australia</p>
-        </div>
-      </div>
-      <div class="talk-item" data-year="2021" data-h="may 2021 image restoration and enhancement inception institute of artificial intelligence (iiai) abu dhabi, united arab emirates">
-        <div class="talk-card">
-          <span class="talk-date">May 2021</span>
-          <p class="talk-title">Image Restoration and Enhancement</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>Inception Institute of Artificial Intelligence (IIAI)<br><i class="fa fa-map-marker"></i>Abu Dhabi, United Arab Emirates</p>
-        </div>
-      </div>
-      <span class="talks-year" id="ty-2020">2020</span>
-      <div class="talk-item" data-year="2020" data-h="mar 2020 traditional image deblurring fundamentals commonwealth scientific and industrial research organisation (csiro) canberra, australia">
-        <div class="talk-card">
-          <span class="talk-date">Mar 2020</span>
-          <p class="talk-title">Traditional Image Deblurring Fundamentals</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>Commonwealth Scientific and Industrial Research Organisation (CSIRO)<br><i class="fa fa-map-marker"></i>Canberra, Australia</p>
-        </div>
-      </div>
-      <span class="talks-year" id="ty-2017">2017</span>
-      <div class="talk-item" data-year="2017" data-h="sep 2017 computer vision and deep learning australian national university (anu) canberra, australia">
-        <div class="talk-card">
-          <span class="talk-date">Sep 2017</span>
-          <p class="talk-title">Computer Vision and Deep Learning</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>Australian National University (ANU)<br><i class="fa fa-map-marker"></i>Canberra, Australia</p>
-        </div>
-      </div>
-      <span class="talks-year" id="ty-2015">2015</span>
-      <div class="talk-item" data-year="2015" data-h="aug 2015 class-specific image deblurring national information and communications technology australia (nicta) canberra, australia">
-        <div class="talk-card">
-          <span class="talk-date">Aug 2015</span>
-          <p class="talk-title">Class-specific Image Deblurring</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>National Information and Communications Technology Australia (NICTA)<br><i class="fa fa-map-marker"></i>Canberra, Australia</p>
-        </div>
-      </div>
-      <span class="talks-year" id="ty-2012">2012</span>
-      <div class="talk-item" data-year="2012" data-h="mar 2012 speeded up robust features toshiba medical visualization systems europe (tmvse) scotland, uk">
-        <div class="talk-card">
-          <span class="talk-date">Mar 2012</span>
-          <p class="talk-title">Speeded Up Robust Features</p>
-          <p class="talk-venue"><i class="fa fa-university"></i>Toshiba Medical Visualization Systems Europe (TMVSE)<br><i class="fa fa-map-marker"></i>Scotland, UK</p>
-        </div>
-      </div>
-      </div><!-- /.talks-timeline -->
+      <aside class="tk-invite">
+        <span class="tk-inv-i"><i class="fa fa-microphone" aria-hidden="true"></i></span>
+        <div><h2>Invite me to speak</h2><p>I am happy to give talks, tutorials and seminars on computer vision, 3D vision, image restoration and generative AI.</p></div>
+        <a class="tk-btn" href="mailto:saeed.anwar@uwa.edu.au?subject=Speaking%20invitation">Get in touch</a>
+      </aside>
 
     </div><!-- /.article-wrap -->
-    {% if site.disqus_shortname and page.comments %}
-      <section id="disqus_thread"></section><!-- /#disqus_thread -->
-    {% endif %}
   </article>
-</div><!-- /#index -->
+</div><!-- /#main -->
+
 <div class="footer-wrap">
   <footer>
     {% include _footer.html %}
@@ -305,37 +319,22 @@ div.bibtex pre { font-size: 75%; overflow: auto;  width: 100%; padding: 0em 0em;
 </div><!-- /.footer-wrap -->
 
 {% include _scripts.html %}
+
 <script>
 (function(){
-  var yr='all';
-  function apply(){
-    var q=(document.getElementById('tkq').value||'').toLowerCase().trim(), total=0;
-    document.querySelectorAll('.talk-item').forEach(function(it){
-      var okY=(yr==='all'||it.getAttribute('data-year')===yr);
-      var okQ=!q||it.getAttribute('data-h').indexOf(q)>-1;
-      var show=okY&&okQ;
-      it.style.display=show?'':'none';
-      if(show)total++;
-    });
-    document.querySelectorAll('.talks-year').forEach(function(y){
-      var yy=y.id.replace('ty-','');
-      var any=false;
-      document.querySelectorAll('.talk-item[data-year="'+yy+'"]').forEach(function(it){ if(it.style.display!=='none') any=true; });
-      y.style.display=any?'':'none';
-    });
-    document.getElementById('tkc').textContent=total+' talk'+(total===1?'':'s');
-    document.getElementById('tke').style.display=total?'none':'block';
-  }
-  document.querySelectorAll('.tk-f').forEach(function(b){
-    b.onclick=function(){
-      document.querySelectorAll('.tk-f').forEach(function(x){x.classList.remove('on');});
-      b.classList.add('on'); yr=b.getAttribute('data-f'); apply();
-    };
-  });
-  document.getElementById('tkq').addEventListener('input', apply);
+  var root=document.querySelector('.tk'); if(!root) return;
+  var chips=[].slice.call(root.querySelectorAll('.tk-chip')), items=[].slice.call(root.querySelectorAll('.tk-e')),
+      secs=[].slice.call(root.querySelectorAll('[data-sec]')), empty=root.querySelector('.tk-empty');
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var f=c.getAttribute('data-f'), n=0;
+    chips.forEach(function(x){var on=x===c; x.classList.toggle('on',on); x.setAttribute('aria-pressed',on);});
+    items.forEach(function(it){var ok=f==='all'||(' '+it.getAttribute('data-t')+' ').indexOf(' '+f+' ')>-1; it.hidden=!ok; if(ok) n++;});
+    secs.forEach(function(s){s.hidden=!s.querySelector('.tk-e:not([hidden])');});
+    empty.hidden=n>0;
+  });});
 })();
 </script>
-          
+
 
 </body>
 </html>
