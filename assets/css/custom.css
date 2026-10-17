@@ -24,3 +24,24 @@ h4 {
     margin-right: 5%;
   }
 }
+
+/* ---------- Author sidebar (every page; the theme hides it on phones) ---------- */
+.article-author-side{--sb-ink:#1c2733;--sb-muted:#6b7480;--sb-navy:#1f3a5f;--sb-teal:#2a8c83;--sb-wash:#eef2f6}
+/* The one accent: the banner's navy-to-teal gradient as a ring around the photo */
+.article-author-side .bio-photo{display:block;box-sizing:border-box;width:100%;max-width:132px;height:auto;aspect-ratio:1/1;object-fit:cover;
+  padding:3px;border:3px solid transparent;border-radius:50%;
+  background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#1f3a5f,#3fb8ad) border-box;
+  box-shadow:0 16px 30px -20px rgba(31,58,95,.75)}
+.article-author-side h3{max-width:none;margin:18px 0 6px;font-size:1.4rem;line-height:1.1;color:var(--sb-ink)}
+.article-author-side p{max-width:none;margin:0 0 20px;font-size:.85rem;font-style:normal;line-height:1.6;color:var(--sb-muted)}
+.article-author-side .author-links{display:flex;flex-direction:column;gap:4px}
+.article-author-side .author-social{display:flex;align-items:center;gap:10px;max-width:none;margin:0;padding:3px 0;
+  font:700 .98rem/1.15 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.02em;color:var(--sb-navy);transition:color .15s ease}
+.article-author-side .author-social i{flex:none;display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;margin:0;
+  border-radius:9px;background:var(--sb-wash);color:var(--sb-navy);font-size:15px;line-height:1;transition:background-color .15s ease,color .15s ease}
+.article-author-side .author-social:visited{color:var(--sb-navy)}
+.article-author-side .author-social:hover,.article-author-side .author-social:focus-visible{color:var(--sb-teal);transform:none}
+.article-author-side .author-social:hover i,.article-author-side .author-social:focus-visible i{background:var(--sb-teal);color:#fff}
+.article-author-side .author-social:active{transform:none}
+.article-author-side .author-social:focus-visible{outline:2px solid var(--sb-teal);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){.article-author-side .author-social,.article-author-side .author-social i{transition:none}}
