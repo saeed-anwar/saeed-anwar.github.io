@@ -14,7 +14,6 @@ html{scroll-behavior:smooth}
 .hm-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
 .hm-hero:after{content:"";position:absolute;right:110px;bottom:-70px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.05)}
 .hm-hero>*{position:relative}
-.hm-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
 .hm .hm-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
 .hm-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:600px;line-height:1.6}
 
@@ -28,6 +27,8 @@ html{scroll-behavior:smooth}
 .hm-prof a{display:inline-block;color:#fff!important;font:700 .85rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.04em;padding:.5rem .9rem;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none!important}
 .hm-prof a:hover{background:rgba(255,255,255,.2);border-color:#fff}
 .hm-prof a:focus-visible,.hm-role a:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* Phones only: from 37.5em up the sidebar shows the same Scholar, LinkedIn and Email links */
+@media only screen and (min-width:37.5em){.hm-prof{display:none}}
 
 /* Page */
 .hm{--ink:#1c2733;--text:#3d4752;--muted:#6b7480;--rule:#dfe3e8;--wash:#f3f5f8;--bg:#fff;--navy:#1f3a5f;--teal:#2a8c83;--gold:#9a7413;color:var(--text)}
@@ -49,7 +50,7 @@ html{scroll-behavior:smooth}
 .hm-cta i{color:var(--teal);margin-right:.5rem;vertical-align:-.1em}
 .hm-cta a,.hm-lead a{border-bottom:1px solid rgba(47,93,148,.35)!important}
 
-/* Background: one tile per area */
+/* Career tiles: one per area */
 .g-ac{--g1:#1f3a5f;--g2:#2f5d94}.g-in{--g1:#22706a;--g2:#3fb8ad}.g-ed{--g1:#4b3f86;--g2:#7a6aa8}
 .hm-tiles{display:grid;grid-template-columns:1fr;gap:1.1rem}
 .g-ed ul{grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem 1.5rem}
@@ -107,13 +108,11 @@ html{scroll-behavior:smooth}
       <!-- Homepage. To add news, copy a row in the News list to the top (types: n-p paper, n-a award, n-s service, n-c career).
            Rows marked data-more stay hidden until "Show all" is pressed; keep the first eight rows without it.
            To add a code or dataset release, do the same in the Code and datasets list (c-k code, c-d dataset; first six visible).
-           Background: Academia and Industry are paragraphs (edit PARA text); Education lists one <li> per degree. -->
+           Career tiles: Academia and Industry are paragraphs (edit PARA text); Education lists one <li> per degree. -->
       <div class="hm-hero">
-        <p class="hm-over">Computer vision &amp; machine learning</p>
         <h1>Saeed Anwar</h1>
         <p class="hm-role">Senior Lecturer, The University of Western Australia<br>Director, <a href="/VIAIL/">Visual Intelligence and Analytical Imaging Lab (VIAIL)</a></p>
-        <p class="s">I develop methods that help machines see and understand the world, from restoring and enhancing images to 3D vision, generative AI and multimodal models.</p>
-        <p class="hm-prof"><a href="https://scholar.google.com/citations?user=vPJIHywAAAAJ&amp;hl=en">Google Scholar</a><a href="https://dblp.org/pid/176/1488.html">DBLP</a><a href="https://orcid.org/0000-0002-0692-8411">ORCID</a><a href="https://github.com/saeed-anwar">GitHub</a><a href="https://www.linkedin.com/in/saeed-anwar-51689a13">LinkedIn</a><a href="mailto:saeed.anwar@uwa.edu.au">Email</a></p>
+        <p class="hm-prof"><a href="https://scholar.google.com/citations?user=vPJIHywAAAAJ&amp;hl=en">Google Scholar</a><a href="https://www.linkedin.com/in/saeed-anwar-51689a13">LinkedIn</a><a href="mailto:saeed.anwar@uwa.edu.au">Email</a></p>
       </div>
       <section class="hm-sec hm-about">
         <p class="hm-kicker">Welcome</p>
@@ -124,9 +123,6 @@ html{scroll-behavior:smooth}
       </section>
 
       <section class="hm-sec">
-        <p class="hm-kicker">Background</p>
-        <h2>Career and education</h2>
-
         <div class="hm-tiles">
           <div class="hm-tile g-ac">
             <header><span class="hm-ti-i"><i class="fa fa-university" aria-hidden="true"></i></span><h3>Academia</h3></header>
@@ -187,27 +183,49 @@ html{scroll-behavior:smooth}
         <p class="hm-kicker">Open source</p>
         <h2>Code and datasets</h2>
         <ul class="hm-list hm-code">
-          <li class="c-k"><span class="hm-dt">May 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/cshw2021/ICISP">ICISP</a></b></p></li>
-          <li class="c-d"><span class="hm-dt">May 2025</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanvirnwu/HazeSpace2M_ACMMN_2024?tab=readme-ov-file#dataset-download">HazeSpace2M</a></b></p></li>
-          <li class="c-d"><span class="hm-dt">Sep 2024</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanvirnwu/TriFuse?tab=readme-ov-file">LoLI-Street</a></b></p></li>
-          <li class="c-d"><span class="hm-dt">Sep 2024</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/ashikiut/DefAn">DefAn</a></b><span>Dataset for testing large language models</span></p></li>
-          <li class="c-k"><span class="hm-dt">Sep 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Jumponthemoon/AllWeatherNet">AllWeatherNet</a></b></p></li>
-          <li class="c-k"><span class="hm-dt">Apr 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/mas94/ADTRS">ADTRS</a></b></p></li>
+          <li class="c-d"><span class="hm-dt">May 2026</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/farazkabir/GenSyn10-Benchmarking">GenSyn10</a></b><span>Synthetic image dataset and benchmarking code</span></p></li>
+          <li class="c-d"><span class="hm-dt">Dec 2025</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/ashikiut/pendulum">PENDULUM</a></b><span>Benchmark for sycophancy in multimodal LLMs</span></p></li>
+          <li class="c-k"><span class="hm-dt">Dec 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Habiba123-stack/SwinIFS">SwinIFS</a></b><span>Identity-preserving face super-resolution</span></p></li>
+          <li class="c-k"><span class="hm-dt">Oct 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Baber-Jan/C3Net">C3Net</a></b><span>Camouflaged object detection</span></p></li>
+          <li class="c-k"><span class="hm-dt">Oct 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Baber-Jan/SPEGNet">SPEGNet</a></b><span>Camouflaged object detection</span></p></li>
+          <li class="c-k"><span class="hm-dt">Jul 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/linaagh98/MSRNet">MSRNet</a></b><span>Camouflaged object detection</span></p></li>
+          <li class="c-d" data-more><span class="hm-dt">Jun 2025</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/msaqib17/Road_Damage_Detection">DRDD</a></b><span>Road damage dataset with RDD4D code</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">May 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/cshw2021/ICISP">ICISP</a></b></p></li>
+          <li class="c-d" data-more><span class="hm-dt">May 2025</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanvirnwu/HazeSpace2M_ACMMN_2024?tab=readme-ov-file#dataset-download">HazeSpace2M</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Nov 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/CuiRuikai/NumGrad-Pull">NumGrad-Pull</a></b><span>Surface reconstruction from point clouds</span></p></li>
+          <li class="c-d" data-more><span class="hm-dt">Oct 2024</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/AdnanMunir338/UAV-AWID">UAV-AWID</a></b><span>Adverse-weather test sets for UAV detection</span></p></li>
+          <li class="c-d" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanvirnwu/TriFuse?tab=readme-ov-file">LoLI-Street</a></b></p></li>
+          <li class="c-d" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/ashikiut/DefAn">DefAn</a></b><span>Dataset for testing large language models</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Jumponthemoon/AllWeatherNet">AllWeatherNet</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/IbrahimUWA/MuStD">MuStD</a></b><span>LiDAR and camera 3D object detection</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Apr 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/mas94/ADTRS">ADTRS</a></b></p></li>
           <li class="c-k" data-more><span class="hm-dt">Mar 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Mona-Alzahrani/SelectiveMV">SelectiveMV</a></b><span>Code and project details</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Mar 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/12sakura/cefdet">Cefdet</a></b><span>Action detection</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Mar 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Mona-Alzahrani/SelectiveMV-Multiview">SelectiveMV-Multiview</a></b><span>3D object classification</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Feb 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/gufranSabri/FSBI">FSBI</a></b><span>Deepfake detection</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Feb 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/IbrahimUWA/UnLoc">UnLoc</a></b><span>Localisation from LiDAR, radar or camera</span></p></li>
+          <li class="c-d" data-more><span class="hm-dt">Nov 2023</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/AdnanMunir294/UAVD-CBRA">CBD</a></b><span>UAV detection dataset and code</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Sep 2023</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/CuiRuikai/Partial2Complete">Partial2Complete</a></b><span>Code, models and results</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Apr 2023</span><span class="hm-bd">Dataset</span><p><b><a href="https://ieee-dataport.org/documents/sequential-storytelling-image-dataset-ssid">SSID</a></b></p></li>
           <li class="c-k" data-more><span class="hm-dt">Feb 2023</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/pointcam">PointCaM</a></b><span>Code, models and results</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Dec 2022</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/CuiRuikai/Latent-Transport-UPCN">Latent-Transport-UPCN</a></b><span>Code and models</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Sep 2022</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/hafeez-anwar/FGBR">FGBR</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Apr 2022</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/YC-Liang/DRT">DRT</a></b><span>Single image deraining</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Mar 2022</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ZhenyueQin/Angular-Skeleton-Encoding">Angular Skeleton Encoding</a></b><span>Code and models</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Jan 2022</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/pnp-3d">PnP-3D</a></b><span>Plug-and-play module for 3D point clouds</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Dec 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/R2Net">R<sup>2</sup>Net</a></b><span>Code and models</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Oct 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/attentions_in_3D_detection">Attentional 3D Object Detection</a></b><span>Code and models</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Oct 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/hayatkhan8660-maker/Light-DehazeNet">Light-DehazeNet</a></b><span>Lightweight single image dehazing</span></p></li>
+          <li class="c-d" data-more><span class="hm-dt">Sep 2021</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/usama-x930/VT-LPR">DVLPD</a></b><span>Vehicle and licence plate dataset with VT-LPR code</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">May 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Li-Chongyi/Ucolor">UColor</a></b><span>Code, trained models and results</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">May 2021</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/Yang-Liu1082/InvDN">InvDN</a></b><span>Code and dataset</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">May 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/BAAF-Net">BAAF-Net</a></b><span>Point cloud semantic segmentation</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Apr 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/GBNet">GBNet</a></b><span>Code and trained models</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Apr 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ZhenyueQin/PSGNN">PSGNN</a></b><span>Position-sensing graph neural networks</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Mar 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/JunlinHan/CWR">CWR</a></b></p></li>
           <li class="c-k" data-more><span class="hm-dt">Mar 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/DRNet">DRNet</a></b></p></li>
           <li class="c-d" data-more><span class="hm-dt">Feb 2021</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanveer-hussain/EfficientSOD">DDNet</a></b><span>Code, results and dataset</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Jan 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/tanveer-hussain/EfficientSOD2">EfficientSOD2</a></b><span>Pyramidal attention for saliency detection</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Nov 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/R2Net">R<sup>2</sup>Net</a></b><span>Code and results</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Nov 2020</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/saeed-anwar/ColorSurvey">Natural-Color Dataset (NCD)</a></b><span>Dataset, from our colourization survey</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Nov 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/IERD">IERD</a></b><span>Code and results</span></p></li>
@@ -222,7 +240,7 @@ html{scroll-behavior:smooth}
           <li class="c-k" data-more><span class="hm-dt">Sep 2019</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/RIDNet">RIDNet</a></b><span>Code and results</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Jul 2018</span><span class="hm-bd">Code</span><p><b>All papers</b><span>Code released for all papers to date</span></p></li>
         </ul>
-        <button type="button" class="hm-more" data-list="hm-code" aria-expanded="false">Show all 34</button>
+        <button type="button" class="hm-more" data-list="hm-code" aria-expanded="false">Show all 56</button>
       </section>
 
     </div><!-- /.article-wrap -->

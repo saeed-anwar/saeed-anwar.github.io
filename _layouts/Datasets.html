@@ -45,27 +45,10 @@ html{scroll-behavior:smooth}
 .dt-cite{display:flex;gap:.6rem;align-items:baseline;margin:.9rem 0 0;font-size:.9rem;font-style:italic;color:var(--muted)}
 .dt-cite i{font-size:.8rem;color:var(--teal)}
 
-/* Cards: one column, compact thumbnail beside the text */
+/* Cards: one column, text only */
 .dt-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
-.dt-card{display:grid;grid-template-columns:14rem minmax(0,1fr);align-items:start;border:1px solid var(--rule);border-radius:14px;background:var(--bg);box-shadow:0 14px 30px -26px rgba(31,58,95,.6)}
-.dt-media{position:relative;display:block;margin:1.25rem 0 1.25rem 1.25rem;aspect-ratio:4/3;overflow:hidden;border-radius:10px;border:1px solid var(--rule);background:var(--wash)}
-.dt-zb{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;background:transparent;cursor:zoom-in;-webkit-appearance:none;appearance:none}
-.dt-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);transition:transform .35s ease}
-.dt-media:hover img{transform:scale(1.04)}
-.dt-zb:focus-visible{outline:3px solid var(--teal);outline-offset:-3px}
-.dt-zoom{position:absolute;right:.45rem;bottom:.45rem;width:1.7rem;height:1.7rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(18,22,27,.6);color:#fff}
-.dt-media.art .dt-cv{position:absolute;inset:0;width:100%;height:100%}
-.dt-cv{display:block}
-@media (prefers-reduced-motion:reduce){.dt-media img{transition:none}}
+.dt-card{border:1px solid var(--rule);border-radius:14px;background:var(--bg);box-shadow:0 14px 30px -26px rgba(31,58,95,.6)}
 
-/* Lightbox */
-.dt-lb{max-width:min(1100px,94vw);width:auto;padding:0;border:0;border-radius:12px;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.45)}
-.dt-lb::backdrop{background:rgba(12,16,22,.78)}
-.dt-lb figure{margin:0}
-.dt-lb img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;margin:0 auto}
-.dt-lb figcaption{padding:.75rem 3.5rem .85rem 1rem;font-size:.9rem;color:#3d4752;background:#fff}
-.dt-lb-x{position:absolute;top:.6rem;right:.6rem;width:2.2rem;height:2.2rem;border-radius:50%;border:0;background:rgba(18,22,27,.7);color:#fff;font-size:1.2rem;line-height:1;cursor:pointer}
-.dt-lb-x:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .dt-body{display:flex;flex-direction:column;padding:1.2rem 1.4rem 1.3rem}
 .dt-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem;margin:0 0 .55rem}
 .dt-dom{font:700 .72rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.05em;text-transform:uppercase;color:var(--ac);background:color-mix(in srgb,var(--ac) 11%,var(--bg));border-radius:999px;padding:.32rem .6rem}
@@ -93,17 +76,11 @@ html{scroll-behavior:smooth}
 .dt-copy{position:absolute;top:.5rem;right:.5rem;font:700 .75rem 'PT Sans Narrow','Arial Narrow',sans-serif;background:var(--bg);color:var(--navy);border:1px solid var(--rule);border-radius:4px;padding:.25rem .55rem;cursor:pointer}
 .dt-empty{margin:1.5rem 0 0;padding:1rem 1.25rem;background:var(--wash);border-radius:8px}
 
-@media only screen and (max-width:48em){
-  .dt-card{grid-template-columns:10.5rem minmax(0,1fr)}
-  .dt-media{margin:1rem 0 1rem 1rem}
-}
 @media only screen and (max-width:37.5em){
   .dt-stats{grid-template-columns:repeat(2,1fr);margin:-32px 0 0}
   .dt-hero{padding:26px 22px 54px}.dt .dt-hero h1{font-size:26px}
   .dt-chips{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:.25rem}
   .dt-chip{white-space:nowrap}
-  .dt-card{grid-template-columns:1fr}
-  .dt-media{display:none}
 }
 </style>
 </head>
@@ -119,37 +96,103 @@ html{scroll-behavior:smooth}
   </div>
   <article>
     <div class="article-wrap dt">
-      <!-- Datasets page. To add a dataset, copy an <li class="dt-card"> block to the top of the list and edit it.
+      <!-- Datasets page. To add a dataset, copy an <li class="dt-card"> block to the top of its year and edit it.
            data-d holds its domain keys for the filter (lm language & multimodal, ll low-level vision, 3d 3D & depth,
-           rc recognition, uw underwater). Images live in /images/datasets/. Use class "cover" on .dt-media for photos
-           (fills the panel) or "contain" for figures (shown whole). Datasets without an image use generated artwork.
-           Update the figures in .dt-stats when you add datasets. -->
+           rc recognition, uw underwater). Give each card its own dd-/db- ids, and update the figures in .dt-stats
+           and the counts on the filter chips when you add datasets. -->
       <div class="dt-hero"><p class="dt-over">Research resources</p><h1>Datasets</h1>
         <p class="s">Datasets and benchmarks released alongside our research, with links to the data, the papers that describe them, and citations.</p></div>
       <div class="dt-stats">
-        <div class="dt-st"><b>16</b><span>Datasets</span></div>
+        <div class="dt-st"><b>23</b><span>Datasets</span></div>
         <div class="dt-st"><b>5</b><span>Research domains</span></div>
         <div class="dt-st"><b>2M+</b><span>Images in the largest</span></div>
-        <div class="dt-st"><b>7</b><span>Years of releases</span></div>
+        <div class="dt-st"><b>8</b><span>Years of releases</span></div>
       </div>
 
       <div class="dt-tools">
-        <div class="dt-chips" role="group" aria-label="Filter datasets by domain"><button type="button" class="dt-chip on" data-f="all" aria-pressed="true">All<span>16</span></button><button type="button" class="dt-chip d-lm" data-f="lm" aria-pressed="false"><i aria-hidden="true"></i>Language &amp; multimodal<span>3</span></button><button type="button" class="dt-chip d-ll" data-f="ll" aria-pressed="false"><i aria-hidden="true"></i>Low-level vision<span>5</span></button><button type="button" class="dt-chip d-3d" data-f="3d" aria-pressed="false"><i aria-hidden="true"></i>3D &amp; depth<span>3</span></button><button type="button" class="dt-chip d-rc" data-f="rc" aria-pressed="false"><i aria-hidden="true"></i>Recognition<span>5</span></button><button type="button" class="dt-chip d-uw" data-f="uw" aria-pressed="false"><i aria-hidden="true"></i>Underwater<span>2</span></button></div>
+        <div class="dt-chips" role="group" aria-label="Filter datasets by domain"><button type="button" class="dt-chip on" data-f="all" aria-pressed="true">All<span>23</span></button><button type="button" class="dt-chip d-lm" data-f="lm" aria-pressed="false"><i aria-hidden="true"></i>Language &amp; multimodal<span>5</span></button><button type="button" class="dt-chip d-ll" data-f="ll" aria-pressed="false"><i aria-hidden="true"></i>Low-level vision<span>5</span></button><button type="button" class="dt-chip d-3d" data-f="3d" aria-pressed="false"><i aria-hidden="true"></i>3D &amp; depth<span>3</span></button><button type="button" class="dt-chip d-rc" data-f="rc" aria-pressed="false"><i aria-hidden="true"></i>Recognition<span>11</span></button><button type="button" class="dt-chip d-uw" data-f="uw" aria-pressed="false"><i aria-hidden="true"></i>Underwater<span>2</span></button></div>
         <p class="dt-cite"><i class="fa fa-quote-left" aria-hidden="true"></i>If you use one of these datasets, please cite the paper that introduced it. BibTeX is provided with each dataset.</p>
       </div>
 
       <ul class="dt-grid">
+          <li class="dt-card" data-d="lm rc">
+            <div class="dt-body">
+              <p class="dt-meta"><span class="dt-dom d-lm">Language &amp; multimodal</span><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2026</span></p>
+              <h3><a href="https://github.com/bibek-cse/VisionCrowdTest">VisionCrowdTest</a><span>Crowd Counting Benchmark for Vision-Language Models</span></h3>
+              <p class="dt-kf"><span>1,304 images</span><span>398K+ annotated heads</span></p>
+              <p class="dt-desc" id="dd-0">VisionCrowdTest is a diagnostic benchmark that asks whether the crowd counts produced by vision-language models are actually supported by spatial evidence in the image. It contains 1,304 images with more than 398K annotated heads, covering RGB, aerial, thermal and infrared imagery across low, medium and high crowd densities. Five recent VLMs are evaluated zero-shot on counting and spatial grounding, revealing a semantic-localization gap: plausible counts that correspond only weakly to where people actually are.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-0">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>Do Vision-Language Models Truly Count? Revealing the Semantic-Localization Gap in Dense Crowd Understanding</em>International Conference on Neural Information Processing (ICONIP), 2026</p>
+              <div class="dt-links"><a class="dt-lk" href="https://github.com/bibek-cse/VisionCrowdTest">GitHub</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-0">BibTeX</button></div>
+              <div class="dt-bib" id="db-0" hidden><pre>@inproceedings{Bibek2026count,
+  author = {Das, Bibek and Prajapati, Sourabh and Adak, Chandranath and Chattopadhyay, Soumi and Saqib, Muhammad and Anwar, Saeed},
+  title = {Do Vision-Language Models Truly Count? Revealing the Semantic-Localization Gap in Dense Crowd Understanding},
+  booktitle = {International Conference on Neural Information Processing (ICONIP)},
+  year = {2026}
+}</pre><button type="button" class="dt-copy">Copy</button></div>
+            </div>
+          </li>
+          <li class="dt-card" data-d="rc">
+            <div class="dt-body">
+              <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2026</span></p>
+              <h3><a href="https://github.com/farazkabir/GenSyn10-Benchmarking">GenSyn10</a><span>Multi-Generator Synthetic Image Dataset</span></h3>
+              <p class="dt-kf"><span>60,000 images</span><span>3 generators</span></p>
+              <p class="dt-desc" id="dd-1">GenSyn10 is a synthetic counterpart to CIFAR-10: 60,000 images at 32×32 across the same ten classes, with the standard 50k/10k train/test split. The images were rendered from grammar-based prompts by three architecturally different text-to-image models (FLUX.2-dev, HunyuanImage-3.0 and Qwen-Image-2512), making it a controlled benchmark for detecting AI-generated images and for studying generalisation across generators. Seventeen classification models are evaluated under a four-stage protocol: real-data baseline, zero-shot transfer, fine-tuning and retention.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-1">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>GenSyn10: A Multi-Generative AI Dataset For Benchmarking Image Classification</em>arXiv preprint, 2026</p>
+              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/farazkabir/GenSyn10-Benchmarking">Dataset</a><a class="dt-lk" href="https://arxiv.org/abs/2607.16283">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-1">BibTeX</button></div>
+              <div class="dt-bib" id="db-1" hidden><pre>@article{Khan2026GenSyn10,
+  title = {GenSyn10: A Multi-Generative AI Dataset For Benchmarking Image Classification},
+  author = {Khan, Md Faraz Kabir and Anwar, Saeed and Hassan, Ghulam Mubashar},
+  journal = {arXiv preprint arXiv:2607.16283},
+  year = {2026}
+}</pre><button type="button" class="dt-copy">Copy</button></div>
+            </div>
+          </li>
           <li class="dt-card" data-d="lm">
-            <div class="dt-media" style="--pos:0% 50%"><img src="/images/datasets/pendulum.jpg" alt="Example question from PENDULUM, with model answers under different prompts" loading="lazy" decoding="async" width="1100" height="460"><button type="button" class="dt-zb" aria-label="Enlarge image: Example question from PENDULUM, with model answers under different prompts" data-cap="Example question from PENDULUM, with model answers under different prompts"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
+            <div class="dt-body">
+              <p class="dt-meta"><span class="dt-dom d-lm">Language &amp; multimodal</span><span class="dt-yr">2026</span></p>
+              <h3><a href="https://yliu1082.github.io/DermCase/">DermCase</a><span>Rare Skin Disease Diagnostic Reasoning Benchmark</span></h3>
+              <p class="dt-kf"><span>6,354 rare cases</span><span>26,030 image–caption pairs</span></p>
+              <p class="dt-desc" id="dd-2">DermCase is a long-context dermatology benchmark for testing whether large vision-language models can reason their way to a diagnosis of rare skin diseases. Built from publicly licensed, peer-reviewed case reports, it holds 6,354 rare cases with complete diagnostic reasoning chains and 26,030 dermatological image–caption pairs. It supports evaluation of diagnostic accuracy, differential diagnosis and multi-step clinical reasoning, and 22 LVLMs are benchmarked on it.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-2">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>Mind the Rarities: Can Rare Skin Diseases Be Reliably Diagnosed via Diagnostic Reasoning?</em>arXiv preprint, 2026</p>
+              <div class="dt-links"><a class="dt-lk" href="https://yliu1082.github.io/DermCase/">Project page</a><a class="dt-lk" href="https://arxiv.org/abs/2603.18418">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-2">BibTeX</button></div>
+              <div class="dt-bib" id="db-2" hidden><pre>@article{Liu2026Mind,
+  title = {Mind the Rarities: Can Rare Skin Diseases Be Reliably Diagnosed via Diagnostic Reasoning?},
+  author = {Liu, Yang and Yang, Jiyao and Zhao, Hongjin and Li, Xiaoyong and Ji, Yanzhe and Li, Xingjian and Jiang, Runmin and Wang, Tianyang and Anwar, Saeed and Kim, Dongwoo and others},
+  journal = {arXiv preprint arXiv:2603.18418},
+  year = {2026}
+}</pre><button type="button" class="dt-copy">Copy</button></div>
+            </div>
+          </li>
+          <li class="dt-card" data-d="rc">
+            <div class="dt-body">
+              <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2026</span></p>
+              <h3><a href="https://github.com/msaqib17/Road_Damage_Detection">DRDD</a><span>Diverse Road Damage Dataset</span></h3>
+              <p class="dt-kf"><span>1,500 images</span><span>5 damage types</span></p>
+              <p class="dt-desc" id="dd-3">DRDD targets road scenes in which several kinds of damage appear in the same frame, with about three damages per image on average. Its 1,500 images (1920×1440) were extracted from GoPro footage recorded in Oman under varying weather and times of day, checked by a civil engineer, and annotated with bounding boxes in Pascal VOC and COCO formats. Five classes are covered (alligator, block, longitudinal, pothole and transverse cracks), with occlusions, shadows and motion blur adding to the difficulty.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-3">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>RDD4D: 4D Attention-Guided Road Damage Detection And Classification</em>IEEE Access, 2026</p>
+              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/msaqib17/Road_Damage_Detection/tree/main/RoadDamageDataset2025">Dataset</a><a class="dt-lk" href="https://arxiv.org/abs/2501.02822">arXiv</a><a class="dt-lk" href="https://github.com/msaqib17/Road_Damage_Detection">Code</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-3">BibTeX</button></div>
+              <div class="dt-bib" id="db-3" hidden><pre>@article{Asma2026RDD4D,
+  title = {RDD4D: 4D Attention-Guided Road Damage Detection And Classification},
+  author = {Alkalbani, Asma and Saqib, Muhammad and Alrawahi, Ahmed Salim and Anwar, Abbas and Adak, Chandarnath and Anwar, Saeed},
+  journal = {IEEE Access},
+  year = {2025}
+}</pre><button type="button" class="dt-copy">Copy</button></div>
+            </div>
+          </li>
+          <li class="dt-card" data-d="lm">
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-lm">Language &amp; multimodal</span><span class="dt-yr">2025</span></p>
               <h3><a href="https://github.com/ashikiut/pendulum/">PENDULUM</a><span>Assessing Sycophancy in MLLMs</span></h3>
               <p class="dt-kf"><span>751 images</span><span>6 domains</span></p>
-              <p class="dt-desc" id="dd-0">Dataset contains 751 images, each paired with approximately 2,000 visual question–answer (VQA) examples. The images span six distinct domains, each presenting different visual and reasoning challenges. For each question, three prompt types are included: a baseline (equilibrium) prompt with no user influence, a positive-influence prompt that provides a correct hint aligned with the visual evidence, and a negative-influence prompt that is misleading or adversarial.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-0">Read more</button>
+              <p class="dt-desc" id="dd-4">Dataset contains 751 images, each paired with approximately 2,000 visual question–answer (VQA) examples. The images span six distinct domains, each presenting different visual and reasoning challenges. For each question, three prompt types are included: a baseline (equilibrium) prompt with no user influence, a positive-influence prompt that provides a correct hint aligned with the visual evidence, and a negative-influence prompt that is misleading or adversarial.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-4">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>PENDULUM: A Benchmark for Assessing Sycophancy in Multimodal Large Language Models</em>arXiv preprint, 2025</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/drive/folders/1RiyKjc7EGWXBjNpZe95jIh8hAgRKs8GM">Dataset</a><a class="dt-lk" href="https://github.com/ashikiut/pendulum/tree/main/VQA">Input Prompts</a><a class="dt-lk" href="https://arxiv.org/abs/2512.19350">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-0">BibTeX</button></div>
-              <div class="dt-bib" id="db-0" hidden><pre>@article{Rahman2025PENDULUM,
+              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/drive/folders/1RiyKjc7EGWXBjNpZe95jIh8hAgRKs8GM">Dataset</a><a class="dt-lk" href="https://github.com/ashikiut/pendulum/tree/main/VQA">Input Prompts</a><a class="dt-lk" href="https://arxiv.org/abs/2512.19350">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-4">BibTeX</button></div>
+              <div class="dt-bib" id="db-4" hidden><pre>@article{Rahman2025PENDULUM,
       title={PENDULUM: A Benchmark for Assessing Sycophancy in Multimodal Large Language Models}, 
       author={A. B. M. Ashikur Rahman and Saeed Anwar and Muhammad Usman and Irfan Ahmad and Ajmal Mian},
       year={2025},
@@ -161,16 +204,15 @@ html{scroll-behavior:smooth}
             </div>
           </li>
           <li class="dt-card" data-d="rc">
-            <div class="dt-media art" aria-hidden="true"><svg class="dt-cv" viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="dg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="400" height="150" fill="url(#dg1)"/><rect x="211" y="95" width="53" height="30" rx="3" fill="none" stroke="#fff" stroke-opacity="0.18" stroke-width="2" stroke-dasharray="none"/><rect x="100" y="69" width="43" height="79" rx="3" fill="none" stroke="#fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="6 4"/><rect x="117" y="31" width="73" height="36" rx="3" fill="none" stroke="#fff" stroke-opacity="0.32" stroke-width="2" stroke-dasharray="none"/><rect x="64" y="52" width="46" height="39" rx="3" fill="none" stroke="#fff" stroke-opacity="0.39" stroke-width="2" stroke-dasharray="6 4"/></svg></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2025</span></p>
               <h3><a href="https://github.com/ShehzadCS18/IARD">IARD</a><span>Intruder Activity Recognition Dataset</span></h3>
               <p class="dt-kf"><span>69,000+ frames</span><span>4 classes</span></p>
-              <p class="dt-desc" id="dd-1">IARD contains four classes — Armed Intruder, Door Kick, Intruder Inside, and Lock Breaking. Together, these classes span more than 69,000 frames. The dataset was built from carefully selected YouTube videos, cropped and manually annotated into the target activity classes, with standardized 224×224 frames. IARD was built with strict ethical safeguards: all videos were sourced from public sources, faces were anonymized, no identifying metadata was retained, and any sensitive or inappropriate content was removed. The dataset follows responsible AI and privacy principles.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-1">Read more</button>
+              <p class="dt-desc" id="dd-5">IARD contains four classes — Armed Intruder, Door Kick, Intruder Inside, and Lock Breaking. Together, these classes span more than 69,000 frames. The dataset was built from carefully selected YouTube videos, cropped and manually annotated into the target activity classes, with standardized 224×224 frames. IARD was built with strict ethical safeguards: all videos were sourced from public sources, faces were anonymized, no identifying metadata was retained, and any sensitive or inappropriate content was removed. The dataset follows responsible AI and privacy principles.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-5">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>IARD: Intruder Activity Recognition Dataset for Threat Detection</em>ACM International Conference on Information and Knowledge Management (CIKM), 2025</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/ShehzadCS18/IARD">Dataset</a><a class="dt-lk" href="https://dl.acm.org/doi/abs/10.1145/3746252.3761619">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-1">BibTeX</button></div>
-              <div class="dt-bib" id="db-1" hidden><pre>@inproceedings{Ali2025IARD,
+              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/ShehzadCS18/IARD">Dataset</a><a class="dt-lk" href="https://dl.acm.org/doi/abs/10.1145/3746252.3761619">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-5">BibTeX</button></div>
+              <div class="dt-bib" id="db-5" hidden><pre>@inproceedings{Ali2025IARD,
 	author = {Ali, Shehzad and Islam, Md Tanvir and Lee, Ik Hyun and Anwar, Saeed and Ser, Javier Del and Muhammad, Khan},
 	title = {IARD: Intruder Activity Recognition Dataset for Threat Detection},
 	isbn = {9798400720406},
@@ -185,17 +227,37 @@ html{scroll-behavior:smooth}
 }</pre><button type="button" class="dt-copy">Copy</button></div>
             </div>
           </li>
+          <li class="dt-card" data-d="rc">
+            <div class="dt-body">
+              <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2025</span></p>
+              <h3><a href="https://github.com/ShehzadCS18/RHAD">RHAD</a><span>Real-World Hazardous Activities Dataset</span></h3>
+              <p class="dt-kf"><span>Real-world video</span><span>Indoor hazards</span></p>
+              <p class="dt-desc" id="dd-6">RHAD is a video dataset curated for recognising hazardous activities in real-world indoor settings, which existing activity datasets cover only thinly. It accompanies HazardNet, a hybrid model that combines local and global spatio-temporal representation modules, and the paper benchmarks a range of state-of-the-art activity recognition models on it to support safety monitoring and preventive interventions.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-6">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>Towards Hazardous Activity Recognition for A Novel Real-World Dataset</em>ACM International Conference on Multimedia (ACM MM), 2025</p>
+              <div class="dt-links"><a class="dt-lk" href="https://github.com/ShehzadCS18/RHAD">GitHub</a><a class="dt-lk" href="https://dl.acm.org/doi/10.1145/3746027.3754795">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-6">BibTeX</button></div>
+              <div class="dt-bib" id="db-6" hidden><pre>@inproceedings{Ali2025RHAD,
+  title = {Towards Hazardous Activity Recognition for A Novel Real-World Dataset},
+  author = {Ali, Shehzad and Islam, Md Tanvir and Lee, Ik Hyun and Xiong, Mingfu and Dao, Minh-Son and Anwar, Saeed and Bakshi, Sambit and Muhammad, Khan},
+  booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia},
+  pages = {5326--5335},
+  year = {2025},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  doi = {10.1145/3746027.3754795}
+}</pre><button type="button" class="dt-copy">Copy</button></div>
+            </div>
+          </li>
           <li class="dt-card" data-d="ll">
-            <div class="dt-media" style="--pos:0% 45%"><img src="/images/datasets/hazespace2m.jpg" alt="Sample hazy scenes from HazeSpace2M across haze types" loading="lazy" decoding="async" width="1100" height="349"><button type="button" class="dt-zb" aria-label="Enlarge image: Sample hazy scenes from HazeSpace2M across haze types" data-cap="Sample hazy scenes from HazeSpace2M across haze types"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-ll">Low-level vision</span><span class="dt-yr">2024</span></p>
               <h3><a href="https://github.com/tanvirnwu/HazeSpace2M">HazeSpace2M</a><span>Hazy Image Dataset</span></h3>
               <p class="dt-kf"><span>2M+ images</span><span>10 haze levels</span></p>
-              <p class="dt-desc" id="dd-2">A collection of over 2 million images designed to enhance dehazing through haze type classification. HazeSpace2M includes diverse scenes with 10 haze intensity levels, featuring Fog, Cloud, and Environmental Haze.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-2">Read more</button>
+              <p class="dt-desc" id="dd-7">A collection of over 2 million images designed to enhance dehazing through haze type classification. HazeSpace2M includes diverse scenes with 10 haze intensity levels, featuring Fog, Cloud, and Environmental Haze.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-7">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>HazeSpace2M: A Dataset for Haze Aware Single Image Dehazing</em>ACM International Conference on Multimedia (ACM MM), 2024</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/tanvirnwu/HazeSpace2M_ACMMN_2024?tab=readme-ov-file#dataset-download">Dataset</a><a class="dt-lk" href="https://dl.acm.org/doi/abs/10.1145/3664647.3681382">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-2">BibTeX</button></div>
-              <div class="dt-bib" id="db-2" hidden><pre>@inproceedings{Tanvir2024hazespace2m,
+              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/tanvirnwu/HazeSpace2M_ACMMN_2024?tab=readme-ov-file#dataset-download">Dataset</a><a class="dt-lk" href="https://dl.acm.org/doi/abs/10.1145/3664647.3681382">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-7">BibTeX</button></div>
+              <div class="dt-bib" id="db-7" hidden><pre>@inproceedings{Tanvir2024hazespace2m,
   title={HazeSpace2M: A Dataset for Haze Aware Single Image Dehazing},
   author={Islam, Md Tanvir and Rahim, Nasir and Anwar, Saeed and Saqib Muhammad and Bakshi, Sambit and Muhammad, Khan},
   booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
@@ -205,16 +267,15 @@ html{scroll-behavior:smooth}
             </div>
           </li>
           <li class="dt-card" data-d="ll">
-            <div class="dt-media" style="--pos:0% 50%"><img src="/images/datasets/loli-street.jpg" alt="Low-light street images from LoLI-Street" loading="lazy" decoding="async" width="1100" height="477"><button type="button" class="dt-zb" aria-label="Enlarge image: Low-light street images from LoLI-Street" data-cap="Low-light street images from LoLI-Street"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-ll">Low-level vision</span><span class="dt-yr">2024</span></p>
               <h3><a href="https://github.com/tanvirnwu/TriFuse?tab=readme-ov-file">LoLI-Street</a><span>Low-light Images of Streets</span></h3>
               <p class="dt-kf"><span>33k image pairs</span><span>4K/8K real test set</span></p>
-              <p class="dt-desc" id="dd-3">The training consists of 30k, while validation has 3k paired low and high-light images. Moreover, we collected high-resolution videos (4K/8K at 60fps) from various cities under low-light conditions, extracting and manually reviewing frames to create the Real Low-light Testset (RLLT) of our LoLI-Street dataset. We used Photoshop v25.0 to generate the synthetic images of our dataset.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-3">Read more</button>
+              <p class="dt-desc" id="dd-8">The training consists of 30k, while validation has 3k paired low and high-light images. Moreover, we collected high-resolution videos (4K/8K at 60fps) from various cities under low-light conditions, extracting and manually reviewing frames to create the Real Low-light Testset (RLLT) of our LoLI-Street dataset. We used Photoshop v25.0 to generate the synthetic images of our dataset.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-8">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>LoLI-Street: Benchmarking Low-Light Image Enhancement and Beyond</em>Asian Conference on Computer Vision (ACCV), 2024</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://www.kaggle.com/datasets/tanvirnwu/loli-street-low-light-image-enhancement-of-street">Dataset (Kaggle)</a><a class="dt-lk pri" href="https://drive.google.com/file/d/1xfATFqrYvMU5a4eLJ5iMi7PVts1x3mmi/view?usp=sharing">Dataset (Google Drive)</a><a class="dt-lk" href="https://arxiv.org/pdf/2410.09831">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-3">BibTeX</button></div>
-              <div class="dt-bib" id="db-3" hidden><pre>@inproceedings{Islam2024loli,
+              <div class="dt-links"><a class="dt-lk pri" href="https://www.kaggle.com/datasets/tanvirnwu/loli-street-low-light-image-enhancement-of-street">Dataset (Kaggle)</a><a class="dt-lk pri" href="https://drive.google.com/file/d/1xfATFqrYvMU5a4eLJ5iMi7PVts1x3mmi/view?usp=sharing">Dataset (Google Drive)</a><a class="dt-lk" href="https://arxiv.org/pdf/2410.09831">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-8">BibTeX</button></div>
+              <div class="dt-bib" id="db-8" hidden><pre>@inproceedings{Islam2024loli,
       title={LoLI-Street: Benchmarking Low-Light Image Enhancement and Beyond}, 
       author={Md Tanvir Islam and Inzamamul Alam and Simon S. Woo and Saeed Anwar and IK Hyun Lee and Khan Muhammad},
       booktitle={Proceedings of the Asian Conference on Computer Vision (ACCV)},
@@ -223,35 +284,78 @@ html{scroll-behavior:smooth}
             </div>
           </li>
           <li class="dt-card" data-d="lm">
-            <div class="dt-media" style="--pos:12% 88%"><img src="/images/datasets/defan.jpg" alt="Graphical overview of the DefAn benchmark" loading="lazy" decoding="async" width="1100" height="665"><button type="button" class="dt-zb" aria-label="Enlarge image: Graphical overview of the DefAn benchmark" data-cap="Graphical overview of the DefAn benchmark"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-lm">Language &amp; multimodal</span><span class="dt-yr">2024</span></p>
               <h3><a href="https://github.com/ashikiut/DefAn">DefAn</a><span>Definitive Answer Dataset</span></h3>
               <p class="dt-kf"><span>75,000+ samples</span><span>8 knowledge domains</span></p>
-              <p class="dt-desc" id="dd-4">DefAn is a comprehensive evaluation benchmark dataset, with more than 75000 samples, designed to assess the hallucination tendencies of large language models (LLMs). The dataset is categorized into eight knowledge domains: Sports, Census Australia, Nobel Prize, Entertainment, World Organizations, QS Ranking, Conference Venue, and Math. The dataset is structured into two parts: public and hidden.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-4">Read more</button>
-              <p class="dt-paper"><span>Paper</span><em>DefAn: Definitive Answer Dataset for LLMs Hallucination Evaluation</em>arXiv preprint, 2024</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://huggingface.co/datasets/iamasQ/DefAn">Dataset</a><a class="dt-lk" href="https://arxiv.org/pdf/2406.09155">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-4">BibTeX</button></div>
-              <div class="dt-bib" id="db-4" hidden><pre>@article{rahman2024defan,
-      title={DefAn: Definitive Answer Dataset for LLMs Hallucination Evaluation}, 
-      author={A B M Ashikur Rahman and Saeed Anwar and Muhammad Usman and Ajmal Mian},
-      year={2024},
-      eprint={2406.09155},
-      archivePrefix={arXiv},
+              <p class="dt-desc" id="dd-9">DefAn is a comprehensive evaluation benchmark dataset, with more than 75000 samples, designed to assess the hallucination tendencies of large language models (LLMs). The dataset is categorized into eight knowledge domains: Sports, Census Australia, Nobel Prize, Entertainment, World Organizations, QS Ranking, Conference Venue, and Math. The dataset is structured into two parts: public and hidden.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-9">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>DefAn: Definitive Answer Dataset for LLM Hallucination Evaluation</em>Information, 2025</p>
+              <div class="dt-links"><a class="dt-lk pri" href="https://huggingface.co/datasets/iamasQ/DefAn">Dataset</a><a class="dt-lk" href="https://www.mdpi.com/2078-2489/16/11/937">Official PDF</a><a class="dt-lk" href="https://arxiv.org/pdf/2406.09155">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-9">BibTeX</button></div>
+              <div class="dt-bib" id="db-9" hidden><pre>@article{rahman2025defan,
+  author = {Rahman, A. B. M. Ashikur and Anwar, Saeed and Usman, Muhammad and Ahmad, Irfan and Mian, Ajmal},
+  title = {DefAn: Definitive Answer Dataset for LLM Hallucination Evaluation},
+  journal = {Information},
+  volume = {16},
+  number = {11},
+  article-number = {937},
+  year = {2025},
+  issn = {2078-2489},
+  doi = {10.3390/info16110937}
+}</pre><button type="button" class="dt-copy">Copy</button></div>
+            </div>
+          </li>
+          <li class="dt-card" data-d="rc">
+            <div class="dt-body">
+              <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2024</span></p>
+              <h3><a href="https://github.com/AdnanMunir338/UAV-AWID">UAV-AWID</a><span>UAVs in Adverse Weather and Image Distortions</span></h3>
+              <p class="dt-kf"><span>3 distortion types</span><span>3 severity levels</span></p>
+              <p class="dt-desc" id="dd-10">UAV-AWID is a set of test benchmarks for measuring how drone detectors cope with degraded images: rain at three intensities (drizzle, heavy, torrential), and motion blur and artificial noise at three levels each (low, medium, high). It is released together with the Complex Background Dataset (CBD) and an augmented version (ACBD) for training. Benchmarks of YOLOv5, YOLOv8, YOLO-NAS, Faster R-CNN and RetinaNet show mAP falling by up to 77 points under severe conditions, and training on the augmented data substantially improves robustness.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-10">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>Impact of Adverse Weather and Image Distortions on Vision-Based UAV Detection: A Performance Evaluation of Deep Learning Models</em>Drones, 2024</p>
+              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/AdnanMunir338/UAV-AWID#datasets">Dataset</a><a class="dt-lk" href="https://www.mdpi.com/2504-446X/8/11/638">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-10">BibTeX</button></div>
+              <div class="dt-bib" id="db-10" hidden><pre>@article{Munir2024drones,
+  author = {Munir, Adnan and Siddiqui, Abdul Jabbar and Anwar, Saeed and El-Maleh, Aiman and Khan, Ayaz H. and Rehman, Aqsa},
+  title = {Impact of Adverse Weather and Image Distortions on Vision-Based UAV Detection: A Performance Evaluation of Deep Learning Models},
+  journal = {Drones},
+  volume = {8},
+  number = {11},
+  article-number = {638},
+  year = {2024},
+  issn = {2504-446X},
+  doi = {10.3390/drones8110638}
+}</pre><button type="button" class="dt-copy">Copy</button></div>
+            </div>
+          </li>
+          <li class="dt-card" data-d="rc">
+            <div class="dt-body">
+              <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2024</span></p>
+              <h3><a href="https://github.com/AdnanMunir294/UAVD-CBRA">CBD</a><span>Complex Background Dataset for UAV Detection</span></h3>
+              <p class="dt-kf"><span>12,492 images</span><span>UAVs &amp; birds</span></p>
+              <p class="dt-desc" id="dd-11">CBD supports drone detection against cluttered scenes. It brings together 12,492 images drawn from several public UAV datasets, spanning urban, semi-urban, indoor, outdoor and mountain scenes in sunny and cloudy conditions, with birds included as distractors and annotations provided in YOLO and JSON formats. The same paper introduces the Sky Background Dataset (SBD, 3,888 sky-only images) and a Rainy Test Set (RTS), which adds synthetic drizzle, heavy and torrential rain to 2,528 test images to measure how detectors degrade in bad weather.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-11">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>Investigation of UAV Detection in Images With Complex Backgrounds and Rainy Artifacts</em>IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW), 2024</p>
+              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/file/d/1-BmnQe9LllS7EA4NhGGj-2f7MKZjfnR-/view?usp=sharing">Dataset</a><a class="dt-lk" href="https://openaccess.thecvf.com/content/WACV2024W/RWS/papers/Munir_Investigation_of_UAV_Detection_in_Images_With_Complex_Backgrounds_and_WACVW_2024_paper.pdf">Official PDF</a><a class="dt-lk" href="https://arxiv.org/abs/2305.16450">arXiv</a><a class="dt-lk" href="https://github.com/AdnanMunir294/UAVD-CBRA">Code</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-11">BibTeX</button></div>
+              <div class="dt-bib" id="db-11" hidden><pre>@InProceedings{Munir_2024_WACV,
+  author = {Munir, Adnan and Siddiqui, Abdul Jabbar and Anwar, Saeed},
+  title = {Investigation of UAV Detection in Images With Complex Backgrounds and Rainy Artifacts},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshops},
+  month = {January},
+  year = {2024},
+  pages = {221-230}
 }</pre><button type="button" class="dt-copy">Copy</button></div>
             </div>
           </li>
           <li class="dt-card" data-d="lm">
-            <div class="dt-media" style="--pos:50% 0%"><img src="/images/datasets/ssid.jpg" alt="An image sequence from SSID with captions and a written story" loading="lazy" decoding="async" width="1100" height="797"><button type="button" class="dt-zb" aria-label="Enlarge image: An image sequence from SSID with captions and a written story" data-cap="An image sequence from SSID with captions and a written story"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-lm">Language &amp; multimodal</span><span class="dt-yr">2023</span></p>
               <h3><a href="https://ieee-dataport.org/documents/sequential-storytelling-image-dataset-ssid">SSID</a><span>Sequential Storytelling Image Dataset</span></h3>
               <p class="dt-kf"><span>17,365 images</span><span>13,892 stories</span></p>
-              <p class="dt-desc" id="dd-5">Visual Storytelling Task (VST) takes a set of images as input and aims to generate a coherent story relevant to the input images. We collected and manually annotated images from publicly available documentaries, lifestyles, and movies. In summary, the SSID dataset has 17,365 images of 3,473 unique sets of five images. Each set of images is associated with four ground truths, resulting in 13,892 unique ground truths (i.e., written stories). Each ground truth is composed of five connected sentences written as a story.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-5">Read more</button>
+              <p class="dt-desc" id="dd-12">Visual Storytelling Task (VST) takes a set of images as input and aims to generate a coherent story relevant to the input images. We collected and manually annotated images from publicly available documentaries, lifestyles, and movies. In summary, the SSID dataset has 17,365 images of 3,473 unique sets of five images. Each set of images is associated with four ground truths, resulting in 13,892 unique ground truths (i.e., written stories). Each ground truth is composed of five connected sentences written as a story.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-12">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>Sequential Vision to Language as Story: A Storytelling Dataset and Benchmarking</em>IEEE Access, 2023</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://ieee-dataport.org/documents/sequential-storytelling-image-dataset-ssid">Dataset</a><a class="dt-lk" href="https://ieeexplore.ieee.org/document/10177150">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-5">BibTeX</button></div>
-              <div class="dt-bib" id="db-5" hidden><pre>@article{Malakan2023SSID,
+              <div class="dt-links"><a class="dt-lk pri" href="https://ieee-dataport.org/documents/sequential-storytelling-image-dataset-ssid">Dataset</a><a class="dt-lk" href="https://ieeexplore.ieee.org/document/10177150">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-12">BibTeX</button></div>
+              <div class="dt-bib" id="db-12" hidden><pre>@article{Malakan2023SSID,
  author={Malakan, Zainy M. and Anwar, Saeed and Hassan, Ghulam Mubashar and Mian, Ajmal},
   journal={IEEE Access}, 
   title={Sequential Vision to Language as Story: A Storytelling Dataset and Benchmarking}, 
@@ -264,16 +368,15 @@ html{scroll-behavior:smooth}
             </div>
           </li>
           <li class="dt-card" data-d="3d">
-            <div class="dt-media art" aria-hidden="true"><svg class="dt-cv" viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="dg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#1f3a5f"/></linearGradient></defs><rect width="400" height="150" fill="url(#dg6)"/><circle cx="284" cy="10" r="2.2" fill="#fff" opacity="0.45"/><circle cx="138" cy="98" r="1.6" fill="#fff" opacity="0.55"/><circle cx="189" cy="6" r="1.6" fill="#fff" opacity="0.45"/><circle cx="256" cy="84" r="2.2" fill="#fff" opacity="0.45"/><circle cx="18" cy="7" r="1.0" fill="#fff" opacity="0.55"/><circle cx="323" cy="35" r="1.6" fill="#fff" opacity="0.15"/><circle cx="186" cy="68" r="1.6" fill="#fff" opacity="0.55"/><circle cx="97" cy="106" r="1.6" fill="#fff" opacity="0.35"/><circle cx="36" cy="19" r="1.6" fill="#fff" opacity="0.45"/><circle cx="184" cy="97" r="1.0" fill="#fff" opacity="0.25"/><circle cx="373" cy="65" r="2.2" fill="#fff" opacity="0.15"/><circle cx="118" cy="118" r="1.6" fill="#fff" opacity="0.55"/><circle cx="385" cy="126" r="1.0" fill="#fff" opacity="0.55"/><circle cx="44" cy="19" r="1.6" fill="#fff" opacity="0.35"/><circle cx="263" cy="117" r="1.0" fill="#fff" opacity="0.15"/><circle cx="253" cy="140" r="1.0" fill="#fff" opacity="0.35"/><circle cx="156" cy="28" r="1.6" fill="#fff" opacity="0.55"/><circle cx="250" cy="16" r="1.6" fill="#fff" opacity="0.35"/><circle cx="248" cy="74" r="1.0" fill="#fff" opacity="0.45"/><circle cx="278" cy="57" r="1.0" fill="#fff" opacity="0.45"/><circle cx="338" cy="125" r="2.2" fill="#fff" opacity="0.15"/><circle cx="380" cy="18" r="2.2" fill="#fff" opacity="0.35"/><circle cx="38" cy="81" r="2.2" fill="#fff" opacity="0.35"/><circle cx="261" cy="149" r="2.2" fill="#fff" opacity="0.35"/><circle cx="337" cy="52" r="1.6" fill="#fff" opacity="0.45"/><circle cx="33" cy="40" r="1.0" fill="#fff" opacity="0.15"/><circle cx="196" cy="73" r="1.0" fill="#fff" opacity="0.15"/><circle cx="295" cy="36" r="2.2" fill="#fff" opacity="0.15"/><circle cx="57" cy="14" r="1.0" fill="#fff" opacity="0.55"/><circle cx="108" cy="67" r="2.2" fill="#fff" opacity="0.35"/><circle cx="369" cy="100" r="1.0" fill="#fff" opacity="0.55"/><circle cx="6" cy="88" r="1.0" fill="#fff" opacity="0.15"/><circle cx="268" cy="146" r="2.2" fill="#fff" opacity="0.45"/><circle cx="122" cy="84" r="1.6" fill="#fff" opacity="0.55"/><circle cx="173" cy="142" r="1.6" fill="#fff" opacity="0.45"/><circle cx="240" cy="70" r="2.2" fill="#fff" opacity="0.45"/><circle cx="2" cy="143" r="1.0" fill="#fff" opacity="0.55"/><circle cx="307" cy="21" r="1.6" fill="#fff" opacity="0.15"/><circle cx="170" cy="54" r="1.6" fill="#fff" opacity="0.55"/><circle cx="81" cy="92" r="1.6" fill="#fff" opacity="0.35"/><circle cx="20" cy="5" r="1.6" fill="#fff" opacity="0.45"/><circle cx="168" cy="83" r="1.0" fill="#fff" opacity="0.25"/><circle cx="357" cy="51" r="2.2" fill="#fff" opacity="0.15"/><circle cx="102" cy="104" r="1.6" fill="#fff" opacity="0.55"/><circle cx="369" cy="112" r="1.0" fill="#fff" opacity="0.55"/><circle cx="28" cy="5" r="1.6" fill="#fff" opacity="0.35"/><circle cx="247" cy="103" r="1.0" fill="#fff" opacity="0.15"/><circle cx="237" cy="126" r="1.0" fill="#fff" opacity="0.35"/><circle cx="140" cy="14" r="1.6" fill="#fff" opacity="0.55"/><circle cx="234" cy="2" r="1.6" fill="#fff" opacity="0.35"/><circle cx="232" cy="60" r="1.0" fill="#fff" opacity="0.45"/><circle cx="262" cy="43" r="1.0" fill="#fff" opacity="0.45"/><circle cx="322" cy="111" r="2.2" fill="#fff" opacity="0.15"/><circle cx="364" cy="4" r="2.2" fill="#fff" opacity="0.35"/><circle cx="22" cy="67" r="2.2" fill="#fff" opacity="0.35"/><circle cx="245" cy="135" r="2.2" fill="#fff" opacity="0.35"/><circle cx="321" cy="38" r="1.6" fill="#fff" opacity="0.45"/><circle cx="17" cy="26" r="1.0" fill="#fff" opacity="0.15"/><circle cx="180" cy="59" r="1.0" fill="#fff" opacity="0.15"/><circle cx="279" cy="22" r="2.2" fill="#fff" opacity="0.15"/><circle cx="41" cy="0" r="1.0" fill="#fff" opacity="0.55"/><circle cx="92" cy="53" r="2.2" fill="#fff" opacity="0.35"/><circle cx="353" cy="86" r="1.0" fill="#fff" opacity="0.55"/><circle cx="390" cy="74" r="1.0" fill="#fff" opacity="0.15"/><circle cx="252" cy="132" r="2.2" fill="#fff" opacity="0.45"/><circle cx="106" cy="70" r="1.6" fill="#fff" opacity="0.55"/><circle cx="157" cy="128" r="1.6" fill="#fff" opacity="0.45"/><circle cx="224" cy="56" r="2.2" fill="#fff" opacity="0.45"/><circle cx="386" cy="129" r="1.0" fill="#fff" opacity="0.55"/><circle cx="291" cy="7" r="1.6" fill="#fff" opacity="0.15"/></svg></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-3d">3D &amp; depth</span><span class="dt-yr">2023</span></p>
               <h3><a href="https://ieee-dataport.org/documents/swan-0">Swan</a><span>A Point Cloud Dataset</span></h3>
               <p class="dt-kf"><span>Outdoor LiDAR</span><span>3 annotation tasks</span></p>
-              <p class="dt-desc" id="dd-6">A large-scale outdoor point cloud dataset captured with LiDAR sensor and annotated manually for semantic segmentation, instance segmentation and object detection.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-6">Read more</button>
+              <p class="dt-desc" id="dd-13">A large-scale outdoor point cloud dataset captured with LiDAR sensor and annotated manually for semantic segmentation, instance segmentation and object detection.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-13">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>SAT3D: Slot Attention Transformer for 3D Point Cloud Semantic Segmentation</em>IEEE Transactions on Intelligent Transportation Systems, 2023</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/drive/folders/11bcx8CizpAFohJy6HS2g032bbzVzGN7a?usp=sharing">Dataset</a><a class="dt-lk" href="https://ieeexplore.ieee.org/document/10046141">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-6">BibTeX</button></div>
-              <div class="dt-bib" id="db-6" hidden><pre>@article{Ibrahim2023SWAN,
+              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/drive/folders/11bcx8CizpAFohJy6HS2g032bbzVzGN7a?usp=sharing">Dataset</a><a class="dt-lk" href="https://ieeexplore.ieee.org/document/10046141">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-13">BibTeX</button></div>
+              <div class="dt-bib" id="db-13" hidden><pre>@article{Ibrahim2023SWAN,
   author={Ibrahim, Muhammad and Akhtar, Naveed and Anwar, Saeed and Mian, Ajmal},
   journal={IEEE Transactions on Intelligent Transportation Systems}, 
   title={SAT3D: Slot Attention Transformer for 3D Point Cloud Semantic Segmentation}, 
@@ -283,16 +386,15 @@ html{scroll-behavior:smooth}
             </div>
           </li>
           <li class="dt-card" data-d="3d">
-            <div class="dt-media art" aria-hidden="true"><svg class="dt-cv" viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="dg7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#1f3a5f"/></linearGradient></defs><rect width="400" height="150" fill="url(#dg7)"/><circle cx="55" cy="25" r="1.6" fill="#fff" opacity="0.35"/><circle cx="398" cy="88" r="1.6" fill="#fff" opacity="0.25"/><circle cx="227" cy="6" r="1.0" fill="#fff" opacity="0.25"/><circle cx="32" cy="29" r="2.2" fill="#fff" opacity="0.45"/><circle cx="307" cy="132" r="1.6" fill="#fff" opacity="0.15"/><circle cx="254" cy="135" r="1.6" fill="#fff" opacity="0.25"/><circle cx="246" cy="78" r="2.2" fill="#fff" opacity="0.55"/><circle cx="130" cy="91" r="2.2" fill="#fff" opacity="0.45"/><circle cx="393" cy="69" r="1.6" fill="#fff" opacity="0.45"/><circle cx="147" cy="82" r="2.2" fill="#fff" opacity="0.45"/><circle cx="397" cy="55" r="1.6" fill="#fff" opacity="0.45"/><circle cx="84" cy="18" r="1.6" fill="#fff" opacity="0.35"/><circle cx="120" cy="61" r="1.6" fill="#fff" opacity="0.25"/><circle cx="361" cy="14" r="1.0" fill="#fff" opacity="0.55"/><circle cx="170" cy="27" r="2.2" fill="#fff" opacity="0.55"/><circle cx="263" cy="95" r="1.0" fill="#fff" opacity="0.35"/><circle cx="388" cy="58" r="1.6" fill="#fff" opacity="0.25"/><circle cx="320" cy="56" r="1.6" fill="#fff" opacity="0.15"/><circle cx="202" cy="134" r="2.2" fill="#fff" opacity="0.15"/><circle cx="104" cy="117" r="1.6" fill="#fff" opacity="0.15"/><circle cx="234" cy="60" r="2.2" fill="#fff" opacity="0.35"/><circle cx="129" cy="48" r="1.0" fill="#fff" opacity="0.15"/><circle cx="122" cy="1" r="2.2" fill="#fff" opacity="0.45"/><circle cx="314" cy="114" r="1.6" fill="#fff" opacity="0.15"/><circle cx="367" cy="7" r="2.2" fill="#fff" opacity="0.45"/><circle cx="347" cy="30" r="1.6" fill="#fff" opacity="0.55"/><circle cx="137" cy="128" r="1.0" fill="#fff" opacity="0.45"/><circle cx="294" cy="86" r="2.2" fill="#fff" opacity="0.35"/><circle cx="346" cy="104" r="1.6" fill="#fff" opacity="0.35"/><circle cx="367" cy="62" r="1.6" fill="#fff" opacity="0.35"/><circle cx="315" cy="15" r="1.6" fill="#fff" opacity="0.45"/><circle cx="8" cy="123" r="2.2" fill="#fff" opacity="0.25"/><circle cx="39" cy="11" r="1.6" fill="#fff" opacity="0.35"/><circle cx="382" cy="74" r="1.6" fill="#fff" opacity="0.25"/><circle cx="211" cy="142" r="1.0" fill="#fff" opacity="0.25"/><circle cx="16" cy="15" r="2.2" fill="#fff" opacity="0.45"/><circle cx="291" cy="118" r="1.6" fill="#fff" opacity="0.15"/><circle cx="238" cy="121" r="1.6" fill="#fff" opacity="0.25"/><circle cx="230" cy="64" r="2.2" fill="#fff" opacity="0.55"/><circle cx="114" cy="77" r="2.2" fill="#fff" opacity="0.45"/><circle cx="377" cy="55" r="1.6" fill="#fff" opacity="0.45"/><circle cx="131" cy="68" r="2.2" fill="#fff" opacity="0.45"/><circle cx="381" cy="41" r="1.6" fill="#fff" opacity="0.45"/><circle cx="68" cy="4" r="1.6" fill="#fff" opacity="0.35"/><circle cx="104" cy="47" r="1.6" fill="#fff" opacity="0.25"/><circle cx="345" cy="0" r="1.0" fill="#fff" opacity="0.55"/><circle cx="154" cy="13" r="2.2" fill="#fff" opacity="0.55"/><circle cx="247" cy="81" r="1.0" fill="#fff" opacity="0.35"/><circle cx="372" cy="44" r="1.6" fill="#fff" opacity="0.25"/><circle cx="304" cy="42" r="1.6" fill="#fff" opacity="0.15"/><circle cx="186" cy="120" r="2.2" fill="#fff" opacity="0.15"/><circle cx="88" cy="103" r="1.6" fill="#fff" opacity="0.15"/><circle cx="218" cy="46" r="2.2" fill="#fff" opacity="0.35"/><circle cx="113" cy="34" r="1.0" fill="#fff" opacity="0.15"/><circle cx="106" cy="137" r="2.2" fill="#fff" opacity="0.45"/><circle cx="298" cy="100" r="1.6" fill="#fff" opacity="0.15"/><circle cx="351" cy="143" r="2.2" fill="#fff" opacity="0.45"/><circle cx="331" cy="16" r="1.6" fill="#fff" opacity="0.55"/><circle cx="121" cy="114" r="1.0" fill="#fff" opacity="0.45"/><circle cx="278" cy="72" r="2.2" fill="#fff" opacity="0.35"/><circle cx="330" cy="90" r="1.6" fill="#fff" opacity="0.35"/><circle cx="351" cy="48" r="1.6" fill="#fff" opacity="0.35"/><circle cx="299" cy="1" r="1.6" fill="#fff" opacity="0.45"/><circle cx="392" cy="109" r="2.2" fill="#fff" opacity="0.25"/><circle cx="23" cy="147" r="1.6" fill="#fff" opacity="0.35"/><circle cx="366" cy="60" r="1.6" fill="#fff" opacity="0.25"/><circle cx="195" cy="128" r="1.0" fill="#fff" opacity="0.25"/><circle cx="0" cy="1" r="2.2" fill="#fff" opacity="0.45"/><circle cx="275" cy="104" r="1.6" fill="#fff" opacity="0.15"/><circle cx="222" cy="107" r="1.6" fill="#fff" opacity="0.25"/></svg></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-3d">3D &amp; depth</span><span class="dt-yr">2023</span></p>
               <h3><a href="https://dx.doi.org/10.21227/s2p2-2e66">Perth-WA Localization</a><span>A Point Cloud Dataset</span></h3>
               <p class="dt-kf"><span>City-scale LiDAR map</span><span>6DoF ground truth</span></p>
-              <p class="dt-desc" id="dd-7">LiDAR 3D point cloud map of Perth, Western Australia is provided with ground truth locations and orientations.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-7">Read more</button>
+              <p class="dt-desc" id="dd-14">LiDAR 3D point cloud map of Perth, Western Australia is provided with ground truth locations and orientations.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-14">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>Slice Transformer and Self-supervised Learning for 6DoF Localization in 3D Point Cloud Maps</em>IEEE International Conference on Robotics and Automation (ICRA), 2023</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/drive/folders/11bcx8CizpAFohJy6HS2g032bbzVzGN7a?usp=sharing">Dataset</a><a class="dt-lk" href="https://arxiv.org/abs/2301.08957">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-7">BibTeX</button></div>
-              <div class="dt-bib" id="db-7" hidden><pre>@article{Ibrahim2023slice,
+              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/drive/folders/11bcx8CizpAFohJy6HS2g032bbzVzGN7a?usp=sharing">Dataset</a><a class="dt-lk" href="https://arxiv.org/abs/2301.08957">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-14">BibTeX</button></div>
+              <div class="dt-bib" id="db-14" hidden><pre>@article{Ibrahim2023slice,
   title={Slice Transformer and Self-supervised Learning for 6DoF Localization in 3D Point Cloud Maps},
   author={Ibrahim, Muhammad and Akhtar, Naveed and Anwar, Saeed and Wise, Michael and Mian, Ajmal},
   journal={IEEE International Conference on Robotics and Automation (ICRA)},
@@ -301,16 +403,15 @@ html{scroll-behavior:smooth}
             </div>
           </li>
           <li class="dt-card" data-d="rc">
-            <div class="dt-media art" aria-hidden="true"><svg class="dt-cv" viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="dg8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="400" height="150" fill="url(#dg8)"/><rect x="117" y="23" width="67" height="74" rx="3" fill="none" stroke="#fff" stroke-opacity="0.18" stroke-width="2" stroke-dasharray="none"/><rect x="190" y="35" width="49" height="41" rx="3" fill="none" stroke="#fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="6 4"/><rect x="158" y="27" width="106" height="57" rx="3" fill="none" stroke="#fff" stroke-opacity="0.32" stroke-width="2" stroke-dasharray="none"/><rect x="114" y="34" width="69" height="78" rx="3" fill="none" stroke="#fff" stroke-opacity="0.39" stroke-width="2" stroke-dasharray="6 4"/></svg></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2022</span></p>
               <h3><a href="https://drive.google.com/drive/folders/11bcx8CizpAFohJy6HS2g032bbzVzGN7a?usp=sharing">FGBR</a><span>Fine Grained Butterflies and Reef Fish Dataset</span></h3>
               <p class="dt-kf"><span>6,438 images</span><span>100 species</span></p>
-              <p class="dt-desc" id="dd-8">FGBR contains two species, butterfly and reef fish. The butterfly dataset has 50 species, consisting of 2613 images, most of which are ecological. The reef fish also has 50 species. Most of the 3825 images in the reef fish dataset are ecological.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-8">Read more</button>
+              <p class="dt-desc" id="dd-15">FGBR contains two species, butterfly and reef fish. The butterfly dataset has 50 species, consisting of 2613 images, most of which are ecological. The reef fish also has 50 species. Most of the 3825 images in the reef fish dataset are ecological.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-15">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>Towards Low-Cost Classification for Novel Fine-Grained Datasets</em>Electronics, 2022</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/drive/folders/11bcx8CizpAFohJy6HS2g032bbzVzGN7a?usp=sharing">Dataset</a><a class="dt-lk" href="https://www.mdpi.com/2079-9292/11/17/2701">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-8">BibTeX</button></div>
-              <div class="dt-bib" id="db-8" hidden><pre>@article{Anwar2022FGBR,
+              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/drive/folders/11bcx8CizpAFohJy6HS2g032bbzVzGN7a?usp=sharing">Dataset</a><a class="dt-lk" href="https://www.mdpi.com/2079-9292/11/17/2701">Official PDF</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-15">BibTeX</button></div>
+              <div class="dt-bib" id="db-15" hidden><pre>@article{Anwar2022FGBR,
   title={Towards Low-Cost Classification for Novel Fine-Grained Datasets},
   author={Anwar, Abbas and Anwar, Hafeez and Anwar, Saeed},
   journal={Electronics},
@@ -319,74 +420,73 @@ html{scroll-behavior:smooth}
             </div>
           </li>
           <li class="dt-card" data-d="rc">
-            <div class="dt-media" style="--pos:50% 50%"><img src="/images/datasets/anubis.jpg" alt="ANUBIS dataset logo" loading="lazy" decoding="async" width="1024" height="1024"><button type="button" class="dt-zb" aria-label="Enlarge image: ANUBIS dataset logo" data-cap="ANUBIS dataset logo"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2022</span></p>
-              <h3><a href="http://hcc-workshop.anu.edu.au/webs/anu101/home">ANUBIS</a><span>Australian National University Benchmarking Indoor Skeleton</span></h3>
-              <p class="dt-kf"><span>80 actions</span><span>Skeleton data</span></p>
-              <p class="dt-desc" id="dd-9">ANUBIS is a large-scale human skeleton dataset containing 80 actions. Compared with previously collected datasets, ANUBIS is advantageous in the following four aspects: (1) employing more recently released sensors; (2) containing novel back view; (3) encouraging high enthusiasm of subjects; (4) including actions of the COVID pandemic era.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-9">Read more</button>
-              <p class="dt-paper"><span>Paper</span><em>ANUBIS: Skeleton Action Recognition Dataset, Review, and Benchmark</em>arXiv preprint, 2022</p>
-              <div class="dt-links"><a class="dt-lk pri" href="http://hcc-workshop.anu.edu.au/webs/anu101/home">Dataset</a><a class="dt-lk" href="https://arxiv.org/abs/2205.02071">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-9">BibTeX</button></div>
-              <div class="dt-bib" id="db-9" hidden><pre>@article{Qin2022ANUBIS,
-  title={ANUBIS: Skeleton Action Recognition Dataset, Review, and Benchmark},
-  author={Qin, Zhenyue and Liu, Yang and Perera, Madhawa and Gedeon, Tom and Ji, Pan and Kim, Dongwoo and Anwar, Saeed},
-  journal={arXiv preprint arXiv:2205.02071},
-  year={2022}
+              <h3><a href="https://yliu1082.github.io/ANUBIS/">ANUBIS</a><span>Australian National University Benchmarking Indoor Skeleton</span></h3>
+              <p class="dt-kf"><span>102 actions</span><span>66,232 clips</span></p>
+              <p class="dt-desc" id="dd-16">ANUBIS is a large-scale skeleton action recognition benchmark with 102 action classes performed by 80 subjects, totalling 66,232 clips recorded with Azure Kinect sensors as 32-joint 3D skeletons. It adds systematic back-view coverage, multi-person interactions, fine-grained and aggressive actions, and contemporary social behaviours, and it remains far from saturated: the best reported top-1 accuracy is around 60%, against more than 90% on the NTU benchmarks.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-16">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>Representation-Centric Survey of Supervised Skeletal Action Recognition and the New Benchmark</em>Pattern Recognition, 2026</p>
+              <div class="dt-links"><a class="dt-lk pri" href="https://huggingface.co/datasets/Khat865/Anubis-skeleton">Dataset</a><a class="dt-lk" href="https://www.sciencedirect.com/science/article/pii/S0031320326011052">Official PDF</a><a class="dt-lk" href="https://arxiv.org/abs/2205.02071">arXiv</a><a class="dt-lk" href="https://github.com/yliu1082/ANUBIS-Sourcecode">Code</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-16">BibTeX</button></div>
+              <div class="dt-bib" id="db-16" hidden><pre>@article{Liu2026ANUBIS,
+  title = {Representation-centric survey of supervised skeletal action recognition and the new benchmark},
+  author = {Liu, Yang and Yang, Jiyao and Perera, Madhawa and Ji, Pan and Kim, Dongwoo and Xu, Min and Wang, Tianyang and Anwar, Saeed and Gedeon, Tom and Wang, Lei and Qin, Zhenyue},
+  journal = {Pattern Recognition},
+  pages = {114140},
+  year = {2026},
+  issn = {0031-3203},
+  doi = {10.1016/j.patcog.2026.114140}
 }</pre><button type="button" class="dt-copy">Copy</button></div>
             </div>
           </li>
           <li class="dt-card" data-d="rc">
-            <div class="dt-media" style="--pos:50% 30%"><img src="/images/datasets/dvlpd.jpg" alt="Sample licence plates from DVLPD" loading="lazy" decoding="async" width="595" height="317"><button type="button" class="dt-zb" aria-label="Enlarge image: Sample licence plates from DVLPD" data-cap="Sample licence plates from DVLPD"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2022</span></p>
               <h3><a href="https://github.com/usama-x930/VT-LPR">DVLPD</a><span>Diverse Vehicle and License Plates Dataset</span></h3>
               <p class="dt-kf"><span>10k images</span><span>Vehicles &amp; plates</span></p>
-              <p class="dt-desc" id="dd-10">We collect a novel dataset that has 10k images of Pakistani vehicles. These vehicles are trucks, buses, vans, carry vans, and cars. There are two sub-classes of trucks called type1 trucks having a single axle and type2 trucks with double axles. After dataset collection, the pre-processing steps and ground truth generation are performed to train and test the CNN models.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-10">Read more</button>
-              <p class="dt-paper"><span>Paper</span><em>Vehicle and License Plate Recognition with Novel Dataset for Toll Collection</em>arXiv preprint, 2022</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/usama-x930/VT-LPR">Dataset</a><a class="dt-lk" href="https://arxiv.org/pdf/2202.05631.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-10">BibTeX</button></div>
-              <div class="dt-bib" id="db-10" hidden><pre>@InProceedings{Usama2022VTLPR,
-      title={Vehicle and License Plate Recognition with Novel Dataset for Toll Collection}, 
-      author={Muhammad Usama and Hafeez Anwar and Muhammad Muaz Shahid and Abbas Anwar and Saeed Anwar and Helmuth Hlavacs},
-      year={2022},
-      eprint={2202.05631},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV}
+              <p class="dt-desc" id="dd-17">We collect a novel dataset that has 10k images of Pakistani vehicles. These vehicles are trucks, buses, vans, carry vans, and cars. There are two sub-classes of trucks called type1 trucks having a single axle and type2 trucks with double axles. After dataset collection, the pre-processing steps and ground truth generation are performed to train and test the CNN models.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-17">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>Vehicle and License Plate Recognition with Novel Dataset for Toll Collection</em>Pattern Analysis and Applications, 2025</p>
+              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/usama-x930/VT-LPR">Dataset</a><a class="dt-lk" href="https://arxiv.org/pdf/2202.05631.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-17">BibTeX</button></div>
+              <div class="dt-bib" id="db-17" hidden><pre>@article{Usama2025VTLPR,
+  title = {Vehicle and License Plate Recognition with Novel Dataset for Toll Collection},
+  author = {Usama, Muhammad and Anwar, Hafeez and Anwar, Abbas and Anwar, Saeed},
+  journal = {Pattern Analysis and Applications},
+  year = {2024},
+  publisher = {Springer}
 }</pre><button type="button" class="dt-copy">Copy</button></div>
             </div>
           </li>
           <li class="dt-card" data-d="ll uw">
-            <div class="dt-media" style="--pos:50% 50%"><img src="/images/datasets/hicrd.jpg" alt="Underwater coral reef image from HICRD" loading="lazy" decoding="async" width="1100" height="585"><button type="button" class="dt-zb" aria-label="Enlarge image: Underwater coral reef image from HICRD" data-cap="Underwater coral reef image from HICRD"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-ll">Low-level vision</span><span class="dt-dom d-uw">Underwater</span><span class="dt-yr">2021</span></p>
               <h3><a href="https://data.csiro.au/collections/collection/CIcsiro:49488">HICRD</a><span>Heron Island Coral Reef Dataset</span></h3>
               <p class="dt-kf"><span>11,676 images</span><span>Real coral reef</span></p>
-              <p class="dt-desc" id="dd-11">Heron Island Coral Reef Dataset (HICRD) contains 6003 low-quality images, 3673 good-quality images, and 2000 restored images. We use low-quality images and restored images as the unpaired training set (trainA + trainB). In contrast, the paired training set contains good-quality (trainA_paired) images and corresponding restored images (trainB_paired). The test set contains 300 good-quality images (testA) as well as 300 paired restored images (testB) as ground truth. All images are in 1842 x 980 resolution. The copyright belongs to CSIRO (Commonwealth Scientific and Industrial Research Organisation).</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-11">Read more</button>
-              <p class="dt-paper"><span>Paper</span><em>Underwater Image Restoration via Contrastive Learning and a Real-world Dataset</em>arXiv preprint, 2021</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://data.csiro.au/collections/collection/CIcsiro:49488">Dataset</a><a class="dt-lk" href="https://arxiv.org/pdf/2106.10718.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-11">BibTeX</button></div>
-              <div class="dt-bib" id="db-11" hidden><pre>@article{Han2021CWR,
-      title={Underwater Image Restoration via Contrastive Learning and a Real-world Dataset}, 
-      author={Junlin Han and Mehrdad Shoeiby and Tim Malthus and Elizabeth Botha and Janet Anstee and Saeed Anwar and Ran Wei and Mohammad Ali Armin and Hongdong Li and Lars Petersson},
-      year={2021},
-      eprint={2106.10718},
-      archivePrefix={arXiv},
-      primaryClass={eess.IV}
+              <p class="dt-desc" id="dd-18">Heron Island Coral Reef Dataset (HICRD) contains 6003 low-quality images, 3673 good-quality images, and 2000 restored images. We use low-quality images and restored images as the unpaired training set (trainA + trainB). In contrast, the paired training set contains good-quality (trainA_paired) images and corresponding restored images (trainB_paired). The test set contains 300 good-quality images (testA) as well as 300 paired restored images (testB) as ground truth. All images are in 1842 x 980 resolution. The copyright belongs to CSIRO (Commonwealth Scientific and Industrial Research Organisation).</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-18">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>Underwater Image Restoration via Contrastive Learning and a Real-world Dataset</em>Remote Sensing, 2022</p>
+              <div class="dt-links"><a class="dt-lk pri" href="https://data.csiro.au/collections/collection/CIcsiro:49488">Dataset</a><a class="dt-lk" href="https://www.mdpi.com/2072-4292/14/17/4297">Official PDF</a><a class="dt-lk" href="https://arxiv.org/pdf/2106.10718.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-18">BibTeX</button></div>
+              <div class="dt-bib" id="db-18" hidden><pre>@article{Han2022CWR,
+  title = {Underwater Image Restoration via Contrastive Learning and a Real-world Dataset},
+  author = {Han, Junlin and Shoeiby, Mehrdad and Malthus, Tim and Botha, Elizabeth and Anstee, Janet and Anwar, Saeed and Wei, Ran and Armin, Mohammad Ali and Li, Hongdong and Petersson, Lars},
+  journal = {Remote Sensing},
+  volume = {14},
+  number = {17},
+  pages = {4297},
+  year = {2022}
 }</pre><button type="button" class="dt-copy">Copy</button></div>
             </div>
           </li>
           <li class="dt-card" data-d="rc">
-            <div class="dt-media art" aria-hidden="true"><svg class="dt-cv" viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="dg12" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="400" height="150" fill="url(#dg12)"/><rect x="211" y="99" width="102" height="38" rx="3" fill="none" stroke="#fff" stroke-opacity="0.18" stroke-width="2" stroke-dasharray="none"/><rect x="168" y="24" width="96" height="67" rx="3" fill="none" stroke="#fff" stroke-opacity="0.25" stroke-width="2" stroke-dasharray="6 4"/><rect x="111" y="92" width="60" height="60" rx="3" fill="none" stroke="#fff" stroke-opacity="0.32" stroke-width="2" stroke-dasharray="none"/><rect x="149" y="55" width="42" height="73" rx="3" fill="none" stroke="#fff" stroke-opacity="0.39" stroke-width="2" stroke-dasharray="6 4"/></svg></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-rc">Recognition</span><span class="dt-yr">2021</span></p>
               <h3><a href="https://drive.google.com/open?id=1Bxcoesctd4xKvXMdgbLTCLjQkC7peQPY">RRCD</a><span>Roman Republican Coin Dataset</span></h3>
               <p class="dt-kf"><span>228 motif classes</span><span>Roman coins</span></p>
-              <p class="dt-desc" id="dd-12">Based on Crawford’s work, we collect the most diverse and extensive image dataset of the reverse sides. For most of the Roman Republic coin classes, the ob- verse side depicts more discriminative information than the observe side. Our dataset has 228 motif classes, including 100 classes that are the main classes for training and testing, which we call the main dataset RRCD-Main. The images of the additional 128 classes constitute the disjoint test set, RRCD-Disjoint, which we allocate to assess the generalization ability of our models.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-12">Read more</button>
+              <p class="dt-desc" id="dd-19">Based on Crawford’s work, we collect the most diverse and extensive image dataset of the reverse sides. For most of the Roman Republic coin classes, the ob- verse side depicts more discriminative information than the observe side. Our dataset has 228 motif classes, including 100 classes that are the main classes for training and testing, which we call the main dataset RRCD-Main. The images of the additional 128 classes constitute the disjoint test set, RRCD-Disjoint, which we allocate to assess the generalization ability of our models.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-19">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>Deep Ancient Roman Republican Coin Classification via Feature Fusion and Attention</em>Pattern Recognition, 2021</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/open?id=1Bxcoesctd4xKvXMdgbLTCLjQkC7peQPY">Dataset</a><a class="dt-lk" href="https://www.sciencedirect.com/science/article/pii/S0031320321000583">Official PDF</a><a class="dt-lk" href="https://arxiv.org/pdf/1908.09428.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-12">BibTeX</button></div>
-              <div class="dt-bib" id="db-12" hidden><pre>@article{Anwar2021CoinNet,
+              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/open?id=1Bxcoesctd4xKvXMdgbLTCLjQkC7peQPY">Dataset</a><a class="dt-lk" href="https://www.sciencedirect.com/science/article/pii/S0031320321000583">Official PDF</a><a class="dt-lk" href="https://arxiv.org/pdf/1908.09428.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-19">BibTeX</button></div>
+              <div class="dt-bib" id="db-19" hidden><pre>@article{Anwar2021CoinNet,
 title = {Deep Ancient Roman Republican Coin Classification via Feature Fusion and Attention},
 journal = {Pattern Recognition},
 pages = {107871},
@@ -399,16 +499,15 @@ author = {Hafeez Anwar and Saeed Anwar and Sebastian Zambanini and Fatih Porikli
             </div>
           </li>
           <li class="dt-card" data-d="3d">
-            <div class="dt-media" style="--pos:50% 50%"><img src="/images/datasets/smd.jpg" alt="An indoor scene and its depth map from the Synthetic Monocular Depth work" loading="lazy" decoding="async" width="1100" height="408"><button type="button" class="dt-zb" aria-label="Enlarge image: An indoor scene and its depth map from the Synthetic Monocular Depth work" data-cap="An indoor scene and its depth map from the Synthetic Monocular Depth work"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-3d">3D &amp; depth</span><span class="dt-yr">2021</span></p>
               <h3><a href="../codes/DefocusingImagesCode.zip">SMD</a><span>Synthetic Monocular Depth</span></h3>
               <p class="dt-kf"><span>Synthetic depth</span><span>Generation code</span></p>
-              <p class="dt-desc" id="dd-13">Synthetic Monocular Depth generation code.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-13">Read more</button>
+              <p class="dt-desc" id="dd-20">Synthetic Monocular Depth generation code.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-20">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>Deblur and deep depth from single defocus image</em>Machine Vision and Applications, 2021</p>
-              <div class="dt-links"><a class="dt-lk" href="https://link.springer.com/article/10.1007/s00138-020-01162-6">Official PDF</a><a class="dt-lk" href="../papers/MVA2020_Defocus.pdf">arXiv</a><a class="dt-lk" href="../codes/DefocusingImagesCode.zip">Code</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-13">BibTeX</button></div>
-              <div class="dt-bib" id="db-13" hidden><pre>@article{Anwar2021DefocusMVA,
+              <div class="dt-links"><a class="dt-lk" href="https://link.springer.com/article/10.1007/s00138-020-01162-6">Official PDF</a><a class="dt-lk" href="../papers/MVA2020_Defocus.pdf">arXiv</a><a class="dt-lk" href="../codes/DefocusingImagesCode.zip">Code</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-20">BibTeX</button></div>
+              <div class="dt-bib" id="db-20" hidden><pre>@article{Anwar2021DefocusMVA,
   title={Deblur and deep depth from single defocus image},
   author={Anwar, Saeed and Hayder, Zeeshan and Porikli, Fatih},
   journal={Machine Vision and Applications},
@@ -421,34 +520,36 @@ author = {Hafeez Anwar and Saeed Anwar and Sebastian Zambanini and Fatih Porikli
             </div>
           </li>
           <li class="dt-card" data-d="ll">
-            <div class="dt-media" style="--pos:50% 50%"><img src="/images/datasets/ncd.jpg" alt="Sample fruit and vegetable images from the Natural-Color Dataset" loading="lazy" decoding="async" width="1100" height="253"><button type="button" class="dt-zb" aria-label="Enlarge image: Sample fruit and vegetable images from the Natural-Color Dataset" data-cap="Sample fruit and vegetable images from the Natural-Color Dataset"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-ll">Low-level vision</span><span class="dt-yr">2020</span></p>
               <h3><a href="https://drive.google.com/file/d/1GpmEVNFn12bK0EoXK46FP3cXFUosomaG/view?usp=sharing">NCD</a><span>Natural-Color Dataset</span></h3>
               <p class="dt-kf"><span>723 images</span><span>20 categories</span></p>
-              <p class="dt-desc" id="dd-14">The Natural-Color Dataset (NCD) is an image colorization dataset where images are true to their colors. For example, a carrot will have an orange color in most images. Bananas will be either greenish or yellowish. It contains 723 images from the internet distributed in 20 categories. Each image has an object and a white background.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-14">Read more</button>
-              <p class="dt-paper"><span>Paper</span><em>Image Colorization: A Survey and Dataset</em>arXiv preprint, 2020</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/file/d/1GpmEVNFn12bK0EoXK46FP3cXFUosomaG/view?usp=sharing">Dataset (GrayScale Images)</a><a class="dt-lk pri" href="https://drive.google.com/file/d/1k_UvYzdrHbphW4UcbDb9jWB0ZQIAGEAo/view?usp=sharing">Dataset (Color GroundTruth)</a><a class="dt-lk" href="https://arxiv.org/pdf/2008.10774.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-14">BibTeX</button></div>
-              <div class="dt-bib" id="db-14" hidden><pre>@article{Anwar2020ColorSurvey,
-  title={Image Colorization: A Survey and Dataset},
-  author={Anwar, Saeed and Tahir, Muhammad and Li, Chongyi and Mian, Ajmal and Khan, Fahad Shahbaz and Muzaffar, Abdul Wahab},
-  journal={arXiv preprint arXiv:2008.10774},
-  year={2020}
+              <p class="dt-desc" id="dd-21">The Natural-Color Dataset (NCD) is an image colorization dataset where images are true to their colors. For example, a carrot will have an orange color in most images. Bananas will be either greenish or yellowish. It contains 723 images from the internet distributed in 20 categories. Each image has an object and a white background.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-21">Read more</button>
+              <p class="dt-paper"><span>Paper</span><em>Image Colorization: A Survey and Dataset</em>Information Fusion, 2025</p>
+              <div class="dt-links"><a class="dt-lk pri" href="https://drive.google.com/file/d/1GpmEVNFn12bK0EoXK46FP3cXFUosomaG/view?usp=sharing">Dataset (GrayScale Images)</a><a class="dt-lk pri" href="https://drive.google.com/file/d/1k_UvYzdrHbphW4UcbDb9jWB0ZQIAGEAo/view?usp=sharing">Dataset (Color GroundTruth)</a><a class="dt-lk" href="https://www.sciencedirect.com/science/article/pii/S1566253524004986">Official PDF</a><a class="dt-lk" href="https://arxiv.org/pdf/2008.10774.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-21">BibTeX</button></div>
+              <div class="dt-bib" id="db-21" hidden><pre>@article{Anwar2025ColorSurvey,
+  title = {Image Colorization: A Survey and Dataset},
+  author = {Anwar, Saeed and Tahir, Muhammad and Li, Chongyi and Mian, Ajmal and Khan, Fahad Shahbaz and Muzaffar, Abdul Wahab},
+  journal = {Information Fusion},
+  volume = {114},
+  pages = {102720},
+  year = {2025},
+  issn = {1566-2535},
+  publisher = {Elsevier}
 }</pre><button type="button" class="dt-copy">Copy</button></div>
             </div>
           </li>
           <li class="dt-card" data-d="ll uw">
-            <div class="dt-media" style="--pos:0% 50%"><img src="/images/datasets/uwsd.jpg" alt="A clear image, its depth map and synthesised underwater water types from UWSD" loading="lazy" decoding="async" width="1100" height="354"><button type="button" class="dt-zb" aria-label="Enlarge image: A clear image, its depth map and synthesised underwater water types from UWSD" data-cap="A clear image, its depth map and synthesised underwater water types from UWSD"><span class="dt-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span></button></div>
             <div class="dt-body">
               <p class="dt-meta"><span class="dt-dom d-ll">Low-level vision</span><span class="dt-dom d-uw">Underwater</span><span class="dt-yr">2019</span></p>
               <h3><a href="https://github.com/saeed-anwar/UWCNN#datasets">UWSD</a><span>UnderWater Synthetic Dataset</span></h3>
               <p class="dt-kf"><span>10 water types</span><span>Synthetic underwater</span></p>
-              <p class="dt-desc" id="dd-15">To synthesize underwater image degradation datasets, we use the attenuation coefficients described in Table 1 for the different water types of oceanic and coastal classes (i.e., I, IA, IB, II, and III for open ocean waters, and 1, 3, 5, 7, and 9 for coastal waters). Type-I is the clearest and Type-III is the most turbid open ocean water. Similarly, for coastal waters, Type-1 is the clearest and Type-9 is the most turbid. We apply Eqs (1) and (2) (please check the paper) to build ten types of underwater image datasets by using the RGB-D NYU-v2 indoor dataset which consists of 1449 images. To improve the quality of datasets, we crop the original size (480x640) of NYU-v2 to 460x620. This dataset is for non-commercial use only. The size of each dataset is 1.2GB.</p>
-              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-15">Read more</button>
+              <p class="dt-desc" id="dd-22">To synthesize underwater image degradation datasets, we use the attenuation coefficients described in Table 1 for the different water types of oceanic and coastal classes (i.e., I, IA, IB, II, and III for open ocean waters, and 1, 3, 5, 7, and 9 for coastal waters). Type-I is the clearest and Type-III is the most turbid open ocean water. Similarly, for coastal waters, Type-1 is the clearest and Type-9 is the most turbid. We apply Eqs (1) and (2) (please check the paper) to build ten types of underwater image datasets by using the RGB-D NYU-v2 indoor dataset which consists of 1449 images. To improve the quality of datasets, we crop the original size (480x640) of NYU-v2 to 460x620. This dataset is for non-commercial use only. The size of each dataset is 1.2GB.</p>
+              <button type="button" class="dt-more" aria-expanded="false" aria-controls="dd-22">Read more</button>
               <p class="dt-paper"><span>Paper</span><em>Underwater Scene Prior Inspired Deep Underwater Image and Video Enhancement</em>Pattern Recognition, 2019</p>
-              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/saeed-anwar/UWCNN#datasets">Dataset</a><a class="dt-lk" href="https://www.sciencedirect.com/science/article/pii/S0031320319303401#fig0010">Official PDF</a><a class="dt-lk" href="https://arxiv.org/pdf/1807.03528.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-15">BibTeX</button></div>
-              <div class="dt-bib" id="db-15" hidden><pre>@article{Anwar2019UWE,
+              <div class="dt-links"><a class="dt-lk pri" href="https://github.com/saeed-anwar/UWCNN#datasets">Dataset</a><a class="dt-lk" href="https://www.sciencedirect.com/science/article/pii/S0031320319303401#fig0010">Official PDF</a><a class="dt-lk" href="https://arxiv.org/pdf/1807.03528.pdf">arXiv</a><button type="button" class="dt-lk dt-bt" aria-expanded="false" aria-controls="db-22">BibTeX</button></div>
+              <div class="dt-bib" id="db-22" hidden><pre>@article{Anwar2019UWE,
   title={Underwater Scene Prior Inspired Deep Underwater Image and Video Enhancement},
   author={Li, Chongyi and Anwar, Saeed},
   journal={Pattern Recognition},
@@ -460,7 +561,6 @@ author = {Hafeez Anwar and Saeed Anwar and Sebastian Zambanini and Fatih Porikli
           </li>
       </ul>
       <p class="dt-empty" hidden>No datasets in this domain.</p>
-      <dialog class="dt-lb" aria-label="Dataset image"><figure><img src="" alt=""><figcaption></figcaption></figure><button type="button" class="dt-lb-x" aria-label="Close">&times;</button></dialog>
 
     </div><!-- /.article-wrap -->
   </article>
@@ -485,11 +585,7 @@ author = {Hafeez Anwar and Saeed Anwar and Sebastian Zambanini and Fatih Porikli
     empty.hidden=n>0;
   });});
   cards.forEach(function(d){var p=d.querySelector('.dt-desc'), b=d.querySelector('.dt-more'); if(p&&b&&p.scrollHeight<=p.clientHeight+2) b.hidden=true;});
-  var lb=root.querySelector('.dt-lb');
   root.addEventListener('click',function(e){
-    var z=e.target.closest('.dt-zb');
-    if(z&&lb&&lb.showModal){var im=z.parentNode.querySelector('img'); var cap=z.getAttribute('data-cap'); lb.querySelector('img').src=im.currentSrc||im.src; lb.querySelector('img').alt=cap; lb.querySelector('figcaption').textContent=cap; lb.showModal(); return;}
-    if(e.target.closest('.dt-lb-x')||e.target===lb){lb.close(); return;}
     var m=e.target.closest('.dt-more');
     if(m){var p=document.getElementById(m.getAttribute('aria-controls')); var open=p.classList.toggle('open'); m.setAttribute('aria-expanded',open); m.textContent=open?'Show less':'Read more'; return;}
     var b=e.target.closest('.dt-bt');
