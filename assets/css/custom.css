@@ -45,3 +45,57 @@ h4 {
 .article-author-side .author-social:active{transform:none}
 .article-author-side .author-social:focus-visible{outline:2px solid var(--sb-teal);outline-offset:3px;border-radius:6px}
 @media (prefers-reduced-motion:reduce){.article-author-side .author-social,.article-author-side .author-social i{transition:none}}
+
+/* ---------- Top navigation ---------- */
+/* The current page is underlined; the colour clears 3:1 against white. */
+.top-navigation a[aria-current="page"]{text-decoration:underline;text-decoration-color:#2a8c83;text-decoration-thickness:2px;text-underline-offset:6px}
+@media only screen and (max-width:37.4375em){
+  .nav .navtoogle{display:inline-flex;align-items:center;gap:.6rem;padding:.55rem .95rem;border-radius:8px;background:#1f3a5f;
+    font:700 1rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.03em}
+  .nav .navtoogle .navicon-lines{margin:0}
+  .nav .navtoogle:focus-visible{outline:2px solid #2a8c83;outline-offset:2px}
+  /* Collapsed links must not be reachable with the Tab key */
+  .js .nav .navtoogle:not(.active)+ul{visibility:hidden}
+}
+
+/* ---------- Author card on phones ---------- */
+/* The theme hides the sidebar below 600px, which removed the photo and profile links
+   from every page on phones. Show it as a compact card at the end of the page instead. */
+@media only screen and (max-width:37.4375em){
+  #main{display:flex;flex-direction:column}
+  #main article{order:1}
+  .article-author-side{display:grid;grid-template-columns:64px 1fr;gap:.2rem 1rem;align-items:center;order:2;
+    width:83.33333%;margin:0 8.33333% 2.5rem;padding-top:1.5rem;border-top:1px solid #dfe3e8}
+  .article-author-side .bio-photo{grid-row:span 2;max-width:64px}
+  .article-author-side h3{margin:0}
+  .article-author-side p{margin:0}
+  .article-author-side .author-links{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;gap:.35rem 1.1rem;margin-top:.9rem}
+  .article-author-side .author-social{font-size:.92rem}
+  .home .article-author-side{display:none}
+}
+
+/* ---------- Inner page header ---------- */
+/* The homepage keeps the gradient banner; other pages get a plain title. */
+.pg-head{margin:0 0 2rem;padding:0 0 1.4rem;border-bottom:1px solid #dfe3e8}
+.article-wrap .pg-head h1{margin:0 0 .8rem;padding:0;font-size:2.4rem;line-height:1.1;color:#1c2733}
+.article-wrap .pg-head h1:after{content:"";display:block;width:56px;height:3px;margin-top:.75rem;border-radius:2px;background:linear-gradient(90deg,#1f3a5f,#3fb8ad)}
+.article-wrap .pg-head .s{margin:0;max-width:40em;font-size:1.02rem;line-height:1.65;color:#3d4752}
+.pg-stats{display:flex;flex-wrap:wrap;gap:.9rem 2.5rem;margin:1.4rem 0 0}
+.pg-st{display:block;color:inherit}
+.article-wrap a.pg-st{border-bottom:0;text-decoration:none}
+.pg-st b{display:block;font:700 1.85rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;color:#1f3a5f;font-variant-numeric:tabular-nums}
+.pg-st span{display:block;margin-top:.3rem;font-size:.85rem;line-height:1.3;color:#5d6773}
+a.pg-st:hover b{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+a.pg-st:focus-visible{outline:2px solid #2a8c83;outline-offset:4px;border-radius:4px}
+.pg-links{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.3rem 0 0}
+.article-wrap .pg-links a{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .85rem;border:1px solid #dfe3e8;border-radius:999px;
+  font:700 .88rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.02em;color:#1f3a5f;text-decoration:none}
+.article-wrap .pg-links a:hover{border-color:#1f3a5f}
+.article-wrap .pg-links a:focus-visible{outline:2px solid #2a8c83;outline-offset:2px}
+@media only screen and (max-width:37.5em){
+  .pg-head{margin-bottom:1.5rem;padding-bottom:1.1rem}
+  .article-wrap .pg-head h1{font-size:1.9rem}
+  .pg-stats{gap:.75rem 1.75rem;margin-top:1.1rem}
+  .pg-st b{font-size:1.45rem}
+  .pg-st span{font-size:.8rem}
+}
