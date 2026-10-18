@@ -11,17 +11,12 @@ stylesheets:
            Link a paper with /publications/?q=WORD, where WORD appears in its title (that opens the filtered list).
            To add a code or dataset release, do the same in the Code and datasets list (c-k code, c-d dataset; first six visible).
            The "Show all" counts update themselves.
-           Selected work: set  selected: true  on a paper in _data/publications.yml (optional  teaser: /images/teasers/NAME.jpg).
            Career tiles: Academia and Industry are paragraphs (edit PARA text); Education lists one <li> per degree. -->
       {%- assign o = site.owner %}
       <div class="hm-hero">
         <img class="hm-photo" src="{{ '/images/' | append: o.avatar | relative_url }}" alt="" width="132" height="135">
         <h1>Saeed Anwar</h1>
         <p class="hm-role">Senior Lecturer, The University of Western Australia<br>Director, <a href="/VIAIL/">Visual Intelligence and Analytical Imaging Lab (VIAIL)</a></p>
-        <ul class="hm-hon" aria-label="Distinctions">
-          <li><i class="fa fa-star" aria-hidden="true"></i>Clarivate Highly Cited Researcher 2025</li>
-          <li><i class="fa fa-trophy" aria-hidden="true"></i>ICPR 2024 Best Paper Award</li>
-        </ul>
         <p class="hm-prof"><a href="https://scholar.google.com/citations?user={{ o.google_scholar }}">Google Scholar</a><a href="https://github.com/{{ o.github }}">GitHub</a><a href="https://www.linkedin.com/in/{{ o.linkedin }}">LinkedIn</a><a href="mailto:{{ o.email }}">Email</a></p>
       </div>
       <section class="hm-sec hm-about">
@@ -30,28 +25,6 @@ stylesheets:
         <p class="hm-lead">I am a Senior Lecturer (equivalent to US Associate Professor) at The University of Western Australia, where I lead the Visual Intelligence and Analytical Imaging Lab. I am also a Visiting Scientist at CSIRO and an Honorary Faculty Member at the Australian National University.</p>
         <ul class="hm-int" aria-label="Research interests"><li>Computer vision</li><li>3D vision</li><li>Image restoration</li><li>Generative AI</li><li>Multimodal AI</li><li>Underwater imaging</li></ul>
         <p class="hm-cta"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Interested in a PhD, Master&rsquo;s or Honours project? Find out how to <a href="/scholarships/">join us</a>.</p>
-      </section>
-
-      <section class="hm-sec" id="selected">
-        <p class="hm-kicker">Research</p>
-        <h2>Selected work</h2>
-        <ul class="hm-sel">
-          {%- for p in site.data.publications %}{% if p.selected %}
-          {%- assign prim = "" %}{% assign code = "" %}
-          {%- for l in p.links %}
-            {%- if prim == "" and l.url != "" %}{% if l.label contains "PDF" or l.label == "arXiv" or l.label == "Preprint" %}{% assign prim = l.url %}{% endif %}{% endif %}
-            {%- if code == "" and l.label == "Code" and l.url != "" %}{% assign code = l.url %}{% endif %}
-          {%- endfor %}
-          <li class="hm-pc">
-            {%- if p.teaser %}<img class="hm-pc-img" src="{{ p.teaser | relative_url }}" alt="" loading="lazy">{% endif %}
-            <p class="hm-pc-v">{% if p.abbr %}{{ p.abbr | escape }}{% else %}{{ p.venue | escape }}{% endif %} {{ p.year }}</p>
-            <h3 class="hm-pc-t">{% if prim != "" %}<a href="{{ prim | escape }}">{{ p.title | escape }}</a>{% else %}{{ p.title | escape }}{% endif %}</h3>
-            {%- if p.awards %}<p class="hm-pc-aw">{% for a in p.awards %}<span>{{ a | escape }}</span>{% endfor %}</p>{% endif %}
-            <p class="hm-pc-l">{% if prim != "" %}<a href="{{ prim | escape }}">Paper</a>{% endif %}{% if code != "" %}<a href="{{ code | escape }}">Code</a>{% endif %}</p>
-          </li>
-          {%- endif %}{% endfor %}
-        </ul>
-        <p class="hm-sel-more"><a href="/publications/">All publications</a></p>
       </section>
 
       <section class="hm-sec">

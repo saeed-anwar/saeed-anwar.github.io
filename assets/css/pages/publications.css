@@ -12,7 +12,6 @@
 .pb-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem 1.25rem;margin:1.75rem 0 0;padding:1rem 0 .9rem;border-top:2px solid var(--navy);border-bottom:1px solid var(--rule)}
 .pb-chips{display:flex;flex-wrap:wrap;gap:.45rem}
 .pb-chip{font:700 .9rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.02em;background:none;border:1px solid var(--rule);color:var(--text);border-radius:999px;padding:.38rem .85rem;cursor:pointer}
-.pb-chip span{margin-left:.4rem;font-weight:400;opacity:.7}
 .pb-chip:hover{border-color:var(--navy)}
 .pb-chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
 .pb-search input{width:16rem;max-width:100%;box-sizing:border-box;border:1px solid var(--rule);background:var(--field);color:var(--ink);border-radius:6px;padding:.5rem .75rem;font:inherit;font-size:.95rem}

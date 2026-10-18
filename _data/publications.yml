@@ -8,8 +8,6 @@
 #   awards   e.g. ["Best Paper Award"]                  (optional; shown as gold badges)
 #   links    one "- label / url" pair per button; leave url as "" to show a dashed "not available yet" button
 #   bibtex   paste the BibTeX under "bibtex: |-", indented by four spaces
-#   selected true to feature the paper under "Selected work" on the homepage (optional)
-#   teaser   an image for that card, e.g. /images/teasers/ridnet.jpg, ideally 16:9 (optional)
 #
 # Lines starting with # are notes and are ignored.
 
@@ -758,7 +756,6 @@
   abbr: "TIST"
   year: 2025
   type: journal
-  selected: true
   links:
     - label: "Official PDF"
       url: "https://dl.acm.org/doi/abs/10.1145/3744746"
@@ -913,7 +910,6 @@
   abbr: "ICPR"
   year: 2024
   type: conference
-  selected: true
   notes: ["Oral"]
   awards: ["Best Paper Award"]
   links:
@@ -2271,7 +2267,6 @@
   abbr: "ICCV"
   year: 2019
   type: conference
-  selected: true
   notes: ["Oral"]
   links:
     - label: "Official PDF"
@@ -2295,7 +2290,6 @@
   abbr: "PR"
   year: 2019
   type: journal
-  selected: true
   awards: ["ESI Highly Cited", "Best Paper Honorable Mention"]
   links:
     - label: "Official PDF"

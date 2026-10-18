@@ -9,9 +9,6 @@ html{scroll-behavior:smooth}
 .hm .hm-hero h1{color:#fff;font-size:40px;margin:0 0 10px;padding:0;line-height:1.2;letter-spacing:.01em}
 .hm-role{margin:0 0 12px!important;font-size:1.02rem;line-height:1.5}
 .hm-role a{color:#fff!important;border-bottom:1px solid rgba(255,255,255,.5)!important;text-decoration:none!important}
-.hm .hm-hon{display:flex;flex-wrap:wrap;gap:.45rem 1.5rem;margin:1rem 0 0}
-.hm .hm-hon li{display:flex;align-items:center;gap:.5rem;font:700 .98rem/1.3 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.02em;color:#fff}
-.hm-hon i{color:#f3cf6b}
 .hm-photo{display:none}
 .hm-prof{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.15rem 0 0!important}
 .hm .hm-prof a{display:inline-block;color:#fff!important;font:700 .85rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.04em;padding:.5rem .9rem;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none!important}
@@ -40,22 +37,6 @@ html{scroll-behavior:smooth}
 .hm-cta i{color:var(--teal);margin-right:.5rem;vertical-align:-.1em}
 .hm-cta a,.hm-lead a{border-bottom:1px solid rgba(47,93,148,.35)!important}
 
-/* Selected work */
-.hm-sel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
-@media only screen and (max-width:37.5em){.hm-sel{grid-template-columns:1fr}}
-.hm-pc{display:flex;flex-direction:column;padding:1.1rem 1.2rem 1.15rem;border:1px solid var(--rule);border-radius:12px;background:var(--bg)}
-.hm-pc-img{display:block;width:calc(100% + 2.4rem);max-width:none;margin:-1.1rem -1.2rem 1rem;aspect-ratio:16/9;object-fit:cover;border-radius:12px 12px 0 0}
-.hm .hm-pc-v{margin:0 0 .35rem;font:700 .85rem/1.2 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.03em;color:var(--teal)}
-.hm .hm-pc-t{margin:0;font:700 1.02rem/1.4 'PT Serif',Georgia,serif;color:var(--ink)}
-.hm .hm-pc-t a{color:var(--ink)}
-.hm .hm-pc-t a:hover{text-decoration:underline;text-decoration-color:rgba(31,58,95,.4);text-underline-offset:3px}
-.hm .hm-pc-aw{display:flex;flex-wrap:wrap;gap:.35rem;margin:.65rem 0 0}
-.hm-pc-aw span{font:700 .78rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.02em;color:var(--gold);background:#fbf4dc;border-radius:4px;padding:.32rem .5rem}
-.hm .hm-pc-l{display:flex;gap:.4rem;margin:auto 0 0;padding-top:.9rem}
-.hm .hm-pc-l a{font:700 .8rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.03em;color:var(--navy);background:var(--wash);border:1px solid var(--rule);border-radius:4px;padding:.4rem .62rem}
-.hm .hm-pc-l a:hover{border-color:var(--navy)}
-.hm .hm-sel-more{margin:.9rem 0 0;font-size:.95rem}
-.hm .hm-sel-more a{border-bottom:1px solid rgba(47,93,148,.35)}
 
 /* Career tiles: one per area */
 .g-ac{--g1:#1f3a5f;--g2:#2f5d94}.g-in{--g1:#22706a;--g2:#3fb8ad}.g-ed{--g1:#4b3f86;--g2:#7a6aa8}

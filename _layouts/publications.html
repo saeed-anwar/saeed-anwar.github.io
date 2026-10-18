@@ -6,14 +6,8 @@ stylesheets:
     <div class="article-wrap pb">
       <!-- This page is built from _data/publications.yml. Add or edit papers there, not here. -->
       {%- assign pubs = site.data.publications -%}
-      {%- assign n_j = 0 -%}{%- assign n_c = 0 -%}{%- assign n_p = 0 -%}{%- assign n_o = 0 -%}{%- assign n_hl = 0 -%}
       {%- assign yl = "" -%}{%- assign n_early = 0 -%}{%- assign n_th = 0 -%}{%- assign emin = 9999 -%}{%- assign emax = 0 -%}
       {%- for p in pubs -%}
-        {%- if p.type == "journal" -%}{%- assign n_j = n_j | plus: 1 -%}{%- endif -%}
-        {%- if p.type == "conference" -%}{%- assign n_c = n_c | plus: 1 -%}{%- endif -%}
-        {%- if p.type == "preprint" -%}{%- assign n_p = n_p | plus: 1 -%}{%- endif -%}
-        {%- if p.notes contains "Oral" -%}{%- assign n_o = n_o | plus: 1 -%}{%- endif -%}
-        {%- if p.notes or p.awards -%}{%- assign n_hl = n_hl | plus: 1 -%}{%- endif -%}
         {%- if p.type == "thesis" -%}{%- assign n_th = n_th | plus: 1 -%}
         {%- else -%}
           {%- if p.year >= 2020 -%}
@@ -36,27 +30,21 @@ stylesheets:
           <p class="s">Journal articles, conference papers and preprints in computer vision, image processing and machine learning, with code, data and BibTeX.</p>
           <p class="pg-links"><a href="https://scholar.google.com/citations?user={{ o.google_scholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a><a href="https://dblp.org/pid/{{ o.dblp }}.html"><i class="fa fa-book" aria-hidden="true"></i>DBLP</a><a href="https://orcid.org/{{ o.orcid }}"><i class="ai ai-orcid" aria-hidden="true"></i>ORCID</a></p>
         </div>
-        <div class="pg-stats">
-          <div class="pg-st"><b>{{ pubs.size }}</b><span>Publications</span></div>
-          <div class="pg-st"><b>{{ n_j }}</b><span>Journal articles</span></div>
-          <div class="pg-st"><b>{{ n_c }}</b><span>Conference papers</span></div>
-          <div class="pg-st"><b>{{ n_o }}</b><span>Oral presentations</span></div>
-        </div>
       </header>
       <div class="pb-tools">
         <div class="pb-chips" role="group" aria-label="Filter publications">
-          <button type="button" class="pb-chip on" data-f="all" aria-pressed="true">All<span>{{ pubs.size }}</span></button>
-          <button type="button" class="pb-chip" data-f="journal" aria-pressed="false">Journals<span>{{ n_j }}</span></button>
-          <button type="button" class="pb-chip" data-f="conference" aria-pressed="false">Conferences<span>{{ n_c }}</span></button>
-          <button type="button" class="pb-chip" data-f="preprint" aria-pressed="false">Preprints<span>{{ n_p }}</span></button>
-          <button type="button" class="pb-chip" data-f="hl" aria-pressed="false">Orals &amp; awards<span>{{ n_hl }}</span></button>
+          <button type="button" class="pb-chip on" data-f="all" aria-pressed="true">All</button>
+          <button type="button" class="pb-chip" data-f="journal" aria-pressed="false">Journals</button>
+          <button type="button" class="pb-chip" data-f="conference" aria-pressed="false">Conferences</button>
+          <button type="button" class="pb-chip" data-f="preprint" aria-pressed="false">Preprints</button>
+          <button type="button" class="pb-chip" data-f="hl" aria-pressed="false">Orals &amp; awards</button>
         </div>
         <label class="pb-search"><span class="pb-sr">Search publications</span><input type="search" placeholder="Search title, author or venue" autocomplete="off"></label>
       </div>
       <nav class="pb-jump" aria-label="Jump to year">
         {%- for g in groups -%}<a href="#y-{{ g }}">{% if g == "earlier" %}Earlier{% elsif g == "thesis" %}Thesis{% else %}{{ g }}{% endif %}</a>{%- endfor -%}
       </nav>
-      <p class="pb-count" aria-live="polite"></p>
+      <p class="pb-count pb-sr" aria-live="polite"></p>
       {%- assign uid = 0 -%}
       {%- for g in groups %}
 
