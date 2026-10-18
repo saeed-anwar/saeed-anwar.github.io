@@ -8,6 +8,8 @@
 #   awards   e.g. ["Best Paper Award"]                  (optional; shown as gold badges)
 #   links    one "- label / url" pair per button; leave url as "" to show a dashed "not available yet" button
 #   bibtex   paste the BibTeX under "bibtex: |-", indented by four spaces
+#   selected true to feature the paper under "Selected work" on the homepage (optional)
+#   teaser   an image for that card, e.g. /images/teasers/ridnet.jpg, ideally 16:9 (optional)
 #
 # Lines starting with # are notes and are ignored.
 
@@ -28,7 +30,7 @@
     @inproceedings{Zhang2026PGMS,
       title={PGMS: Pyramidal Gaussian Mixture Splatting for 3DGS Compression},
       author={Xiaoge Zhang and Zijie Wu and Mingtao Feng and Saeed Anwar and Ajmal Mian},
-      journal={Conference on Neural Information Processing Systems},
+      booktitle={Conference on Neural Information Processing Systems},
       year={2026}
     }
 
@@ -68,7 +70,7 @@
     @inproceedings{Anwar2026TDiR,
       title={TDiR: Transformer based Diffusion for Image Restoration Tasks},
       author={Anwar, Abbas and Radwan, Ibrahim and Nasir, Ali Arshad and Masood, Mudassir and Anwar, Saeed},
-      journal={Asian Conference on Computer Vision},
+      booktitle={Asian Conference on Computer Vision},
       year={2026}
     }
 
@@ -145,7 +147,7 @@
     - label: "arXiv"
       url: "https://arxiv.org/pdf/2608.04429"
   bibtex: |-
-    @article{Yasmin2026UBLLIE,
+    @misc{Yasmin2026UBLLIE,
           title={UBLLIE: Unified Backlight and Low-Light Image Enhancement},
           author={Yasmin Yasin and Muhammad Usman and Ibrahim Radwan and Saeed Anwar},
           year={2026},
@@ -224,7 +226,7 @@
     - label: "Code"
       url: "https://github.com/cshw2021/SPRDiff"
   bibtex: |-
-    @article{Wei2026SPRDiff,
+    @misc{Wei2026SPRDiff,
           title={Exploiting Semantic and Pixel Representations for Ultra-Low Bitrate Image Compression},
           author={Hao Wei and Yanhui Zhou and Chenyang Ge and Saeed Anwar and Ajmal Mian},
           year={2026},
@@ -331,7 +333,7 @@
     - label: "Project page"
       url: "https://xiaogezhang9.github.io/project/FLaTEC/"
   bibtex: |-
-    @article{Zhang2026FLaTEC,
+    @inproceedings{Zhang2026FLaTEC,
           title={FLaTEC: Frequency-Disentangled Latent Triplanes for Efficient Compression of LiDAR Point Clouds},
           author={Xiaoge Zhang and Zijie Wu and Mingtao Feng and Zichen Geng and Mehwish Nasim and Saeed Anwar and Ajmal Mian},
           booktitle={IEEE International Conference on Multimedia and Expo (ICME)},
@@ -470,7 +472,7 @@
     - label: "Code"
       url: "https://github.com/Habiba123-stack/SwinIFS"
   bibtex: |-
-    @article{Kausar2026SwinIFS,
+    @misc{Kausar2026SwinIFS,
           title={SwinIFS: Landmark Guided Swin Transformer For Identity Preserving Face Super Resolution},
           author={Habiba Kausar and Saeed Anwar and Omar Jamal Hammad and Abdul Bais},
           year={2026},
@@ -491,7 +493,7 @@
     - label: "Code"
       url: "https://github.com/ashikiut/pendulum/"
   bibtex: |-
-    @article{Rahman2025PENDULUM,
+    @misc{Rahman2025PENDULUM,
           title={PENDULUM: A Benchmark for Assessing Sycophancy in Multimodal Large Language Models},
           author={A. B. M. Ashikur Rahman and Saeed Anwar and Muhammad Usman and Irfan Ahmad and Ajmal Mian},
           year={2025},
@@ -512,7 +514,7 @@
     - label: "Code"
       url: "https://github.com/Baber-Jan/C3Net"
   bibtex: |-
-    @article{Baber2025C3Net,
+    @misc{Baber2025C3Net,
          title={C3Net: Context-Contrast Network for Camouflaged Object Detection},
           author={Baber Jan and Aiman H. El-Maleh and Abdul Jabbar Siddiqui and Abdul Bais and Saeed Anwar},
           year={2025},
@@ -533,7 +535,7 @@
     - label: "Code"
       url: "https://github.com/linaagh98/MSRNet"
   bibtex: |-
-    @article{Alghamdi2025MSRNet,
+    @misc{Alghamdi2025MSRNet,
           title={MSRNet: A Multi-Scale Recursive Network for Camouflaged Object Detection},
           author={Leena Alghamdi and Muhammad Usman and Hafeez Anwar and Abdul Bais and Saeed Anwar},
           year={2025},
@@ -734,8 +736,8 @@
       url: "https://github.com/ShehzadCS18/RHAD/"
   bibtex: |-
     @InProceedings{Ali2025RHAD,
-    title={\enquote{Towards Hazardous Activity Recognition for A Novel Real-World Dataset}},
-    author	={Shehzad Ali and Md Tanvir Islam and Ik Hyun Lee and  Mingfu Xiong and Minh-Son Dao and {\bf Saeed Anwar} and Sambit Bakshi and Khan Muhammad},
+    title={Towards Hazardous Activity Recognition for A Novel Real-World Dataset},
+    author	={Shehzad Ali and Md Tanvir Islam and Ik Hyun Lee and  Mingfu Xiong and Minh-Son Dao and Saeed Anwar and Sambit Bakshi and Khan Muhammad},
     isbn = {9798400720352},
     publisher = {Association for Computing Machinery},
     address = {New York, NY, USA},
@@ -746,7 +748,7 @@
     numpages = {10},
     keywords = {child activities, hazardnet, indoor hazard, safety, surveillance},
     location = {Dublin, Ireland},
-    series = {MM '25}
+    series = {MM '25},
     year={2025}
     }
 
@@ -756,6 +758,7 @@
   abbr: "TIST"
   year: 2025
   type: journal
+  selected: true
   links:
     - label: "Official PDF"
       url: "https://dl.acm.org/doi/abs/10.1145/3744746"
@@ -767,7 +770,7 @@
     @article{Humza2025LLMs,
       title = {A Comprehensive Overview of Large Language Models},
       author={Humza Naveed and Asad Ullah Khan and Shi Qiu and Muhammad Saqib and Saeed Anwar and Muhammad Usman and Nick Barnes and Ajmal Mian},
-      publisher = {ACM Transactions on Intelligent Systems and Technology},
+      journal = {ACM Transactions on Intelligent Systems and Technology},
       year={2025}
     }
 
@@ -790,6 +793,7 @@
         booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
         month     = {June},
         year      = {2025},
+    }
 
 - title: "SEDNet: Synergistic Learning Network with Embedded Encoder and Dense Atrous Convolution for Vehicle Re-identification"
   authors: "M. Xiong, T. Gui, Z. Sun, S. Anwar, A. Alotaibi, and K Muhammad"
@@ -909,6 +913,7 @@
   abbr: "ICPR"
   year: 2024
   type: conference
+  selected: true
   notes: ["Oral"]
   awards: ["Best Paper Award"]
   links:
@@ -1162,6 +1167,7 @@
         month     = {June},
         year      = {2024},
         pages     = {5336-5345}
+    }
 
 - title: "Visual Attention Methods in Deep Learning: An In-Depth Survey"
   authors: "M. Hassanin, S. Anwar, I. Radwan, F. S. Khan, and A. Mian"
@@ -1222,7 +1228,7 @@
     - label: "Code"
       url: "https://github.com/AdnanMunir294/UAVD-CBRA"
   bibtex: |-
-    @article{munir2024investigation,
+    @inproceedings{munir2024investigation,
       title={Investigation of UAV Detection in Images With Complex Backgrounds and Rainy Artifacts},
       author={Munir, Adnan and Siddiqui, Abdul Jabbar and Anwar, Saeed},
       booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
@@ -1247,7 +1253,7 @@
     @article{Humza2023Aug,
       title = {Survey: Image Mixing and Deleting for Data Augmentation},
       author = {Naveed, Humza and Anwar, Saeed and Hayat, Munawar and Javed, Kashif and Mian, Ajmal},
-      publisher = {Journal Engineering Applications of Artificial Intelligence},
+      journal = {Engineering Applications of Artificial Intelligence},
       year={2024}
     }
 
@@ -1372,10 +1378,10 @@
     - label: "Code"
       url: "https://github.com/ibrahimUWA/slice"
   bibtex: |-
-    @article{Ibrahim2023slice,
+    @inproceedings{Ibrahim2023slice,
       title={Slice Transformer and Self-supervised Learning for 6DoF Localization in 3D Point Cloud Maps},
       author={Ibrahim, Muhammad and Akhtar, Naveed and Anwar, Saeed and Wise, Michael and Mian, Ajmal},
-      journal={IEEE International Conference on Robotics and Automation (ICRA)},
+      booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
       year={2023}
     }
 
@@ -1680,7 +1686,7 @@
     - label: "Official PDF"
       url: "https://ieeexplore.ieee.org/document/9661313"
     - label: "arXiv"
-      url: "http://arxiv.org/abs/2108.07378"
+      url: "https://arxiv.org/abs/2108.07378"
     - label: "Code"
       url: "https://github.com/ShiQiu0419/pnp-3d"
   bibtex: |-
@@ -1703,7 +1709,7 @@
     - label: "Supplementary"
       url: "https://ieeexplore.ieee.org/ielx7/5962385/6104215/9648263/supp1-3131739.pdf?arnumber=9648263"
     - label: "arXiv"
-      url: "http://arxiv.org/abs/2004.13524"
+      url: "https://arxiv.org/abs/2004.13524"
     - label: "Code"
       url: "https://github.com/saeed-anwar/R2Net"
   bibtex: |-
@@ -1889,7 +1895,7 @@
     - label: "Code"
       url: "https://github.com/Yang-Liu1082/InvDN.git"
   bibtex: |-
-    @article{Yang2020InvDN,
+    @inproceedings{Yang2020InvDN,
       author = {Liu, Yang and Qin, Zhenyue and Anwar, Saeed and Ji, Pan and Kim, Dongwoo and Cadwell, Sabrina and Gedeon, Tom },
       title = {Invertible Denoising Network: A Light Solution for Real Noise Removal},
       booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -1911,7 +1917,7 @@
     - label: "Code"
       url: "https://github.com/JunlinHan/CWR"
   bibtex: |-
-    @article{Han2020CWR,
+    @inproceedings{Han2020CWR,
       author = {Han, Junlin and Shoeiby, Mehrdad and Malthus, Tim and Botha, Elizabeth and Anstee, Janet and  Anwar, Saeed  and Wei, Ran and Petersson, Lars  and Armin, Mohammad Ali
     },
       title = {Single Underwater Image Restoration by contrastive learning},
@@ -1949,7 +1955,7 @@
     - label: "Code"
       url: "https://github.com/tanveer-hussain/EfficientSOD"
   bibtex: |-
-    @InProceedings{Tan2021DDNET,
+    @misc{Tan2021DDNET,
           title={Densely Deformable Efficient Salient Object Detection Network},
           author={Tanveer Hussain and Saeed Anwar and Amin Ullah and Khan Muhammad and Sung Wook Baik},
           year={2021},
@@ -2099,7 +2105,7 @@
     - label: "Code"
       url: "https://github.com/Lillian1082/IRAE_pytorch"
   bibtex: |-
-    @article{Yang2020Glow,
+    @inproceedings{Yang2020Glow,
       author = {Liu, Yang and Qin, Zhenyue and Anwar, Saeed  and Caldwell, Sabrina  and Gedeon, Tom },
       title = {Are Deep Neural Architectures Losing Information? Invertibility Is Indispensable},
       booktitle={International Conference on Neural Information Processing},
@@ -2160,7 +2166,7 @@
   awards: ["Best Paper nominated in CVPR"]
   links:
     - label: "Official PDF"
-      url: "http://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf"
+      url: "https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_UC-Net_Uncertainty_Inspired_RGB-D_Saliency_Detection_via_Conditional_Variational_Autoencoders_CVPR_2020_paper.pdf"
     - label: "Code"
       url: "https://github.com/JingZhang617/UCNet"
   bibtex: |-
@@ -2180,7 +2186,7 @@
   type: conference
   links:
     - label: "Official PDF"
-      url: "http://openaccess.thecvf.com/content_CVPR_2020/papers/Lu_From_Depth_What_Can_You_See_Depth_Completion_via_Auxiliary_CVPR_2020_paper.pdf"
+      url: "https://openaccess.thecvf.com/content_CVPR_2020/papers/Lu_From_Depth_What_Can_You_See_Depth_Completion_via_Auxiliary_CVPR_2020_paper.pdf"
     - label: "Video"
       url: "https://www.youtube.com/watch?v=aIxvUuoT0Cg"
   bibtex: |-
@@ -2200,11 +2206,11 @@
   type: conference
   links:
     - label: "Official PDF"
-      url: "http://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Anwar_Identity_Enhanced_Residual_Image_Denoising_CVPRW_2020_paper.pdf"
+      url: "https://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Anwar_Identity_Enhanced_Residual_Image_Denoising_CVPRW_2020_paper.pdf"
     - label: "arXiv"
-      url: "http://arxiv.org/abs/2004.13523"
+      url: "https://arxiv.org/abs/2004.13523"
     - label: "Supplementary"
-      url: "http://openaccess.thecvf.com/content_CVPRW_2020/supplemental/Anwar_Identity_Enhanced_Residual_CVPRW_2020_supplemental.pdf"
+      url: "https://openaccess.thecvf.com/content_CVPRW_2020/supplemental/Anwar_Identity_Enhanced_Residual_CVPRW_2020_supplemental.pdf"
     - label: "Code"
       url: "https://github.com/saeed-anwar/IERD"
   bibtex: |-
@@ -2224,9 +2230,9 @@
   type: conference
   links:
     - label: "Official PDF"
-      url: "http://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Liu_GradNet_Image_Denoising_CVPRW_2020_paper.pdf"
+      url: "https://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Liu_GradNet_Image_Denoising_CVPRW_2020_paper.pdf"
     - label: "Supplementary"
-      url: "http://openaccess.thecvf.com/content_CVPRW_2020/supplemental/Liu_GradNet_Image_Denoising_CVPRW_2020_supplemental.pdf"
+      url: "https://openaccess.thecvf.com/content_CVPRW_2020/supplemental/Liu_GradNet_Image_Denoising_CVPRW_2020_supplemental.pdf"
     - label: "Code"
       url: "https://github.com/Lillian1082/GradNet-Image-Denoising"
   bibtex: |-
@@ -2247,7 +2253,7 @@
   notes: ["Oral"]
   links:
     - label: "Official PDF"
-      url: "http://openaccess.thecvf.com/content_CVPRW_2020/papers/w6/Shoeiby_Mosaic_Super-Resolution_via_Sequential_Feature_Pyramid_Networks_CVPRW_2020_paper.pdf"
+      url: "https://openaccess.thecvf.com/content_CVPRW_2020/papers/w6/Shoeiby_Mosaic_Super-Resolution_via_Sequential_Feature_Pyramid_Networks_CVPRW_2020_paper.pdf"
     - label: "arXiv"
       url: "https://arxiv.org/abs/2004.06853"
   bibtex: |-
@@ -2265,12 +2271,13 @@
   abbr: "ICCV"
   year: 2019
   type: conference
+  selected: true
   notes: ["Oral"]
   links:
     - label: "Official PDF"
-      url: "http://openaccess.thecvf.com/content_ICCV_2019/papers/Anwar_Real_Image_Denoising_With_Feature_Attention_ICCV_2019_paper.pdf"
+      url: "https://openaccess.thecvf.com/content_ICCV_2019/papers/Anwar_Real_Image_Denoising_With_Feature_Attention_ICCV_2019_paper.pdf"
     - label: "Supplementary"
-      url: "http://openaccess.thecvf.com/content_ICCV_2019/supplemental/Anwar_Real_Image_Denoising_ICCV_2019_supplemental.pdf"
+      url: "https://openaccess.thecvf.com/content_ICCV_2019/supplemental/Anwar_Real_Image_Denoising_ICCV_2019_supplemental.pdf"
     - label: "Code"
       url: "https://github.com/saeed-anwar/RIDNet"
   bibtex: |-
@@ -2288,6 +2295,7 @@
   abbr: "PR"
   year: 2019
   type: journal
+  selected: true
   awards: ["ESI Highly Cited", "Best Paper Honorable Mention"]
   links:
     - label: "Official PDF"
@@ -2362,10 +2370,10 @@
     - label: "Code"
       url: "/codes/Combined_BMVC17_codes.zip"
   bibtex: |-
-    @article{Anwar2017internalnoise,
+    @inproceedings{Anwar2017internalnoise,
       author = {Anwar, Saeed and Huynh, Cong P. and Porikli, Fatih },
       title = {Combined Internal and External Category-Specific Image Denoising},
-      journal = {British Machine Vision Conference},
+      booktitle = {British Machine Vision Conference},
       year = {2017}
     }
 
@@ -2382,10 +2390,10 @@
     - label: "Code"
       url: "/codes/DefocusingImagesCode.zip"
   bibtex: |-
-    @article{Anwar2017depth,
+    @inproceedings{Anwar2017depth,
       author = {Anwar, Saeed and Hayder, Zeeshan and Porikli, Fatih },
       title = {Depth Estimation and Blur Removal from a Single Out-of-focus Image},
-      journal = {British Machine Vision Conference},
+      booktitle = {British Machine Vision Conference},
       year = {2017}
     }
 
