@@ -1,0 +1,38 @@
+{%- comment -%}
+  Abstract avatar generated from a person's name, so every person gets the same artwork on every build.
+  Parameters: name (required), uid (unique on the page), class (extra class, e.g. "xs").
+{%- endcomment -%}
+{%- assign _abc = "abcdefghijklmnopqrstuvwxyz" -%}
+{%- assign _h = 7 -%}
+{%- assign _chars = include.name | downcase | split: "" -%}
+{%- for _c in _chars -%}
+  {%- assign _v = _abc | split: _c | first | size | plus: 1 -%}
+  {%- assign _h = _h | times: 131 | plus: _v | modulo: 1000000007 -%}
+{%- endfor -%}
+{%- assign _words = include.name | split: " " -%}
+{%- assign _f = _words.first | slice: 0 | upcase -%}
+{%- assign _ini = _f -%}
+{%- if _words.size > 1 -%}{%- assign _l = _words.last | slice: 0 | upcase -%}{%- assign _ini = _f | append: _l -%}{%- endif -%}
+{%- assign _pal = _h | modulo: 5 -%}
+{%- case _pal -%}
+  {%- when 0 -%}{%- assign _c1 = "#1f3a5f" -%}{%- assign _c2 = "#2f5d94" -%}
+  {%- when 1 -%}{%- assign _c1 = "#1f3a5f" -%}{%- assign _c2 = "#3fb8ad" -%}
+  {%- when 2 -%}{%- assign _c1 = "#24476f" -%}{%- assign _c2 = "#4a7fb8" -%}
+  {%- when 3 -%}{%- assign _c1 = "#2f5d94" -%}{%- assign _c2 = "#3fb8ad" -%}
+  {%- else -%}{%- assign _c1 = "#1f3a5f" -%}{%- assign _c2 = "#35837e" -%}
+{%- endcase -%}
+{%- assign _dir = _h | divided_by: 5 | modulo: 4 -%}
+{%- case _dir -%}
+  {%- when 0 -%}{%- assign _g = 'x1="0" y1="0" x2="1" y2="1"' -%}
+  {%- when 1 -%}{%- assign _g = 'x1="0" y1="1" x2="1" y2="0"' -%}
+  {%- when 2 -%}{%- assign _g = 'x1="1" y1="0" x2="0" y2="1"' -%}
+  {%- else -%}{%- assign _g = 'x1="0" y1="0" x2="0" y2="1"' -%}
+{%- endcase -%}
+{%- assign _a1x = _h | divided_by: 7 | modulo: 100 -%}{%- assign _a1y = _h | divided_by: 11 | modulo: 100 -%}{%- assign _a1r = _h | divided_by: 13 | modulo: 30 | plus: 34 -%}
+{%- assign _a2x = _h | divided_by: 17 | modulo: 100 -%}{%- assign _a2y = _h | divided_by: 19 | modulo: 100 -%}{%- assign _a2r = _h | divided_by: 23 | modulo: 22 | plus: 18 -%}
+{%- assign _rx = _h | divided_by: 29 | modulo: 80 | plus: 10 -%}{%- assign _ry = _h | divided_by: 31 | modulo: 80 | plus: 10 -%}{%- assign _rr = _h | divided_by: 37 | modulo: 12 | plus: 16 -%}
+{%- assign _rd = _h | divided_by: 41 | modulo: 36 | plus: 20 -%}{%- assign _rt = _h | divided_by: 43 | modulo: 180 -%}
+{%- assign _d1x = _h | divided_by: 47 | modulo: 90 | plus: 5 -%}{%- assign _d1y = _h | divided_by: 53 | modulo: 90 | plus: 5 -%}{%- assign _d1r = _h | divided_by: 59 | modulo: 2 | plus: 1 -%}
+{%- assign _d2x = _h | divided_by: 61 | modulo: 90 | plus: 5 -%}{%- assign _d2y = _h | divided_by: 67 | modulo: 90 | plus: 5 -%}{%- assign _d2r = _h | divided_by: 71 | modulo: 2 | plus: 1 -%}
+{%- assign _d3x = _h | divided_by: 73 | modulo: 90 | plus: 5 -%}{%- assign _d3y = _h | divided_by: 79 | modulo: 90 | plus: 5 -%}{%- assign _d3r = _h | divided_by: 83 | modulo: 2 | plus: 1 -%}
+<svg class="pp-art{% if include.class %} {{ include.class }}{% endif %}" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg-{{ include.uid }}" {{ _g }}><stop offset="0" stop-color="{{ _c1 }}"/><stop offset="1" stop-color="{{ _c2 }}"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg-{{ include.uid }})"/><circle cx="{{ _a1x }}" cy="{{ _a1y }}" r="{{ _a1r }}" fill="#fff" opacity=".09"/><circle cx="{{ _a2x }}" cy="{{ _a2y }}" r="{{ _a2r }}" fill="#fff" opacity=".07"/><circle cx="{{ _rx }}" cy="{{ _ry }}" r="{{ _rr }}" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="{{ _rd }} 200" transform="rotate({{ _rt }} {{ _rx }} {{ _ry }})"/><circle cx="{{ _d1x }}" cy="{{ _d1y }}" r="{{ _d1r }}" fill="#fff" opacity=".45"/><circle cx="{{ _d2x }}" cy="{{ _d2y }}" r="{{ _d2r }}" fill="#fff" opacity=".45"/><circle cx="{{ _d3x }}" cy="{{ _d3y }}" r="{{ _d3r }}" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">{{ _ini }}</text></svg>
