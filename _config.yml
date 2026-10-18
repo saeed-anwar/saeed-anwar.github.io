@@ -49,8 +49,11 @@ social:
 google_analytics:
 
 # Top navigation ----------------------------------------------------------------
-# Your name at the top left links to the homepage. For external links add external: true
+# For external links add external: true. icon is an optional Font Awesome name.
 links:
+  - title: Home
+    url: /
+    icon: home
   - title: Publications
     url: /publications/
   - title: Datasets

@@ -31,15 +31,17 @@ stylesheets:
       {%- if n_th > 0 -%}{%- assign groups = groups | join: "," | append: ",thesis" | split: "," -%}{%- endif -%}
       {%- assign o = site.owner -%}
       <header class="pg-head">
-        <h1>Publications</h1>
-        <p class="s">Journal articles, conference papers and preprints in computer vision, image processing and machine learning, with code, data and BibTeX.</p>
+        <div class="pg-card">
+          <h1>Publications</h1>
+          <p class="s">Journal articles, conference papers and preprints in computer vision, image processing and machine learning, with code, data and BibTeX.</p>
+          <p class="pg-links"><a href="https://scholar.google.com/citations?user={{ o.google_scholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a><a href="https://dblp.org/pid/{{ o.dblp }}.html"><i class="fa fa-book" aria-hidden="true"></i>DBLP</a><a href="https://orcid.org/{{ o.orcid }}"><i class="ai ai-orcid" aria-hidden="true"></i>ORCID</a></p>
+        </div>
         <div class="pg-stats">
           <div class="pg-st"><b>{{ pubs.size }}</b><span>Publications</span></div>
           <div class="pg-st"><b>{{ n_j }}</b><span>Journal articles</span></div>
           <div class="pg-st"><b>{{ n_c }}</b><span>Conference papers</span></div>
           <div class="pg-st"><b>{{ n_o }}</b><span>Oral presentations</span></div>
         </div>
-        <p class="pg-links"><a href="https://scholar.google.com/citations?user={{ o.google_scholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a><a href="https://dblp.org/pid/{{ o.dblp }}.html"><i class="fa fa-book" aria-hidden="true"></i>DBLP</a><a href="https://orcid.org/{{ o.orcid }}"><i class="ai ai-orcid" aria-hidden="true"></i>ORCID</a></p>
       </header>
       <div class="pb-tools">
         <div class="pb-chips" role="group" aria-label="Filter publications">

@@ -7,7 +7,7 @@
       <button type="button" class="navtoogle navtoggle navicon-lines-button x" aria-expanded="false" aria-controls="site-nav-list"><span class="navicon-lines" aria-hidden="true"></span>Menu</button>
       <ul id="site-nav-list">
         {%- for link in site.links %}
-        <li><a href="{% if link.external %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"{% if page.url == link.url %} aria-current="page"{% endif %}{% if link.external %} rel="noopener"{% endif %}>{{ link.title }}</a></li>
+        <li><a href="{% if link.external %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"{% if page.url == link.url %} aria-current="page"{% endif %}{% if link.external %} rel="noopener"{% endif %}>{% if link.icon %}<i class="fa fa-{{ link.icon }}" aria-hidden="true"></i> {% endif %}{{ link.title }}</a></li>
         {%- endfor %}
       </ul>
     </nav>
