@@ -1,6 +1,7 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'jekyll'
-gem 'jekyll-sitemap'
-gem 'octopress', '~> 3.0.0.rc.12'
-gem 'rouge'
+# Same Jekyll version and plugins as GitHub Pages, so local builds match the live site.
+#   bundle install
+#   bundle exec jekyll serve
+gem "github-pages", group: :jekyll_plugins
+gem "webrick" # needed by `jekyll serve` on Ruby 3 and later

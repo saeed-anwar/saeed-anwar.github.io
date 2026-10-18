@@ -1,76 +1,98 @@
+# Site settings ---------------------------------------------------------------
 title:            Saeed Anwar
+# Shown after your name in the homepage's browser tab and search results.
+tagline:          Computer Vision Researcher, UWA
 description:      Saeed Anwar is a Senior Lecturer at the University of Western Australia and Director of the Visual Intelligence and Analytical Imaging Lab (VIAIL), researching computer vision, image restoration and AI-based image processing.
 url:              https://saeed-anwar.github.io
+baseurl:          ""
+lang:             en_AU
 
-# Owner/author information
+# About you. Profile links are defined once here and reused across the site
+# (sidebar, homepage banner, Publications banner and search-engine data).
 owner:
   name:           Saeed Anwar
-  avatar:         Saeed.jpg 
-  bio:            I'm currently with UWA and Director at Visual Intelligence and Analytical Imaging Lab. Also hold honorary positions with ANU. 
+  avatar:         Saeed.jpg
+  bio:            Senior Lecturer at The University of Western Australia and Director of VIAIL.
+  job_title:      Senior Lecturer
+  employer:       The University of Western Australia
   email:          saeed.anwar@uwa.edu.au
-  # Social networking links are used in author-bio sidebar. Update and remove as you like.
-  #twitter: jponttuset
-  linkedin: saeed-anwar-51689a13
-  google_scholar: vPJIHywAAAAJ&hl=en
-  #google_plus: 113718226018314522413
-  #github: jponttuset
-  
-# Analytics and webmaster tools stuff goes here
-google_analytics: UA-52736040-1
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+  google_scholar: vPJIHywAAAAJ
+  orcid:          0000-0002-0692-8411
+  dblp:           176/1488
+  github:         saeed-anwar
+  linkedin:       saeed-anwar-51689a13
+  uwa_profile:    https://research-repository.uwa.edu.au/en/persons/saeed-anwar
+  # twitter:      your-handle
 
-# Links to include in top navigation
-# For external links add external: true
+# Search engines and link previews (jekyll-seo-tag) ----------------------------
+author:
+  name:           Saeed Anwar
+  url:            https://saeed-anwar.github.io/
+# These tell search engines that the profiles below are the same person, which
+# helps separate you from other people called Saeed Anwar.
+social:
+  name:           Saeed Anwar
+  links:
+    - https://scholar.google.com/citations?user=vPJIHywAAAAJ
+    - https://orcid.org/0000-0002-0692-8411
+    - https://dblp.org/pid/176/1488.html
+    - https://github.com/saeed-anwar
+    - https://www.linkedin.com/in/saeed-anwar-51689a13
+    - https://research-repository.uwa.edu.au/en/persons/saeed-anwar
+# Paste verification codes from Google Search Console / Bing Webmaster Tools here.
+# webmaster_verifications:
+#   google: xxxxxxxx
+#   bing: xxxxxxxx
+
+# Analytics: paste a Google Analytics 4 measurement ID (it starts with "G-").
+# Old Universal Analytics IDs (UA-...) stopped collecting data in July 2023.
+google_analytics:
+
+# Top navigation ----------------------------------------------------------------
+# Your name at the top left links to the homepage. For external links add external: true
 links:
-  #- title: Home
-  #  url: /
-  #- title: Research
-  #  url: /research/
- - title: Publications
-   url: /publications/
- - title: Datasets
-   url: /Datasets/
- - title: Teaching
-   url: /Teaching/
- - title: Honors & Awards
-   url: /HonorsAwards/
- - title: VIAIL Lab
-   url: /VIAIL/
- - title: People
-   url: /people/
- - title: Talks
-   url: /Talks/
- - title: Scholarships
-   url: /scholarships/
- - title: Service
-   url: /Service/
+  - title: Publications
+    url: /publications/
+  - title: Datasets
+    url: /Datasets/
+  - title: VIAIL Lab
+    url: /VIAIL/
+  - title: People
+    url: /people/
+  - title: Join us
+    url: /scholarships/
+  - title: Teaching
+    url: /Teaching/
+  - title: Talks
+    url: /Talks/
+  - title: Service
+    url: /Service/
+  - title: Awards
+    url: /HonorsAwards/
 
-   
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    Australia/ACT
-future:      true
-#pygments:    true
-highlighter: rouge
-markdown:    kramdown
+# Build settings ----------------------------------------------------------------
+timezone:         Australia/Perth
+markdown:         kramdown
+highlighter:      rouge
+permalink:        /:categories/:title/
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      # Picture used when a page is shared on LinkedIn, X, Slack, WhatsApp, etc.
+      image: /images/social-card.png
 
-  coderay:
-    coderay_line_numbers:
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - "*.sublime-project"
+  - "*.sublime-workspace"
