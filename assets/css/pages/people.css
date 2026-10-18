@@ -1,0 +1,74 @@
+
+/* Page */
+.pp{--ink:#1c2733;--text:#3d4752;--muted:#6b7480;--rule:#dfe3e8;--wash:#f3f5f8;--bg:#fff;--navy:#1f3a5f;--blue:#2f5d94;--teal:#2f9e94;--gold:#b8901c;
+  --k-cur:#3fb8ad;--k-phd:#1f3a5f;--k-ms:#2f5d94;--k-ug:#86a9d6;--k-co:#c9a227;color:var(--text)}
+.pp ul{list-style:none;margin:0;padding:0}
+.pp li{margin:0}
+.pp a{border-bottom:0;text-decoration:none;color:var(--navy)}
+.pp a:hover{text-decoration:underline}
+.pp h3 a,.pp-rn a{color:var(--navy);border-bottom:1px solid rgba(47,93,148,.35)!important;text-decoration:none!important}
+.pp h3 a:hover,.pp-rn a:hover{border-bottom-color:currentColor!important}
+.pp a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.pp h2{font-size:1.75rem;line-height:1.2;color:var(--ink);margin:0 0 1.25rem;padding:0}
+.pp h2:after{content:"";display:block;width:56px;height:3px;margin-top:.6rem;border-radius:2px;background:linear-gradient(90deg,var(--navy),var(--k-cur))}
+.pp-kicker{margin:0 0 .25rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-family:'PT Sans Narrow','Arial Narrow',sans-serif}
+.pp-sec{padding:3.25rem 0 0}
+.pp-art{display:block;width:100%;height:auto}
+.pp-ini{font-family:'PT Serif',Georgia,serif;font-weight:700;font-size:24px;fill:#fff;letter-spacing:2px}
+.pp-lnk{display:inline-block;margin-top:.45rem;font-size:.82rem;font-weight:700;letter-spacing:.02em;border-bottom:1px solid currentColor!important}
+.pp-lnk:hover{text-decoration:none!important}
+
+/* Figures count up on load; "since" line under the tiles */
+
+.pp-since{display:flex;align-items:center;gap:1rem;margin:1.1rem 22px 0;font-family:'PT Sans Narrow','Arial Narrow',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.pp-since:before,.pp-since:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--rule))}
+.pp-since:after{background:linear-gradient(90deg,var(--rule),transparent)}
+
+/* Current PhD gallery */
+.pp-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.pp-frame{border-radius:12px;overflow:hidden;box-shadow:0 10px 24px -14px rgba(31,58,95,.55);aspect-ratio:1/1}
+.pp-frame .pp-art{width:100%;height:100%;object-fit:cover}
+.pp-gal h3{margin:.9rem 0 .15rem;font-family:'PT Serif',Georgia,serif;font-size:1.12rem;line-height:1.3;color:var(--ink)}
+.pp-role{margin:0 0 .3rem;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);font-family:'PT Sans Narrow','Arial Narrow',sans-serif}
+.pp-meta{margin:0;font-size:.88rem;line-height:1.5;color:var(--muted)}
+
+/* PhD graduates */
+.pp-alums{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:1.1rem 2rem}
+.pp-alum{display:flex;gap:1rem;align-items:flex-start;padding-bottom:1.1rem;border-bottom:1px solid var(--rule)}
+.pp-frame.sm{flex:0 0 76px;width:76px;border-radius:10px;box-shadow:0 6px 16px -10px rgba(31,58,95,.6)}
+.pp-alum h3{margin:.1rem 0 .2rem;font-family:'PT Serif',Georgia,serif;font-size:1.05rem;line-height:1.3;color:var(--ink)}
+.pp-alum .pp-lnk{margin-top:.3rem}
+
+/* Rosters */
+.pp-two{display:grid;grid-template-columns:1.25fr 1fr;gap:2.5rem}
+.pp-roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(13.5rem,1fr));gap:.2rem 1.5rem}
+.pp-roster li{display:flex;align-items:center;gap:.75rem;padding:.5rem 0;border-bottom:1px solid var(--rule)}
+.pp-art.xs{flex:0 0 34px;width:34px;height:34px;border-radius:50%}
+.pp-art.xs .pp-ini{font-size:34px;letter-spacing:1px}
+.pp-rn{font-size:.95rem;line-height:1.3;color:var(--ink)}
+.pp-rn em{display:block;font-style:normal;font-size:.8rem;color:var(--muted);margin-top:.05rem}
+.pp-omark{flex:0 0 34px;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--k-co);color:var(--navy);display:flex;align-items:center;justify-content:center;font:700 .78rem 'PT Serif',Georgia,serif}
+.pp-col3 a{font-weight:700}
+
+/* Join */
+.pp-join{margin:3.5rem 0 1rem;position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:2rem 2.25rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
+.pp-join:before{content:"";position:absolute;left:-40px;bottom:-80px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06)}
+.pp-join>*{position:relative}
+.pp-join h2{color:#fff;margin:0 0 .3rem;font-size:1.5rem}
+.pp-join h2:after{display:none}
+.pp-join p{margin:0;opacity:.92;max-width:34em}
+.pp-btn{display:inline-block;background:#fff;color:#1f3a5f!important;font-weight:700;padding:.75rem 1.5rem;border-radius:6px;text-decoration:none!important}
+.pp-btn:hover{background:#eef3f8}
+.pp-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+@media only screen and (max-width:56em){
+  .pp-gallery{grid-template-columns:repeat(2,1fr)}
+  .pp-two{grid-template-columns:1fr;gap:3.25rem}
+}
+@media only screen and (max-width:37.5em){
+  .pp-since{margin:1rem 0 0;font-size:.78rem;gap:.75rem}
+  .pp h2{font-size:1.45rem}
+  .pp-gallery{gap:1.1rem}
+  .pp-alums{grid-template-columns:1fr}
+  .pp-join{padding:1.6rem 1.4rem}
+}
