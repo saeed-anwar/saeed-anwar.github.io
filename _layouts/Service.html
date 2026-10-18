@@ -1,110 +1,22 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<head>
-{% include _head.html %}
-<style>
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-/* Top banner and figure tiles (shared style with the other pages) */
-.sv-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 64px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
-.sv-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
-.sv-hero>*{position:relative}
-.sv-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
-.sv .sv-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
-.sv-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:580px;line-height:1.6}
-.sv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-36px 22px 26px;position:relative;z-index:2}
-.sv-st{background:#fff!important;border-radius:10px;padding:14px 8px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
-.sv-st b{display:block;font-size:22px;color:#1f3a5f;font-family:'PT Sans Narrow',sans-serif}
-.sv-st span{font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#888}
-
-/* Page content */
-.sv{--ink:#1c2733;--navy:#1f3a5f;--text:#3d4752;--muted:#6b7480;--rule:#dfe3e8;--wash:#f3f5f8;--green:#2e7d4f;color:var(--text)}
-.sv ul{list-style:none;margin:0;padding:0}
-.sv li{margin:0}
-.sv-sec{padding:2.25rem 0 .25rem}
-.sv-h{display:flex;align-items:center;gap:.6rem;font-size:1.5rem;color:var(--ink);margin:0 0 .3rem;padding:0;scroll-margin-top:1.25rem}
-.sv-h i{font-size:1rem;width:1.25rem;text-align:center;color:var(--navy)}
-.sv-note{margin:0 0 1.1rem;font-size:.92rem;color:var(--muted)}
-.sv abbr{text-decoration:none;border:0;cursor:help}
-
-/* Editorial roles: entries with a left rule */
-.sv-eds{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem 2rem;margin-top:1.1rem!important}
-.sv-ed{border-left:3px solid var(--rule);padding:.15rem 0 .2rem 1rem}
-.sv-ed.is-cur{border-left-color:var(--navy)}
-.sv-role{margin:0 0 .2rem;font-size:.85rem;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
-.sv-now{display:inline-flex;align-items:center;gap:.35rem;color:var(--green);font-weight:700}
-.sv-now:before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--green)}
-.sv-ed h4{margin:0;font-size:1.05rem;line-height:1.4;color:var(--ink)}
-.sv-ed h4.sv-title{font-family:inherit;font-style:italic;font-weight:400;font-size:1.02rem;line-height:1.55}
-.sv-meta{margin:.25rem 0 0;font-size:.9rem;color:var(--muted);display:flex;align-items:center;flex-wrap:wrap;gap:0 .6rem}
-.sv-sep{width:1px;height:.85rem;background:var(--rule)}
-
-/* Conference organisation: venue panels */
-.sv-vens{display:grid;grid-template-columns:repeat(auto-fill,minmax(13.5rem,1fr));gap:1rem}
-.sv-ven{display:flex;flex-direction:column;border:1px solid var(--rule);border-top:3px solid var(--navy);border-radius:4px;padding:1rem 1.1rem}
-.sv-acr{font-family:'PT Sans Narrow','Arial Narrow',sans-serif;font-weight:700;font-size:1.3rem;line-height:1.1;color:var(--navy);letter-spacing:.01em}
-.sv-vrole{margin:.45rem 0 .15rem;font-weight:700;font-size:.95rem;color:var(--ink)}
-.sv-vfull{margin:0;font-size:.82rem;line-height:1.4;color:var(--muted)}
-.sv-yrs{margin:auto 0 0;padding-top:.8rem;display:flex;gap:.4rem;flex-wrap:wrap}
-.sv-yrs span{font-size:.85rem;font-weight:700;color:var(--navy);background:var(--wash);border-radius:3px;padding:.15rem .5rem;font-variant-numeric:tabular-nums}
-
-/* Conference reviewing: compact venue strip */
-.sv-rvs{margin-top:1.1rem!important;display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:.75rem}
-.sv-rv{display:flex;flex-direction:column;background:var(--wash);border-radius:4px;padding:.8rem .95rem}
-.sv-rv .sv-acr{font-size:1.25rem}
-.sv-rvy{margin:.3rem 0 .2rem;font-size:.9rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
-.sv-rv .sv-vfull{font-size:.78rem}
-
-/* Journal reviewing: by publisher */
-.sv-pubs{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem 2rem;align-items:start}
-.sv-pub h4{display:flex;justify-content:space-between;align-items:baseline;margin:0;padding:0 0 .45rem;font-size:1.05rem;color:var(--ink);border-bottom:2px solid var(--navy)}
-.sv-pub h4 span{font-size:.85rem;font-weight:400;color:var(--muted)}
-.sv-pub li{padding:.5rem 0;border-bottom:1px solid var(--rule);font-size:.95rem;line-height:1.45;color:var(--text)}
-
-/* Memberships */
-.sv-mems{margin-top:1.1rem!important;display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.75rem}
-.sv-mem{display:flex;align-items:center;gap:.9rem;border:1px solid var(--rule);border-radius:4px;padding:.8rem 1rem}
-.sv-macr{flex:0 0 3.4rem;height:3.4rem;border-radius:50%;background:var(--wash);color:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'PT Sans Narrow','Arial Narrow',sans-serif;font-weight:700;font-size:1rem}
-.sv-mname{font-size:.95rem;line-height:1.35;color:var(--ink)}
-.sv-mname em{display:block;font-style:normal;font-size:.82rem;color:var(--muted);margin-top:.1rem}
-
-@media only screen and (max-width:37.5em){
-  .sv-stats{grid-template-columns:repeat(2,1fr);margin:-32px 0 22px}
-  .sv-hero{padding:26px 22px 54px}.sv .sv-hero h1{font-size:26px}
-  .sv-eds{grid-template-columns:1fr}
-  .sv-vens{grid-template-columns:1fr 1fr;gap:.75rem}
-  .sv-ven{padding:.85rem .9rem}
-  .sv-acr{font-size:1.15rem}
-  .sv-rvs{grid-template-columns:1fr 1fr}
-}
-</style>
-</head>
-
-<body class="page">
-{% include _browser-upgrade.html %}
-
-{% include _navigation.html %}
-
-<div id="main" role="main">
-  <div class="article-author-side">
-    {% include _author-bio.html %}
-  </div>
-  <article>
+---
+layout: default
+stylesheets:
+  - "/assets/css/pages/service.css"
+---
     <div class="article-wrap sv">
       <!-- Update the four figures in .sv-stats when you add roles:
            editorial = editorial entries; area chair & SPC = total years across the venue panels;
            conference reviews = total years across the reviewing strip; journals = journals across all publishers. -->
-      <div class="sv-hero"><p class="sv-over">Academic service</p><h1>Service</h1>
-        <p class="s">Editorial roles, conference organization, and reviewing for conferences and journals in computer vision and machine learning.</p></div>
-      <div class="sv-stats">
-        <div class="sv-st"><b>4</b><span>Editorial roles</span></div>
-        <div class="sv-st"><b>11</b><span>Area chair &amp; SPC</span></div>
-        <div class="sv-st"><b>12</b><span>Conference reviews</span></div>
-        <div class="sv-st"><b>14</b><span>Journals reviewed</span></div>
-      </div>
+      <header class="pg-head">
+        <h1>Service</h1>
+        <p class="s">Editorial roles, conference organization, and reviewing for conferences and journals in computer vision and machine learning.</p>
+        <div class="pg-stats">
+          <div class="pg-st"><b>4</b><span>Editorial roles</span></div>
+          <div class="pg-st"><b>12</b><span>Area chair &amp; SPC</span></div>
+          <div class="pg-st"><b>12</b><span>Conference reviews</span></div>
+          <div class="pg-st"><b>14</b><span>Journals reviewed</span></div>
+        </div>
+      </header>
 
       <section id="editorial" class="sv-sec">
         <h2 class="sv-h"><i class="fa fa-pencil" aria-hidden="true"></i>Editorial roles</h2>
@@ -158,7 +70,7 @@ html{scroll-behavior:smooth}
             <abbr class="sv-acr" title="AAAI Conference on Artificial Intelligence">AAAI</abbr>
             <p class="sv-vrole">Senior Program Committee</p>
             <p class="sv-vfull">AAAI Conference on Artificial Intelligence</p>
-            <p class="sv-yrs"><span>2026</span></p>
+            <p class="sv-yrs"><span>2026</span><span>2027</span></p>
           </li>
           <li class="sv-ven">
             <abbr class="sv-acr" title="International Joint Conference on Artificial Intelligence">IJCAI</abbr>
@@ -253,16 +165,3 @@ html{scroll-behavior:smooth}
       </section>
 
     </div><!-- /.article-wrap -->
-  </article>
-</div><!-- /#main -->
-
-<div class="footer-wrap">
-  <footer>
-    {% include _footer.html %}
-  </footer>
-</div><!-- /.footer-wrap -->
-
-{% include _scripts.html %}
-
-</body>
-</html>

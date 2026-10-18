@@ -1,155 +1,37 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<head>
-{% include _head.html %}
-<style>
-/* Top banner and figure tiles (same style as the other pages) */
-.pp-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 64px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
-.pp-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
-.pp-hero:after{content:"";position:absolute;right:90px;bottom:-60px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.05)}
-.pp-hero>*{position:relative}
-.pp-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
-.pp .pp-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
-.pp-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:580px;line-height:1.6}
-.pp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-36px 22px 10px;position:relative;z-index:2}
-.pp-st{background:#fff!important;border-radius:10px;padding:14px 8px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
-.pp-st b{display:block;font-size:22px;color:#1f3a5f;font-family:'PT Sans Narrow',sans-serif}
-.pp-st span{font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#888}
-
-/* Page */
-.pp{--ink:#1c2733;--text:#3d4752;--muted:#6b7480;--rule:#dfe3e8;--wash:#f3f5f8;--bg:#fff;--navy:#1f3a5f;--blue:#2f5d94;--teal:#2f9e94;--gold:#b8901c;
-  --k-cur:#3fb8ad;--k-phd:#1f3a5f;--k-ms:#2f5d94;--k-ug:#86a9d6;--k-co:#c9a227;color:var(--text)}
-.pp ul{list-style:none;margin:0;padding:0}
-.pp li{margin:0}
-.pp a{border-bottom:0;text-decoration:none;color:var(--navy)}
-.pp a:hover{text-decoration:underline}
-.pp h3 a,.pp-rn a{color:var(--navy);border-bottom:1px solid rgba(47,93,148,.35)!important;text-decoration:none!important}
-.pp h3 a:hover,.pp-rn a:hover{border-bottom-color:currentColor!important}
-.pp a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-.pp h2{font-size:1.75rem;line-height:1.2;color:var(--ink);margin:0 0 1.25rem;padding:0}
-.pp h2:after{content:"";display:block;width:56px;height:3px;margin-top:.6rem;border-radius:2px;background:linear-gradient(90deg,var(--navy),var(--k-cur))}
-.pp-kicker{margin:0 0 .25rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-family:'PT Sans Narrow','Arial Narrow',sans-serif}
-.pp-sec{padding:3.25rem 0 0}
-.pp-art{display:block;width:100%;height:auto}
-.pp-ini{font-family:'PT Serif',Georgia,serif;font-weight:700;font-size:24px;fill:#fff;letter-spacing:2px}
-.pp-lnk{display:inline-block;margin-top:.45rem;font-size:.82rem;font-weight:700;letter-spacing:.02em;border-bottom:1px solid currentColor!important}
-.pp-lnk:hover{text-decoration:none!important}
-
-/* Figures count up on load; "since" line under the tiles */
-.pp-st b{font-variant-numeric:tabular-nums}
-.pp-since{display:flex;align-items:center;gap:1rem;margin:1.1rem 22px 0;font-family:'PT Sans Narrow','Arial Narrow',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
-.pp-since:before,.pp-since:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--rule))}
-.pp-since:after{background:linear-gradient(90deg,var(--rule),transparent)}
-
-/* Current PhD gallery */
-.pp-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.pp-frame{border-radius:12px;overflow:hidden;box-shadow:0 10px 24px -14px rgba(31,58,95,.55);aspect-ratio:1/1}
-.pp-frame .pp-art{width:100%;height:100%;object-fit:cover}
-.pp-gal h3{margin:.9rem 0 .15rem;font-family:'PT Serif',Georgia,serif;font-size:1.12rem;line-height:1.3;color:var(--ink)}
-.pp-role{margin:0 0 .3rem;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);font-family:'PT Sans Narrow','Arial Narrow',sans-serif}
-.pp-meta{margin:0;font-size:.88rem;line-height:1.5;color:var(--muted)}
-
-/* PhD graduates */
-.pp-alums{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:1.1rem 2rem}
-.pp-alum{display:flex;gap:1rem;align-items:flex-start;padding-bottom:1.1rem;border-bottom:1px solid var(--rule)}
-.pp-frame.sm{flex:0 0 76px;width:76px;border-radius:10px;box-shadow:0 6px 16px -10px rgba(31,58,95,.6)}
-.pp-alum h3{margin:.1rem 0 .2rem;font-family:'PT Serif',Georgia,serif;font-size:1.05rem;line-height:1.3;color:var(--ink)}
-.pp-alum .pp-lnk{margin-top:.3rem}
-
-/* Rosters */
-.pp-two{display:grid;grid-template-columns:1.25fr 1fr;gap:2.5rem}
-.pp-roster{display:grid;grid-template-columns:repeat(auto-fill,minmax(13.5rem,1fr));gap:.2rem 1.5rem}
-.pp-roster li{display:flex;align-items:center;gap:.75rem;padding:.5rem 0;border-bottom:1px solid var(--rule)}
-.pp-art.xs{flex:0 0 34px;width:34px;height:34px;border-radius:50%}
-.pp-art.xs .pp-ini{font-size:34px;letter-spacing:1px}
-.pp-rn{font-size:.95rem;line-height:1.3;color:var(--ink)}
-.pp-rn em{display:block;font-style:normal;font-size:.8rem;color:var(--muted);margin-top:.05rem}
-.pp-omark{flex:0 0 34px;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--k-co);color:var(--navy);display:flex;align-items:center;justify-content:center;font:700 .78rem 'PT Serif',Georgia,serif}
-.pp-col3 a{font-weight:700}
-
-/* Join */
-.pp-join{margin:3.5rem 0 1rem;position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:2rem 2.25rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
-.pp-join:before{content:"";position:absolute;left:-40px;bottom:-80px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06)}
-.pp-join>*{position:relative}
-.pp-join h2{color:#fff;margin:0 0 .3rem;font-size:1.5rem}
-.pp-join h2:after{display:none}
-.pp-join p{margin:0;opacity:.92;max-width:34em}
-.pp-btn{display:inline-block;background:#fff;color:#1f3a5f!important;font-weight:700;padding:.75rem 1.5rem;border-radius:6px;text-decoration:none!important}
-.pp-btn:hover{background:#eef3f8}
-.pp-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
-
-@media only screen and (max-width:56em){
-  .pp-gallery{grid-template-columns:repeat(2,1fr)}
-  .pp-two{grid-template-columns:1fr;gap:3.25rem}
-}
-@media only screen and (max-width:37.5em){
-  .pp-stats{grid-template-columns:repeat(2,1fr);margin:-32px 0 10px}
-  .pp-hero{padding:26px 22px 54px}.pp .pp-hero h1{font-size:26px}
-  .pp-since{margin:1rem 0 0;font-size:.78rem;gap:.75rem}
-  .pp h2{font-size:1.45rem}
-  .pp-gallery{gap:1.1rem}
-  .pp-alums{grid-template-columns:1fr}
-  .pp-join{padding:1.6rem 1.4rem}
-}
-</style>
-</head>
-
-<body class="page">
-{% include _browser-upgrade.html %}
-
-{% include _navigation.html %}
-
-<div id="main" role="main">
-  <div class="article-author-side">
-    {% include _author-bio.html %}
-  </div>
-  <article>
+---
+layout: default
+stylesheets:
+  - "/assets/css/pages/people.css"
+---
     <div class="article-wrap pp">
-      <!-- Each person's artwork is generated from their name. To use a real photo instead, replace that <svg class="pp-art ..."> with
-           <img class="pp-art" src="/images/people/firstname-lastname.jpg" alt=""> (square images work best).
-           Lists run newest first; collaborators are alphabetical by surname.
-           When you add people, update each figure in .pp-stats in both places (data-to and the number itself). -->
-      <div class="pp-hero"><p class="pp-over">Our group</p><h1>People</h1>
-        <p class="s">The students, graduates and collaborators behind our research in computer vision and machine learning.</p></div>
-      <div class="pp-stats">
-        <div class="pp-st"><b data-to="4">4</b><span>Current PhD</span></div>
-        <div class="pp-st"><b data-to="11">11</b><span>PhD graduates</span></div>
-        <div class="pp-st"><b data-to="21">21</b><span>Master&rsquo;s students</span></div>
-        <div class="pp-st"><b data-to="16">16</b><span>Collaborators</span></div>
-      </div>
+      <!-- This page is built from _data/people.yml. Add or edit people there, not here.
+           The figures at the top are counted automatically. -->
+      {%- assign ppl = site.data.people %}
+      <header class="pg-head">
+        <h1>People</h1>
+        <p class="s">The students, graduates and collaborators behind our research in computer vision and machine learning.</p>
+        <div class="pg-stats">
+          <div class="pg-st"><b>{{ ppl.current_phd.size }}</b><span>Current PhD</span></div>
+          <div class="pg-st"><b>{{ ppl.phd_graduates.size }}</b><span>PhD graduates</span></div>
+          <div class="pg-st"><b>{{ ppl.masters.size }}</b><span>Master&rsquo;s students</span></div>
+          <div class="pg-st"><b>{{ ppl.collaborators.size }}</b><span>Collaborators</span></div>
+        </div>
+      </header>
       <p class="pp-since">Supervising students since 2012</p>
 
       <section class="pp-sec" id="current">
         <p class="pp-kicker">The team today</p>
         <h2>Current PhD students</h2>
         <ul class="pp-gallery">
+          {%- for p in ppl.current_phd %}
+          {%- capture uid %}c{{ forloop.index }}{% endcapture %}
           <li class="pp-gal">
-            <div class="pp-frame"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg1)"/><circle cx="83" cy="48" r="46" fill="#fff" opacity=".09"/><circle cx="40" cy="37" r="18" fill="#fff" opacity=".07"/><circle cx="48" cy="7" r="18" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="32 200" transform="rotate(90 48 7)"/><circle cx="23" cy="43" r="2" fill="#fff" opacity=".45"/><circle cx="20" cy="57" r="1" fill="#fff" opacity=".45"/><circle cx="62" cy="24" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">WA</text></svg></div>
-            <h3>Wesley Arthur</h3>
-            <p class="pp-role">PhD candidate</p>
-            <p class="pp-meta">University of Western Australia<br>Since 2026</p>
+            <div class="pp-frame">{% if p.photo %}<img class="pp-art" src="{{ p.photo | relative_url }}" alt="">{% else %}{% include person-art.html name=p.name uid=uid %}{% endif %}</div>
+            <h3>{% if p.url %}<a href="{{ p.url | escape }}">{{ p.name | escape }}</a>{% else %}{{ p.name | escape }}{% endif %}</h3>
+            <p class="pp-role">{{ p.role | escape }}</p>
+            <p class="pp-meta">{{ p.institution | escape }}<br>Since {{ p.since }}</p>
           </li>
-          <li class="pp-gal">
-            <div class="pp-frame"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg2)"/><circle cx="90" cy="67" r="46" fill="#fff" opacity=".09"/><circle cx="22" cy="29" r="29" fill="#fff" opacity=".07"/><circle cx="36" cy="9" r="21" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="26 200" transform="rotate(62 36 9)"/><circle cx="53" cy="40" r="1" fill="#fff" opacity=".45"/><circle cx="72" cy="41" r="2" fill="#fff" opacity=".45"/><circle cx="16" cy="60" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">TW</text></svg></div>
-            <h3>Tengkai Wang</h3>
-            <p class="pp-role">PhD candidate</p>
-            <p class="pp-meta">University of Western Australia<br>Since 2026</p>
-          </li>
-          <li class="pp-gal">
-            <div class="pp-frame"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg3" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg3)"/><circle cx="6" cy="79" r="34" fill="#fff" opacity=".09"/><circle cx="89" cy="60" r="28" fill="#fff" opacity=".07"/><circle cx="47" cy="15" r="25" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="59 200" transform="rotate(56 47 15)"/><circle cx="12" cy="75" r="1" fill="#fff" opacity=".45"/><circle cx="66" cy="40" r="2" fill="#fff" opacity=".45"/><circle cx="89" cy="53" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">XZ</text></svg></div>
-            <h3><a href="https://xiaogezhang9.github.io/">Xiaoge Zhang</a></h3>
-            <p class="pp-role">PhD candidate</p>
-            <p class="pp-meta">University of Western Australia<br>Since 2025</p>
-          </li>
-          <li class="pp-gal">
-            <div class="pp-frame"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg4)"/><circle cx="9" cy="84" r="42" fill="#fff" opacity=".09"/><circle cx="46" cy="9" r="33" fill="#fff" opacity=".07"/><circle cx="44" cy="42" r="16" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="47 200" transform="rotate(152 44 42)"/><circle cx="16" cy="84" r="2" fill="#fff" opacity=".45"/><circle cx="82" cy="87" r="1" fill="#fff" opacity=".45"/><circle cx="77" cy="70" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">NN</text></svg></div>
-            <h3><a href="https://scholar.google.com/citations?user=SIahZ3UAAAAJ&amp;hl=en">Numair Nadeem</a></h3>
-            <p class="pp-role">PhD candidate</p>
-            <p class="pp-meta">University of Regina<br>Since 2024</p>
-          </li>
+          {%- endfor %}
         </ul>
       </section>
 
@@ -157,162 +39,48 @@
         <p class="pp-kicker">Alumni</p>
         <h2>PhD graduates</h2>
         <ul class="pp-alums">
+          {%- for p in ppl.phd_graduates %}
+          {%- capture uid %}g{{ forloop.index }}{% endcapture %}
           <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg5" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#35837e"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg5)"/><circle cx="88" cy="59" r="37" fill="#fff" opacity=".09"/><circle cx="7" cy="57" r="20" fill="#fff" opacity=".07"/><circle cx="26" cy="34" r="29" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="42 200" transform="rotate(177 26 34)"/><circle cx="60" cy="68" r="1" fill="#fff" opacity=".45"/><circle cx="27" cy="28" r="2" fill="#fff" opacity=".45"/><circle cx="72" cy="65" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">AR</text></svg></div>
-            <div><h3><a href="https://scholar.google.com/citations?user=wI9QQg4AAAAJ&amp;hl=en">ABM Ashikur Rahman</a></h3><p class="pp-meta">PhD, 2024&ndash;2026<br>King Fahd University of Petroleum &amp; Minerals</p></div>
+            <div class="pp-frame sm">{% if p.photo %}<img class="pp-art" src="{{ p.photo | relative_url }}" alt="">{% else %}{% include person-art.html name=p.name uid=uid %}{% endif %}</div>
+            <div><h3>{% if p.url %}<a href="{{ p.url | escape }}">{{ p.name | escape }}</a>{% else %}{{ p.name | escape }}{% endif %}</h3><p class="pp-meta">PhD, {{ p.years }}<br>{{ p.institution | escape }}</p></div>
           </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg6)"/><circle cx="3" cy="35" r="62" fill="#fff" opacity=".09"/><circle cx="6" cy="89" r="19" fill="#fff" opacity=".07"/><circle cx="45" cy="92" r="18" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="54 200" transform="rotate(164 45 92)"/><circle cx="47" cy="81" r="2" fill="#fff" opacity=".45"/><circle cx="14" cy="12" r="1" fill="#fff" opacity=".45"/><circle cx="44" cy="22" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">WA</text></svg></div>
-            <div><h3><a href="https://www.iau.edu.sa/en/colleges/college-of-computer-science-and-information-technology/faculty/wadha-muteb-al-mattar">Wadha Almattar</a></h3><p class="pp-meta">PhD, 2022&ndash;2025<br>King Fahd University of Petroleum &amp; Minerals</p></div>
-          </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg7" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg7)"/><circle cx="5" cy="50" r="61" fill="#fff" opacity=".09"/><circle cx="25" cy="80" r="23" fill="#fff" opacity=".07"/><circle cx="99" cy="52" r="35" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="43 200" transform="rotate(143 99 52)"/><circle cx="84" cy="69" r="1" fill="#fff" opacity=".45"/><circle cx="73" cy="32" r="1" fill="#fff" opacity=".45"/><circle cx="33" cy="18" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">MA</text></svg></div>
-            <div><h3><a href="https://scholar.google.com.au/citations?hl=en&amp;user=e5fM3ZgAAAAJ">Mona Alzahrani</a></h3><p class="pp-meta">PhD, 2022&ndash;2025<br>King Fahd University of Petroleum &amp; Minerals</p></div>
-          </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg8)"/><circle cx="36" cy="76" r="34" fill="#fff" opacity=".09"/><circle cx="28" cy="33" r="39" fill="#fff" opacity=".07"/><circle cx="67" cy="45" r="31" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="25 200" transform="rotate(208 67 45)"/><circle cx="46" cy="79" r="2" fill="#fff" opacity=".45"/><circle cx="58" cy="83" r="1" fill="#fff" opacity=".45"/><circle cx="15" cy="59" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">RC</text></svg></div>
-            <div><h3><a href="https://ruikai.ink/">Ruikai Cui</a></h3><p class="pp-meta">PhD, 2021&ndash;2025<br>Australian National University</p></div>
-          </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg9)"/><circle cx="64" cy="60" r="44" fill="#fff" opacity=".09"/><circle cx="13" cy="52" r="27" fill="#fff" opacity=".07"/><circle cx="72" cy="28" r="14" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="55 200" transform="rotate(167 72 28)"/><circle cx="79" cy="87" r="2" fill="#fff" opacity=".45"/><circle cx="17" cy="52" r="1" fill="#fff" opacity=".45"/><circle cx="45" cy="40" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">MI</text></svg></div>
-            <div><h3><a href="https://scholar.google.com/citations?user=t_M0DmoAAAAJ&amp;hl=en">Muhammad Ibrahim</a></h3><p class="pp-meta">PhD, 2021&ndash;2024<br>University of Western Australia</p></div>
-          </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg10" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg10)"/><circle cx="81" cy="72" r="55" fill="#fff" opacity=".09"/><circle cx="83" cy="11" r="29" fill="#fff" opacity=".07"/><circle cx="89" cy="14" r="17" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="54 200" transform="rotate(201 89 14)"/><circle cx="34" cy="50" r="2" fill="#fff" opacity=".45"/><circle cx="51" cy="13" r="2" fill="#fff" opacity=".45"/><circle cx="44" cy="54" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">SQ</text></svg></div>
-            <div><h3><a href="https://shiqiu0419.github.io/">Shi Qiu</a></h3><p class="pp-meta">PhD, 2019&ndash;2023<br>Australian National University</p></div>
-          </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg11" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#35837e"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg11)"/><circle cx="33" cy="92" r="49" fill="#fff" opacity=".09"/><circle cx="71" cy="73" r="27" fill="#fff" opacity=".07"/><circle cx="11" cy="18" r="19" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="48 200" transform="rotate(199 11 18)"/><circle cx="10" cy="78" r="1" fill="#fff" opacity=".45"/><circle cx="49" cy="68" r="2" fill="#fff" opacity=".45"/><circle cx="78" cy="78" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">TH</text></svg></div>
-            <div><h3><a href="https://scholar.google.com/citations?user=4fU0t_oAAAAJ&amp;hl=en">Tanveer Hussain</a></h3><p class="pp-meta">PhD, 2020&ndash;2022<br>Sejong University</p></div>
-          </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg12" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg12)"/><circle cx="23" cy="85" r="35" fill="#fff" opacity=".09"/><circle cx="30" cy="42" r="36" fill="#fff" opacity=".07"/><circle cx="51" cy="54" r="22" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="56 200" transform="rotate(56 51 54)"/><circle cx="73" cy="74" r="2" fill="#fff" opacity=".45"/><circle cx="66" cy="26" r="1" fill="#fff" opacity=".45"/><circle cx="46" cy="27" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">YL</text></svg></div>
-            <div><h3><a href="https://scholar.google.com/citations?hl=en&amp;user=VPs7nXkAAAAJ">Yang Liu</a></h3><p class="pp-meta">PhD, 2019&ndash;2021<br>CSIRO and ANU</p></div>
-          </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg13" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg13)"/><circle cx="88" cy="21" r="56" fill="#fff" opacity=".09"/><circle cx="88" cy="0" r="20" fill="#fff" opacity=".07"/><circle cx="37" cy="45" r="39" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="34 200" transform="rotate(198 37 45)"/><circle cx="41" cy="76" r="1" fill="#fff" opacity=".45"/><circle cx="48" cy="58" r="1" fill="#fff" opacity=".45"/><circle cx="64" cy="80" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">ZQ</text></svg></div>
-            <div><h3><a href="https://kfzyqin.github.io/">Zhenyue Qin</a></h3><p class="pp-meta">PhD, 2019&ndash;2021<br>Australian National University</p></div>
-          </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg14" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg14)"/><circle cx="0" cy="54" r="49" fill="#fff" opacity=".09"/><circle cx="84" cy="61" r="38" fill="#fff" opacity=".07"/><circle cx="77" cy="94" r="39" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="57 200" transform="rotate(170 77 94)"/><circle cx="28" cy="21" r="1" fill="#fff" opacity=".45"/><circle cx="20" cy="24" r="2" fill="#fff" opacity=".45"/><circle cx="47" cy="48" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">JZ</text></svg></div>
-            <div><h3><a href="https://jingzhang617.github.io/">Jing Zhang</a></h3><p class="pp-meta">PhD, 2019&ndash;2021<br>Australian National University</p></div>
-          </li>
-          <li class="pp-alum">
-            <div class="pp-frame sm"><svg class="pp-art" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg15" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg15)"/><circle cx="46" cy="58" r="62" fill="#fff" opacity=".09"/><circle cx="35" cy="46" r="36" fill="#fff" opacity=".07"/><circle cx="15" cy="39" r="39" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="52 200" transform="rotate(117 15 39)"/><circle cx="33" cy="38" r="1" fill="#fff" opacity=".45"/><circle cx="47" cy="82" r="1" fill="#fff" opacity=".45"/><circle cx="42" cy="75" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">KL</text></svg></div>
-            <div><h3><a href="https://dblp.org/pid/190/8790.html">Kaiyue Lu</a></h3><p class="pp-meta">PhD, 2018&ndash;2021<br>CSIRO and ANU</p></div>
-          </li>
+          {%- endfor %}
         </ul>
       </section>
 
       <section class="pp-sec pp-two">
-        <div id="masters">
+        {%- assign groups = "masters,undergraduates" | split: "," %}
+        {%- for g in groups %}
+        {%- if g == "masters" %}{% assign list = ppl.masters %}{% assign gid = "masters" %}{% assign gtitle = "Master&rsquo;s students" %}{% assign pre = "m" %}
+        {%- else %}{% assign list = ppl.undergraduates %}{% assign gid = "undergraduate" %}{% assign gtitle = "Undergraduate &amp; interns" %}{% assign pre = "u" %}{% endif %}
+        <div id="{{ gid }}">
           <p class="pp-kicker">Alumni</p>
-          <h2>Master&rsquo;s students</h2>
+          <h2>{{ gtitle }}</h2>
           <ul class="pp-roster">
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg16" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg16)"/><circle cx="86" cy="26" r="34" fill="#fff" opacity=".09"/><circle cx="41" cy="36" r="33" fill="#fff" opacity=".07"/><circle cx="57" cy="82" r="19" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="31 200" transform="rotate(42 57 82)"/><circle cx="52" cy="70" r="1" fill="#fff" opacity=".45"/><circle cx="52" cy="35" r="2" fill="#fff" opacity=".45"/><circle cx="61" cy="77" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">MK</text></svg><span class="pp-rn">Md Faraz Kabir Khan<em>UWA, 2025&ndash;2026</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg17" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg17)"/><circle cx="13" cy="16" r="42" fill="#fff" opacity=".09"/><circle cx="34" cy="44" r="27" fill="#fff" opacity=".07"/><circle cx="11" cy="34" r="24" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="52 200" transform="rotate(46 11 34)"/><circle cx="43" cy="23" r="2" fill="#fff" opacity=".45"/><circle cx="56" cy="17" r="2" fill="#fff" opacity=".45"/><circle cx="42" cy="31" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">LA</text></svg><span class="pp-rn">Leena Alghamdi<em>KFUPM, 2024&ndash;2025</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg18" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg18)"/><circle cx="94" cy="23" r="37" fill="#fff" opacity=".09"/><circle cx="48" cy="66" r="24" fill="#fff" opacity=".07"/><circle cx="52" cy="21" r="14" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="48 200" transform="rotate(100 52 21)"/><circle cx="61" cy="66" r="1" fill="#fff" opacity=".45"/><circle cx="30" cy="70" r="1" fill="#fff" opacity=".45"/><circle cx="78" cy="71" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">RJ</text></svg><span class="pp-rn">Rahaf Jaber<em>KFUPM, 2024&ndash;2025</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg19" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg19)"/><circle cx="77" cy="82" r="41" fill="#fff" opacity=".09"/><circle cx="35" cy="29" r="24" fill="#fff" opacity=".07"/><circle cx="29" cy="12" r="24" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="34 200" transform="rotate(74 29 12)"/><circle cx="25" cy="32" r="1" fill="#fff" opacity=".45"/><circle cx="84" cy="25" r="1" fill="#fff" opacity=".45"/><circle cx="64" cy="84" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">BJ</text></svg><span class="pp-rn">Babar Jan<em>KFUPM, 2024&ndash;2025</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg20" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg20)"/><circle cx="41" cy="87" r="42" fill="#fff" opacity=".09"/><circle cx="39" cy="47" r="24" fill="#fff" opacity=".07"/><circle cx="99" cy="94" r="28" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="39 200" transform="rotate(254 99 94)"/><circle cx="19" cy="31" r="1" fill="#fff" opacity=".45"/><circle cx="24" cy="40" r="1" fill="#fff" opacity=".45"/><circle cx="69" cy="89" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">HK</text></svg><span class="pp-rn">Habiba Kausar<em>KFUPM, 2024&ndash;2025</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg21" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg21)"/><circle cx="39" cy="29" r="54" fill="#fff" opacity=".09"/><circle cx="77" cy="34" r="37" fill="#fff" opacity=".07"/><circle cx="14" cy="81" r="18" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="52 200" transform="rotate(33 14 81)"/><circle cx="60" cy="35" r="1" fill="#fff" opacity=".45"/><circle cx="43" cy="18" r="1" fill="#fff" opacity=".45"/><circle cx="82" cy="83" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">SK</text></svg><span class="pp-rn">Shahzad Khan<em>KFUPM, 2024&ndash;2025</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg22" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg22)"/><circle cx="89" cy="25" r="40" fill="#fff" opacity=".09"/><circle cx="49" cy="73" r="19" fill="#fff" opacity=".07"/><circle cx="32" cy="33" r="15" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="23 200" transform="rotate(186 32 33)"/><circle cx="39" cy="14" r="1" fill="#fff" opacity=".45"/><circle cx="36" cy="16" r="2" fill="#fff" opacity=".45"/><circle cx="13" cy="40" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">YY</text></svg><span class="pp-rn">Yasmin Yasin<em>KFUPM, 2024&ndash;2025</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg23" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg23)"/><circle cx="61" cy="18" r="53" fill="#fff" opacity=".09"/><circle cx="17" cy="28" r="37" fill="#fff" opacity=".07"/><circle cx="19" cy="82" r="21" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="26 200" transform="rotate(43 19 82)"/><circle cx="28" cy="89" r="1" fill="#fff" opacity=".45"/><circle cx="53" cy="32" r="1" fill="#fff" opacity=".45"/><circle cx="56" cy="86" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">KB</text></svg><span class="pp-rn">Khawlah Bajbaa<em>KFUPM, 2023&ndash;2024</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg24" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg24)"/><circle cx="61" cy="64" r="47" fill="#fff" opacity=".09"/><circle cx="16" cy="25" r="23" fill="#fff" opacity=".07"/><circle cx="42" cy="30" r="31" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="42 200" transform="rotate(45 42 30)"/><circle cx="31" cy="12" r="1" fill="#fff" opacity=".45"/><circle cx="55" cy="34" r="2" fill="#fff" opacity=".45"/><circle cx="72" cy="20" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">AE</text></svg><span class="pp-rn">Ali Elborki<em>KFUPM, 2023&ndash;2024</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg25" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg25)"/><circle cx="96" cy="10" r="42" fill="#fff" opacity=".09"/><circle cx="8" cy="84" r="27" fill="#fff" opacity=".07"/><circle cx="18" cy="15" r="19" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="35 200" transform="rotate(184 18 15)"/><circle cx="79" cy="86" r="2" fill="#fff" opacity=".45"/><circle cx="34" cy="56" r="1" fill="#fff" opacity=".45"/><circle cx="65" cy="23" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">MS</text></svg><span class="pp-rn">Mohammad Shullar<em>KFUPM, 2023&ndash;2024</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg26" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg26)"/><circle cx="26" cy="61" r="57" fill="#fff" opacity=".09"/><circle cx="11" cy="58" r="18" fill="#fff" opacity=".07"/><circle cx="24" cy="48" r="14" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="39 200" transform="rotate(21 24 48)"/><circle cx="36" cy="47" r="2" fill="#fff" opacity=".45"/><circle cx="31" cy="54" r="1" fill="#fff" opacity=".45"/><circle cx="69" cy="52" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">LC</text></svg><span class="pp-rn">Luoyu Chen<em>ANU, 2022</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg27" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg27)"/><circle cx="17" cy="4" r="51" fill="#fff" opacity=".09"/><circle cx="52" cy="3" r="35" fill="#fff" opacity=".07"/><circle cx="19" cy="24" r="37" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="55 200" transform="rotate(200 19 24)"/><circle cx="78" cy="24" r="1" fill="#fff" opacity=".45"/><circle cx="50" cy="77" r="1" fill="#fff" opacity=".45"/><circle cx="85" cy="87" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">QZ</text></svg><span class="pp-rn">Qichen Zheng<em>ANU, 2022</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg28" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg28)"/><circle cx="27" cy="45" r="37" fill="#fff" opacity=".09"/><circle cx="25" cy="39" r="30" fill="#fff" opacity=".07"/><circle cx="53" cy="33" r="24" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="26 200" transform="rotate(101 53 33)"/><circle cx="29" cy="55" r="1" fill="#fff" opacity=".45"/><circle cx="31" cy="76" r="2" fill="#fff" opacity=".45"/><circle cx="16" cy="21" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">RE</text></svg><span class="pp-rn">Rizqi Ekoputris<em>ANU, 2020&ndash;2022</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg29" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#35837e"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg29)"/><circle cx="25" cy="39" r="59" fill="#fff" opacity=".09"/><circle cx="69" cy="7" r="28" fill="#fff" opacity=".07"/><circle cx="34" cy="5" r="26" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="49 200" transform="rotate(122 34 5)"/><circle cx="41" cy="23" r="1" fill="#fff" opacity=".45"/><circle cx="52" cy="30" r="1" fill="#fff" opacity=".45"/><circle cx="79" cy="20" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">RC</text></svg><span class="pp-rn">Ruiqi Chen<em>ANU, 2021</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg30" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg30)"/><circle cx="36" cy="76" r="34" fill="#fff" opacity=".09"/><circle cx="28" cy="33" r="39" fill="#fff" opacity=".07"/><circle cx="67" cy="45" r="31" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="25 200" transform="rotate(208 67 45)"/><circle cx="46" cy="79" r="2" fill="#fff" opacity=".45"/><circle cx="58" cy="83" r="1" fill="#fff" opacity=".45"/><circle cx="15" cy="59" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">RC</text></svg><span class="pp-rn">Ruikai Cui<em>ANU, 2021</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg31" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg31)"/><circle cx="92" cy="93" r="34" fill="#fff" opacity=".09"/><circle cx="74" cy="3" r="23" fill="#fff" opacity=".07"/><circle cx="68" cy="12" r="14" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="47 200" transform="rotate(66 68 12)"/><circle cx="59" cy="27" r="2" fill="#fff" opacity=".45"/><circle cx="76" cy="43" r="2" fill="#fff" opacity=".45"/><circle cx="37" cy="14" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">YS</text></svg><span class="pp-rn">Yuheng Shi<em>ANU, 2021</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg32" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg32)"/><circle cx="11" cy="57" r="41" fill="#fff" opacity=".09"/><circle cx="58" cy="97" r="24" fill="#fff" opacity=".07"/><circle cx="55" cy="83" r="19" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="42 200" transform="rotate(255 55 83)"/><circle cx="67" cy="60" r="1" fill="#fff" opacity=".45"/><circle cx="25" cy="77" r="2" fill="#fff" opacity=".45"/><circle cx="72" cy="85" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">XW</text></svg><span class="pp-rn">Xingshu Wang<em>ANU, 2021</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg33" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg33)"/><circle cx="74" cy="48" r="59" fill="#fff" opacity=".09"/><circle cx="39" cy="16" r="38" fill="#fff" opacity=".07"/><circle cx="67" cy="71" r="15" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="43 200" transform="rotate(148 67 71)"/><circle cx="18" cy="77" r="2" fill="#fff" opacity=".45"/><circle cx="78" cy="88" r="1" fill="#fff" opacity=".45"/><circle cx="33" cy="56" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">YW</text></svg><span class="pp-rn">Yunfan Wu<em>ANU, 2020&ndash;2021</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg34" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg34)"/><circle cx="8" cy="37" r="56" fill="#fff" opacity=".09"/><circle cx="2" cy="33" r="25" fill="#fff" opacity=".07"/><circle cx="12" cy="84" r="24" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="47 200" transform="rotate(66 12 84)"/><circle cx="55" cy="88" r="2" fill="#fff" opacity=".45"/><circle cx="76" cy="47" r="2" fill="#fff" opacity=".45"/><circle cx="37" cy="39" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">DL</text></svg><span class="pp-rn">Derek Liu<em>ANU, 2020</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg35" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg35)"/><circle cx="53" cy="75" r="51" fill="#fff" opacity=".09"/><circle cx="48" cy="44" r="35" fill="#fff" opacity=".07"/><circle cx="82" cy="3" r="37" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="51 200" transform="rotate(118 82 3)"/><circle cx="60" cy="40" r="2" fill="#fff" opacity=".45"/><circle cx="48" cy="39" r="2" fill="#fff" opacity=".45"/><circle cx="41" cy="59" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">ZY</text></svg><span class="pp-rn">Zhuocheng Yuan<em>ANU, 2020</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg36" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#35837e"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg36)"/><circle cx="68" cy="49" r="48" fill="#fff" opacity=".09"/><circle cx="53" cy="50" r="31" fill="#fff" opacity=".07"/><circle cx="19" cy="32" r="24" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="26 200" transform="rotate(101 19 32)"/><circle cx="32" cy="25" r="1" fill="#fff" opacity=".45"/><circle cx="31" cy="55" r="2" fill="#fff" opacity=".45"/><circle cx="56" cy="38" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">JX</text></svg><span class="pp-rn">Jiabo Xu<em>ANU, 2019&ndash;2020</em></span></li>
+          {%- for p in list %}
+          {%- capture uid %}{{ pre }}{{ forloop.index }}{% endcapture %}
+          <li>{% if p.photo %}<img class="pp-art xs" src="{{ p.photo | relative_url }}" alt="">{% else %}{% include person-art.html name=p.name uid=uid class="xs" %}{% endif %}<span class="pp-rn">{% if p.url %}<a href="{{ p.url | escape }}">{{ p.name | escape }}</a>{% else %}{{ p.name | escape }}{% endif %}<em>{{ p.note | escape }}</em></span></li>
+          {%- endfor %}
           </ul>
         </div>
-        <div id="undergraduate">
-          <p class="pp-kicker">Alumni</p>
-          <h2>Undergraduate &amp; interns</h2>
-          <ul class="pp-roster">
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg37" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg37)"/><circle cx="47" cy="97" r="52" fill="#fff" opacity=".09"/><circle cx="25" cy="93" r="18" fill="#fff" opacity=".07"/><circle cx="53" cy="89" r="25" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="24 200" transform="rotate(157 53 89)"/><circle cx="16" cy="27" r="1" fill="#fff" opacity=".45"/><circle cx="87" cy="80" r="1" fill="#fff" opacity=".45"/><circle cx="14" cy="12" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">AJ</text></svg><span class="pp-rn">Armaan Josan<em>UWA, 2025</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg38" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#24476f"/><stop offset="1" stop-color="#4a7fb8"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg38)"/><circle cx="47" cy="55" r="37" fill="#fff" opacity=".09"/><circle cx="55" cy="94" r="31" fill="#fff" opacity=".07"/><circle cx="77" cy="61" r="28" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="54 200" transform="rotate(37 77 61)"/><circle cx="19" cy="48" r="1" fill="#fff" opacity=".45"/><circle cx="47" cy="16" r="2" fill="#fff" opacity=".45"/><circle cx="84" cy="11" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">BR</text></svg><span class="pp-rn">Bill Rayner<em>UWA, 2025</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg39" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg39)"/><circle cx="84" cy="16" r="34" fill="#fff" opacity=".09"/><circle cx="66" cy="87" r="34" fill="#fff" opacity=".07"/><circle cx="43" cy="53" r="27" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="23 200" transform="rotate(186 43 53)"/><circle cx="67" cy="25" r="2" fill="#fff" opacity=".45"/><circle cx="36" cy="44" r="1" fill="#fff" opacity=".45"/><circle cx="13" cy="46" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">JH</text></svg><span class="pp-rn">Junlin Han<em>ANU, 2023</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg40" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg40)"/><circle cx="2" cy="97" r="54" fill="#fff" opacity=".09"/><circle cx="36" cy="37" r="31" fill="#fff" opacity=".07"/><circle cx="46" cy="7" r="15" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="34 200" transform="rotate(127 46 7)"/><circle cx="56" cy="10" r="2" fill="#fff" opacity=".45"/><circle cx="57" cy="24" r="1" fill="#fff" opacity=".45"/><circle cx="64" cy="67" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">YL</text></svg><span class="pp-rn">Yuanchu Liang<em>ANU, 2021</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg41" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#2f5d94"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg41)"/><circle cx="15" cy="4" r="52" fill="#fff" opacity=".09"/><circle cx="91" cy="38" r="35" fill="#fff" opacity=".07"/><circle cx="24" cy="32" r="27" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="28 200" transform="rotate(89 24 32)"/><circle cx="15" cy="52" r="2" fill="#fff" opacity=".45"/><circle cx="19" cy="28" r="1" fill="#fff" opacity=".45"/><circle cx="18" cy="58" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">JT</text></svg><span class="pp-rn">Jatin Takyar<em>UTS, 2020, vacation intern</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg42" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg42)"/><circle cx="34" cy="24" r="52" fill="#fff" opacity=".09"/><circle cx="40" cy="6" r="33" fill="#fff" opacity=".07"/><circle cx="30" cy="50" r="38" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="45 200" transform="rotate(236 30 50)"/><circle cx="74" cy="31" r="1" fill="#fff" opacity=".45"/><circle cx="86" cy="18" r="2" fill="#fff" opacity=".45"/><circle cx="75" cy="57" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">KL</text></svg><span class="pp-rn">Kevin Lam<em>CSIRO, 2019&ndash;2020, vacation intern</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg43" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg43)"/><circle cx="45" cy="25" r="34" fill="#fff" opacity=".09"/><circle cx="42" cy="97" r="35" fill="#fff" opacity=".07"/><circle cx="60" cy="37" r="28" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="53 200" transform="rotate(49 60 37)"/><circle cx="28" cy="55" r="2" fill="#fff" opacity=".45"/><circle cx="59" cy="26" r="1" fill="#fff" opacity=".45"/><circle cx="83" cy="18" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">WA</text></svg><span class="pp-rn">Waqas Ahmed<em>NUCES, 2014</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg44" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg44)"/><circle cx="74" cy="80" r="37" fill="#fff" opacity=".09"/><circle cx="51" cy="27" r="27" fill="#fff" opacity=".07"/><circle cx="98" cy="50" r="23" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="46 200" transform="rotate(63 98 50)"/><circle cx="11" cy="78" r="2" fill="#fff" opacity=".45"/><circle cx="73" cy="17" r="2" fill="#fff" opacity=".45"/><circle cx="36" cy="46" r="2" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">IS</text></svg><span class="pp-rn">Ibrahim Shakeel<em>NUCES, 2014</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg45" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#2f5d94"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg45)"/><circle cx="94" cy="9" r="36" fill="#fff" opacity=".09"/><circle cx="22" cy="15" r="34" fill="#fff" opacity=".07"/><circle cx="22" cy="54" r="27" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="39 200" transform="rotate(214 22 54)"/><circle cx="46" cy="83" r="1" fill="#fff" opacity=".45"/><circle cx="64" cy="49" r="1" fill="#fff" opacity=".45"/><circle cx="69" cy="16" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">KK</text></svg><span class="pp-rn">Khadija Khan<em>NUCES, 2013</em></span></li>
-          <li><svg class="pp-art xs" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><defs><linearGradient id="pg46" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a5f"/><stop offset="1" stop-color="#3fb8ad"/></linearGradient></defs><rect width="100" height="100" fill="url(#pg46)"/><circle cx="13" cy="28" r="63" fill="#fff" opacity=".09"/><circle cx="41" cy="62" r="29" fill="#fff" opacity=".07"/><circle cx="47" cy="66" r="20" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="20 200" transform="rotate(134 47 66)"/><circle cx="85" cy="15" r="1" fill="#fff" opacity=".45"/><circle cx="64" cy="68" r="1" fill="#fff" opacity=".45"/><circle cx="10" cy="34" r="1" fill="#fff" opacity=".45"/><text x="50" y="50" dy=".35em" text-anchor="middle" class="pp-ini">AA</text></svg><span class="pp-rn">Akas Ali<em>NUCES, 2012</em></span></li>
-          </ul>
-        </div>
+        {%- endfor %}
       </section>
 
       <section class="pp-sec" id="collaborators">
         <p class="pp-kicker">Colleagues</p>
         <h2>Collaborators</h2>
         <ul class="pp-roster pp-col3">
-          <li><span class="pp-omark" aria-hidden="true">NA</span><span class="pp-rn"><a href="https://scholar.google.com.au/citations?hl=en&amp;user=Xqmlj18AAAAJ">Naveed Akhtar</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">HA</span><span class="pp-rn"><a href="https://scholar.google.com/citations?user=5zKe6mUAAAAJ&amp;hl=en">Hafeez Anwar</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">MA</span><span class="pp-rn"><a href="https://au.linkedin.com/in/ali-armin-9b420941">Mohammad Ali Armin</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">NB</span><span class="pp-rn"><a href="http://users.cecs.anu.edu.au/~nmb/">Nick Barnes</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">TG</span><span class="pp-rn"><a href="https://scholar.google.com.au/citations?hl=en&amp;user=UnnAvjAAAAAJ">Tom Gedeon</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">CH</span><span class="pp-rn"><a href="https://www.linkedin.com/in/cong-phuoc-huynh-61891b15">Cong Phuoc Huynh</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">FK</span><span class="pp-rn"><a href="https://sites.google.com/view/fahadkhans/home">Fahad Shahbaz Khan</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">SK</span><span class="pp-rn"><a href="https://salman-h-khan.github.io/">Salman Khan</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">CL</span><span class="pp-rn"><a href="https://li-chongyi.github.io/">Chongyi Li</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">AM</span><span class="pp-rn"><a href="https://ajmalsaeed.net/">Ajmal Mian</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">FP</span><span class="pp-rn"><a href="http://www.porikli.com/">Fatih Porikli</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">MS</span><span class="pp-rn"><a href="https://scholar.google.com.au/citations?hl=en&amp;user=KvbLR3gAAAAJ">Muhammad Saqib</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">NS</span><span class="pp-rn"><a href="https://profiles.uts.edu.au/Nabin.Sharma">Nabin Sharma</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">MT</span><span class="pp-rn"><a href="https://scholar.google.com.au/citations?hl=en&amp;user=dqEiXrYAAAAJ">Muhammad Tahir</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">MU</span><span class="pp-rn"><a href="https://scholar.google.com.au/citations?hl=en&amp;user=cTTXR50AAAAJ">Muhammad Usman</a></span></li>
-          <li><span class="pp-omark" aria-hidden="true">LZ</span><span class="pp-rn"><a href="https://zheng-lab.cecs.anu.edu.au/J">Liang Zheng</a></span></li>
+          {%- for p in ppl.collaborators %}
+          {%- assign w = p.name | split: " " %}{% assign i1 = w.first | slice: 0 | upcase %}{% assign i2 = w.last | slice: 0 | upcase %}
+          <li><span class="pp-omark" aria-hidden="true">{{ i1 }}{{ i2 }}</span><span class="pp-rn">{% if p.url %}<a href="{{ p.url | escape }}">{{ p.name | escape }}</a>{% else %}{{ p.name | escape }}{% endif %}</span></li>
+          {%- endfor %}
         </ul>
       </section>
 
       <aside class="pp-join">
         <div><h2>Join the group</h2><p>We welcome PhD, Master&rsquo;s and Honours students interested in computer vision and machine learning.</p></div>
-        <a class="pp-btn" href="/scholarships/">See current openings</a>
+        <a class="pp-btn" href="{{ '/scholarships/' | relative_url }}">See current openings</a>
       </aside>
 
     </div><!-- /.article-wrap -->
-  </article>
-</div><!-- /#main -->
-
-<div class="footer-wrap">
-  <footer>
-    {% include _footer.html %}
-  </footer>
-</div><!-- /.footer-wrap -->
-
-{% include _scripts.html %}
-
-<script>
-(function(){
-  var els=[].slice.call(document.querySelectorAll('.pp-st b[data-to]')); if(!els.length) return;
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var done=false;
-  function run(){
-    if(done) return; done=true;
-    var start=null, dur=1400;
-    els.forEach(function(el){el.textContent='0';});
-    function step(t){
-      if(start===null) start=t;
-      var k=Math.min(1,(t-start)/dur), e=1-Math.pow(1-k,3);
-      els.forEach(function(el){el.textContent=Math.round(e*(+el.getAttribute('data-to')));});
-      if(k<1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(en){ if(en.some(function(x){return x.isIntersecting;})){ io.disconnect(); run(); } },{threshold:.4});
-    io.observe(els[0].closest('.pp-stats')||els[0]);
-  } else { run(); }
-})();
-</script>
-
-</body>
-</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+{% include _head.html %}
+{%- for href in layout.stylesheets %}
+<link rel="stylesheet" href="{% if href contains '://' %}{{ href | escape }}{% else %}{{ href | relative_url }}{% endif %}">
+{%- endfor %}
+</head>
+
+<body class="page{% if layout.body_class %} {{ layout.body_class }}{% endif %}">
+{% include _navigation.html %}
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    {% include _author-bio.html compact=layout.compact_bio %}
+  </div>
+  <article>
+{{ content }}
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <footer>
+    {% include _footer.html %}
+  </footer>
+</div><!-- /.footer-wrap -->
+
+{% include _scripts.html %}
+</body>
+</html>

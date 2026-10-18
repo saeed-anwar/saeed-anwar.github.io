@@ -1,136 +1,9 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<head>
-{% include _head.html %}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@700&amp;display=swap">
-<style>
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-/* Top banner and figure tiles (same style as the other pages) */
-.vl-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:40px 40px 70px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
-.vl-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
-.vl-hero:after{content:"";position:absolute;right:110px;bottom:-70px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.05)}
-.vl-hero>*{position:relative}
-.vl-over{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;opacity:.75;margin:0 0 8px}
-.vl .vl-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
-.vl-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:600px;line-height:1.6}
-.vl-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-36px 22px 0;position:relative;z-index:2}
-.vl-st{background:#fff!important;border-radius:10px;padding:14px 8px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.12)}
-.vl-st b{display:block;font-size:22px;color:#1f3a5f;font-family:'PT Sans Narrow',sans-serif}
-.vl-st span{font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#888}
-
-
-/* VIAIL banner extras */
-.vl-stats{grid-template-columns:repeat(2,1fr)}
-.vl-hero{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.vl-ht{flex:1;min-width:0}
-.vl .vl-hero h1{font-size:60px;line-height:1;letter-spacing:.14em;margin:0 0 10px}
-.vl-full{margin:0 0 12px!important;font-size:1.05rem;letter-spacing:.02em;opacity:.95}
-.vl-full b{color:#9ff0e6}
-.vl-emb{flex:0 0 170px;width:170px;height:170px}
-.vl-st{text-decoration:none!important;border-bottom:0!important;transition:transform .2s ease}
-.vl-st:hover{transform:translateY(-2px)}
-@media (prefers-reduced-motion:reduce){.vl-st{transition:none}.vl-st:hover{transform:none}}
-
-/* Page */
-.vl{--ink:#1c2733;--text:#3d4752;--muted:#6b7480;--rule:#dfe3e8;--wash:#f3f5f8;--bg:#fff;--navy:#1f3a5f;--teal:#2a8c83;color:var(--text)}
-.vl ul,.vl ol{list-style:none;margin:0;padding:0}
-.vl li{margin:0}
-.vl a{text-decoration:none;border-bottom:0}
-.vl a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-.vl-sec{margin-top:3.25rem;scroll-margin-top:1rem}
-.vl-kicker{margin:0 0 .25rem;font:700 .78rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
-.vl h2{margin:0 0 1.25rem;padding:0;font-size:1.75rem;line-height:1.2;color:var(--ink)}
-.vl h2:after{content:"";display:block;width:56px;height:3px;margin-top:.6rem;border-radius:2px;background:linear-gradient(90deg,#1f3a5f,#3fb8ad)}
-.vl-lead{font-size:1.08rem;line-height:1.7;margin:0 0 1.25rem;max-width:42em}
-
-/* Mission */
-.vl-pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.vl-pl{display:flex;gap:1rem;padding:1.25rem;border:1px solid var(--rule);border-radius:14px;background:linear-gradient(160deg,var(--wash),var(--bg) 65%)}
-.vl-pli{flex:0 0 2.8rem;height:2.8rem;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.15rem;background:linear-gradient(135deg,#1f3a5f,#2f5d94 60%,#3fb8ad)}
-.vl-pl h3{margin:.1rem 0 .3rem;font:700 1.08rem 'PT Serif',Georgia,serif;color:var(--ink)}
-.vl-pl p{margin:0;font-size:.95rem;line-height:1.6}
-
-/* Name */
-.vl-name{display:grid;grid-template-columns:1.15fr 1fr;gap:1rem}
-.vl-nc{padding:1.4rem 1.5rem;border:1px solid var(--rule);border-radius:14px;background:var(--bg)}
-.vl-nc h3{margin:0 0 1rem;font:700 .82rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.vl-acr{display:grid;grid-template-columns:1fr 1fr 2.3fr 1fr;gap:.6rem}
-.vl-acr span{min-width:0;text-align:center;padding:.75rem .4rem .65rem;border-radius:12px;background:var(--wash)}
-.vl-acr b{display:block;font:700 2.1rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;color:var(--navy)}
-.vl-acr em{display:block;margin-top:.35rem;font-style:normal;font-size:.82rem;color:var(--muted)}
-.vl-acr .ai{background:linear-gradient(135deg,#1f3a5f,#2f5d94 60%,#3fb8ad)}
-.vl-acr .ai b,.vl-acr .ai em{color:#fff}
-.vl-acr .l{opacity:.6}
-.vl-cap{margin:1rem 0 0;font-size:.92rem;line-height:1.6;color:var(--text)}
-.vl-ps{background:linear-gradient(160deg,var(--wash),var(--bg) 70%)}
-.vl-ps .vl-ar{margin:0 0 .4rem;font:700 3rem/1.25 'Noto Naskh Arabic','Scheherazade New','Geeza Pro','Times New Roman',serif;color:var(--navy);text-align:left}
-.vl-ps p{margin:0;font-size:.95rem;line-height:1.6}
-
-/* Themes */
-.vl-themes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.vl-th{padding:1.15rem 1.2rem;border:1px solid var(--rule);border-top:3px solid var(--ac);border-radius:12px;background:var(--bg)}
-.vl-ti{display:inline-flex;align-items:center;justify-content:center;width:2.3rem;height:2.3rem;border-radius:10px;background:color-mix(in srgb,var(--ac) 12%,var(--bg));color:var(--ac);font-size:1rem}
-.vl-th h3{margin:.7rem 0 .3rem;font:700 1.05rem 'PT Serif',Georgia,serif;color:var(--ink)}
-.vl-th p{margin:0;font-size:.9rem;line-height:1.55;color:var(--text)}
-
-/* Members and visitors */
-.vl-vp .pp-ini{font-family:'PT Serif',Georgia,serif;font-weight:700;font-size:30px;fill:#fff;letter-spacing:1px}
-.vl-ppl{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
-.vl-ppl>div{scroll-margin-top:1rem}
-.vl-vis li{display:flex;align-items:center;gap:.8rem;padding:.75rem 0;border-bottom:1px solid var(--rule)}
-.vl-vis li:first-child{border-top:1px solid var(--rule)}
-.vl-vp{flex:0 0 2.6rem;width:2.6rem;height:2.6rem;border-radius:50%}
-.vl-vy{margin:0!important;font:700 .72rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.08em;color:var(--teal)}
-.vl-vis h4{margin:.05rem 0;font:700 .98rem 'PT Serif',Georgia,serif;color:var(--ink)}
-.vl-vis p{margin:0;font-size:.85rem;color:var(--muted)}
-
-/* Join */
-.vl-join{margin:3.5rem 0 1rem;position:relative;overflow:hidden;color:#fff;border-radius:16px;padding:2rem 2.25rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
-.vl-join:before{content:"";position:absolute;right:-60px;top:-90px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.07)}
-.vl-join>*{position:relative}
-.vl-join>div:first-child{flex:1 1 22rem}
-.vl-join h2{color:#fff;margin:0 0 .35rem;font-size:1.55rem}
-.vl-join h2:after{display:none}
-.vl-join p{margin:0;opacity:.92;line-height:1.6}
-.vl-jb{display:flex;flex-wrap:wrap;gap:.6rem}
-.vl-btn{display:inline-flex;align-items:center;gap:.45rem;background:#fff;color:#1f3a5f!important;font-weight:700;padding:.75rem 1.25rem;border-radius:8px}
-.vl-btn:hover{background:#eef3f8}
-.vl-btn.alt{background:transparent;color:#fff!important;border:1px solid rgba(255,255,255,.6)}
-.vl-btn.alt:hover{background:rgba(255,255,255,.12)}
-.vl-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
-
-@media only screen and (max-width:52em){
-  .vl-themes{grid-template-columns:repeat(2,1fr)}
-  .vl-name,.vl-ppl{grid-template-columns:1fr}
-}
-@media only screen and (max-width:37.5em){
-  .vl-stats{grid-template-columns:repeat(2,1fr);margin:-32px 0 0}
-  .vl-hero{padding:28px 22px 58px}.vl .vl-hero h1{font-size:44px}
-  .vl-emb{display:none}
-  .vl-acr b{font-size:1.7rem}
-  .vl-acr em{font-size:.72rem}
-  .vl h2{font-size:1.45rem}
-  .vl-pillars,.vl-themes{grid-template-columns:1fr}
-  .vl-join{padding:1.6rem 1.4rem}
-}
-</style>
-</head>
-
-<body class="page">
-{% include _browser-upgrade.html %}
-
-{% include _navigation.html %}
-
-<div id="main" role="main">
-  <div class="article-author-side">
-    {% include _author-bio.html %}
-  </div>
-  <article>
+---
+layout: default
+stylesheets:
+  - "https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@700&display=swap"
+  - "/assets/css/pages/viail.css"
+---
     <div class="article-wrap vl">
       <!-- VIAIL lab page. When you add lab members or visitors, add a row to the right list; update the banner figures if needed. -->
       <div class="vl-hero">
@@ -141,10 +14,6 @@ html{scroll-behavior:smooth}
           <p class="s">Directed by Saeed Anwar at The University of Western Australia, we research computer vision, visual informatics and AI-based image processing and analysis.</p>
         </div>
         <svg class="vl-emb" viewBox="-100 -100 200 200" aria-hidden="true" focusable="false"><defs><linearGradient id="vl-bl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#bfe9e4" stop-opacity=".55"/></linearGradient><radialGradient id="vl-iris" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#7fe0d6"/><stop offset=".6" stop-color="#3fb8ad"/><stop offset="1" stop-color="#1f3a5f"/></radialGradient></defs><circle r="92" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="1.5"/><circle cx="78.0" cy="0.0" r="2.6" fill="#fff" opacity="0.7"/><circle cx="75.3" cy="20.2" r="1.6" fill="#fff" opacity="0.35"/><circle cx="67.5" cy="39.0" r="1.6" fill="#fff" opacity="0.35"/><circle cx="55.2" cy="55.2" r="1.6" fill="#fff" opacity="0.35"/><circle cx="39.0" cy="67.5" r="2.6" fill="#fff" opacity="0.7"/><circle cx="20.2" cy="75.3" r="1.6" fill="#fff" opacity="0.35"/><circle cx="0.0" cy="78.0" r="1.6" fill="#fff" opacity="0.35"/><circle cx="-20.2" cy="75.3" r="1.6" fill="#fff" opacity="0.35"/><circle cx="-39.0" cy="67.5" r="2.6" fill="#fff" opacity="0.7"/><circle cx="-55.2" cy="55.2" r="1.6" fill="#fff" opacity="0.35"/><circle cx="-67.5" cy="39.0" r="1.6" fill="#fff" opacity="0.35"/><circle cx="-75.3" cy="20.2" r="1.6" fill="#fff" opacity="0.35"/><circle cx="-78.0" cy="0.0" r="2.6" fill="#fff" opacity="0.7"/><circle cx="-75.3" cy="-20.2" r="1.6" fill="#fff" opacity="0.35"/><circle cx="-67.5" cy="-39.0" r="1.6" fill="#fff" opacity="0.35"/><circle cx="-55.2" cy="-55.2" r="1.6" fill="#fff" opacity="0.35"/><circle cx="-39.0" cy="-67.5" r="2.6" fill="#fff" opacity="0.7"/><circle cx="-20.2" cy="-75.3" r="1.6" fill="#fff" opacity="0.35"/><circle cx="-0.0" cy="-78.0" r="1.6" fill="#fff" opacity="0.35"/><circle cx="20.2" cy="-75.3" r="1.6" fill="#fff" opacity="0.35"/><circle cx="39.0" cy="-67.5" r="2.6" fill="#fff" opacity="0.7"/><circle cx="55.2" cy="-55.2" r="1.6" fill="#fff" opacity="0.35"/><circle cx="67.5" cy="-39.0" r="1.6" fill="#fff" opacity="0.35"/><circle cx="75.3" cy="-20.2" r="1.6" fill="#fff" opacity="0.35"/><circle r="64" fill="rgba(255,255,255,.08)" stroke="#fff" stroke-opacity=".55" stroke-width="2"/><g><path d="M0 -58 A58 58 0 0 1 50.2 -29 L14 -8 Z" fill="url(#vl-bl)" opacity="0.55" transform="rotate(0)"/><path d="M0 -58 A58 58 0 0 1 50.2 -29 L14 -8 Z" fill="url(#vl-bl)" opacity="0.62" transform="rotate(60)"/><path d="M0 -58 A58 58 0 0 1 50.2 -29 L14 -8 Z" fill="url(#vl-bl)" opacity="0.69" transform="rotate(120)"/><path d="M0 -58 A58 58 0 0 1 50.2 -29 L14 -8 Z" fill="url(#vl-bl)" opacity="0.55" transform="rotate(180)"/><path d="M0 -58 A58 58 0 0 1 50.2 -29 L14 -8 Z" fill="url(#vl-bl)" opacity="0.62" transform="rotate(240)"/><path d="M0 -58 A58 58 0 0 1 50.2 -29 L14 -8 Z" fill="url(#vl-bl)" opacity="0.69" transform="rotate(300)"/></g><circle r="20" fill="url(#vl-iris)" stroke="#fff" stroke-width="2"/><circle cx="-6" cy="-7" r="5" fill="#fff" opacity=".85"/></svg>
-      </div>
-      <div class="vl-stats">
-        <a class="vl-st" href="#themes"><b>6</b><span>Research themes</span></a>
-        <a class="vl-st" href="#visitors"><b>3</b><span>Visitors</span></a>
       </div>
 
       <section class="vl-sec" id="mission">
@@ -214,16 +83,3 @@ html{scroll-behavior:smooth}
       </aside>
 
     </div><!-- /.article-wrap -->
-  </article>
-</div><!-- /#main -->
-
-<div class="footer-wrap">
-  <footer>
-    {% include _footer.html %}
-  </footer>
-</div><!-- /.footer-wrap -->
-
-{% include _scripts.html %}
-
-</body>
-</html>

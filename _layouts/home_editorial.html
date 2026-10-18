@@ -1,136 +1,68 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<head>
-{% include _head.html %}
-<style>
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-/* Top banner and figure tiles (same style as the other pages) */
-.hm-hero{position:relative;overflow:hidden;color:#fff;border-radius:14px;padding:36px 36px 64px;background:linear-gradient(135deg,#1f3a5f 0%,#2f5d94 62%,#3fb8ad 100%)}
-.hm-hero:before{content:"";position:absolute;right:-50px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.07)}
-.hm-hero:after{content:"";position:absolute;right:110px;bottom:-70px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.05)}
-.hm-hero>*{position:relative}
-.hm .hm-hero h1{color:#fff;font-size:32px;margin:0 0 10px;padding:0;line-height:1.2}
-.hm-hero p.s{margin:0;font-size:15.5px;opacity:.92;max-width:600px;line-height:1.6}
-
-
-/* Homepage banner extras */
-.hm-hero{padding:38px 40px 36px!important}
-.hm .hm-hero h1{font-size:40px!important;letter-spacing:.01em}
-.hm-role{margin:0 0 12px!important;font-size:1.02rem;line-height:1.5;opacity:.95}
-.hm-role a{color:#fff!important;border-bottom:1px solid rgba(255,255,255,.5)!important;text-decoration:none!important}
-.hm-prof{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.15rem 0 0!important}
-.hm-prof a{display:inline-block;color:#fff!important;font:700 .85rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.04em;padding:.5rem .9rem;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none!important}
-.hm-prof a:hover{background:rgba(255,255,255,.2);border-color:#fff}
-.hm-prof a:focus-visible,.hm-role a:focus-visible{outline:2px solid #fff;outline-offset:2px}
-/* Phones only: from 37.5em up the sidebar shows the same Scholar, LinkedIn and Email links */
-@media only screen and (min-width:37.5em){.hm-prof{display:none}}
-
-/* Page */
-.hm{--ink:#1c2733;--text:#3d4752;--muted:#6b7480;--rule:#dfe3e8;--wash:#f3f5f8;--bg:#fff;--navy:#1f3a5f;--teal:#2a8c83;--gold:#9a7413;color:var(--text)}
-.hm ul{list-style:none;margin:0;padding:0}
-.hm li{margin:0}
-.hm a{color:var(--navy);text-decoration:none;border-bottom:0}
-.hm a:focus-visible,.hm button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-.hm [hidden]{display:none!important}
-.hm-sec{margin-top:3rem;scroll-margin-top:1rem}
-.hm-kicker{margin:0 0 .25rem;font:700 .78rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
-.hm h2{margin:0 0 1.2rem;padding:0;font-size:1.75rem;line-height:1.2;color:var(--ink)}
-.hm h2:after{content:"";display:block;width:56px;height:3px;margin-top:.6rem;border-radius:2px;background:linear-gradient(90deg,#1f3a5f,#3fb8ad)}
-
-/* About */
-.hm-lead{font-size:1.07rem;line-height:1.75;margin:0 0 1rem;max-width:44em}
-.hm-int{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 1.1rem!important}
-.hm-int li{font:700 .82rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.03em;color:var(--navy);background:var(--wash);border:1px solid var(--rule);border-radius:999px;padding:.45rem .8rem}
-.hm-cta{display:block;margin:0;padding:.8rem 1rem;border-left:3px solid var(--teal);background:var(--wash);border-radius:0 8px 8px 0;font-size:.95rem}
-.hm-cta i{color:var(--teal);margin-right:.5rem;vertical-align:-.1em}
-.hm-cta a,.hm-lead a{border-bottom:1px solid rgba(47,93,148,.35)!important}
-
-/* Career tiles: one per area */
-.g-ac{--g1:#1f3a5f;--g2:#2f5d94}.g-in{--g1:#22706a;--g2:#3fb8ad}.g-ed{--g1:#4b3f86;--g2:#7a6aa8}
-.hm-tiles{display:grid;grid-template-columns:1fr;gap:1.1rem}
-.g-ed ul{grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:1rem 1.5rem}
-.hm-tile{display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:var(--bg);border:1px solid var(--rule);box-shadow:0 16px 34px -28px rgba(31,58,95,.75)}
-.hm-tile header{position:relative;overflow:hidden;display:flex;align-items:center;gap:.7rem;padding:.75rem 1.2rem;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2))}
-.hm-tile header:after{content:"";position:absolute;right:-30px;top:-40px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.09)}
-.hm-ti-i{position:relative;flex:0 0 2rem;height:2rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.18);font-size:1rem}
-.hm-tile h3{position:relative;margin:0;font:700 1.15rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.02em;color:#fff}
-.hm-tile ul{display:grid;gap:.85rem;padding:1.1rem 1.15rem 1.2rem}
-.hm-para{margin:0;padding:1.1rem 1.2rem 1.25rem;font-size:.95rem;line-height:1.75;color:var(--muted)}
-.hm-para b{font-weight:400;color:var(--ink)}
-.hm-tile li{display:flex;gap:.7rem;align-items:flex-start}
-.hm-mono{flex:0 0 2.35rem;height:2.35rem;border-radius:9px;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.05;color:var(--g1);font-family:'PT Sans Narrow','Arial Narrow',sans-serif;font-weight:700;letter-spacing:.01em;background:color-mix(in srgb,var(--g2) 14%,var(--bg));border:1px solid color-mix(in srgb,var(--g2) 30%,transparent)}
-.hm-tr{margin:0;font:700 .92rem/1.35 'PT Serif',Georgia,serif;color:var(--ink)}
-.hm-tn{margin:.1rem 0 0;font-size:.82rem;line-height:1.45;color:var(--muted)}
-.hm-now{display:inline-flex;align-items:center;gap:.3rem;margin-left:.4rem;font:700 .66rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#2e7d4f;vertical-align:.12em;white-space:nowrap}
-.hm-now:before{content:"";width:.4rem;height:.4rem;border-radius:50%;background:#2e7d4f}
-
-/* News and code lists */
-.hm-list{border-top:1px solid var(--rule)}
-.hm-list li{display:grid;grid-template-columns:5.8rem 5.4rem 1fr;gap:.75rem;align-items:baseline;padding:.7rem 0;border-bottom:1px solid var(--rule)}
-.hm-dt{font:700 .85rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.02em;color:var(--muted);white-space:nowrap}
-.hm-bd{justify-self:start;font:700 .7rem/1 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:.3rem .55rem;color:var(--bc);background:color-mix(in srgb,var(--bc) 12%,var(--bg))}
-.n-p{--bc:#2f5d94}.n-a{--bc:#9a7413}.n-s{--bc:#2a8c83}.n-c{--bc:#7a6aa8}.c-k{--bc:#1f3a5f}.c-d{--bc:#2a8c83}
-.hm-list p{margin:0;font-size:.97rem;line-height:1.5;color:var(--ink)}
-.hm-list p a{border-bottom:1px solid rgba(47,93,148,.35)!important}
-.hm-code p b{font-weight:700}
-.hm-code p b a{color:var(--navy)}
-.hm-code p span{display:block;font-size:.86rem;color:var(--muted)}
-.hm-list li[data-more]{display:none}
-.hm-list.open li[data-more]{display:grid}
-.hm-more{margin-top:.9rem;font:700 .88rem 'PT Sans Narrow','Arial Narrow',sans-serif;letter-spacing:.03em;color:var(--navy);background:var(--bg);border:1px solid var(--rule);border-radius:999px;padding:.5rem 1rem;cursor:pointer}
-.hm-more:hover{border-color:var(--navy)}
-
-@media only screen and (max-width:37.5em){
-  .hm-hero{padding:26px 22px 28px}.hm .hm-hero h1{font-size:30px!important}
-  .hm h2{font-size:1.45rem}
-  .hm-list li{grid-template-columns:auto 1fr;gap:.3rem .6rem}
-  .hm-list li p{grid-column:1/-1}
-}
-</style>
-</head>
-
-<body class="page">
-{% include _browser-upgrade.html %}
-
-{% include _navigation.html %}
-
-<div id="main" role="main">
-  <div class="article-author-side">
-    {% include _author-bio.html %}
-  </div>
-  <article>
+---
+layout: default
+body_class: home
+compact_bio: true
+stylesheets:
+  - "/assets/css/pages/home.css"
+---
     <div class="article-wrap hm">
       <!-- Homepage. To add news, copy a row in the News list to the top (types: n-p paper, n-a award, n-s service, n-c career).
            Rows marked data-more stay hidden until "Show all" is pressed; keep the first eight rows without it.
+           Link a paper with /publications/?q=WORD, where WORD appears in its title (that opens the filtered list).
            To add a code or dataset release, do the same in the Code and datasets list (c-k code, c-d dataset; first six visible).
+           The "Show all" counts update themselves.
+           Selected work: set  selected: true  on a paper in _data/publications.yml (optional  teaser: /images/teasers/NAME.jpg).
            Career tiles: Academia and Industry are paragraphs (edit PARA text); Education lists one <li> per degree. -->
+      {%- assign o = site.owner %}
       <div class="hm-hero">
+        <img class="hm-photo" src="{{ '/images/' | append: o.avatar | relative_url }}" alt="" width="132" height="135">
         <h1>Saeed Anwar</h1>
         <p class="hm-role">Senior Lecturer, The University of Western Australia<br>Director, <a href="/VIAIL/">Visual Intelligence and Analytical Imaging Lab (VIAIL)</a></p>
-        <p class="hm-prof"><a href="https://scholar.google.com/citations?user=vPJIHywAAAAJ&amp;hl=en">Google Scholar</a><a href="https://www.linkedin.com/in/saeed-anwar-51689a13">LinkedIn</a><a href="mailto:saeed.anwar@uwa.edu.au">Email</a></p>
+        <ul class="hm-hon" aria-label="Distinctions">
+          <li><i class="fa fa-star" aria-hidden="true"></i>Clarivate Highly Cited Researcher 2025</li>
+          <li><i class="fa fa-trophy" aria-hidden="true"></i>ICPR 2024 Best Paper Award</li>
+        </ul>
+        <p class="hm-prof"><a href="https://scholar.google.com/citations?user={{ o.google_scholar }}">Google Scholar</a><a href="https://github.com/{{ o.github }}">GitHub</a><a href="https://www.linkedin.com/in/{{ o.linkedin }}">LinkedIn</a><a href="mailto:{{ o.email }}">Email</a></p>
       </div>
       <section class="hm-sec hm-about">
         <p class="hm-kicker">Welcome</p>
         <h2>About me</h2>
         <p class="hm-lead">I am a Senior Lecturer (equivalent to US Associate Professor) at The University of Western Australia, where I lead the Visual Intelligence and Analytical Imaging Lab. I am also a Visiting Scientist at CSIRO and an Honorary Faculty Member at the Australian National University.</p>
         <ul class="hm-int" aria-label="Research interests"><li>Computer vision</li><li>3D vision</li><li>Image restoration</li><li>Generative AI</li><li>Multimodal AI</li><li>Underwater imaging</li></ul>
-        <p class="hm-cta"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Interested in a PhD, Master&rsquo;s or Honours project? See <a href="/scholarships/">Prospective students</a>.</p>
+        <p class="hm-cta"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Interested in a PhD, Master&rsquo;s or Honours project? Find out how to <a href="/scholarships/">join us</a>.</p>
+      </section>
+
+      <section class="hm-sec" id="selected">
+        <p class="hm-kicker">Research</p>
+        <h2>Selected work</h2>
+        <ul class="hm-sel">
+          {%- for p in site.data.publications %}{% if p.selected %}
+          {%- assign prim = "" %}{% assign code = "" %}
+          {%- for l in p.links %}
+            {%- if prim == "" and l.url != "" %}{% if l.label contains "PDF" or l.label == "arXiv" or l.label == "Preprint" %}{% assign prim = l.url %}{% endif %}{% endif %}
+            {%- if code == "" and l.label == "Code" and l.url != "" %}{% assign code = l.url %}{% endif %}
+          {%- endfor %}
+          <li class="hm-pc">
+            {%- if p.teaser %}<img class="hm-pc-img" src="{{ p.teaser | relative_url }}" alt="" loading="lazy">{% endif %}
+            <p class="hm-pc-v">{% if p.abbr %}{{ p.abbr | escape }}{% else %}{{ p.venue | escape }}{% endif %} {{ p.year }}</p>
+            <h3 class="hm-pc-t">{% if prim != "" %}<a href="{{ prim | escape }}">{{ p.title | escape }}</a>{% else %}{{ p.title | escape }}{% endif %}</h3>
+            {%- if p.awards %}<p class="hm-pc-aw">{% for a in p.awards %}<span>{{ a | escape }}</span>{% endfor %}</p>{% endif %}
+            <p class="hm-pc-l">{% if prim != "" %}<a href="{{ prim | escape }}">Paper</a>{% endif %}{% if code != "" %}<a href="{{ code | escape }}">Code</a>{% endif %}</p>
+          </li>
+          {%- endif %}{% endfor %}
+        </ul>
+        <p class="hm-sel-more"><a href="/publications/">All publications</a></p>
       </section>
 
       <section class="hm-sec">
         <div class="hm-tiles">
           <div class="hm-tile g-ac">
             <header><span class="hm-ti-i"><i class="fa fa-university" aria-hidden="true"></i></span><h3>Academia</h3></header>
-            <p class="hm-para">I am a Senior Lecturer at <b>The University of Western Australia</b> and an Honorary Faculty Member at the <b>Australian National University</b>. Previously, I was an Assistant Professor at <b>KFUPM</b>, an Adjunct Assistant Professor at the <b>University of Canberra</b> and a Visiting Fellow at the <b>University of Technology Sydney</b>. Earlier, I held academic posts at <b>NUCES</b> and <b>GIKI</b> in Pakistan.</p>
+            <p class="hm-para">Before joining <b>The University of Western Australia</b> in 2025, I was an Assistant Professor at <b>KFUPM</b>, an Adjunct Assistant Professor at the <b>University of Canberra</b> and a Visiting Fellow at the <b>University of Technology Sydney</b>. Earlier, I held academic posts at <b>NUCES</b> and <b>GIKI</b> in Pakistan.</p>
           </div>
           <div class="hm-tile g-in">
             <header><span class="hm-ti-i"><i class="fa fa-building" aria-hidden="true"></i></span><h3>Industry</h3></header>
-            <p class="hm-para">I was a Visiting Scientist at <b>CSIRO</b>, where I was previously a Research Scientist at <b>Data61</b>, and I was a Fellow at the <b>SDAIA's Joint Research Center for AI</b>. I also worked on research projects with <b>National ICT Australia (NICTA)</b>, on a medical project with <b>Toshiba Medical Visualization Systems Europe</b> in Scotland, and on simulating sonar sensors for transparent object detection at <b>PAL Robotics</b> in Barcelona.</p>
+            <p class="hm-para">I am a Visiting Scientist at <b>CSIRO</b>, where I was previously a Research Scientist at <b>Data61</b>, and I was a Fellow at the <b>SDAIA's Joint Research Center for AI</b>. I also worked on research projects with <b>National ICT Australia (NICTA)</b>, on a medical project with <b>Toshiba Medical Visualization Systems Europe</b> in Scotland, and on simulating sonar sensors for transparent object detection at <b>PAL Robotics</b> in Barcelona.</p>
           </div>
           <div class="hm-tile g-ed">
             <header><span class="hm-ti-i"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span><h3>Education</h3></header>
@@ -147,36 +79,36 @@ html{scroll-behavior:smooth}
         <p class="hm-kicker">Updates</p>
         <h2>Recent news</h2>
         <ul class="hm-list hm-news">
-          <li class="n-s"><span class="hm-dt">2026&ndash;27</span><span class="hm-bd">Service</span><p>Area Chair for CVPR 2027, WACV 2027, AAAI 2027, ACCV 2026, ECCV 2026, CVPR 2026 and WACV 2026.</p></li>
-          <li class="n-p"><span class="hm-dt">Sep 2026</span><span class="hm-bd">Paper</span><p>PGMS accepted at NeurIPS.</p></li>
-          <li class="n-p"><span class="hm-dt">Aug 2026</span><span class="hm-bd">Paper</span><p>TDiR and FlashNet accepted at ACCV.</p></li>
-          <li class="n-p"><span class="hm-dt">Jul 2026</span><span class="hm-bd">Paper</span><p>Two papers accepted at ICONIP.</p></li>
-          <li class="n-p"><span class="hm-dt">Jul 2026</span><span class="hm-bd">Paper</span><p>NumGrad-Pull accepted in <i>IEEE TVCG</i> (IF 6.5).</p></li>
-          <li class="n-p"><span class="hm-dt">Jun 2026</span><span class="hm-bd">Paper</span><p>SPEGNet accepted in <i>IEEE TIP</i> (IF 13.7).</p></li>
-          <li class="n-p"><span class="hm-dt">Jun 2026</span><span class="hm-bd">Paper</span><p>ANUBIS and ASIL accepted in <i>Pattern Recognition</i> (IF 7.6).</p></li>
-          <li class="n-p"><span class="hm-dt">Jun 2026</span><span class="hm-bd">Paper</span><p>HVLFormer accepted at ECCV.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">May 2026</span><span class="hm-bd">Paper</span><p>PointCaM accepted in <i>CVIU</i> (IF 3.5).</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Apr 2026</span><span class="hm-bd">Paper</span><p>DiffCom published in <i>IEEE TCSVT</i> (IF 11.1).</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Mar 2026</span><span class="hm-bd">Paper</span><p>Our survey on animal action recognition accepted in <i>Artificial Intelligence Review</i> (IF 13.9).</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Mar 2026</span><span class="hm-bd">Paper</span><p>FLaTEC accepted at ICME.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Feb 2026</span><span class="hm-bd">Paper</span><p>RDD4D accepted in <i>IEEE Access</i>.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Jan 2026</span><span class="hm-bd">Paper</span><p>DiffCom accepted in <i>IEEE TCSVT</i>.</p></li>
-          <li class="n-a" data-more><span class="hm-dt">Dec 2025</span><span class="hm-bd">Award</span><p>Named a Clarivate Highly Cited Researcher 2025.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Nov 2025</span><span class="hm-bd">Paper</span><p>ICISP accepted in <i>Neural Networks</i>.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Oct 2025</span><span class="hm-bd">Paper</span><p>Two papers accepted, one in <i>Information</i> and one in <i>Sensors</i>.</p></li>
+          <li class="n-s"><span class="hm-dt">2026&ndash;27</span><span class="hm-bd">Service</span><p>Area Chair for CVPR 2027, WACV 2027, ACCV 2026, ECCV 2026, CVPR 2026 and WACV 2026, and Senior Program Committee for AAAI 2027, AAAI 2026 and IJCAI 2026.</p></li>
+          <li class="n-p"><span class="hm-dt">Sep 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=PGMS">PGMS</a>, on compressing 3D Gaussian splatting scenes, accepted at NeurIPS.</p></li>
+          <li class="n-p"><span class="hm-dt">Aug 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=TDiR">TDiR</a>, a diffusion transformer for image restoration, and <a href="/publications/?q=flashing">FlashNet</a>, for recognising flashing traffic lights, accepted at ACCV.</p></li>
+          <li class="n-p"><span class="hm-dt">Jul 2026</span><span class="hm-bd">Paper</span><p>Two papers accepted at <a href="/publications/?q=ICONIP%202026">ICONIP</a>, on crowd counting with vision-language models and on image-grounded review assistance.</p></li>
+          <li class="n-p"><span class="hm-dt">Jul 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=NumGrad">NumGrad-Pull</a>, for reconstructing surfaces from point clouds, accepted in <i>IEEE TVCG</i> (IF 6.5).</p></li>
+          <li class="n-p"><span class="hm-dt">Jun 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=SPEGNet">SPEGNet</a>, for camouflaged object detection, accepted in <i>IEEE TIP</i> (IF 13.7).</p></li>
+          <li class="n-p"><span class="hm-dt">Jun 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=ANUBIS">ANUBIS</a>, a survey and benchmark for skeleton-based action recognition, and <a href="/publications/?q=person%20retrieval">ASIL</a>, for text-based person retrieval, accepted in <i>Pattern Recognition</i> (IF 7.6).</p></li>
+          <li class="n-p"><span class="hm-dt">Jun 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=language%20anchors">HVLFormer</a>, on language-guided semi-supervised image segmentation, accepted at ECCV.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">May 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=PointCaM">PointCaM</a>, for open-set point cloud analysis, accepted in <i>CVIU</i> (IF 3.5).</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Apr 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=DiffCom">DiffCom</a>, on diffusion-based point cloud compression, published in <i>IEEE TCSVT</i> (IF 11.1).</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Mar 2026</span><span class="hm-bd">Paper</span><p>Our <a href="/publications/?q=animal%20action">survey on animal action recognition</a> accepted in <i>Artificial Intelligence Review</i> (IF 13.9).</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Mar 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=FLaTEC">FLaTEC</a>, for compressing LiDAR point clouds, accepted at ICME.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Feb 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=RDD4D">RDD4D</a>, for road damage detection, accepted in <i>IEEE Access</i>.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Jan 2026</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=DiffCom">DiffCom</a> accepted in <i>IEEE TCSVT</i>.</p></li>
+          <li class="n-a" data-more><span class="hm-dt">Nov 2025</span><span class="hm-bd">Award</span><p>Named a <a href="/HonorsAwards/">Clarivate Highly Cited Researcher</a> 2025.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Nov 2025</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=perceptual%20image%20compression">ICISP</a>, a lightweight model for perceptual image compression, accepted in <i>Neural Networks</i>.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Oct 2025</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=DefAn">DefAn</a>, a dataset for evaluating LLM hallucinations, accepted in <i>Information</i>, and <a href="/publications/?q=CRTSC">CRTSC</a>, for anomaly detection in chest images, accepted in <i>Sensors</i>.</p></li>
           <li class="n-p" data-more><span class="hm-dt">Oct 2025</span><span class="hm-bd">Paper</span><p>A paper accepted in a Springer Nature journal.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Sep 2025</span><span class="hm-bd">Paper</span><p>Our survey on satellite-to-street-view synthesis accepted in <i>Applied Intelligence</i>.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Aug 2025</span><span class="hm-bd">Paper</span><p>A paper accepted at ICTDsC.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Jul 2025</span><span class="hm-bd">Paper</span><p>A paper accepted at ACM MM.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Jun 2025</span><span class="hm-bd">Paper</span><p>MuStD accepted as an oral at IROS.</p></li>
-          <li class="n-p" data-more><span class="hm-dt">May 2025</span><span class="hm-bd">Paper</span><p>Our overview of large language models accepted in <i>ACM TIST</i> (IF 7.2).</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Apr 2025</span><span class="hm-bd">Paper</span><p>A paper accepted in <i>AEJ</i> (IF 6.2).</p></li>
-          <li class="n-p" data-more><span class="hm-dt">Mar 2025</span><span class="hm-bd">Paper</span><p>Paper accepted as an oral at the CVPR Vision for Agriculture (V4A) workshop.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Sep 2025</span><span class="hm-bd">Paper</span><p>Our <a href="/publications/?q=street-view">survey on satellite-to-street-view synthesis</a> accepted in <i>Applied Intelligence</i>.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Aug 2025</span><span class="hm-bd">Paper</span><p>A paper on <a href="/publications/?q=ICTDsC">benchmarking crowd counting in drone images</a> accepted at ICTDsC.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Jul 2025</span><span class="hm-bd">Paper</span><p>A paper on <a href="/publications/?q=hazardous">recognising hazardous activities</a>, with a new real-world dataset, accepted at ACM MM.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Jun 2025</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=multistream">MuStD</a>, for LiDAR and camera 3D object detection, accepted as an oral at IROS.</p></li>
+          <li class="n-p" data-more><span class="hm-dt">May 2025</span><span class="hm-bd">Paper</span><p>Our <a href="/publications/?q=comprehensive%20overview">overview of large language models</a> accepted in <i>ACM TIST</i> (IF 7.2).</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Apr 2025</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=SEDNet">SEDNet</a>, for vehicle re-identification, accepted in <i>AEJ</i> (IF 6.2).</p></li>
+          <li class="n-p" data-more><span class="hm-dt">Mar 2025</span><span class="hm-bd">Paper</span><p><a href="/publications/?q=MaskAdapt">MaskAdapt</a> accepted as an oral at the CVPR Vision for Agriculture (V4A) workshop.</p></li>
           <li class="n-c" data-more><span class="hm-dt">Jan 2025</span><span class="hm-bd">Career</span><p>Joined The University of Western Australia as a Senior Lecturer.</p></li>
-          <li class="n-a" data-more><span class="hm-dt">Nov 2024</span><span class="hm-bd">Award</span><p><a href="https://icpr2024.org/Prizes-Awards.html">Best Paper Award</a> at ICPR 2024.</p></li>
-          <li class="n-s" data-more><span class="hm-dt">2024&ndash;25</span><span class="hm-bd">Service</span><p>Area Chair for ACCV 2024, IJCAI 2025 and ICCV 2025.</p></li>
+          <li class="n-a" data-more><span class="hm-dt">Nov 2024</span><span class="hm-bd">Award</span><p><a href="https://icpr2024.org/Prizes-Awards.html">Best Paper Award</a> at ICPR 2024 for <a href="/publications/?q=AllWeather">AllWeather-Net</a>.</p></li>
+          <li class="n-s" data-more><span class="hm-dt">2024&ndash;25</span><span class="hm-bd">Service</span><p>Area Chair for ACCV 2024 and ICCV 2025, and Senior Program Committee for IJCAI 2025.</p></li>
         </ul>
-        <button type="button" class="hm-more" data-list="hm-news" aria-expanded="false">Show all 28</button>
+        <button type="button" class="hm-more" data-list="hm-news" aria-expanded="false">Show all</button>
       </section>
 
       <section class="hm-sec" id="code">
@@ -190,15 +122,15 @@ html{scroll-behavior:smooth}
           <li class="c-k"><span class="hm-dt">Oct 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Baber-Jan/SPEGNet">SPEGNet</a></b><span>Camouflaged object detection</span></p></li>
           <li class="c-k"><span class="hm-dt">Jul 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/linaagh98/MSRNet">MSRNet</a></b><span>Camouflaged object detection</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Jun 2025</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/msaqib17/Road_Damage_Detection">DRDD</a></b><span>Road damage dataset with RDD4D code</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">May 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/cshw2021/ICISP">ICISP</a></b></p></li>
-          <li class="c-d" data-more><span class="hm-dt">May 2025</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanvirnwu/HazeSpace2M_ACMMN_2024?tab=readme-ov-file#dataset-download">HazeSpace2M</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">May 2025</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/cshw2021/ICISP">ICISP</a></b><span>Perceptual image compression</span></p></li>
+          <li class="c-d" data-more><span class="hm-dt">May 2025</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanvirnwu/HazeSpace2M_ACMMN_2024?tab=readme-ov-file#dataset-download">HazeSpace2M</a></b><span>Dataset for haze-aware image dehazing</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Nov 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/CuiRuikai/NumGrad-Pull">NumGrad-Pull</a></b><span>Surface reconstruction from point clouds</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Oct 2024</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/AdnanMunir338/UAV-AWID">UAV-AWID</a></b><span>Adverse-weather test sets for UAV detection</span></p></li>
-          <li class="c-d" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanvirnwu/TriFuse?tab=readme-ov-file">LoLI-Street</a></b></p></li>
+          <li class="c-d" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanvirnwu/TriFuse?tab=readme-ov-file">LoLI-Street</a></b><span>Low-light street image enhancement benchmark</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/ashikiut/DefAn">DefAn</a></b><span>Dataset for testing large language models</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Jumponthemoon/AllWeatherNet">AllWeatherNet</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Jumponthemoon/AllWeatherNet">AllWeatherNet</a></b><span>Image enhancement for driving in bad weather and low light</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Sep 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/IbrahimUWA/MuStD">MuStD</a></b><span>LiDAR and camera 3D object detection</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Apr 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/mas94/ADTRS">ADTRS</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Apr 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/mas94/ADTRS">ADTRS</a></b><span>Blind image quality assessment</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Mar 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Mona-Alzahrani/SelectiveMV">SelectiveMV</a></b><span>Code and project details</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Mar 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/12sakura/cefdet">Cefdet</a></b><span>Action detection</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Mar 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Mona-Alzahrani/SelectiveMV-Multiview">SelectiveMV-Multiview</a></b><span>3D object classification</span></p></li>
@@ -206,14 +138,13 @@ html{scroll-behavior:smooth}
           <li class="c-k" data-more><span class="hm-dt">Feb 2024</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/IbrahimUWA/UnLoc">UnLoc</a></b><span>Localisation from LiDAR, radar or camera</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Nov 2023</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/AdnanMunir294/UAVD-CBRA">CBD</a></b><span>UAV detection dataset and code</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Sep 2023</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/CuiRuikai/Partial2Complete">Partial2Complete</a></b><span>Code, models and results</span></p></li>
-          <li class="c-d" data-more><span class="hm-dt">Apr 2023</span><span class="hm-bd">Dataset</span><p><b><a href="https://ieee-dataport.org/documents/sequential-storytelling-image-dataset-ssid">SSID</a></b></p></li>
+          <li class="c-d" data-more><span class="hm-dt">Apr 2023</span><span class="hm-bd">Dataset</span><p><b><a href="https://ieee-dataport.org/documents/sequential-storytelling-image-dataset-ssid">SSID</a></b><span>Sequential storytelling image dataset</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Feb 2023</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/pointcam">PointCaM</a></b><span>Code, models and results</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Dec 2022</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/CuiRuikai/Latent-Transport-UPCN">Latent-Transport-UPCN</a></b><span>Code and models</span></p></li>
-          <li class="c-d" data-more><span class="hm-dt">Sep 2022</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/hafeez-anwar/FGBR">FGBR</a></b></p></li>
+          <li class="c-d" data-more><span class="hm-dt">Sep 2022</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/hafeez-anwar/FGBR">FGBR</a></b><span>Low-cost fine-grained classification</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Apr 2022</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/YC-Liang/DRT">DRT</a></b><span>Single image deraining</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Mar 2022</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ZhenyueQin/Angular-Skeleton-Encoding">Angular Skeleton Encoding</a></b><span>Code and models</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Jan 2022</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/pnp-3d">PnP-3D</a></b><span>Plug-and-play module for 3D point clouds</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Dec 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/R2Net">R<sup>2</sup>Net</a></b><span>Code and models</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Oct 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/attentions_in_3D_detection">Attentional 3D Object Detection</a></b><span>Code and models</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Oct 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/hayatkhan8660-maker/Light-DehazeNet">Light-DehazeNet</a></b><span>Lightweight single image dehazing</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Sep 2021</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/usama-x930/VT-LPR">DVLPD</a></b><span>Vehicle and licence plate dataset with VT-LPR code</span></p></li>
@@ -222,45 +153,34 @@ html{scroll-behavior:smooth}
           <li class="c-k" data-more><span class="hm-dt">May 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/BAAF-Net">BAAF-Net</a></b><span>Point cloud semantic segmentation</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Apr 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/GBNet">GBNet</a></b><span>Code and trained models</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Apr 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ZhenyueQin/PSGNN">PSGNN</a></b><span>Position-sensing graph neural networks</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Mar 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/JunlinHan/CWR">CWR</a></b></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Mar 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/DRNet">DRNet</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Mar 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/JunlinHan/CWR">CWR</a></b><span>Underwater image restoration</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Mar 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/ShiQiu0419/DRNet">DRNet</a></b><span>Point cloud classification and segmentation</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Feb 2021</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/tanveer-hussain/EfficientSOD">DDNet</a></b><span>Code, results and dataset</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Jan 2021</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/tanveer-hussain/EfficientSOD2">EfficientSOD2</a></b><span>Pyramidal attention for saliency detection</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Nov 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/R2Net">R<sup>2</sup>Net</a></b><span>Code and results</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Nov 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/R2Net">R<sup>2</sup>Net</a></b><span>Real image restoration: code, models and results</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">Nov 2020</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/saeed-anwar/ColorSurvey">Natural-Color Dataset (NCD)</a></b><span>Dataset, from our colourization survey</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Nov 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/IERD">IERD</a></b><span>Code and results</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Nov 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Lillian1082/IRAE_pytorch">IRAE</a></b></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Oct 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Lillian1082/GradNet-Image-Denoising">GradNet</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Nov 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Lillian1082/IRAE_pytorch">IRAE</a></b><span>Invertible networks for image restoration</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Oct 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/Lillian1082/GradNet-Image-Denoising">GradNet</a></b><span>Image denoising</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Sep 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/FGSE">FGSE</a></b><span>Code and trained networks</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Jul 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/COVID19-Baselines">COVID19 Baseline</a></b><span>Code and trained models</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Jun 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/JingZhang617/UCNet">UC-Net</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Jun 2020</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/JingZhang617/UCNet">UC-Net</a></b><span>RGB-D saliency detection</span></p></li>
           <li class="c-d" data-more><span class="hm-dt">May 2020</span><span class="hm-bd">Dataset</span><p><b><a href="https://github.com/saeed-anwar/CoinNet">CoinNet</a></b><span>Code and dataset</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Nov 2019</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/UWCNN">UWCNN</a></b></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Nov 2019</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/UWCNN">UWCNN</a></b><span>Underwater image and video enhancement</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Sep 2019</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/DRLN">DRLN</a></b><span>Code and results</span></p></li>
           <li class="c-k" data-more><span class="hm-dt">Sep 2019</span><span class="hm-bd">Code</span><p><b><a href="https://github.com/saeed-anwar/RIDNet">RIDNet</a></b><span>Code and results</span></p></li>
-          <li class="c-k" data-more><span class="hm-dt">Jul 2018</span><span class="hm-bd">Code</span><p><b>All papers</b><span>Code released for all papers to date</span></p></li>
+          <li class="c-k" data-more><span class="hm-dt">Jul 2018</span><span class="hm-bd">Code</span><p><b><a href="/publications/#y-earlier">All papers</a></b><span>Code released for all papers to date</span></p></li>
         </ul>
-        <button type="button" class="hm-more" data-list="hm-code" aria-expanded="false">Show all 56</button>
+        <button type="button" class="hm-more" data-list="hm-code" aria-expanded="false">Show all</button>
       </section>
 
     </div><!-- /.article-wrap -->
-  </article>
-</div><!-- /#main -->
-
-<div class="footer-wrap">
-  <footer>
-    {% include _footer.html %}
-  </footer>
-</div><!-- /.footer-wrap -->
-
-{% include _scripts.html %}
-
 <script>
 (function(){
   var btns=[].slice.call(document.querySelectorAll('.hm-more'));
   btns.forEach(function(b){
     var list=document.querySelector('.'+b.getAttribute('data-list')); if(!list) return;
-    var label=b.textContent;
+    var label='Show all '+list.children.length; b.textContent=label;
     b.addEventListener('click',function(){
       var open=list.classList.toggle('open');
       b.setAttribute('aria-expanded',open); b.textContent=open?'Show fewer':label;
@@ -268,7 +188,3 @@ html{scroll-behavior:smooth}
   });
 })();
 </script>
-
-
-</body>
-</html>
