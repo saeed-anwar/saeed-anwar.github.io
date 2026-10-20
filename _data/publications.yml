@@ -448,7 +448,7 @@
     - label: "arXiv"
       url: "https://arxiv.org/abs/2501.02822"
     - label: "Official PDF"
-      url: ""
+      url: "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11430174"
     - label: "Code"
       url: "https://github.com/msaqib17/Road_Damage_Detection"
   bibtex: |-
